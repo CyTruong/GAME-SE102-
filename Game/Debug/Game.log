@@ -1,0 +1,5 @@
+﻿  Animation_defaut.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\workspace directx\game\game\dxgraphic.h(17): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+c:\users\admin\onedrive - gm.uit.edu.vn\workspace directx\game\game\animation_defaut.cpp(36): warning C4715: 'Animation_defaut::Create': not all control paths return a value
+  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Workspace DirectX\Game\Debug\Game.exe
+  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Workspace DirectX\Game\Debug\Game.pdb (Partial PDB)
