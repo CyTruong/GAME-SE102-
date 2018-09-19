@@ -7,7 +7,6 @@ using namespace std;
 class Gameobject
 {
 public :
-	IControlEventSender	Esource;
 	IControl* control;
 	IAnimation* animation;
 	string name;
@@ -15,10 +14,10 @@ public :
 	
 	
 public:
-	void virtual OnreciveControl(char[256]);
 	Gameobject();
-	void Start();
-	void Stop();
+	void virtual Start();
+	void virtual Update();
+	void virtual Stop();
 	~Gameobject();
 };
 

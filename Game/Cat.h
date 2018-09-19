@@ -10,7 +10,10 @@ class Cat : public Gameobject
 public:
 	Cat(HWND,LPDIRECT3DDEVICE9);
 	~Cat();
-
-	void OnreciveControl (char[256]) override;
+	
+public: 
+	void Start() override;
+	void Update() override;
+	void Stop() override;
 };
 

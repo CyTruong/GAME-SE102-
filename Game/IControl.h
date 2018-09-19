@@ -9,9 +9,6 @@ public:
 	virtual int Creat_Input(HWND) = 0;
 	virtual void Poll_input() = 0;
 	virtual void Clear_input() = 0;
+	virtual int Get_State(int) = 0;
 };
-				
- class IControlEventSender {
-public :
-	__event void TriggerEvent(char[256]);
-};
+

@@ -1,5 +1,5 @@
 ﻿#include "Keyboard_Input.h"
-
+#include <iostream>
 
 int Keyboard_Input::Creat_Input(HWND hWnd) {
 	HRESULT result;
@@ -33,12 +33,29 @@ int Keyboard_Input::Creat_Input(HWND hWnd) {
 		return 0;
 	}
 
+	result = dikeyboard->Acquire();
+	if (result != DI_OK) {
+		return 0;
+	}
+
+
 	return 1;
 }
 
 void Keyboard_Input::Poll_input() {
 	dikeyboard->GetDeviceState(sizeof(key), (LPVOID)&key);
-	__raise Esource.TriggerEvent(key);
+}
+
+int Keyboard_Input::Get_State(int ikey) {
+	/*for (int i = 0; i < 255; i ++) {
+		if ((key[i] & 0x80)) {
+			 return key[ikey] & 0x80;
+		}
+	}*/
+	if ((key[ikey] & 0x80)!= 0) {
+
+	}
+	return (key[ikey] & 0x80);
 }
 
 void Keyboard_Input::Clear_input() {

@@ -1,13 +1,9 @@
 #include "Gameobject.h"
 
 
-void Gameobject::OnreciveControl(char keys[256]) {
-
-}
-
 Gameobject::Gameobject()
 {
-	__hook(&IControlEventSender::TriggerEvent, &Esource, &Gameobject::OnreciveControl);
+
 }
 
 void Gameobject::Start() {
@@ -18,6 +14,11 @@ void Gameobject::Start() {
 		
 	}
 }
+
+void Gameobject::Update() {
+	this->control->Poll_input();
+}
+void Gameobject::Stop(){}
 
 
 

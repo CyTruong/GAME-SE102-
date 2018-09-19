@@ -27,6 +27,7 @@ void game::GameRun(HWND hWnd) {
 
 		D3DXVECTOR3 position(122,122, 0);
 
+		cat->Update();
 		cat->animation->DrawCurframe(position);
 
 		dxGraphic::d3ddev->EndScene();
