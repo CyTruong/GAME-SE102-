@@ -1,7 +1,8 @@
 #include "game.h"
 #include "Cat.h"
+#include "Zero.h"
 #include "dxGraphic.h"
-
+#include "Animation.h"
 game::game()
 {
 }
@@ -11,24 +12,28 @@ game::~game()
 {
 }
 
-Cat *cat; 
+Zero* z;
 LPDIRECT3DSURFACE9 back;// test nên xóa khi code ccái khác
 
+Animation *ani;
 int game::GameInit(HWND hWnd) {
-//	back = dxGraphic::LoadSurface("E:\\Sprite\\game\\back.png", D3DCOLOR_XRGB(255, 255, 255));
-	cat = new Cat(hWnd,dxGraphic::d3ddev );
+
+	z = new Zero(hWnd);
+	z->Start();
+
 	return 1;
 }
 
 void game::GameRun(HWND hWnd) {
 	if (dxGraphic::d3ddev->BeginScene())
 	{
-//		dxGraphic::d3ddev->StretchRect(back, NULL, dxGraphic::backbuffer, NULL, D3DTEXF_NONE);
+
 
 		D3DXVECTOR3 position(122,122, 0);
 
-		cat->Update();
-		cat->animation->DrawCurframe(position);
+	
+		z->Update();
+		z->animation_control->DrawCurrentFrame(position);
 
 		dxGraphic::d3ddev->EndScene();
 	}
@@ -37,7 +42,6 @@ void game::GameRun(HWND hWnd) {
 }
 
 int game::GameEnd(HWND hWnd) {
-	cat->animation->Clear();
-	delete cat;
+
 	return 1;
 }

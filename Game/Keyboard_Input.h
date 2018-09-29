@@ -7,7 +7,7 @@ class Keyboard_Input :
 {
 public:
 	LPDIRECTINPUTDEVICE8 dikeyboard;
-	char key[256];
+	
 public:
 	int Creat_Input(HWND) override;
 	void Poll_input() override;

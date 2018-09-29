@@ -1,4 +1,31 @@
-﻿  Keyboard_Input.cpp
+﻿  Zero.cpp
   e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Workspace DirectX\Game\Debug\Game.exe
-  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Workspace DirectX\Game\Debug\Game.pdb (Partial PDB)
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  winmain.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  Keyboard_Input.cpp
+  e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Gameobject.cpp
+  e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  game.cpp
+  e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  dxGraphic.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.cpp(38): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Cat.cpp
+  e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  Animation_defaut.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  AnimationControl.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  Animation.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\animation.cpp(48): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\animation_defaut.cpp(36): warning C4715: 'Animation_defaut::Create': not all control paths return a value
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\winmain.cpp(59): warning C4715: 'MyRegisterClass': not all control paths return a value
+  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\Debug\Game.exe
+  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\Debug\Game.pdb (Partial PDB)

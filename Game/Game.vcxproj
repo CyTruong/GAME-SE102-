@@ -116,6 +116,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationControl.cpp" />
     <ClCompile Include="Animation_defaut.cpp" />
     <ClCompile Include="Cat.cpp" />
     <ClCompile Include="dxGraphic.cpp" />
@@ -123,8 +125,11 @@
     <ClCompile Include="Gameobject.cpp" />
     <ClCompile Include="Keyboard_Input.cpp" />
     <ClCompile Include="winmain.cpp" />
+    <ClCompile Include="Zero.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationControl.h" />
     <ClInclude Include="Animation_defaut.h" />
     <ClInclude Include="Cat.h" />
     <ClInclude Include="define.h" />
@@ -134,6 +139,30 @@
     <ClInclude Include="IAnimation.h" />
     <ClInclude Include="IControl.h" />
     <ClInclude Include="Keyboard_Input.h" />
+    <ClInclude Include="rapidjson\allocators.h" />
+    <ClInclude Include="rapidjson\document.h" />
+    <ClInclude Include="rapidjson\encodedstream.h" />
+    <ClInclude Include="rapidjson\encodings.h" />
+    <ClInclude Include="rapidjson\filereadstream.h" />
+    <ClInclude Include="rapidjson\filewritestream.h" />
+    <ClInclude Include="rapidjson\fwd.h" />
+    <ClInclude Include="rapidjson\istreamwrapper.h" />
+    <ClInclude Include="rapidjson\memorybuffer.h" />
+    <ClInclude Include="rapidjson\memorystream.h" />
+    <ClInclude Include="rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="rapidjson\pointer.h" />
+    <ClInclude Include="rapidjson\prettywriter.h" />
+    <ClInclude Include="rapidjson\rapidjson.h" />
+    <ClInclude Include="rapidjson\reader.h" />
+    <ClInclude Include="rapidjson\schema.h" />
+    <ClInclude Include="rapidjson\stream.h" />
+    <ClInclude Include="rapidjson\stringbuffer.h" />
+    <ClInclude Include="rapidjson\writer.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Zero.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -47,11 +47,7 @@ void Keyboard_Input::Poll_input() {
 }
 
 int Keyboard_Input::Get_State(int ikey) {
-	/*for (int i = 0; i < 255; i ++) {
-		if ((key[i] & 0x80)) {
-			 return key[ikey] & 0x80;
-		}
-	}*/
+	
 	if ((key[ikey] & 0x80)!= 0) {
 
 	}

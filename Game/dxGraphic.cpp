@@ -129,3 +129,18 @@ LPDIRECT3DTEXTURE9 dxGraphic::LoadTexture(char* name, D3DCOLOR trancolor) {
 
 	return texture;
 }
+
+rapidjson::Document dxGraphic::LoadJSonDocument(char* name) {
+	std::ifstream filedir(name);
+	rapidjson::Document document;
+	rapidjson::IStreamWrapper isw(filedir);
+	document.ParseStream(isw);
+	return document;
+}
+
+char* dxGraphic::standardizedSourceName(char* name) {
+	char source[50];
+	strcpy_s(source, SPRITE_SOURCE);
+	strcat_s(source, name);
+	return _strdup(source);
+}
