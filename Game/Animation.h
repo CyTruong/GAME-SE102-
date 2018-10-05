@@ -33,7 +33,8 @@ public :
 		int Animation_Numberofsprite;
 		int Animation_Count;
 		int Animation_Delay;
-	}ANIMATE_CONTROL;
+	}ANIMATE_PROPERTIES
+;
 
 public:
 	int ID;
@@ -45,7 +46,7 @@ public:
 	HWND hWnd;
 	Document jsonDocument;
 	TITLESHEET title_set;
-	ANIMATE_CONTROL animate_control;
+	ANIMATE_PROPERTIES animate_properties;
 public:
 	
 	Animation();

@@ -7,13 +7,13 @@ Animation::Animation() {}
 Animation::Animation(HWND hWnd, char* name, D3DCOLOR transcolor,int animation_delay,int ID)
 {
 	//Gán 1 số thứ linh tinh
-	this->hWnd = hWnd; 
+	this->hWnd = hWnd;  
 	this->ID = ID;
 	this->JsonFileName = dxGraphic::standardizedSourceName(name);  // sửa lại đường dẫn
 	this->title_set.trans_color = transcolor; //màu lọc 
-	this->animate_control.Animation_Delay = animation_delay; //Đỗ trễn animation ( tính bằng frame )
-	this->animate_control.Curframe_Id = 0; // này vs phía dưới là 2 cái biến đếm
-	this->animate_control.Animation_Count = 0;
+	this->animate_properties.Animation_Delay = animation_delay; //Đỗ trễn animation ( tính bằng frame )
+	this->animate_properties.Curframe_Id = 0; // này vs phía dưới là 2 cái biến đếm
+	this->animate_properties.Animation_Count = 0;
 }
 
 int Animation::Creat()
@@ -42,12 +42,12 @@ int Animation::Creat()
 	// Load mảng animation
 	const rapidjson::Value& layer = jsonDocument["layers"];  
 	const rapidjson::Value& data = layer[0]["data"];
-	this->animate_control.Arrdata = new int[data.Size()];
-	this->animate_control.Animation_Numberofsprite = data.Size();
+	this->animate_properties.Arrdata = new int[data.Size()];
+	this->animate_properties.Animation_Numberofsprite = data.Size();
 
 	for (int i = 0; i < data.Size(); i++)
 	{
-		this->animate_control.Arrdata[i] = data[i].GetInt();
+		this->animate_properties.Arrdata[i] = data[i].GetInt();
 	}
 
 	//load sprite image
@@ -78,7 +78,7 @@ void Animation::DrawCurframe(D3DXVECTOR3 position)
 		start = GetTickCount();
 		sprite_handler->Begin(D3DXSPRITE_ALPHABLEND);
 
-		int Frameid = this->animate_control.Arrdata[this->animate_control.Curframe_Id];
+		int Frameid = this->animate_properties.Arrdata[this->animate_properties.Curframe_Id];
 		Frameid = Frameid - this->title_set.First_gid;
 		int left = (Frameid % this->title_set.titlesheet_colums) * this->title_set.titlesheet_width;
 		int top = (Frameid / this->title_set.titlesheet_colums) * this->title_set.titlesheet_height;
@@ -95,10 +95,10 @@ void Animation::DrawCurframe(D3DXVECTOR3 position)
 			&position,
 			this->title_set.trans_color
 		);
-		if (++this->animate_control.Animation_Count > this->animate_control.Animation_Delay) {
-			this->animate_control.Animation_Count = 0;
-			if (++this->animate_control.Curframe_Id >= this->animate_control.Animation_Numberofsprite) {
-				this->animate_control.Curframe_Id = 0;
+		if (++this->animate_properties.Animation_Count > this->animate_properties.Animation_Delay) {
+			this->animate_properties.Animation_Count = 0;
+			if (++this->animate_properties.Curframe_Id >= this->animate_properties.Animation_Numberofsprite) {
+				this->animate_properties.Curframe_Id = 0;
 			}
 		}
 		sprite_handler->End();
@@ -106,8 +106,8 @@ void Animation::DrawCurframe(D3DXVECTOR3 position)
 }
 
 void Animation::refresh() {
-	this->animate_control.Animation_Count = 0;
-	this->animate_control.Curframe_Id = 0; 
+	this->animate_properties.Animation_Count = 0;
+	this->animate_properties.Curframe_Id = 0;
 }
 Animation::~Animation()
 {
