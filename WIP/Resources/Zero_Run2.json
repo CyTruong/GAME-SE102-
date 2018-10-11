@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="5" height="2" tilewidth="201" tileheight="101" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="zero" tilewidth="201" tileheight="101" tilecount="228" columns="12">
+  <image source="zero.png" width="2413" height="1920"/>
+  <tile id="38">
+   <animation>
+    <frame tileid="16" duration="85"/>
+    <frame tileid="7" duration="85"/>
+    <frame tileid="8" duration="85"/>
+    <frame tileid="9" duration="85"/>
+    <frame tileid="10" duration="85"/>
+    <frame tileid="11" duration="85"/>
+    <frame tileid="12" duration="85"/>
+    <frame tileid="13" duration="85"/>
+    <frame tileid="14" duration="85"/>
+    <frame tileid="15" duration="85"/>
+    <frame tileid="16" duration="85"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="5" height="2">
+  <data encoding="csv">
+39,0,0,0,0,
+0,0,0,0,0
+</data>
+ </layer>
+</map>
