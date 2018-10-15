@@ -5,13 +5,7 @@
 #define SPRITE_SOURCE "..\\Resources\\"  // nơi chứa sprite
 #define ANIMATIONUPDATEDELAY 30 //ms
 
-//Cat sprite
-#define CAT_SPRITE_NAME "catfull.png"
-#define CAT_SPRITE_WIDTH  100
-#define CAT_SPRTIE_HEIGHT 100
-#define CAT_SPRITE_COLLUMS 4
-#define CAT_SPRITE_NUMBEROFSPRITE 6
-#define CAT_SPRITE_ANIMATION_FRAME_DELAY 3 // fix
+#define TRANSCOLOR D3DCOLOR_XRGB(255,255,255)
 
 //Zero animation
 #define ZERO_IDLE "Zero_Idle.json"
@@ -20,3 +14,12 @@
 #define ZERO_RUNRIGHT "Zero_Run.json"
 #define ZERO_RUNRIGHTID DIK_RIGHTARROW
 #define ZERO_RUNRIGHTDELAY 2
+
+
+//Megaman animation
+#define MEGAMAN_IDLE "Megaman_Idle.json"
+#define MEGAMAN_IDLEID 0
+#define MEGAMAN_IDLEDELAY 4
+#define MEGAMAN_RUNRIGHT "Megaman_Run.json"
+#define MEGAMAN_RUNRIGHTID DIK_RIGHTARROW
+#define MEGAMAN_RUNRIGHTDELAY 2

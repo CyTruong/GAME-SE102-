@@ -16,7 +16,7 @@ Animation::Animation(HWND hWnd, char* name, D3DCOLOR transcolor,int animation_de
 	this->animate_properties.Animation_Count = 0;
 }
 
-int Animation::Creat()
+int Animation::Create()
 {
 
 	//load Json content
@@ -72,8 +72,8 @@ int Animation::Creat()
 void Animation::DrawCurframe(D3DXVECTOR3 position)
 {
 	// Cái đống phía dưới này xem sách
-	if (GetTickCount() - start > ANIMATIONUPDATEDELAY) {
-		dxGraphic::d3ddev->ColorFill(dxGraphic::backbuffer, NULL, D3DCOLOR_XRGB(0, 0, 0));
+	//if (GetTickCount() - start > ANIMATIONUPDATEDELAY) {
+		/*dxGraphic::d3ddev->ColorFill(dxGraphic::backbuffer, NULL, D3DCOLOR_XRGB(0, 0, 0));*/
 
 		start = GetTickCount();
 		sprite_handler->Begin(D3DXSPRITE_ALPHABLEND);
@@ -102,7 +102,7 @@ void Animation::DrawCurframe(D3DXVECTOR3 position)
 			}
 		}
 		sprite_handler->End();
-	}
+	/*}*/
 }
 
 void Animation::refresh() {

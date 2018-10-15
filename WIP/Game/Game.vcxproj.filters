@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files\GameProperty">
       <UniqueIdentifier>{c6d6cc7a-8323-4a2e-8ed1-62a1e3af1630}</UniqueIdentifier>
     </Filter>
@@ -52,6 +48,10 @@
     <Filter Include="RapidJson">
       <UniqueIdentifier>{d77c927d-fd78-4f43-adc5-afeb5998375b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h">
@@ -77,9 +77,6 @@
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Header Files\GameProperty</Filter>
-    </ClInclude>
-    <ClInclude Include="Cat.h">
-      <Filter>Header Files\GameContent</Filter>
     </ClInclude>
     <ClInclude Include="rapidjson\allocators.h">
       <Filter>RapidJson</Filter>
@@ -147,8 +144,11 @@
     <ClInclude Include="AnimationControl.h">
       <Filter>Header Files\GameProperty\Animation</Filter>
     </ClInclude>
+    <ClInclude Include="Megaman.h">
+      <Filter>Header Files\GameContent</Filter>
+    </ClInclude>
     <ClInclude Include="Zero.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameContent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -170,17 +170,17 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files\GameProperty</Filter>
     </ClCompile>
-    <ClCompile Include="Cat.cpp">
-      <Filter>Source Files\GameContent</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Source Files\GameProperty\Animation</Filter>
     </ClCompile>
     <ClCompile Include="AnimationControl.cpp">
       <Filter>Source Files\GameProperty\Animation</Filter>
     </ClCompile>
+    <ClCompile Include="Megaman.cpp">
+      <Filter>Source Files\GameContent</Filter>
+    </ClCompile>
     <ClCompile Include="Zero.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameContent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,40 @@
+{ "height":1,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+         "height":1,
+         "id":1,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":2,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.2.0",
+ "tileheight":37,
+ "tilesets":[
+        {
+         "columns":6,
+         "firstgid":1,
+         "image":"MegamanRun.png",
+         "imageheight":76,
+         "imagewidth":240,
+         "margin":0,
+         "name":"MegamanRun",
+         "spacing":0,
+         "tilecount":12,
+         "tileheight":37,
+         "tilewidth":40
+        }],
+ "tilewidth":40,
+ "type":"map",
+ "version":1.2,
+ "width":11
+}

@@ -53,7 +53,7 @@ public:
 	//lần lượt là hWnd, tên file, trans color, AnimationDelay,AnimationID
 	Animation(HWND, char*, D3DCOLOR,int,int);
 	~Animation();
-	int Creat();
+	int Create();
 	void DrawCurframe(D3DXVECTOR3);
 	void refresh();
 

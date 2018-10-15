@@ -1,12 +1,9 @@
-﻿  Animation.cpp
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\game\animation.cpp(48): warning C4018: '<': signed/unsigned mismatch
+﻿  game.cpp
+  e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  Animation.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\animation.cpp(48): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  Skipping... (no relevant changes detected)
-  game.cpp
-  Zero.cpp
-  Gameobject.cpp
-  Cat.cpp
-  AnimationControl.cpp
-  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\Debug\Game.exe
-  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\Debug\Game.pdb (Partial PDB)
+  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Debug\Game.exe
+  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Debug\Game.pdb (Partial PDB)

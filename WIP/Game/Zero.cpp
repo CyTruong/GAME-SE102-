@@ -8,9 +8,9 @@ Zero::Zero(HWND hWnd)
 	this->animation_control = new AnimationControl(hWnd);
 	//Tạo các loại animation
 	Animation* Idle = new Animation(hWnd, ZERO_IDLE, D3DCOLOR_XRGB(255, 255, 255), ZERO_IDLEDELAY,ZERO_IDLEID); //Các hằng số lưu vào define tất
-	Idle->Creat();
+	Idle->Create();
 	Animation* Run = new Animation(hWnd, ZERO_RUNRIGHT, D3DCOLOR_XRGB(255, 255, 255), ZERO_RUNRIGHTDELAY,ZERO_RUNRIGHTID);
-	Run->Creat();
+	Run->Create();
 	//Thêm Animation vào controler
 	this->animation_control->AddAnimation(Idle);
 	this->animation_control->AddAnimation(Run);
