@@ -123,6 +123,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="Gameobject.cpp" />
     <ClCompile Include="Keyboard_Input.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Megaman.cpp" />
     <ClCompile Include="winmain.cpp" />
     <ClCompile Include="Zero.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="IAnimation.h" />
     <ClInclude Include="IControl.h" />
     <ClInclude Include="Keyboard_Input.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Megaman.h" />
     <ClInclude Include="rapidjson\allocators.h" />
     <ClInclude Include="rapidjson\document.h" />

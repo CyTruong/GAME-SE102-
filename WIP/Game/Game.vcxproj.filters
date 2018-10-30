@@ -150,6 +150,9 @@
     <ClInclude Include="Zero.h">
       <Filter>Header Files\GameContent</Filter>
     </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dxGraphic.cpp">
@@ -181,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="Zero.cpp">
       <Filter>Source Files\GameContent</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
