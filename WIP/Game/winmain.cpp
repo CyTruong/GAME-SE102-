@@ -2,7 +2,7 @@
 #include <d3dx9.h>
 #include <time.h>
 #include <stdio.h>
-#include "dxGraphic.h"
+#include "dxgraphics.h"
 #include "game.h"
 
 
@@ -15,14 +15,14 @@ LRESULT WINAPI WinPro(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	switch (msg)
 	{
 	case WM_DESTROY:
-		game::GameEnd(hWnd);
-		if (dxGraphic::d3ddev != NULL)
+		// game::GameEnd(hWnd);
+		if (dxgraphics::getInstance()->getDevice() != NULL)
 		{
-			dxGraphic::d3ddev->Release();
+			dxgraphics::getInstance()->getDevice()->Release();
 		}
-		if (dxGraphic::d3d != NULL)
+		if (dxgraphics::getInstance()->getD3d() != NULL)
 		{
-			dxGraphic::d3d->Release();
+			dxgraphics::getInstance()->getD3d()->Release();
 		}
 		
 		PostQuitMessage(-3200);
@@ -60,7 +60,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLine, int nCmdShow)
 {
-	MSG msg;
+
 	HWND hWnd;
 	MyRegisterClass(hInstance);
 	DWORD style;
@@ -93,37 +93,85 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLin
 	}
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
-
-	if (!dxGraphic::InitDirect(hWnd, SCREEN_WIDTH, SCREEN_HEIGHT, 0))
+/*
+	if (!dxgraphics::Init_Direct3D(hWnd, SCREEN_WIDTH, SCREEN_HEIGHT, 0))
 	{
 		MessageBox(hWnd, "Somthing false when init directx ", "Error", MB_OK);
 		return 0;
-	}
+	}*/
 
 	/*if (!dxInit_DirectXInput(hWnd))
 	{
 		MessageBox(hWnd, "Something false when init inout", "Error", MB_OK);
 		return 0;
 	}*/
+	game game(hWnd);
 
-	if (!game::GameInit(hWnd))
+
+	__int64 cntsPerSec = 0;
+	QueryPerformanceFrequency((LARGE_INTEGER*)&cntsPerSec);
+
+	float secsPerCnt = 1.0f / (float)cntsPerSec;
+
+	float delta = 0.0f;
+
+	unsigned int nFrameCount = 0;
+
+	float timeCount = 0;
+
+	__int64 currTimeStamp = 0;
+
+	__int64 prevTimeStamp = 0;
+
+	QueryPerformanceCounter((LARGE_INTEGER*)&prevTimeStamp);
+	MSG msg; // create the Message ( MSG) object the handle event
+	ZeroMemory(&msg, sizeof(MSG));
+	while (msg.message != WM_QUIT)
 	{
-		MessageBox(hWnd, "Something false when init game", "Error", MB_OK);
-		return 0;
-	}
-	int done = 0;
-	while (!done)
-	{
-		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+		if (false &&PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
 			if (msg.message == WM_QUIT) {
-				done = 1;
+
 			}
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
+
+
+
+
+
 		}
 		else
 		{
-			game::GameRun(hWnd);
+
+			bool render = false;
+
+			QueryPerformanceCounter((LARGE_INTEGER*)&currTimeStamp);
+
+			double deltaTimeInMiliSecond = (double)(currTimeStamp - prevTimeStamp) * secsPerCnt * 1000.0f;
+			prevTimeStamp = currTimeStamp;
+
+			delta += deltaTimeInMiliSecond;
+			timeCount += deltaTimeInMiliSecond;
+			if (timeCount >= (double)1000.0f)
+			{
+				nFrameCount = 0;
+				timeCount = 0;
+
+			}
+
+			while (delta >= 6000)
+			{
+				render = true;
+				delta -= 6000;
+				game.update();
+			}
+
+			if (render)
+			{
+				nFrameCount++;
+				game.render();
+			}
+
 		}
 
 	}

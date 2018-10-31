@@ -9,7 +9,7 @@ Animation::Animation(HWND hWnd, char* name, D3DCOLOR transcolor,int animation_de
 	//Gán 1 số thứ linh tinh
 	this->hWnd = hWnd;  
 	this->ID = ID;
-	this->JsonFileName = dxGraphic::standardizedSourceName(name);  // sửa lại đường dẫn
+	this->JsonFileName = dxgraphics::standardizedSourceName(name);  // sửa lại đường dẫn
 	this->title_set.trans_color = transcolor; //màu lọc 
 	this->animate_properties.Animation_Delay = animation_delay; //Đỗ trễn animation ( tính bằng frame )
 	this->animate_properties.Curframe_Id = 0; // này vs phía dưới là 2 cái biến đếm
@@ -23,7 +23,7 @@ int Animation::Create()
 	try
 	{	
 		//Load Json content
-		jsonDocument = dxGraphic::LoadJSonDocument(this->JsonFileName);
+		jsonDocument = dxgraphics::LoadJSonDocument(this->JsonFileName);
 	}
 	catch (const std::exception&)
 	{
@@ -51,14 +51,14 @@ int Animation::Create()
 	}
 
 	//load sprite image
-	HRESULT result = D3DXCreateSprite(dxGraphic::d3ddev, &sprite_handler);
+	HRESULT result = D3DXCreateSprite(dxgraphics::getInstance()->getDevice() , &sprite_handler);
 	if (result != D3D_OK)
 	{
 		MessageBox(hWnd, "Somthing wrong when creat sprite handler", "error", MB_OK);
 		return 0;
 	}
 
-	sprite_texture = dxGraphic::LoadTexture(dxGraphic::standardizedSourceName(this->title_set.source), this->title_set.trans_color);
+	sprite_texture = dxgraphics::LoadTexture(dxgraphics::standardizedSourceName(this->title_set.source), this->title_set.trans_color);
 	if (sprite_texture == NULL)
 	{
 		MessageBox(hWnd, "Load Textture faild", "error", MB_OK);
@@ -73,7 +73,7 @@ void Animation::DrawCurframe(D3DXVECTOR3 position)
 {
 	// Cái đống phía dưới này xem sách
 	//if (GetTickCount() - start > ANIMATIONUPDATEDELAY) {
-		/*dxGraphic::d3ddev->ColorFill(dxGraphic::backbuffer, NULL, D3DCOLOR_XRGB(0, 0, 0));*/
+		/*dxgraphics::d3ddev->ColorFill(dxgraphics::backbuffer, NULL, D3DCOLOR_XRGB(0, 0, 0));*/
 
 		start = GetTickCount();
 		sprite_handler->Begin(D3DXSPRITE_ALPHABLEND);

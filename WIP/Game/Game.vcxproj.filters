@@ -57,9 +57,6 @@
     <ClInclude Include="define.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dxGraphic.h">
-      <Filter>Header Files\DirectxProperty</Filter>
-    </ClInclude>
     <ClInclude Include="IAnimation.h">
       <Filter>Header Files\GameProperty\Animation</Filter>
     </ClInclude>
@@ -153,11 +150,20 @@
     <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="dxgraphics.h">
+      <Filter>Header Files\DirectxProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\GameProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header Files\GameProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayScene.h">
+      <Filter>Header Files\GameContent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dxGraphic.cpp">
-      <Filter>Source Files\DirectxProperty</Filter>
-    </ClCompile>
     <ClCompile Include="Animation_defaut.cpp">
       <Filter>Source Files\GameProperty\Animation</Filter>
     </ClCompile>
@@ -187,6 +193,15 @@
     </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dxgraphics.cpp">
+      <Filter>Source Files\DirectxProperty</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source Files\GameProperty</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScene.cpp">
+      <Filter>Source Files\GameContent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

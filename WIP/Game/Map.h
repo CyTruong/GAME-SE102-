@@ -8,7 +8,8 @@ public:
 	char* JsonFileName;
 	HWND hWnd;
 public:
-	Map();
+	Map(); 
+
 	Map(HWND,char*);
 	void Creat();
 	~Map();
