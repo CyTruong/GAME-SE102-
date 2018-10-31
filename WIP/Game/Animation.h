@@ -8,7 +8,7 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include "rapidjson\document.h"
-#include "dxGraphic.h"
+#include "dxgraphics.h"
 #include "define.h"
 using namespace rapidjson;
 

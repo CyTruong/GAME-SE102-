@@ -2,6 +2,7 @@
 
 
 
+SceneManager* SceneManager::Instance = nullptr; 
 
 SceneManager* SceneManager::GetInstance()
 {
@@ -17,10 +18,10 @@ Scene* SceneManager::GetCurScene()
 }
 
 void SceneManager::createScene(Scene * scene)
-{
-	if (scene)
+{	
+ 	if (scene)
 	{
-		if (CurScene!=nullptr)
+		if (1)
 		{
 			delete CurScene; 
 
@@ -40,7 +41,7 @@ void SceneManager::createScene(Scene * scene)
 
 SceneManager::SceneManager()
 {
-	CurScene = nullptr;
+	//CurScene = nullptr;
 }
 
 SceneManager::~SceneManager()

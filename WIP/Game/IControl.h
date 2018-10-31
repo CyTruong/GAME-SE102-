@@ -5,10 +5,15 @@
 public :
 	LPDIRECTINPUT8 dinput;
 	char key[256];
-public:
+public:	
 	virtual int Creat_Input(HWND) = 0;
 	virtual void Poll_input() = 0;
 	virtual void Clear_input() = 0;
 	virtual int Get_State(int) = 0;
 };
+
+
+
+
+
 
