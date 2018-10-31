@@ -1,9 +1,31 @@
-﻿  game.cpp
-  e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
-  Animation.cpp
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\animation.cpp(48): warning C4018: '<': signed/unsigned mismatch
+﻿  Animation.cpp
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+c:\users\dattebayo09\desktop\game-se102-\wip\game\animation.cpp(48): warning C4018: '<': signed/unsigned mismatch
+  AnimationControl.cpp
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  Animation_defaut.cpp
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  dxGraphic.cpp
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.cpp(38): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  game.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  Gameobject.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  Keyboard_Input.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Map.cpp
+  Megaman.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  winmain.cpp
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
+  Zero.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\dattebayo09\desktop\game-se102-\wip\game\dxgraphic.h(25): warning C4091: 'static ': ignored on left of 'dxGraphic' when no variable is declared
   Generating Code...
-  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Debug\Game.exe
-  Game.vcxproj -> C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Debug\Game.pdb (Partial PDB)
+c:\users\dattebayo09\desktop\game-se102-\wip\game\winmain.cpp(59): warning C4715: 'MyRegisterClass': not all control paths return a value
+c:\users\dattebayo09\desktop\game-se102-\wip\game\animation_defaut.cpp(36): warning C4715: 'Animation_defaut::Create': not all control paths return a value
+  Game.vcxproj -> C:\Users\Dattebayo09\Desktop\GAME-SE102-\WIP\Debug\Game.exe
