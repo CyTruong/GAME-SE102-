@@ -168,9 +168,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLin
 */
 			if (1)
 			{
-				game.update(); 
+				game.update();
+				
 			//	nFrameCount++;
 				game.render();
+
+				
 			}
 
 		}
