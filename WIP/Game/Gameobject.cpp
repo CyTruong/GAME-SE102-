@@ -3,8 +3,7 @@
 
 Gameobject::Gameobject()
 {
-	tranform = new Tranform();
-	colider = new Colider();
+
 }
 
 void Gameobject::Start() {

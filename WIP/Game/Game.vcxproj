@@ -69,8 +69,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\DirectX SDK\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\DirectX SDK\Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
@@ -136,8 +136,6 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationControl.cpp" />
     <ClCompile Include="Animation_defaut.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Colider.cpp" />
     <ClCompile Include="dxgraphics.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="Gameobject.cpp" />
@@ -145,10 +143,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Megaman.cpp" />
     <ClCompile Include="PlayScene.cpp" />
-    <ClCompile Include="Position.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="Size.cpp" />
-    <ClCompile Include="Tranform.cpp" />
     <ClCompile Include="winmain.cpp" />
     <ClCompile Include="Zero.cpp" />
   </ItemGroup>
@@ -156,8 +151,6 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationControl.h" />
     <ClInclude Include="Animation_defaut.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Colider.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="dxgraphics.h" />
     <ClInclude Include="game.h" />
@@ -168,7 +161,6 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Megaman.h" />
     <ClInclude Include="PlayScene.h" />
-    <ClInclude Include="Position.h" />
     <ClInclude Include="rapidjson\allocators.h" />
     <ClInclude Include="rapidjson\document.h" />
     <ClInclude Include="rapidjson\encodedstream.h" />
@@ -191,8 +183,6 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Size.h" />
-    <ClInclude Include="Tranform.h" />
     <ClInclude Include="Zero.h" />
   </ItemGroup>
   <ItemGroup>

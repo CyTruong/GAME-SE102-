@@ -19,7 +19,7 @@
 //Megaman animation
 #define MEGAMAN_IDLE "Megaman_Idle.json"
 #define MEGAMAN_IDLEID 0
-#define MEGAMAN_IDLEDELAY 6
+#define MEGAMAN_IDLEDELAY 4
 #define MEGAMAN_RUNRIGHT "Megaman_Run.json"
 #define MEGAMAN_RUNRIGHTID DIK_RIGHTARROW
 #define MEGAMAN_RUNRIGHTDELAY 2
