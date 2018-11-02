@@ -162,6 +162,21 @@
     <ClInclude Include="PlayScene.h">
       <Filter>Header Files\GameContent</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Colider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Header Files\GameProperty\Tranform</Filter>
+    </ClInclude>
+    <ClInclude Include="Size.h">
+      <Filter>Header Files\GameProperty\Tranform</Filter>
+    </ClInclude>
+    <ClInclude Include="Tranform.h">
+      <Filter>Header Files\GameProperty\Tranform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation_defaut.cpp">
@@ -202,6 +217,21 @@
     </ClCompile>
     <ClCompile Include="PlayScene.cpp">
       <Filter>Source Files\GameContent</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Colider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tranform.cpp">
+      <Filter>Source Files\GameProperty\Tranform</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Source Files\GameProperty\Tranform</Filter>
+    </ClCompile>
+    <ClCompile Include="Size.cpp">
+      <Filter>Source Files\GameProperty\Tranform</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -93,18 +93,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLin
 	}
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
-/*
-	if (!dxgraphics::Init_Direct3D(hWnd, SCREEN_WIDTH, SCREEN_HEIGHT, 0))
-	{
-		MessageBox(hWnd, "Somthing false when init directx ", "Error", MB_OK);
-		return 0;
-	}*/
 
-	/*if (!dxInit_DirectXInput(hWnd))
-	{
-		MessageBox(hWnd, "Something false when init inout", "Error", MB_OK);
-		return 0;
-	}*/
 	game game(hWnd);
 
 
@@ -159,16 +148,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLin
 
 			}
 
-			while (delta >= 6000)
+			/*while (delta >= 6000)
 			{
 				render = true;
 				delta -= 6000;
-				game.update();
+				
 			}
-
-			if (render)
+*/
+			if (1)
 			{
-				nFrameCount++;
+				game.update();
 				game.render();
 			}
 

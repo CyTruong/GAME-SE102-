@@ -27,7 +27,7 @@ void PlayScene ::onCollision () {}
 void PlayScene::handlerInput()
 {
 }
-void PlayScene::onUpdate() {}
+void PlayScene::onUpdate() { m->Update(); }
 void PlayScene::update() {}
 void PlayScene::render() {
 
@@ -44,7 +44,7 @@ void PlayScene::render() {
 	
 	
 			
-			m->Update();
+			
 			
 		
 			//	start = GetTickCount();
