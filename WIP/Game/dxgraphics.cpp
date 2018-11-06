@@ -90,7 +90,7 @@ LPD3DXSPRITE dxgraphics::getSpriteHandler() {
 
 void dxgraphics::beginRender()
 {
-	d3ddev->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 0, 0), 0.0f, 0);
+	d3ddev->Clear(0, NULL, D3DCLEAR_TARGET, TRANSCOLOR, 0.0f, 0);
 	d3ddev->BeginScene();
 }
 void dxgraphics::endRender() {

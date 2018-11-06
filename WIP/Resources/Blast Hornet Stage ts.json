@@ -1,0 +1,14 @@
+{ "columns":318,
+ "image":"Blast Hornet Stage.png",
+ "imageheight":4125,
+ "imagewidth":7950,
+ "margin":0,
+ "name":"Blast Hornet Stage",
+ "spacing":0,
+ "tilecount":52470,
+ "tiledversion":"1.2.0",
+ "tileheight":25,
+ "tilewidth":25,
+ "type":"tileset",
+ "version":1.2
+}

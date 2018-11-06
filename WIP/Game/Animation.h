@@ -18,7 +18,6 @@ class Animation
 public :
 	typedef struct
 	{
-		;
 		D3DCOLOR trans_color;
 		int titlesheet_colums;
 		int titlesheet_height, titlesheet_width;

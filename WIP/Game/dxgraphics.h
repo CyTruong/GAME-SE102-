@@ -19,7 +19,7 @@ public   :
 	 LPDIRECT3D9 d3d;
 	 LPDIRECT3DDEVICE9 d3ddev;
 	 LPDIRECT3DSURFACE9 backbuffer;
-	  LPD3DXSPRITE	pSpriteHandler;
+	 LPD3DXSPRITE	pSpriteHandler;
 
 
 

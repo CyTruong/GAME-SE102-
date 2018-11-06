@@ -7,13 +7,30 @@
 class Map
 {
 public:
-	char* JsonFileName;
+	typedef struct
+	{
+		LPDIRECT3DTEXTURE9 mapTexture;
+		int tileHeight, tileWidth;
+		int width, height;
+		char* name;
+	}MapFile;
+
+public:
+	char* jsFileSource;
 	HWND hWnd;
+	Document jsMapDocument;
+	MapFile mapFile;
+	LPD3DXSPRITE sprite_handler;
+
 public:
 	Map(); 
 	Map(HWND,char*);
-	void Creat();
-	vector<Gameobject> getObjList(Camera* );
+	int	 Creat();
+	vector<Gameobject*> getObjList(Camera* );
+	void DrawScene(Camera *);
 	~Map();
+
+private:
+	void LoadTexture(char*);
 };
 

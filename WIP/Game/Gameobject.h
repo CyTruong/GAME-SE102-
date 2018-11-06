@@ -15,7 +15,8 @@ public :
 	IControl* control;
 	IAnimation* animation;
 	AnimationControl* animation_control;
-	string name;
+	char* name;
+	char* tag; 
 	int id;
 	
 	

@@ -2,9 +2,7 @@
 
 #include "Scene.h"
 #include "dxgraphics.h" 
-
-#include"Megaman.h"
-
+#include "Megaman.h"
 class PlayScene : public Scene 
 {
 public:
@@ -14,12 +12,7 @@ public:
 	virtual void handlerInput();
 	virtual void render();
 	virtual void onUpdate();
-	virtual void update();
 private:
-		// map 
-	    // view port 
-	    //camara  
 	Megaman * m; 
-
 
 };
