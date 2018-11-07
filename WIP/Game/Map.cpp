@@ -81,7 +81,7 @@ void Map::DrawScene(Camera* cam) {
 	
 	sprite_handler->Begin(D3DXSPRITE_ALPHABLEND);
 	
-	RECT viewport = { cam->position->pX,cam->position->pY,cam->position->pX + 140,cam->position->pY + 100 };
+	RECT viewport = { cam->position->pX,cam->position->pY,cam->position->pX + SCREEN_WIDTH,cam->position->pY + SCREEN_HEIGHT };
 	sprite_handler->Draw(
 		this->mapFile.mapTexture,
 		&viewport,

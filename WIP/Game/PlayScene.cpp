@@ -9,7 +9,7 @@ PlayScene::PlayScene(HWND hwnd )
 	// player 
 	// ...   
 	m = new  Megaman(hwnd);
-	m->tranform->position = new Position(20, 2990);
+	m->tranform->position = new Position(20, 2980);
 	
 	camera = new Camera();
 	camera->setTarget(m);
@@ -42,15 +42,16 @@ void PlayScene::onUpdate() {
 }
 
 void PlayScene::render() {
-
+	if (camera->position->pX <= 0)
+		camera->position->pX = 0;
+	if (camera->position->pY <= 0)
+		camera->position->pY = 0;
 // get instance graphics 
 //	dxgraphics::getInstance(); 
 	dxgraphics::getInstance()->beginRender(); 
 //	dxgraphics::getInstance()->getSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND); 
+	map->DrawScene(camera);
 
-	//map->DrawScene(camera);
-	if (camera->position->pX <= 0) camera->position->pX = 0;
-	if (camera->position->pY <= 0) camera->position->pY = 0;
 
 	
 	D3DXVECTOR3 position2(m->tranform->position->pX - camera->position->pX, m->tranform->position->pY - camera->position->pY, 0);

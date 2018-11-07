@@ -1,4 +1,6 @@
-﻿  PlayScene.cpp
+﻿  Map.cpp
   e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\playscene.cpp(56): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\map.cpp(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\map.cpp(44): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\game\map.cpp(34): warning C4715: 'Map::Creat': not all control paths return a value
   Game.vcxproj -> C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Debug\Game.exe
