@@ -8,9 +8,9 @@ Gameobject::Gameobject()
 }
 
 void Gameobject::Start() {
-	if (this->animation != NULL) {
+	/*if (this->animation != NULL) {
 
-	}
+	}*/
 	if (this->control != NULL) {
 		
 	}
@@ -26,5 +26,5 @@ void Gameobject::Stop(){}
 Gameobject::~Gameobject()
 {
 	delete this->control;
-	delete this->animation;
+	//delete this->animation;
 }

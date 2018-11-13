@@ -63,4 +63,4 @@ void PlayScene::render() {
 //	dxgraphics::getInstance()->getSpriteHandler()->End();
 	dxgraphics::getInstance()->endRender(); 
 
-}
+}	

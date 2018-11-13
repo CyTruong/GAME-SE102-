@@ -39,7 +39,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 
 	ZeroMemory(&wc, sizeof(WNDCLASSEX));
 	wc.cbSize = sizeof(WNDCLASSEX);	//kích thước trên bộ nhớ của window class này
-	wc.style = 0;	//kiểu của Class, khác với kiểu của window (window style), thường có giá trị 0
+	wc.style =  CS_HREDRAW | CS_VREDRAW;;	//kiểu của Class, khác với kiểu của window (window style), thường có giá trị 0
 	wc.lpfnWndProc = WinPro;	//thủ tục của window (window procedure) là con trỏ trỏ tới WinProc như ở trên (giải thích bên dưới, Bước 4)
 	wc.cbClsExtra = 0;	//số lượng dữ liệu tối đa được cài đặt cho class này, thường có giá trị 0 (không cần quan tâm lắm, tìm hiểu sau)
 	wc.cbWndExtra = 0;	//số lượng dữ liệu tối đa được cài đặt cho class này, thường có giá trị 0 (không cần quan tâm lắm, tìm hiểu sau)
@@ -97,7 +97,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLin
 	game game(hWnd);
 
 
-	__int64 cntsPerSec = 0;
+	/*__int64 cntsPerSec = 0;
 	QueryPerformanceFrequency((LARGE_INTEGER*)&cntsPerSec);
 
 	float secsPerCnt = 1.0f / (float)cntsPerSec;
@@ -112,27 +112,23 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLin
 
 	__int64 prevTimeStamp = 0;
 
-	QueryPerformanceCounter((LARGE_INTEGER*)&prevTimeStamp);
+	QueryPerformanceCounter((LARGE_INTEGER*)&prevTimeStamp);*/
 	MSG msg; // create the Message ( MSG) object the handle event
 	ZeroMemory(&msg, sizeof(MSG));
-	while (msg.message != WM_QUIT)
+	while (!done)
 	{
-		if (false &&PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
 			if (msg.message == WM_QUIT) {
 
 			}
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 
-
-
-
-
 		}
 		else
 		{
 
-			bool render = false;
+			/*bool render = false;
 
 			QueryPerformanceCounter((LARGE_INTEGER*)&currTimeStamp);
 
@@ -147,7 +143,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLin
 				timeCount = 0;
 
 			}
-
+*/
 			/*while (delta >= 6000)
 			{
 				render = true;

@@ -133,9 +133,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="AnimationControl.cpp" />
-    <ClCompile Include="Animation_defaut.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateControl.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Colider.cpp" />
     <ClCompile Include="dxgraphics.cpp" />
@@ -153,9 +152,8 @@
     <ClCompile Include="Zero.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Animation.h" />
-    <ClInclude Include="AnimationControl.h" />
-    <ClInclude Include="Animation_defaut.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateControl.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Colider.h" />
     <ClInclude Include="define.h" />

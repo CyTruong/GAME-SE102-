@@ -7,7 +7,7 @@
 	Đối vs các đối tượng animation đặc biệt thì có thể trigger thông qua hàm trigger animation 
 */
 #pragma once
-#include "Animation.h"
+#include "State.h"
 #include "define.h"
 #include <d3d9.h>
 #include <d3dx9.h>
@@ -15,17 +15,17 @@
 
 using namespace std;
 
-class AnimationControl
+class StateControl
 {
 public:
-	Animation* CurentAnimation;
-	vector<Animation*> AnimationList;
+	State* CurentState;
+	vector<State*> StateList;
 	HWND hWnd;
 public:
-	AnimationControl(HWND);
-	~AnimationControl();
+	StateControl(HWND);
+	~StateControl();
 	int PushInput(char[]);
-	void AddAnimation(Animation*);	
+	void AddState(State*);
 	void TriggerAnimate(int);
 	void DrawCurrentFrame(D3DXVECTOR3);
 	

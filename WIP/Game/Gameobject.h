@@ -1,7 +1,7 @@
 #pragma once
 #include "IAnimation.h"
 #include "IControl.h"
-#include "AnimationControl.h"
+#include "StateControl.h"
 #include "Tranform.h"
 #include "Colider.h"
 #include <string>
@@ -13,8 +13,8 @@ public :
 	Tranform* tranform;
 	Colider* colider;
 	IControl* control;
-	IAnimation* animation;
-	AnimationControl* animation_control;
+	//IAnimation* animation;
+	StateControl* animation_control;
 	char* name;
 	char* tag; 
 	int id;

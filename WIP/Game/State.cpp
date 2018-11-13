@@ -1,22 +1,22 @@
-﻿#include "Animation.h"
+﻿#include "State.h"
 
 ////https://discuss.cocos2d-x.org/t/solved-need-help-in-rapidjson-object-parsing/33429/2
 
-Animation::Animation() {}
+State::State() {}
 
-Animation::Animation(HWND hWnd, char* name, D3DCOLOR transcolor,int animation_delay,int ID)
+State::State(HWND hWnd, char* name, D3DCOLOR transcolor,int animation_delay,int ID)
 {
 	//Gán 1 số thứ linh tinh
 	this->hWnd = hWnd;  
 	this->ID = ID;
 	this->JsonFileName = dxgraphics::standardizedSourceName(name);  // sửa lại đường dẫn
 	this->title_set.trans_color = transcolor; //màu lọc 
-	this->animate_properties.Animation_Delay = animation_delay; //Đỗ trễn animation ( tính bằng frame )
-	this->animate_properties.Curframe_Id = 0; // này vs phía dưới là 2 cái biến đếm
-	this->animate_properties.Animation_Count = 0;
+	this->state_properties.Animation_Delay = animation_delay; //Đỗ trễn animation ( tính bằng frame )
+	this->state_properties.Curframe_Id = 0; // này vs phía dưới là 2 cái biến đếm
+	this->state_properties.Animation_Count = 0;
 }
 
-int Animation::Create()
+int State::Create()
 {
 
 	//load Json content
@@ -42,12 +42,12 @@ int Animation::Create()
 	// Load mảng animation
 	const rapidjson::Value& layer = jsonDocument["layers"];  
 	const rapidjson::Value& data = layer[0]["data"];
-	this->animate_properties.Arrdata = new int[data.Size()];
-	this->animate_properties.Animation_Numberofsprite = data.Size();
+	this->state_properties.Arrdata = new int[data.Size()];
+	this->state_properties.Animation_Numberofsprite = data.Size();
 
 	for (int i = 0; i < data.Size(); i++)
 	{
-		this->animate_properties.Arrdata[i] = data[i].GetInt();
+		this->state_properties.Arrdata[i] = data[i].GetInt();
 	}
 
 	//load sprite image
@@ -69,7 +69,7 @@ int Animation::Create()
 	return 1;
 }
 
-void Animation::DrawCurframe(D3DXVECTOR3 position)
+void State::DrawCurframe(D3DXVECTOR3 position)
 {
 	// Cái đống phía dưới này xem sách
 	//if (GetTickCount() - start > ANIMATIONUPDATEDELAY) {
@@ -78,7 +78,7 @@ void Animation::DrawCurframe(D3DXVECTOR3 position)
 		start = GetTickCount();
 		sprite_handler->Begin(D3DXSPRITE_ALPHABLEND);
 
-		int Frameid = this->animate_properties.Arrdata[this->animate_properties.Curframe_Id];
+		int Frameid = this->state_properties.Arrdata[this->state_properties.Curframe_Id];
 		Frameid = Frameid - this->title_set.First_gid;
 		int left = (Frameid % this->title_set.titlesheet_colums) * this->title_set.titlesheet_width;
 		int top = (Frameid / this->title_set.titlesheet_colums) * this->title_set.titlesheet_height;
@@ -95,20 +95,20 @@ void Animation::DrawCurframe(D3DXVECTOR3 position)
 			&position,
 			this->title_set.trans_color
 		);
-		if (++this->animate_properties.Animation_Count > this->animate_properties.Animation_Delay) {
-			this->animate_properties.Animation_Count = 0;
-			if (++this->animate_properties.Curframe_Id >= this->animate_properties.Animation_Numberofsprite) {
-				this->animate_properties.Curframe_Id = 0;
+		if (++this->state_properties.Animation_Count > this->state_properties.Animation_Delay) {
+			this->state_properties.Animation_Count = 0;
+			if (++this->state_properties.Curframe_Id >= this->state_properties.Animation_Numberofsprite) {
+				this->state_properties.Curframe_Id = 0;
 			}
 		}
 		sprite_handler->End();
 	/*}*/
 }
 
-void Animation::refresh() {
-	this->animate_properties.Animation_Count = 0;
-	this->animate_properties.Curframe_Id = 0;
+void State::refresh() {
+	this->state_properties.Animation_Count = 0;
+	this->state_properties.Curframe_Id = 0;
 }
-Animation::~Animation()
+State::~State()
 {
 }

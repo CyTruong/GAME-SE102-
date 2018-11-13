@@ -12,7 +12,7 @@
 #include "define.h"
 using namespace rapidjson;
 
-class Animation
+class State
 {
 
 public :
@@ -32,7 +32,7 @@ public :
 		int Animation_Numberofsprite;
 		int Animation_Count;
 		int Animation_Delay;
-	}ANIMATE_PROPERTIES
+	}STATE_PROPERTIES
 ;
 
 public:
@@ -45,15 +45,15 @@ public:
 	HWND hWnd;
 	Document jsonDocument;
 	TITLESHEET title_set;
-	ANIMATE_PROPERTIES animate_properties;
+	STATE_PROPERTIES state_properties;
 public:
 	
-	Animation();
+	State();
 	//lần lượt là hWnd, tên file, trans color, AnimationDelay,AnimationID
-	Animation(HWND, char*, D3DCOLOR,int,int);
-	~Animation();
-	int Create();
-	void DrawCurframe(D3DXVECTOR3);
+	State(HWND, char*, D3DCOLOR,int,int);
+	~State();
+	int virtual Create();
+	void virtual DrawCurframe(D3DXVECTOR3);
 	void refresh();
 
 	

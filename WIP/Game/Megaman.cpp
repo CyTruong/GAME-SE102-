@@ -4,18 +4,18 @@
 
 Megaman::Megaman(HWND hWnd)
 {
-	this->animation_control = new AnimationControl(hWnd);
+	this->animation_control = new StateControl(hWnd);
 
-	Animation* runright_ani = new Animation(hWnd, MEGAMAN_RUNRIGHT, TRANSCOLOR, MEGAMAN_RUNRIGHTDELAY, MEGAMAN_RUNRIGHTID);
+	State* runright_ani = new State(hWnd, MEGAMAN_RUNRIGHT, TRANSCOLOR, MEGAMAN_RUNRIGHTDELAY, MEGAMAN_RUNRIGHTID);
 	runright_ani->Create();
 	
-	Animation* idle_ani = new Animation(hWnd, MEGAMAN_IDLE, TRANSCOLOR, MEGAMAN_IDLEDELAY, MEGAMAN_IDLEID);
+	State* idle_ani = new State(hWnd, MEGAMAN_IDLE, TRANSCOLOR, MEGAMAN_IDLEDELAY, MEGAMAN_IDLEID);
 	idle_ani->Create();
 
 	this->colider = new Colider(40,40);
 
-	this->animation_control->AddAnimation(idle_ani);
-	this->animation_control->AddAnimation(runright_ani);
+	this->animation_control->AddState(idle_ani);
+	this->animation_control->AddState(runright_ani);
 
 	this->control = new  Keyboard_Input();
 

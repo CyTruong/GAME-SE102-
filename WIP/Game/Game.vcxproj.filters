@@ -27,9 +27,6 @@
     <Filter Include="Source Files\GameProperty\Animation">
       <UniqueIdentifier>{6fe3912c-587e-42fc-80ba-e0628b48c28d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameProperty\Tranform">
-      <UniqueIdentifier>{1691675c-d61e-4f8c-a766-659209c7db02}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\GameProperty\Tranform">
       <UniqueIdentifier>{f0655136-74aa-4cb0-8201-d8088da0b8ef}</UniqueIdentifier>
     </Filter>
@@ -52,15 +49,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\GameProperty\Tranform">
+      <UniqueIdentifier>{1691675c-d61e-4f8c-a766-659209c7db02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IAnimation.h">
-      <Filter>Header Files\GameProperty\Animation</Filter>
-    </ClInclude>
-    <ClInclude Include="Animation_defaut.h">
       <Filter>Header Files\GameProperty\Animation</Filter>
     </ClInclude>
     <ClInclude Include="IControl.h">
@@ -135,12 +132,6 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>Header Files\GameProperty\Animation</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimationControl.h">
-      <Filter>Header Files\GameProperty\Animation</Filter>
-    </ClInclude>
     <ClInclude Include="Megaman.h">
       <Filter>Header Files\GameContent</Filter>
     </ClInclude>
@@ -177,11 +168,14 @@
     <ClInclude Include="Tranform.h">
       <Filter>Header Files\GameProperty\Tranform</Filter>
     </ClInclude>
+    <ClInclude Include="StateControl.h">
+      <Filter>Header Files\GameProperty\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files\GameProperty\Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Animation_defaut.cpp">
-      <Filter>Source Files\GameProperty\Animation</Filter>
-    </ClCompile>
     <ClCompile Include="Keyboard_Input.cpp">
       <Filter>Source Files\GameProperty\Control</Filter>
     </ClCompile>
@@ -193,12 +187,6 @@
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files\GameProperty</Filter>
-    </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>Source Files\GameProperty\Animation</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimationControl.cpp">
-      <Filter>Source Files\GameProperty\Animation</Filter>
     </ClCompile>
     <ClCompile Include="Megaman.cpp">
       <Filter>Source Files\GameContent</Filter>
@@ -232,6 +220,12 @@
     </ClCompile>
     <ClCompile Include="Size.cpp">
       <Filter>Source Files\GameProperty\Tranform</Filter>
+    </ClCompile>
+    <ClCompile Include="StateControl.cpp">
+      <Filter>Source Files\GameProperty\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Source Files\GameProperty\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
