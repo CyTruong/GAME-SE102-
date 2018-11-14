@@ -5,7 +5,7 @@ public:
 public: Position();
 		Position(int , int);
 		Position(Position*);
-		~Position();
+		~Position() { };
 
 		
 };

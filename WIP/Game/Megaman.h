@@ -8,6 +8,7 @@ public:
 	Megaman(HWND);
 	~Megaman();
 public:
+	void onCollision() override; 
 	void Start() override;
 	void Update() override;
 	void Stop() override;

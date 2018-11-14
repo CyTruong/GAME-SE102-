@@ -155,6 +155,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreinstance, LPTSTR lpCmndLin
 			{
 				game.update();
 				game.render();
+				
 			}
 
 		}

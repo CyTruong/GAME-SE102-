@@ -22,6 +22,7 @@ public :
 	
 public:
 	Gameobject();
+	void virtual  onCollision() {}
 	void virtual Start();
 	void virtual Update();
 	void virtual Stop();

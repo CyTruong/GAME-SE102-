@@ -13,6 +13,7 @@ public:
 	virtual void render();
 	virtual void onUpdate();
 private:
-	Megaman * m; 
+	Megaman * m, * m2; 
+
 
 };

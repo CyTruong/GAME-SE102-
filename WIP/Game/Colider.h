@@ -19,6 +19,19 @@ public:
 		this->width = w;
 		this->height = h;
 	}
-	~Colider();
+
+	bool checkCollision(Colider  c2)
+	{
+		if (this->position->pX + this->width <= c2.position->pX)
+			return false;
+		if (this->position->pX >= position->pX + c2.width)
+			return false;
+		if (this->position->pY + this->height <= c2.position->pY)
+			return false;
+		if (this->position->pY >= c2.position->pY + c2.height)
+			return false;
+		return true;
+	}
+	~Colider() {};
 };
 
