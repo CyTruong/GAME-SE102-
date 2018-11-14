@@ -28,7 +28,7 @@ int Keyboard_Input::Creat_Input(HWND hWnd) {
 		return 0;
 	}
 
-	result = dikeyboard->SetCooperativeLevel(hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
+	result = dikeyboard->SetCooperativeLevel(hWnd, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
 	if (result != DI_OK) {
 		return 0;
 	}

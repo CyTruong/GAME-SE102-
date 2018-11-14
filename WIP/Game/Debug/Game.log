@@ -1,4 +1,3 @@
-﻿  winmain.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-d:\game\new folder\game-se102-\wip\game\winmain.cpp(59): warning C4715: 'MyRegisterClass': not all control paths return a value
-  Game.vcxproj -> D:\Game\New folder\GAME-SE102-\WIP\Debug\Game.exe
+﻿  Camera.cpp
+  e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Game.vcxproj -> C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Debug\Game.exe

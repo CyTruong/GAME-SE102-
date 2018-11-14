@@ -1,6 +1,6 @@
 ﻿#pragma once
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 480
+#define SCREEN_WIDTH 300	
+#define SCREEN_HEIGHT 200
 #define FULLSCREEN 0
 #define SPRITE_SOURCE "..\\Resources\\"  // nơi chứa sprite
 #define ANIMATIONUPDATEDELAY 30 //ms
