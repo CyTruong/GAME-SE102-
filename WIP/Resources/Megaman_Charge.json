@@ -1,0 +1,40 @@
+{ "height":1,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[1, 2],
+         "height":1,
+         "id":1,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":2,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":2,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.2.0",
+ "tileheight":35,
+ "tilesets":[
+        {
+         "columns":2,
+         "firstgid":1,
+         "image":"Megaman_Charge.png",
+         "imageheight":36,
+         "imagewidth":72,
+         "margin":0,
+         "name":"Megaman_Charge",
+         "spacing":0,
+         "tilecount":2,
+         "tileheight":35,
+         "tilewidth":35
+        }],
+ "tilewidth":35,
+ "type":"map",
+ "version":1.2,
+ "width":2
+}

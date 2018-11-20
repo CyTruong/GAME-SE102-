@@ -1,3 +1,32 @@
 ﻿  Camera.cpp
-  e:\directx sdk\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Game.vcxproj -> C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Debug\Game.exe
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Gameobject.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Keyboard_Input.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Map.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\master\documents\github\game-se102-\wip\game\map.cpp(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\master\documents\github\game-se102-\wip\game\map.cpp(44): warning C4018: '<': signed/unsigned mismatch
+  Megaman.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  PlayScene.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\master\documents\github\game-se102-\wip\game\playscene.cpp(92): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\master\documents\github\game-se102-\wip\game\playscene.cpp(93): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+  SceneManager.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  State.cpp
+c:\users\master\documents\github\game-se102-\wip\game\state.cpp(48): warning C4018: '<': signed/unsigned mismatch
+  StateControl.cpp
+  Zero.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  dxgraphics.cpp
+  game.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  winmain.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Generating Code...
+c:\users\master\documents\github\game-se102-\wip\game\winmain.cpp(59): warning C4715: 'MyRegisterClass': not all control paths return a value
+c:\users\master\documents\github\game-se102-\wip\game\map.cpp(34): warning C4715: 'Map::Creat': not all control paths return a value
+  Game.vcxproj -> C:\Users\Master\Documents\GitHub\GAME-SE102-\WIP\Debug\Game.exe

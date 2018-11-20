@@ -1,0 +1,40 @@
+{ "height":1,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[1, 2, 3, 4, 5, 6, 7],
+         "height":1,
+         "id":1,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":7,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":2,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.2.0",
+ "tileheight":50,
+ "tilesets":[
+        {
+         "columns":7,
+         "firstgid":1,
+         "image":"Megaman_Jump.png",
+         "imageheight":51,
+         "imagewidth":210,
+         "margin":0,
+         "name":"Megaman_Jump",
+         "spacing":0,
+         "tilecount":7,
+         "tileheight":50,
+         "tilewidth":30
+        }],
+ "tilewidth":30,
+ "type":"map",
+ "version":1.2,
+ "width":7
+}
