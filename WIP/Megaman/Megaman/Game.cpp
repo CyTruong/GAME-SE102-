@@ -25,11 +25,15 @@ void Game::Update()
 
 void Game::Draw()
 {
+	SceneManager::GetInstance()->GetCurScene()->draw();
 }
 
 
 void Game::Clean()
 {
+	//UIComponents::getInstance()->cleanUp();
+	//Sound::getInstance()->cleanUp();
+	//Graphics::getInstance()->cleanUp();	
 }
 
 

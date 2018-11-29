@@ -16,6 +16,9 @@
     <Filter Include="Gamecomponent">
       <UniqueIdentifier>{a63b3bb0-e1df-4434-8d60-0298e18bbf16}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{5c16e196-ba39-4d82-94c2-a59aa3780e0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -33,6 +36,12 @@
     <ClInclude Include="Game.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
+    <ClInclude Include="Scene1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -46,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene1.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

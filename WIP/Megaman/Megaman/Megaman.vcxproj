@@ -123,13 +123,16 @@
   <ItemGroup>
     <ClInclude Include="define.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Rect.h" />
     <ClInclude Include="KeyBoard.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Scene1.h" />
     <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
+    <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
