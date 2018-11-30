@@ -36,9 +36,6 @@
     <ClInclude Include="Game.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
-    <ClInclude Include="Scene1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Rect.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
@@ -47,6 +44,15 @@
     </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene1.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -62,8 +68,11 @@
     <ClCompile Include="Game.cpp">
       <Filter>Gamecomponent</Filter>
     </ClCompile>
-    <ClCompile Include="Scene1.cpp">
+    <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene1.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
