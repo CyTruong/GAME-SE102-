@@ -7,7 +7,7 @@ class SceneManager
 {
 public:
 
-	~SceneManager();
+	~SceneManager() {};
 
 	void Update(float delta);
 	void ReplaceScene(Scene* scene);
