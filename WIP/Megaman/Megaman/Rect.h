@@ -82,6 +82,7 @@ public:
 			return false;
 	}
 
+	template < class T2 >
 	//phép ép kiểu
 	operator const Rect< T2 >()
 	{
