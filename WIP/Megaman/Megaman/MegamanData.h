@@ -23,15 +23,7 @@ public:
 	enum SpriteArrayIndex
 	{
 		STAND,
-		STANDNFIRE,
-		STANDUP,
-		STANDUPNFIRE,
-		STANDDOWN,
-		STANDDOWNNFIRE,
-		RUN,
-		RUNNFIRE,
-		RUNUP,
-		RUNDOWN
+		RUN
 	};
 	virtual void setiCurrentArray(int index)
 	{
