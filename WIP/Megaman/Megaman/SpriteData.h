@@ -1,6 +1,6 @@
 #pragma once
 
-//#include "TextureArray.h"
+#include "TextureArray.h"
 #include "Direction.h"
 #include "CollisionRect.h"
 
@@ -46,8 +46,7 @@ public:
 		else return 0;
 	}
 
-	//TextureArray ** ppTextureArrays;
-
+	TextureArray ** ppTextureArrays;
 	unsigned int iCurrentArr;
 	float x;
 	float y;

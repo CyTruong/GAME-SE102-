@@ -72,9 +72,6 @@
     <ClInclude Include="Sprite.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
-    <ClInclude Include="RunningState.h">
-      <Filter>Megaman</Filter>
-    </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
@@ -87,9 +84,6 @@
     <ClInclude Include="MegamanData.h">
       <Filter>Megaman</Filter>
     </ClInclude>
-    <ClInclude Include="StandingState.h">
-      <Filter>Megaman</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
@@ -100,7 +94,16 @@
       <Filter>Gamecomponent</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.h">
-      <Filter>Header Files</Filter>
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanRunningState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanStandingState.h">
+      <Filter>Megaman</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +133,12 @@
     </ClCompile>
     <ClCompile Include="Graphics.cpp">
       <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanSprite.cpp">
+      <Filter>Megaman</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

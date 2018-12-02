@@ -127,7 +127,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Graphics.h" />
-    <ClInclude Include="StandingState.h" />
+    <ClInclude Include="MegamanStandingState.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MegamanData.h" />
     <ClInclude Include="MegamanSprite.h" />
@@ -135,13 +135,14 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="KeyBoard.h" />
-    <ClInclude Include="RunningState.h" />
+    <ClInclude Include="MegamanRunningState.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteData.h" />
     <ClInclude Include="SpriteState.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureArray.h" />
     <ClInclude Include="Viewport.h" />
   </ItemGroup>
@@ -150,8 +151,10 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MegamanSprite.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureArray.cpp" />
     <ClCompile Include="Viewport.cpp" />
     <ClCompile Include="winmain.cpp" />

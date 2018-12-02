@@ -23,7 +23,8 @@ public:
 	enum SpriteArrayIndex
 	{
 		STAND,
-		RUN
+		RUN,
+		COUNT
 	};
 	virtual void setiCurrentArray(int index)
 	{
