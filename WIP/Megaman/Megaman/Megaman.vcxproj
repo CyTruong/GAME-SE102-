@@ -121,17 +121,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionRect.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="StandingState.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MegamanData.h" />
+    <ClInclude Include="MegamanSprite.h" />
+    <ClInclude Include="MegamanState.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="KeyBoard.h" />
+    <ClInclude Include="RunningState.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteData.h" />
+    <ClInclude Include="SpriteState.h" />
+    <ClInclude Include="Viewport.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
@@ -139,6 +149,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Viewport.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

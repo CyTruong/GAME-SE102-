@@ -19,6 +19,18 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{5c16e196-ba39-4d82-94c2-a59aa3780e0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Megaman">
+      <UniqueIdentifier>{5573a0bd-5c41-4fee-851f-5b2f6977847a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{005c1f86-dc94-4874-80d8-f9dc53defd01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets">
+      <UniqueIdentifier>{3ff0997f-95c3-466e-9f76-be39275d6583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies">
+      <UniqueIdentifier>{68f3c98d-fa27-482e-afe3-2edea2e78575}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -45,14 +57,44 @@
     <ClInclude Include="Object.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header.h">
-      <Filter>Gamecomponent</Filter>
-    </ClInclude>
     <ClInclude Include="Scene1.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteData.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteState.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="RunningState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanSprite.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanData.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="StandingState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewport.h">
+      <Filter>Gamecomponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="Scene1.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Viewport.cpp">
+      <Filter>Gamecomponent</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
