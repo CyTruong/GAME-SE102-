@@ -105,6 +105,12 @@
     <ClInclude Include="MegamanStandingState.h">
       <Filter>Megaman</Filter>
     </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -139,6 +145,12 @@
     </ClCompile>
     <ClCompile Include="MegamanSprite.cpp">
       <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>Gamecomponent</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
