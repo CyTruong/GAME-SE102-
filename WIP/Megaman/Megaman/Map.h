@@ -10,8 +10,8 @@
 #include "base64.h"
 #include "QuadTree.h"
 #include "MegamanSprite.h"
-#include "EnermyCreator.h"
-#include "ObjectSprite.h"
+//#include "EnermyCreator.h"
+//#include "ObjectSprite.h"
 #include "UI.h"
 
 //H

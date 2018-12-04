@@ -31,6 +31,9 @@
     <Filter Include="Enemies">
       <UniqueIdentifier>{68f3c98d-fa27-482e-afe3-2edea2e78575}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TintXml">
+      <UniqueIdentifier>{3218d13f-ebe2-42b3-88c3-4143cf7158a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -111,6 +114,21 @@
     <ClInclude Include="QuadTree.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="tinystr.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="zconf.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -151,6 +169,21 @@
     </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinystr.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+      <Filter>TintXml</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
