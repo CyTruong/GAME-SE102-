@@ -74,7 +74,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, LPWSTR, INT)
 	wc.cbSize = sizeof(WNDCLASSEX);
 	wc.lpfnWndProc = callBack;
 	wc.hInstance = hInstance;
-	wc.lpszClassName = "Megaman"; // class name
+	wc.lpszClassName = L"Megaman"; // class name
 
 	RegisterClassEx(&wc);// Register the WND class
 
@@ -86,8 +86,8 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, LPWSTR, INT)
 
 	AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false); // automaticlly adjust the window depend on what its size
 
-	HWND hWnd = CreateWindow("Megaman",    // create a handle window object by createWindow function
-		"Megaman_x3",
+	HWND hWnd = CreateWindow(L"Megaman",    // create a handle window object by createWindow function
+		L"Megaman_x3",
 		WS_OVERLAPPEDWINDOW,
 		rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top,
 		NULL,
@@ -181,7 +181,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, LPWSTR, INT)
 	}
 
 	game.Clean();
-	UnregisterClass("Framework Window", wc.hInstance);
+	UnregisterClass(L"Framework Window", wc.hInstance);
 
 	return 0;
 }

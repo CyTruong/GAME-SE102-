@@ -185,5 +185,8 @@
     <ClCompile Include="tinyxmlparser.cpp">
       <Filter>TintXml</Filter>
     </ClCompile>
+    <ClCompile Include="MegamanStandingState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

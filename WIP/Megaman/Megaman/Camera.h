@@ -5,7 +5,7 @@
 class Camera
 {
 private:
-	Viewport* viewPort;
+	ViewPort* viewPort;
 	RectF mapRect;
 	float x;
 	float y;
@@ -16,7 +16,7 @@ private:
 
 public:
 
-	Camera(Viewport* viewPort, float x, float y, RectF rect, RectF cameraTranslatePoint)
+	Camera(ViewPort* viewPort, float x, float y, RectF rect, RectF cameraTranslatePoint)
 	{
 		this->viewPort = viewPort;
 		this->cameraTranslatePoint = cameraTranslatePoint;
@@ -44,26 +44,6 @@ public:
 	}
 	void setPosition(float x, float y)
 	{
-		if (this->x < x - (float)viewPort->getWidth() / 2.0f && moveDir.isRight())
-		{
-			this->x = x - (float)viewPort->getWidth() / 2.0f;
-			this->x = max(this->x, mapRect.x);
-			this->x = min(this->x, mapRect.width + mapRect.x - viewPort->getWidth());
-		}
-		else if (this->y > y - (float)viewPort->getHeight() / 2.0f && moveDir.isUp())
-		{
-			this->y = y - (float)viewPort->getHeight() / 2.0f;
-			this->y = max(this->y, mapRect.y);
-			this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
-		}
-	}
-
-
-	void setPosition(float player1X, float player1Y)
-	{
-		float x = player1X  - 10;
-		//float y = (player1Y + player2Y ) / 2;
-		float y = player1Y;
 		if (this->x < x - (float)viewPort->getWidth() / 2.0f && moveDir.isRight())
 		{
 			this->x = x - (float)viewPort->getWidth() / 2.0f;
@@ -128,35 +108,8 @@ public:
 		}
 	}
 
-	void update(float player1X, float player1Y)
-	{
-
-		if (moveDir.isRight())
-		{
-			if (this->x + getWidth() >= cameraTranslatePoint.x)
-			{
-				setPosition(this->x + getWidth() / 2 + vx, y);
-			}
-			else
-			{
-				setPosition(player1X, player1Y);
-			}
-		}
-		else
-		{
-			if (this->y <= cameraTranslatePoint.y + cameraTranslatePoint.height)
-			{
-
-				setPosition(x, this->y + getHeight() / 2 - vy);
-			}
-			else
-			{
-				setPosition(player1X, player1Y);
-			}
-		}
-	}
 
 	Direction getMoveDir() { return moveDir; }
-	Viewport* getViewport() { return viewPort; }
+	ViewPort* getViewport() { return viewPort; }
 
 };

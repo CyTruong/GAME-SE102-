@@ -1,15 +1,192 @@
-﻿  Game.cpp
+﻿  base64.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\base64.cpp(69): warning C4267: '=': conversion from 'size_t' to 'unsigned char', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\base64.cpp(86): warning C4267: '=': conversion from 'size_t' to 'unsigned char', possible loss of data
+  Game.cpp
+  Graphics.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(149): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(150): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(151): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(152): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(156): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(160): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(163): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(178): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(179): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(180): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(181): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(183): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(185): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(192): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(217): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(218): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(227): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(229): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(230): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(235): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(239): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(242): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(268): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(269): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(270): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(271): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(275): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(279): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(282): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(288): warning C4244: 'argument': conversion from 'LONG' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(302): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(303): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(304): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(305): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(308): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(312): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(315): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\graphics.cpp(321): warning C4244: 'argument': conversion from 'LONG' to 'FLOAT', possible loss of data
   KeyBoard.cpp
   Map.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.h(4): fatal error C1083: Cannot open include file: 'TileLayer.h': No such file or directory
+  MegamanSprite.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+  MegamanStandingState.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  QuadTree.cpp
   Scene1.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.h(4): fatal error C1083: Cannot open include file: 'TileLayer.h': No such file or directory
   SceneManager.cpp
+  Source.cpp
+  Texture.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\texture.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\texture.cpp(36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\texture.cpp(79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  TextureArray.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\texturearray.cpp(17): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\texturearray.cpp(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\texturearray.cpp(57): warning C4018: '<': signed/unsigned mismatch
+  tinystr.cpp
+  tinyxml.cpp
+  tinyxmlerror.cpp
+  tinyxmlparser.cpp
+  UI.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\ui.cpp(106): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\ui.cpp(117): warning C4018: '<': signed/unsigned mismatch
+  Viewport.cpp
   winmain.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\winmain.cpp(89): error C2664: 'HWND CreateWindowExW(DWORD,LPCWSTR,LPCWSTR,DWORD,int,int,int,int,HWND,HMENU,HINSTANCE,LPVOID)': cannot convert argument 2 from 'const char [8]' to 'LPCWSTR'
+  c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\winmain.cpp(96): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\winmain.cpp(148): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\winmain.cpp(149): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   Generating Code...
-Scene1.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Scene1::OnCollision(void)" (?OnCollision@Scene1@@UAEXXZ)
-Scene1.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Scene1::handlerInput(void)" (?handlerInput@Scene1@@UAEXXZ)
-Scene1.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Scene1::render(void)" (?render@Scene1@@UAEXXZ)
-Scene1.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Scene1::onUpdate(void)" (?onUpdate@Scene1@@UAEXXZ)
-Scene1.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Scene1::Update(void)" (?Update@Scene1@@UAEXXZ)
-C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe : fatal error LNK1120: 5 unresolved externals
