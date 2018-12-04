@@ -2,12 +2,12 @@
 #include "Direction.h"
 #include "Rect.h"
 
-class Viewport
+class ViewPort
 {
 private:
 	RectI port;
 public:
-	Viewport(RectI port);
+	ViewPort(RectI port);
 	int getWidth();
 	int getHeight();
 	RectI getPort() { return port; }

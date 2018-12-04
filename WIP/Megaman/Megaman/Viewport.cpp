@@ -2,16 +2,18 @@
 
 
 
-Viewport::Viewport(RectI port)
-{
-	this->port = port;
-}
 
-int Viewport::getHeight() {
+int ViewPort::getHeight() {
 	return port.height;
 }
 
-int Viewport::getWidth() {
+ViewPort::ViewPort(RectI port)
+{
+	this->port = port;
+
+}
+
+int ViewPort::getWidth() {
 	return port.width;
 }
 

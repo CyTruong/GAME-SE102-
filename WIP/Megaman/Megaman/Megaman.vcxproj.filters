@@ -125,9 +125,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Gamecomponent</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Scene1.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
@@ -150,6 +147,9 @@
       <Filter>Gamecomponent</Filter>
     </ClCompile>
     <ClCompile Include="QuadTree.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
       <Filter>Gamecomponent</Filter>
     </ClCompile>
   </ItemGroup>
