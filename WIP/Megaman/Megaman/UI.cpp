@@ -189,7 +189,7 @@ void UIComponents::setKey(int index, char keyCode, int playerindex)
 
 void UIComponents::setDefaultKeyBoard()
 {
-	memccpy(configKeyBoard, defaultKeyBoard, NULL, sizeof(configKeyBoard));
+	_memccpy(configKeyBoard, defaultKeyBoard, NULL, sizeof(configKeyBoard));
 }
 
 //void UIComponents::setNumberPlayer(int val)

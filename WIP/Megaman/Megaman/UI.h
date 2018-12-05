@@ -89,23 +89,23 @@ public:
 
 // Hp 
 
-class Hp
-{
-public: 
-	Hp();
-	~Hp();
-
-private:
-
-};
-
-Hp::Hp()
-{
-}
-
-Hp::~Hp()
-{
-}
+//class Hp
+//{
+//public: 
+//	Hp();
+//	~Hp();
+//
+//private:
+//
+//};
+//
+//Hp::Hp()
+//{
+//}
+//
+//Hp::~Hp()
+//{
+//}
 
 class UIComponents
 {

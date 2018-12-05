@@ -1,235 +1,70 @@
 ﻿  Map.cpp
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(173): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(301): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(427): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(57): error C2065: 'BulletSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(57): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(57): error C2976: 'std::vector': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(625): note: see declaration of 'std::vector'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(60): error C2065: 'EnermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(60): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(60): error C2976: 'std::map': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(61): error C2065: 'ObjectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(61): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(61): error C2976: 'std::map': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(9): error C2512: 'std::vector': no appropriate default constructor available
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(625): note: see declaration of 'std::vector'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(9): error C2512: 'std::map': no appropriate default constructor available
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(39): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(74): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(81): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(90): error C2662: '_Vector_alloc<_Alloc_types>::_Val_types::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(90): note: Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(90): note: Conversion requires a second user-defined-conversion operator or constructor
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(92): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1739): note: could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type) const'
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1730): note: or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type)'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(92): note: while trying to match the argument list '(std::vector, int)'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(93): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1739): note: could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type) const'
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1730): note: or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type)'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(93): note: while trying to match the argument list '(std::vector, int)'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(95): error C2662: 'void std::vector<_Ty,_Alloc>::clear(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(95): note: Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(95): note: Conversion requires a second user-defined-conversion operator or constructor
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(96): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(103): error C2663: 'std::_Tree<_Traits>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(103): error C3536: 'it': cannot be used before it is initialized
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(103): error C2663: 'std::_Tree<_Traits>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(108): error C2663: 'std::_Tree<_Traits>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(108): error C3536: 'it': cannot be used before it is initialized
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(108): error C2663: 'std::_Tree<_Traits>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(268): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(173): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(301): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(427): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(74): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(81): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(268): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(272): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(273): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(287): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(272): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(273): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(287): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(297): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(297): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(303): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(304): error C2065: 'EnermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(304): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(304): error C2976: 'std::map': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(304): error C2955: 'std::map': use of class template requires template argument list
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(304): error C2663: 'std::_Tree<_Traits>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(304): error C2663: 'std::_Tree<_Traits>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(306): error C2065: 'EnermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(306): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(307): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(308): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(310): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(312): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(312): error C2660: 'UIComponents::addScore': function does not take 1 arguments
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\ui.h(133): note: see declaration of 'UIComponents::addScore'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(314): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(316): error C2653: 'Sound': is not a class or namespace name
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(316): error C3861: 'getInstance': identifier not found
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(317): error C2653: 'Sound': is not a class or namespace name
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(317): error C3861: 'getInstance': identifier not found
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(321): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(321): error C2541: 'delete': cannot delete objects that are not pointers
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(322): error C2663: 'std::_Tree<_Traits>::erase': 4 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(328): error C2662: '_Vector_alloc<_Alloc_types>::_Val_types::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(328): note: Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(328): note: Conversion requires a second user-defined-conversion operator or constructor
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(330): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1739): note: could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type) const'
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1730): note: or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type)'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(330): note: while trying to match the argument list '(std::vector, int)'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(334): error C2663: 'std::vector<_Ty,_Alloc>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(334): error C2663: 'std::vector<_Ty,_Alloc>::erase': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(341): error C2065: 'ObjectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(341): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(341): error C2976: 'std::map': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(341): error C2955: 'std::map': use of class template requires template argument list
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(341): error C2663: 'std::_Tree<_Traits>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(341): error C2663: 'std::_Tree<_Traits>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(343): error C2065: 'ObjectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(343): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(344): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(348): error C2065: 'temp': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(348): error C2541: 'delete': cannot delete objects that are not pointers
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(349): error C2663: 'std::_Tree<_Traits>::erase': 4 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(360): error C2065: 'EnermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(360): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(360): error C2976: 'std::map': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(360): error C2955: 'std::map': use of class template requires template argument list
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(360): error C2663: 'std::_Tree<_Traits>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(360): error C2663: 'std::_Tree<_Traits>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(365): error C2065: 'ObjectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(365): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(365): error C2976: 'std::map': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(365): error C2955: 'std::map': use of class template requires template argument list
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(365): error C2663: 'std::_Tree<_Traits>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(365): error C2663: 'std::_Tree<_Traits>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(370): error C2662: '_Vector_alloc<_Alloc_types>::_Val_types::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(370): note: Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(370): note: Conversion requires a second user-defined-conversion operator or constructor
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(372): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1739): note: could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type) const'
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1730): note: or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type)'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(372): note: while trying to match the argument list '(std::vector, int)'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(381): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(382): error C2065: 'BulletSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(382): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(382): error C2976: 'std::vector': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(625): note: see declaration of 'std::vector'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(382): error C2039: 'getBullets': is not a member of 'MegamanSprite'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.h(7): note: see declaration of 'MegamanSprite'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(382): error C2530: 'playerBullets': references must be initialized
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(384): error C2662: '_Vector_alloc<_Alloc_types>::_Val_types::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(384): note: Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(384): note: Conversion requires a second user-defined-conversion operator or constructor
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(386): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1739): note: could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type) const'
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(1730): note: or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const _Vector_alloc<_Alloc_types>::_Val_types::size_type)'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(386): note: while trying to match the argument list '(std::vector, int)'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(390): error C2663: 'std::vector<_Ty,_Alloc>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(390): error C2663: 'std::vector<_Ty,_Alloc>::erase': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(398): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(401): error C2663: 'std::_Tree<_Traits>::find': 4 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(401): error C2663: 'std::_Tree<_Traits>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(408): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(414): error C2653: 'EnermyCreator': is not a class or namespace name
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(414): error C3861: 'getInstance': identifier not found
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(419): error C2065: 'EnermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(419): error C2065: 'enermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(419): error C2653: 'EnermyCreator': is not a class or namespace name
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(419): error C3861: 'getInstance': identifier not found
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(420): error C2065: 'enermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(421): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::map' (or there is no acceptable conversion)
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(361): note: could be '_Ty &std::map<_Kty,_Ty,_Pr,_Alloc>::operator [](const _Kty &)'
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(197): note: or       '_Ty &std::map<_Kty,_Ty,_Pr,_Alloc>::operator [](_Kty &&)'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(421): note: while trying to match the argument list '(std::map, int)'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(421): error C2065: 'enermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(425): error C2065: 'ObjectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(425): error C2065: 'objectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(425): error C2653: 'EnermyCreator': is not a class or namespace name
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(425): error C3861: 'getInstance': identifier not found
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(426): error C2065: 'objectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(427): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::map' (or there is no acceptable conversion)
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(361): note: could be '_Ty &std::map<_Kty,_Ty,_Pr,_Alloc>::operator [](const _Kty &)'
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(197): note: or       '_Ty &std::map<_Kty,_Ty,_Pr,_Alloc>::operator [](_Kty &&)'
-  d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(427): note: while trying to match the argument list '(std::map, int)'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(427): error C2065: 'objectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(437): error C2065: 'EnermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(437): error C2065: 'enermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(437): fatal error C1003: error count exceeds 100; stopping compilation
-  MegamanSprite.cpp
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(524): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(555): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(702): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(714): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(904): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(921): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(968): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(1086): warning C4018: '<': signed/unsigned mismatch
   Scene1.cpp
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(173): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(301): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(427): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(57): error C2065: 'BulletSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(57): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(57): error C2976: 'std::vector': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\vector(625): note: see declaration of 'std::vector'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(60): error C2065: 'EnermySprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(60): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(60): error C2976: 'std::map': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(61): error C2065: 'ObjectSprite': undeclared identifier
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(61): error C2059: syntax error: '>'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.h(61): error C2976: 'std::map': too few template arguments
-  e:\sorfware\vs\vc\tools\msvc\14.15.26726\include\map(81): note: see declaration of 'std::map'
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\scene1.cpp(22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(173): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(301): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(427): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\scene1.cpp(22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
   UI.cpp
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\ui.cpp(106): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\ui.cpp(117): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\ui.cpp(192): error C4996: 'memccpy': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _memccpy. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\corecrt_memory.h(79): note: see declaration of 'memccpy'
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\ui.cpp(106): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\ui.cpp(117): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
+Map.obj : error LNK2019: unresolved external symbol _uncompress referenced in function "private: void __thiscall Map::loadLayer(class TiXmlElement *)" (?loadLayer@Map@@AAEXPAVTiXmlElement@@@Z)
+MegamanSprite.obj : error LNK2019: unresolved external symbol "public: virtual __thiscall MegamanSprite::~MegamanSprite(void)" (??1MegamanSprite@@UAE@XZ) referenced in function "public: virtual void * __thiscall MegamanSprite::`scalar deleting destructor'(unsigned int)" (??_GMegamanSprite@@UAEPAXI@Z)
+MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::update(void)" (?update@MegamanSprite@@UAEXXZ)
+MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::draw(class Camera *)" (?draw@MegamanSprite@@UAEXPAVCamera@@@Z)
+MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual class std::vector<class CollisionRect<float>,class std::allocator<class CollisionRect<float> > > & __thiscall MegamanSprite::getThroughRect(void)" (?getThroughRect@MegamanSprite@@UAEAAV?$vector@V?$CollisionRect@M@@V?$allocator@V?$CollisionRect@M@@@std@@@std@@XZ)
+MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual class std::vector<class CollisionRect<float> *,class std::allocator<class CollisionRect<float> *> > & __thiscall MegamanSprite::getDynamicThroughRect(void)" (?getDynamicThroughRect@MegamanSprite@@UAEAAV?$vector@PAV?$CollisionRect@M@@V?$allocator@PAV?$CollisionRect@M@@@std@@@std@@XZ)
+MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::updateThroughRect(void)" (?updateThroughRect@MegamanSprite@@UAEXXZ)
+MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::die(void)" (?die@MegamanSprite@@UAEXXZ)
+MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::onCameraCollision(class Rect<float>)" (?onCameraCollision@MegamanSprite@@UAEXV?$Rect@M@@@Z)
+MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual int __thiscall MegamanSprite::getDamage(void)" (?getDamage@MegamanSprite@@UAEHXZ)
+C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe : fatal error LNK1120: 10 unresolved externals

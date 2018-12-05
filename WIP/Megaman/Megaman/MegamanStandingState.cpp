@@ -1,27 +1,27 @@
 ﻿#pragma once
-#include "MegamanStandingState.h"
+#include "MegamanMegamanStandingState.h"
 
-StandingState::StandingState(MegamanData * data)
+MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
 	//đứng thui chứ có làm cc gì nửa đâu
 	pData->setiCurrentArray(MegamanData::STAND);
 	pData->vx = 0;
 }
 
-void StandingState::onMovePressed(Direction d)
+void MegamanStandingState::onMovePressed(Direction d)
 {
 	pData->dir = d;
 	pData->setiCurrentArray(MegamanData::RUN);
 }
 
-void StandingState::onJumpPressed()
+void MegamanStandingState::onJumpPressed()
 {
 	hittableCalculation();
 	undyingCalculation();
 	pData->ppTextureArrays[pData->iCurrentArr]->update();
 }
 
-void StandingState::onUpdate()
+void MegamanStandingState::onUpdate()
 {
 	hittableCalculation();
 	undyingCalculation();
@@ -52,26 +52,26 @@ void StandingState::onUpdate()
 	}
 }
 
-void StandingState::onVeticalDirectionPressed(Direction d)
+void MegamanStandingState::onVeticalDirectionPressed(Direction d)
 {
 	pData->verticalDir = d;
 }
 
-void StandingState::onVeticalDirectionReleased()
+void MegamanStandingState::onVeticalDirectionReleased()
 {
 	pData->verticalDir = Direction::createNone();
 	pData->setiCurrentArray(MegamanData::STAND);
 }
 
-void StandingState::onFirePressed()
+void MegamanStandingState::onFirePressed()
 {
 
 }
 
-void StandingState::onFall()
+void MegamanStandingState::onFall()
 {
 }
 
-void StandingState::onDead()
+void MegamanStandingState::onDead()
 {
 }
