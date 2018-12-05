@@ -7,7 +7,7 @@ Map::Map(std::string mapName)
 	:
 	mapName(mapName)
 {
-	std::string convertFileName = std::string("Resources\\Maps\\") + (mapName)+std::string(".tmx");
+	std::string convertFileName = std::string("Resource\\Map\\") + (mapName)+std::string(".tmx");
 	TiXmlDocument levelDocument;
 	levelDocument.LoadFile(convertFileName);
 	TiXmlElement* pRoot = levelDocument.RootElement();
@@ -20,7 +20,7 @@ Map::Map(std::string mapName)
 	{
 		if (e->Value() == std::string("tileset"))
 		{
-			loadTileSet(e);
+			//loadTileSet(e);
 		}
 	}
 
@@ -38,26 +38,26 @@ Map::Map(std::string mapName)
 	// create tileTmx in BackGroundLayer
 	for (int i = 0; i < layers.size(); i++)
 	{
-		if (layers[i]->getName() == "BackGroundLayer")
+		if (layers[i]->getName() == "BackgroundLayer")
 			layers[i]->createTileTmx();
 	}
 
-	// Load Collision Rect
+	// Load CollisionLayer
 	for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
-		if (e->Value() == std::string("objectgroup") && e->Attribute("name") == std::string("CollisionRect"))
+		if (e->Value() == std::string("objectgroup") && e->Attribute("name") == std::string("CollisionLayer"))
 		{
 			loadCollisionRect(e);
 		}
 	}
 
-	for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+	/*for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
 		if (e->Value() == std::string("objectgroup") && e->Attribute("name") == std::string("ObjectLayer"))
 		{
 			loadObject(e);
 		}
-	}
+	}*/
 
 
 
@@ -87,7 +87,7 @@ Map::~Map()
 
 	collisionRectFs.clear();
 
-	for (int i = 0; i < bulletSprites.size(); i++)
+	/*for (int i = 0; i < bulletSprites.size(); i++)
 	{
 		if (bulletSprites[i])
 			delete bulletSprites[i];
@@ -109,7 +109,7 @@ Map::~Map()
 	{
 		delete it->second;
 	}
-
+*/
 	delete mapCollisionTree;
 
 
@@ -299,86 +299,88 @@ void Map::createMapCollsionTree()
 
 void Map::cleanMap(Camera* cam)
 {
-	// clean Enermy
-	RectF camRect(cam->getX(), cam->getY(), cam->getWidth(), cam->getHeight());
-	for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); )
-	{
-		EnermySprite* temp = it->second;
-		RectF SpriteRect(temp->getBody());
-		if (temp->isDesTroyed())
-		{
-			if (temp->isDead())
-			{
-				UIComponents::getInstance()->addScore(temp->getScore(), temp->getKillByIndex());
-			}
-			if (temp->getName().find("final") != std::string::npos)
-			{
-				Sound::getInstance()->stop();
-				Sound::getInstance()->play("explode.wav", false, 1);
+	//// clean Enermy
+	//RectF camRect(cam->getX(), cam->getY(), cam->getWidth(), cam->getHeight());
+	//for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); )
+	//{
+	//	EnermySprite* temp = it->second;
+	//	RectF SpriteRect(temp->getBody());
+	//	if (temp->isDesTroyed())
+	//	{
+	//		if (temp->isDead())
+	//		{
+	//			UIComponents::getInstance()->addScore(temp->getScore(), temp->getKillByIndex());
+	//		}
+	//		if (temp->getName().find("final") != std::string::npos)
+	//		{
+	//			Sound::getInstance()->stop();
+	//			Sound::getInstance()->play("explode.wav", false, 1);
 
-				bIsFinish = true;
-			}
-			delete temp;
-			it = enermyMap.erase(it);
-		}
-		else
-			it++;
-	}
+	//			bIsFinish = true;
+	//		}
+	//		delete temp;
+	//		it = enermyMap.erase(it);
+	//	}
+	//	else
+	//		it++;
+	//}
 
-	for (int i = 0; i < bulletSprites.size(); i++)
-	{
-		Sprite* temp = bulletSprites[i];
-		if (!camRect.checkCollision(temp->getBody()) || temp->isDesTroyed())
-		{
-			delete temp;
-			bulletSprites.erase(bulletSprites.begin() + i);
-		}
-	}
-
-
-	// clean ObjectSprite
-
-	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); )
-	{
-		ObjectSprite* temp = it->second;
-		RectF SpriteRect(temp->getBody());
-
-		if (it->second->isDesTroyed())
-		{
-			delete temp;
-			it = objectMap.erase(it);
-		}
-		else
-			it++;
-	}
+	//for (int i = 0; i < bulletSprites.size(); i++)
+	//{
+	//	Sprite* temp = bulletSprites[i];
+	//	if (!camRect.checkCollision(temp->getBody()) || temp->isDesTroyed())
+	//	{
+	//		delete temp;
+	//		bulletSprites.erase(bulletSprites.begin() + i);
+	//	}
+	//}
 
 
+	//// clean ObjectSprite
+
+	//for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); )
+	//{
+	//	ObjectSprite* temp = it->second;
+	//	RectF SpriteRect(temp->getBody());
+
+	//	if (it->second->isDesTroyed())
+	//	{
+	//		delete temp;
+	//		it = objectMap.erase(it);
+	//	}
+	//	else
+	//		it++;
+	//}
 
 
-	if (bIsFinish)
-	{
-		for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
-		{
-			it->second->die();
-		}
 
-		for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
-		{
-			it->second->die();
-		}
 
-		for (int i = 0; i < bulletSprites.size(); i++)
-		{
-			bulletSprites[i]->die();
-		}
+	//if (bIsFinish)
+	//{
+	//	for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
+	//	{
+	//		it->second->die();
+	//	}
 
-	}
+	//	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
+	//	{
+	//		it->second->die();
+	//	}
+
+	//	for (int i = 0; i < bulletSprites.size(); i++)
+	//	{
+	//		bulletSprites[i]->die();
+	//	}
+
+	//}
 
 
 }
+
+
 void Map::cleanPlayerBullet(Camera* cam, MegamanSprite* sprite)
 {
-	RectF camRect(cam->getX(), cam->getY(), cam->getWidth(), cam->getHeight());
+	/*RectF camRect(cam->getX(), cam->getY(), cam->getWidth(), cam->getHeight());
 	std::vector<BulletSprite* >& playerBullets = sprite->getBullets();
 
 	for (int i = 0; i < playerBullets.size(); i++)
@@ -389,126 +391,127 @@ void Map::cleanPlayerBullet(Camera* cam, MegamanSprite* sprite)
 			delete temp;
 			playerBullets.erase(playerBullets.begin() + i);
 		}
-	}
+	}*/
 }
+
 void Map::addEToMap(Camera* cam)
 {
-	RectF camRect = cam->getRect();
-	mapCollisionTree->clear();
-	for (int i = 0; i < Objects.size(); i++)
-	{
+	//RectF camRect = cam->getRect();
+	//mapCollisionTree->clear();
+	//for (int i = 0; i < Objects.size(); i++)
+	//{
 
-		if (enermyMap.find(Objects[i]->id) == enermyMap.end() && objectMap.find(Objects[i]->id) == objectMap.end())
-			mapCollisionTree->insert(Objects[i]);
+	//	if (enermyMap.find(Objects[i]->id) == enermyMap.end() && objectMap.find(Objects[i]->id) == objectMap.end())
+	//		mapCollisionTree->insert(Objects[i]);
 
-	}
-	std::vector < Object * > returnList;
-	mapCollisionTree->getObjectlist(returnList, camRect);
+	//}
+	//std::vector < Object * > returnList;
+	//mapCollisionTree->getObjectlist(returnList, camRect);
 
-	for (int i = 0; i < returnList.size(); i++)
-	{
-		RectF body = returnList[i]->body;
-		std::string type = returnList[i]->type;
-		if (camRect.checkCollision(body))
-		{
-			Direction appearDir = EnermyCreator::getInstance()->getAppearDir(returnList[i]->name);
-			if (appearDir.isNone())
-			{
-				if (type == "enemy")
-				{
-					EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-					if (enermySprite != nullptr)
-						enermyMap[returnList[i]->id] = enermySprite;
-				}
-				else
-				{
-					ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-					if (objectSprite != nullptr)
-						objectMap[returnList[i]->id] = objectSprite;
-				}
-				continue;
-			}
-			if (appearDir.isRight())
-			{
-				if ((body.x <= camRect.x + camRect.width) && (body.x >= camRect.x + camRect.width - 10))
-				{
-					if (type == "enemy")
-					{
-						EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-						if (enermySprite != nullptr)
-							enermyMap[returnList[i]->id] = enermySprite;
-					}
-					else
-					{
-						ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-						if (objectSprite != nullptr)
-							objectMap[returnList[i]->id] = objectSprite;
-					}
-				}
-			}
+	//for (int i = 0; i < returnList.size(); i++)
+	//{
+	//	RectF body = returnList[i]->body;
+	//	std::string type = returnList[i]->type;
+	//	if (camRect.checkCollision(body))
+	//	{
+	//		Direction appearDir = EnermyCreator::getInstance()->getAppearDir(returnList[i]->name);
+	//		if (appearDir.isNone())
+	//		{
+	//			if (type == "enemy")
+	//			{
+	//				EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+	//				if (enermySprite != nullptr)
+	//					enermyMap[returnList[i]->id] = enermySprite;
+	//			}
+	//			else
+	//			{
+	//				ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+	//				if (objectSprite != nullptr)
+	//					objectMap[returnList[i]->id] = objectSprite;
+	//			}
+	//			continue;
+	//		}
+	//		if (appearDir.isRight())
+	//		{
+	//			if ((body.x <= camRect.x + camRect.width) && (body.x >= camRect.x + camRect.width - 10))
+	//			{
+	//				if (type == "enemy")
+	//				{
+	//					EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+	//					if (enermySprite != nullptr)
+	//						enermyMap[returnList[i]->id] = enermySprite;
+	//				}
+	//				else
+	//				{
+	//					ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+	//					if (objectSprite != nullptr)
+	//						objectMap[returnList[i]->id] = objectSprite;
+	//				}
+	//			}
+	//		}
 
-			if (appearDir.isLeft())
-			{
-				if (
-					((body.x + body.width >= camRect.x) && (body.x + body.width <= camRect.x + 10))
-					)
-				{
-					if (type == "enemy")
-					{
-						EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-						if (enermySprite != nullptr)
-							enermyMap[returnList[i]->id] = enermySprite;
-					}
-					else
-					{
-						ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-						if (objectSprite != nullptr)
-							objectMap[returnList[i]->id] = objectSprite;
-					}
-				}
-			}
+	//		if (appearDir.isLeft())
+	//		{
+	//			if (
+	//				((body.x + body.width >= camRect.x) && (body.x + body.width <= camRect.x + 10))
+	//				)
+	//			{
+	//				if (type == "enemy")
+	//				{
+	//					EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+	//					if (enermySprite != nullptr)
+	//						enermyMap[returnList[i]->id] = enermySprite;
+	//				}
+	//				else
+	//				{
+	//					ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+	//					if (objectSprite != nullptr)
+	//						objectMap[returnList[i]->id] = objectSprite;
+	//				}
+	//			}
+	//		}
 
-			if (appearDir.isUp())
-			{
-				if ((body.y + body.height >= camRect.y) && (body.y + body.height <= camRect.y + 20))
-				{
-					if (type == "enemy")
-					{
-						EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-						if (enermySprite != nullptr)
-							enermyMap[returnList[i]->id] = enermySprite;
-					}
-					else
-					{
-						ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-						if (objectSprite != nullptr)
-							objectMap[returnList[i]->id] = objectSprite;
-					}
-				}
-			}
+	//		if (appearDir.isUp())
+	//		{
+	//			if ((body.y + body.height >= camRect.y) && (body.y + body.height <= camRect.y + 20))
+	//			{
+	//				if (type == "enemy")
+	//				{
+	//					EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+	//					if (enermySprite != nullptr)
+	//						enermyMap[returnList[i]->id] = enermySprite;
+	//				}
+	//				else
+	//				{
+	//					ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+	//					if (objectSprite != nullptr)
+	//						objectMap[returnList[i]->id] = objectSprite;
+	//				}
+	//			}
+	//		}
 
 
-			if (appearDir.isDown())
-			{
-				if ((body.y <= camRect.y + camRect.height) && (body.y >= camRect.y + camRect.height - 20))
-				{
-					if (type == "enemy")
-					{
-						EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-						if (enermySprite != nullptr)
-							enermyMap[returnList[i]->id] = enermySprite;
-					}
-					else
-					{
-						ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-						if (objectSprite != nullptr)
-							objectMap[returnList[i]->id] = objectSprite;
-					}
-				}
-			}
+	//		if (appearDir.isDown())
+	//		{
+	//			if ((body.y <= camRect.y + camRect.height) && (body.y >= camRect.y + camRect.height - 20))
+	//			{
+	//				if (type == "enemy")
+	//				{
+	//					EnermySprite* enermySprite = EnermyCreator::getInstance()->createEnermySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+	//					if (enermySprite != nullptr)
+	//						enermyMap[returnList[i]->id] = enermySprite;
+	//				}
+	//				else
+	//				{
+	//					ObjectSprite* objectSprite = EnermyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+	//					if (objectSprite != nullptr)
+	//						objectMap[returnList[i]->id] = objectSprite;
+	//				}
+	//			}
+	//		}
 
-		}
-	}
+	//	}
+	//}
 }
 
 #pragma endregion helperFunction
@@ -520,10 +523,10 @@ void Map::draw(Camera* cam)
 {
 	for (int i = 0; i < layers.size(); i++)
 	{
-		if (layers[i]->getName() == "BackGroundLayer")
+		if (layers[i]->getName() == "BackgroundLayer")
 			layers[i]->draw(cam);
 	}
-
+/*
 	for (std::map < int, EnermySprite* > ::reverse_iterator it = enermyMap.rbegin(); it != enermyMap.rend(); ++it)
 	{
 		it->second->draw(cam);
@@ -537,7 +540,7 @@ void Map::draw(Camera* cam)
 	for (int i = 0; i < bulletSprites.size(); i++)
 	{
 		bulletSprites[i]->draw(cam);
-	}
+	}*/
 
 
 }
@@ -556,7 +559,7 @@ void Map::onCollision(Camera* cam)
 
 #pragma region
 
-	for (std::map < int, EnermySprite* > ::iterator enermyIt = enermyMap.begin(); enermyIt != enermyMap.end(); enermyIt++)
+	/*for (std::map < int, EnermySprite* > ::iterator enermyIt = enermyMap.begin(); enermyIt != enermyMap.end(); enermyIt++)
 	{
 		std::vector < CollisionRectF > returnLists;
 		mapCollisionTree->getObjectlist(returnLists, enermyIt->second->getBody());
@@ -593,12 +596,12 @@ void Map::onCollision(Camera* cam)
 
 
 
-	}
+	}*/
 #pragma endregion EnermyvsMap
 
 #pragma region
 
-
+/*
 	for (int i = 0; i < bulletSprites.size(); i++)
 	{
 		std::vector < CollisionRectF > returnLists;
@@ -614,63 +617,63 @@ void Map::onCollision(Camera* cam)
 				}
 			}
 		}
-	}
+	}*/
 #pragma endregion EnermyBulletvsMap
 
 #pragma region
 
 
 
-	for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
-	{
-		std::vector < CollisionRectF > objectCollisionReturnList;
+	//for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
+	//{
+	//	std::vector < CollisionRectF > objectCollisionReturnList;
 
-		mapCollisionTree->getObjectlist(objectCollisionReturnList, objectIt->second->getBody());
+	//	mapCollisionTree->getObjectlist(objectCollisionReturnList, objectIt->second->getBody());
 
-		for (int i = 0; i < objectCollisionReturnList.size(); i++)
-		{
-			CollisionRectF cRect = objectCollisionReturnList[i];
-			if (objectIt->second->getBody().checkCollision(cRect.rect))
-			{
-				objectIt->second->onCollision(cRect);
-			}
-		}
+	//	for (int i = 0; i < objectCollisionReturnList.size(); i++)
+	//	{
+	//		CollisionRectF cRect = objectCollisionReturnList[i];
+	//		if (objectIt->second->getBody().checkCollision(cRect.rect))
+	//		{
+	//			objectIt->second->onCollision(cRect);
+	//		}
+	//	}
 
-	}
-
-
+	//}
 
 
 
-	for (std::map < int, ObjectSprite* > ::iterator iobjectIt = objectMap.begin(); iobjectIt != objectMap.end(); iobjectIt++)
-	{
-		for (std::map < int, ObjectSprite* > ::iterator jobjectIt = objectMap.begin(); jobjectIt != objectMap.end(); jobjectIt++)
-		{
 
-			RectF iBody = iobjectIt->second->getBody();
-			RectF jBody = jobjectIt->second->getBody();
 
-			if (!iobjectIt->second->isAffectble())
-			{
-				if (iBody.checkCollision(jBody) && iobjectIt != jobjectIt)
-				{
-					iobjectIt->second->onCollision(jobjectIt->second->getCollisionRect());
-				}
-			}
-			else
-			{
-				break;
-			}
-		}
+	//for (std::map < int, ObjectSprite* > ::iterator iobjectIt = objectMap.begin(); iobjectIt != objectMap.end(); iobjectIt++)
+	//{
+	//	for (std::map < int, ObjectSprite* > ::iterator jobjectIt = objectMap.begin(); jobjectIt != objectMap.end(); jobjectIt++)
+	//	{
 
-	}
+	//		RectF iBody = iobjectIt->second->getBody();
+	//		RectF jBody = jobjectIt->second->getBody();
+
+	//		if (!iobjectIt->second->isAffectble())
+	//		{
+	//			if (iBody.checkCollision(jBody) && iobjectIt != jobjectIt)
+	//			{
+	//				iobjectIt->second->onCollision(jobjectIt->second->getCollisionRect());
+	//			}
+	//		}
+	//		else
+	//		{
+	//			break;
+	//		}
+	//	}
+
+	//}
 
 #pragma endregion ObjectvsMap
 
 	RectF cameraRect = cam->getRect();
 
 #pragma region
-	for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
+	/*for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
 	{
 		it->second->onCameraCollision(cameraRect);
 	}
@@ -678,18 +681,18 @@ void Map::onCollision(Camera* cam)
 	{
 		it->second->onCameraCollision(cameraRect);
 	}
-
+*/
 #pragma endregion EnemyObjectvsCamera
-	// update through rect list of enermy
-	for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
-	{
-		it->second->updateThroughRect();
-	}
-	// update through rect list of object
-	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
-	{
-		it->second->updateThroughRect();
-	}
+	//// update through rect list of enermy
+	//for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
+	//{
+	//	it->second->updateThroughRect();
+	//}
+	//// update through rect list of object
+	//for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
+	//{
+	//	it->second->updateThroughRect();
+	//}
 }
 
 void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
@@ -700,7 +703,8 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 	{
 		mapCollisionTree->insert(collisionRectFs[i]);
 	}
-#pragma region
+#pragma region mapvsPlayer
+
 
 	// player vs Collision Rect
 	std::vector < CollisionRectF > returnList;
@@ -722,7 +726,7 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 
 
 
-	for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
+	/*for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
 	{
 		if (objectIt->second->isPlayerCollisionable())
 		{
@@ -783,11 +787,13 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 
 	}
 
+*/
+
+#pragma endregion 
 
 
-#pragma endregion mapvsPlayer
 #pragma region
-	for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
+	/*for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
 	{
 		RectF r = it->second->getBody();
 		if (sprite->isHittable() && r.checkCollision(sprite->getBody()) && !it->second->isThroughable())
@@ -801,10 +807,12 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 				sprite->die();
 		}
 
-	}
+	}*/
 #pragma endregion EnermyvsPlayer
+
+
 #pragma region
-	for (int i = 0; i < bulletSprites.size(); i++)
+	/*for (int i = 0; i < bulletSprites.size(); i++)
 	{
 		Sprite* bulletE = bulletSprites[i];
 		if (sprite->isHittable() && bulletE->getBody().checkCollision(sprite->getBody()))
@@ -815,11 +823,12 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 
 			break;
 		}
-	}
+	}*/
 #pragma endregion EnermyBulletvsPlayer
+
 #pragma region 
 
-	std::vector < BulletSprite* >& bullets = sprite->getBullets();
+	/*std::vector < BulletSprite* >& bullets = sprite->getBullets();
 	for (int bulletIt = 0; bulletIt < bullets.size(); bulletIt++)
 	{
 		for (std::map < int, EnermySprite* > ::iterator enermyIt = enermyMap.begin(); enermyIt != enermyMap.end(); enermyIt++)
@@ -853,12 +862,13 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 			}
 		}
 
-	}
+	}*/
 
 #pragma endregion playerBulletvsEnermy
+
 #pragma region 
 
-	for (int bulletIt = 0; bulletIt < bullets.size(); bulletIt++)
+	/*for (int bulletIt = 0; bulletIt < bullets.size(); bulletIt++)
 	{
 		for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
 		{
@@ -873,13 +883,17 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 				break;
 			}
 		}
-	}
+	}*/
 
-#pragma endregion playerBulletvsObjetSprite
+#pragma endregion playerBulletvsObjetSprite 
+
 	RectF cameraRect = cam->getRect();
+
 #pragma region
-	sprite->onCameraCollision(cameraRect);
+	//sprite->onCameraCollision(cameraRect);
 #pragma endregion playervsCamera
+
+
 	// update through rect list of player
 	sprite->updateThroughRect();
 }
@@ -916,7 +930,7 @@ void Map::onSupportPlayer(MegamanSprite* sprite)
 	// player vs object Map
 	if (!isSupported)
 	{
-		for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
+		/*for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
 		{
 			if (objectIt->second->isPlayerCollisionable())
 			{
@@ -931,7 +945,7 @@ void Map::onSupportPlayer(MegamanSprite* sprite)
 				}
 			}
 
-		}
+		}*/
 	}
 
 
@@ -958,7 +972,7 @@ void Map::onSupportSprite()
 #pragma region
 
 
-	for (std::map < int, EnermySprite* > ::iterator enermyIt = enermyMap.begin(); enermyIt != enermyMap.end(); enermyIt++)
+	/*for (std::map < int, EnermySprite* > ::iterator enermyIt = enermyMap.begin(); enermyIt != enermyMap.end(); enermyIt++)
 	{
 		RectF r = enermyIt->second->getBody();
 		r.y += r.height;
@@ -1012,7 +1026,7 @@ void Map::onSupportSprite()
 
 
 	}
-
+*/
 #pragma endregion EnermyvsMap
 }
 
@@ -1024,7 +1038,7 @@ void Map::onUpdatePlayerProperties(MegamanSprite* sprite, MegamanSprite* sprite2
 		cleanPlayerBullet(cam, sprite2);
 	}
 	// update enermy
-	for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
+	/*for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
 	{
 		if (sprite2)
 		{
@@ -1048,23 +1062,23 @@ void Map::onUpdatePlayerProperties(MegamanSprite* sprite, MegamanSprite* sprite2
 			it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY());
 		}
 
-	}
+	}*/
 }
 void Map::onUpdatePlayerProperties(MegamanSprite* sprite, Camera* cam)
 {
 	cleanPlayerBullet(cam, sprite);
 
-	// update enermy
-	for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
-	{
-		it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY(), sprite->isDead());
+	//// update enermy
+	//for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
+	//{
+	//	it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY(), sprite->isDead());
 
-	}
+	//}
 
-	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
-	{
-		it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY());
-	}
+	//for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
+	//{
+	//	it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY());
+	//}
 }
 void Map::onUpdate(Camera* cam)
 {
@@ -1081,26 +1095,26 @@ void Map::onUpdate(Camera* cam)
 
 
 
-	// update enermy
-	for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
-	{
-		//it ->second ->setPlayerProperties(sprite -> getCenterX(), sprite ->getCenterY(), sprite -> isDead());
-		it->second->update();
-	}
+	//// update enermy
+	//for (std::map < int, EnermySprite* > ::iterator it = enermyMap.begin(); it != enermyMap.end(); it++)
+	//{
+	//	//it ->second ->setPlayerProperties(sprite -> getCenterX(), sprite ->getCenterY(), sprite -> isDead());
+	//	it->second->update();
+	//}
 
 
-	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
-	{
-		//it ->second ->setPlayerX(sprite -> getCenterX());
-		//it ->second ->setPlayerY(sprite -> getCenterY());
-		it->second->update();
-	}
+	//for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
+	//{
+	//	//it ->second ->setPlayerX(sprite -> getCenterX());
+	//	//it ->second ->setPlayerY(sprite -> getCenterY());
+	//	it->second->update();
+	//}
 
 
-	for (std::vector < BulletSprite* > ::iterator it = bulletSprites.begin(); it != bulletSprites.end(); it++)
-	{
-		(*it)->update();
-	}
+	//for (std::vector < BulletSprite* > ::iterator it = bulletSprites.begin(); it != bulletSprites.end(); it++)
+	//{
+	//	(*it)->update();
+	//}
 }
 float Map::getResX()
 {

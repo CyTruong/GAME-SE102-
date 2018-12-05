@@ -3,7 +3,7 @@
 
 Scene1::Scene1()
 {
-	std::string mapName = "stage" + std::to_string(UIComponents::getInstance()->getCurrentStage());
+	std::string mapName = "BlastHornetStage"  ;
 
 	pMap = new Map(mapName);
 
