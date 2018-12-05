@@ -129,6 +129,18 @@
     <ClInclude Include="zlib.h">
       <Filter>TintXml</Filter>
     </ClInclude>
+    <ClInclude Include="TileTmx.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TileLayer.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -187,6 +199,12 @@
     </ClCompile>
     <ClCompile Include="MegamanStandingState.cpp">
       <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="TileTmx.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="TileLayer.cpp">
+      <Filter>Gamecomponent</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

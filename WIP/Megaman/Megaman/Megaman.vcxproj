@@ -141,6 +141,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Layer.h" />
     <ClInclude Include="MegamanStandingState.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MegamanData.h" />
@@ -159,6 +160,9 @@
     <ClInclude Include="SpriteState.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureArray.h" />
+    <ClInclude Include="TileLayer.h" />
+    <ClInclude Include="TileSet.h" />
+    <ClInclude Include="TileTmx.h" />
     <ClInclude Include="tinystr.h" />
     <ClInclude Include="tinyxml.h" />
     <ClInclude Include="UI.h" />
@@ -179,6 +183,8 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureArray.cpp" />
+    <ClCompile Include="TileLayer.cpp" />
+    <ClCompile Include="TileTmx.cpp" />
     <ClCompile Include="tinystr.cpp" />
     <ClCompile Include="tinyxml.cpp" />
     <ClCompile Include="tinyxmlerror.cpp" />
