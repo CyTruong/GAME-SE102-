@@ -11,7 +11,7 @@
 #include "QuadTree.h"
 #include "MegamanSprite.h"
 //#include "EnermyCreator.h"
-//#include "ObjectSprite.h"
+#include "ObjectSprite.h"
 #include "UI.h"
 
 //H
@@ -33,8 +33,10 @@ public:
 		return &layers;
 	}
 	RectF getMapRect()
-	{
-		return RectF(0.0f, 0.0f, width * tileSize, height * tileSize);
+	{ // hcmt lay chieu rong cua hinh chu nhat 
+	return RectF(0.0f, 0.0f,15*17,15*17);
+
+	  //	return RectF(0.0f, 0.0f, width * tileSize, height * tileSize);
 	}
 	void onCollision(Camera* cam);
 	void onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam);
@@ -52,11 +54,11 @@ private:
 	std::vector< TileSet* > tileSets; // vector of TileSet Pointer
 	std::vector< Layer* > layers; // vector of Layer pointer
 	std::vector < CollisionRectF > collisionRectFs;
-	std::vector < BulletSprite* > bulletSprites;
+	//std::vector < BulletSprite* > bulletSprites;
 	std::vector < Object*> Objects;
 	std::vector < std::string> spriteNames;
-	std::map < int, EnermySprite* > enermyMap;
-	std::map < int, ObjectSprite* > objectMap;
+//	std::map < int, EnermySprite* > enermyMap;
+	//std::map < int, ObjectSprite* > objectMap;
 	int tileSize;
 	int width; // number of tile in row
 	int height; // number of tile in col

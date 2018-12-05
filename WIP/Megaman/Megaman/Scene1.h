@@ -5,7 +5,7 @@
 #include "MegamanSprite.h"
 #include"MegamanState.h"
 #include "KeyBoard.h" 
-
+#include"define.h"
 #include"Map.h"
 
 

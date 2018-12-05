@@ -96,5 +96,6 @@ bool KeyBoard::isEmpty()
 	return keyEventQueue.empty();
 }
 
+
 #pragma endregion
 

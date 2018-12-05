@@ -135,9 +135,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="base64.h" />
+    <ClInclude Include="BulletData.h" />
+    <ClInclude Include="BulletSprite.h" />
+    <ClInclude Include="BulletState.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionRect.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="EnemyData.h" />
+    <ClInclude Include="EnemySprite.h" />
+    <ClInclude Include="EnemyState.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Graphics.h" />
@@ -148,6 +154,9 @@
     <ClInclude Include="MegamanSprite.h" />
     <ClInclude Include="MegamanState.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectData.h" />
+    <ClInclude Include="ObjectSprite.h" />
+    <ClInclude Include="ObjectState.h" />
     <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="KeyBoard.h" />
@@ -158,6 +167,7 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteData.h" />
     <ClInclude Include="SpriteState.h" />
+    <ClInclude Include="S_Bullet.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureArray.h" />
     <ClInclude Include="TileLayer.h" />
@@ -172,15 +182,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base64.cpp" />
+    <ClCompile Include="BulletData.cpp" />
+    <ClCompile Include="BulletSpite.cpp" />
+    <ClCompile Include="BulletState.cpp" />
+    <ClCompile Include="EnemyData.cpp" />
+    <ClCompile Include="EnemySprite.cpp" />
+    <ClCompile Include="EnemyState.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MegamanSprite.cpp" />
     <ClCompile Include="MegamanStandingState.cpp" />
+    <ClCompile Include="ObjectData.cpp" />
+    <ClCompile Include="ObjectSprite.cpp" />
+    <ClCompile Include="ObjectState.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="S_Bullet.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureArray.cpp" />
     <ClCompile Include="TileLayer.cpp" />

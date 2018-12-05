@@ -159,39 +159,39 @@ void UIComponents::gameOverReset()
 
 // chua can thiet 
 
-//char UIComponents::getKey(int index, int playerindex)
-//{
-//	return configKeyBoard[playerindex][index];
-//}
-//
-//char UIComponents::getDefaultKey(int index, int playerindex)
-//{
-//	return defaultKeyBoard[playerindex][index];
-//}
-//
-//void UIComponents::setKey(int index, char keyCode, int playerindex)
-//{
-//	for (int i = 0; i < COUNT - 1; i++)
-//	{
-//		for (int j = 0; j < 2; j++) // 2 is number players
-//		{
-//			if (configKeyBoard[j][i] == keyCode && (i != index || j != playerindex))
-//			{
-//				configKeyBoard[j][i] = configKeyBoard[playerindex][index];
-//				configKeyBoard[playerindex][index] = keyCode;
-//				return;
-//			}
-//		}
-//
-//	}
-//	configKeyBoard[playerindex][index] = keyCode;
-//}
-//
-//void UIComponents::setDefaultKeyBoard()
-//{
-//	memccpy(configKeyBoard, defaultKeyBoard, NULL, sizeof(configKeyBoard));
-//}
-//
+char UIComponents::getKey(int index, int playerindex)
+{
+	return configKeyBoard[playerindex][index];
+}
+
+char UIComponents::getDefaultKey(int index, int playerindex)
+{
+	return defaultKeyBoard[playerindex][index];
+}
+
+void UIComponents::setKey(int index, char keyCode, int playerindex)
+{
+	for (int i = 0; i < COUNT - 1; i++)
+	{
+		for (int j = 0; j < 2; j++) // 2 is number players
+		{
+			if (configKeyBoard[j][i] == keyCode && (i != index || j != playerindex))
+			{
+				configKeyBoard[j][i] = configKeyBoard[playerindex][index];
+				configKeyBoard[playerindex][index] = keyCode;
+				return;
+			}
+		}
+
+	}
+	configKeyBoard[playerindex][index] = keyCode;
+}
+
+void UIComponents::setDefaultKeyBoard()
+{
+	memccpy(configKeyBoard, defaultKeyBoard, NULL, sizeof(configKeyBoard));
+}
+
 //void UIComponents::setNumberPlayer(int val)
 //{
 //	nPlayers = val;

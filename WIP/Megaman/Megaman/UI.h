@@ -133,10 +133,10 @@ public:
 	void addScore(int val, int index);
 	void setStage(int val);
 	void gameOverReset();
-	/*char getKey(int index, int playerindex);
+	char getKey(int index, int playerindex);
 	void setKey(int index, char keyCode, int playerindex);
 	char getDefaultKey(int index, int playerindex);
-	void setDefaultKeyBoard();*/
+	void setDefaultKeyBoard();
 	void resetStage();
   /*  unsigned int getNumberPlayer();
     void setNumberPlayer(int val);

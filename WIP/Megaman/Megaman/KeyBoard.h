@@ -53,5 +53,6 @@ public:
 	void Clean();
 	bool isEmpty();
 
+
 };
 

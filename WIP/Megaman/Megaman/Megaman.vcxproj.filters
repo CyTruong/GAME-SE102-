@@ -141,13 +141,40 @@
     <ClInclude Include="Layer.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
+    <ClInclude Include="ObjectData.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectSprite.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectState.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletSprite.h">
+      <Filter>Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletState.h">
+      <Filter>Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletData.h">
+      <Filter>Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Bullet.h">
+      <Filter>Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemySprite.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyState.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyData.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
       <Filter>Gamecomponent</Filter>
-    </ClCompile>
-    <ClCompile Include="winmain.cpp">
-      <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Gamecomponent</Filter>
@@ -205,6 +232,39 @@
     </ClCompile>
     <ClCompile Include="TileLayer.cpp">
       <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletSpite.cpp">
+      <Filter>Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletState.cpp">
+      <Filter>Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletData.cpp">
+      <Filter>Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Bullet.cpp">
+      <Filter>Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemySprite.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyData.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyState.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="winmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectSprite.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectState.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectData.cpp">
+      <Filter>Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
