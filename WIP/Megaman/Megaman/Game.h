@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "SceneManager.h"
 #include <d3d9.h>
+#include "Scene1.h" 
+
 //thiếu
 
 class Game

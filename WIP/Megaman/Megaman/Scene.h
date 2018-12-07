@@ -6,7 +6,7 @@ class Scene
 public:
 	Scene() {}
 	virtual ~Scene() {}
-	virtual void draw() = 0;
+	virtual void render() = 0;
 	virtual void Update() = 0;
 };
 

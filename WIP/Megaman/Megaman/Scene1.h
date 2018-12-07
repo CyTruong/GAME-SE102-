@@ -22,7 +22,7 @@ public:
 	virtual void handlerInput();
 	virtual void render();
 	virtual void onUpdate();
-	virtual void update();
+	virtual void Update();
 
 
 private:

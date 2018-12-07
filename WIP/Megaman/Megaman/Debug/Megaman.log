@@ -1,70 +1,13 @@
-﻿  Map.cpp
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  MegamanSprite.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(173): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(301): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(427): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(39): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(74): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(81): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(268): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(272): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(273): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(287): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(297): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(524): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(555): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(702): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(714): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(904): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(921): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(968): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(1086): warning C4018: '<': signed/unsigned mismatch
-  Scene1.cpp
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(173): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(301): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(427): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\scene1.cpp(22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-  UI.cpp
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\ui.cpp(106): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\ui.cpp(117): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-Map.obj : error LNK2019: unresolved external symbol _uncompress referenced in function "private: void __thiscall Map::loadLayer(class TiXmlElement *)" (?loadLayer@Map@@AAEXPAVTiXmlElement@@@Z)
-MegamanSprite.obj : error LNK2019: unresolved external symbol "public: virtual __thiscall MegamanSprite::~MegamanSprite(void)" (??1MegamanSprite@@UAE@XZ) referenced in function "public: virtual void * __thiscall MegamanSprite::`scalar deleting destructor'(unsigned int)" (??_GMegamanSprite@@UAEPAXI@Z)
-MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::update(void)" (?update@MegamanSprite@@UAEXXZ)
-MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::draw(class Camera *)" (?draw@MegamanSprite@@UAEXPAVCamera@@@Z)
-MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual class std::vector<class CollisionRect<float>,class std::allocator<class CollisionRect<float> > > & __thiscall MegamanSprite::getThroughRect(void)" (?getThroughRect@MegamanSprite@@UAEAAV?$vector@V?$CollisionRect@M@@V?$allocator@V?$CollisionRect@M@@@std@@@std@@XZ)
-MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual class std::vector<class CollisionRect<float> *,class std::allocator<class CollisionRect<float> *> > & __thiscall MegamanSprite::getDynamicThroughRect(void)" (?getDynamicThroughRect@MegamanSprite@@UAEAAV?$vector@PAV?$CollisionRect@M@@V?$allocator@PAV?$CollisionRect@M@@@std@@@std@@XZ)
-MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::updateThroughRect(void)" (?updateThroughRect@MegamanSprite@@UAEXXZ)
-MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::die(void)" (?die@MegamanSprite@@UAEXXZ)
-MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall MegamanSprite::onCameraCollision(class Rect<float>)" (?onCameraCollision@MegamanSprite@@UAEXV?$Rect@M@@@Z)
-MegamanSprite.obj : error LNK2001: unresolved external symbol "public: virtual int __thiscall MegamanSprite::getDamage(void)" (?getDamage@MegamanSprite@@UAEHXZ)
-C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe : fatal error LNK1120: 10 unresolved externals
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Megaman.vcxproj -> D:\Game\GAME-SE102-\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe

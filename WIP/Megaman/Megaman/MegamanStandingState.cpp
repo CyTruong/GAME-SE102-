@@ -1,9 +1,11 @@
 ﻿#pragma once
-#include "MegamanMegamanStandingState.h"
+#include "MegamanStandingState.h"
 
 MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
 	//đứng thui chứ có làm cc gì nửa đâu
+	// má đéo gán đối số :v 
+	pData = data; 
 	pData->setiCurrentArray(MegamanData::STAND);
 	pData->vx = 0;
 }

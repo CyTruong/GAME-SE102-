@@ -206,7 +206,7 @@ void Scene1::onUpdate()
 
 	if (!isPause)
 	{
-		update();
+		Update();
 		onCollision();
 
 		isFinish = pMap->isFinish();
@@ -242,7 +242,7 @@ void Scene1::render()
 
 }
 
-void Scene1::update()
+void Scene1::Update()
 {
 
 	pMap->onUpdatePlayerProperties(pMegaman[0], cam);

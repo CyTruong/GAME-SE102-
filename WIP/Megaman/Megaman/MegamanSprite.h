@@ -42,9 +42,9 @@ public:
 	{
 		pData->cDynamicSupportRect = rect;
 	}
-
-	virtual std::vector< CollisionRectF>& getThroughRect();
-	virtual std::vector< CollisionRectF* >&  getDynamicThroughRect();
+	//hcmt 
+	//virtual std::vector< CollisionRectF>& getThroughRect();
+	//virtual std::vector< CollisionRectF* >&  getDynamicThroughRect();
 	virtual void updateThroughRect();
 	//std::vector<BulletSprite* >& getBullets();
 	virtual void die();

@@ -4,9 +4,9 @@
 
 Game::Game(HWND hWnd)
 {
-	/*Graphics::create(hWnd);
-	Sound::create(hWnd);
-	SceneManager::getInstance()->createScene(new StartingScene());*/
+	Graphics::create(hWnd);
+	//Sound::create(hWnd);
+	SceneManager::GetInstance()->createScene(new Scene1());
 }
 void Game::Update()
 {
@@ -25,7 +25,7 @@ void Game::Update()
 
 void Game::Draw()
 {
-	SceneManager::GetInstance()->GetCurScene()->draw();
+	SceneManager::GetInstance()->GetCurScene()->render();
 }
 
 
