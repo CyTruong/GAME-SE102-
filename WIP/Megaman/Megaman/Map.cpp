@@ -172,55 +172,55 @@ void Map::loadTileSet(TiXmlElement* e)
 void Map::loadLayer(TiXmlElement* pTileElement)
 {
 
-	//TileLayer* pTileLayer = new TileLayer(tileSize, width, height, pTileElement->Attribute("name"), tileSets);
+	TileLayer* pTileLayer = new TileLayer(tileSize, width, height, pTileElement->Attribute("name"), tileSets);
 
-	//std::vector<std::vector<int>> data;
+	std::vector<std::vector<int>> data;
 
-	//std::string decodedIDs;
+	std::string decodedIDs;
 
-	//TiXmlElement* pDataNode = NULL;
+	TiXmlElement* pDataNode = NULL;
 
-	//for (TiXmlElement* e = pTileElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
-	//{
-	//	if (e->Value() == std::string("data"))
-	//	{
-	//		pDataNode = e;
-	//	}
-	//}
+	for (TiXmlElement* e = pTileElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+	{
+		if (e->Value() == std::string("data"))
+		{
+			pDataNode = e;
+		}
+	}
 
-	//for (TiXmlNode* e = pDataNode->FirstChild(); e != NULL; e = e->NextSibling())
-	//{
-	//	TiXmlText* text = e->ToText();
+	for (TiXmlNode* e = pDataNode->FirstChild(); e != NULL; e = e->NextSibling())
+	{
+		TiXmlText* text = e->ToText();
 
-	//	std::string t = text->Value();
+		std::string t = text->Value();
 
-	//	decodedIDs = base64_decode(t);
-	//}
+		decodedIDs = base64_decode(t);
+	}
 
-	//// uncompress zlib compression
-	//uLongf numGids = width * height * sizeof(int);
+	// uncompress zlib compression
+	uLongf numGids = width * height * sizeof(int);
 
-	//std::vector< int > gids(width * height);
+	std::vector< int > gids(width * height);
 
-	//uncompress((Bytef*)&gids[0], &numGids, (const Bytef*)decodedIDs.c_str(), decodedIDs.size());
+	uncompress((Bytef*)&gids[0], &numGids, (const Bytef*)decodedIDs.c_str(), decodedIDs.size());
 
-	//std::vector<int> layerRow(width);
+	std::vector<int> layerRow(width);
 
-	//for (int j = 0; j < height; j++)
-	//{
-	//	data.push_back(layerRow);
-	//}
-	//for (int rows = 0; rows < height; rows++)
-	//{
-	//	for (int cols = 0; cols < width; cols++)
-	//	{
-	//		data[rows][cols] = gids[rows * width + cols];
-	//	}
-	//}
+	for (int j = 0; j < height; j++)
+	{
+		data.push_back(layerRow);
+	}
+	for (int rows = 0; rows < height; rows++)
+	{
+		for (int cols = 0; cols < width; cols++)
+		{
+			data[rows][cols] = gids[rows * width + cols];
+		}
+	}
 
-	//pTileLayer->setTileIDs(data);
+	pTileLayer->setTileIDs(data);
 
-	//layers.push_back(pTileLayer);
+	layers.push_back(pTileLayer);
 }
 
 void Map::loadCollisionRect(TiXmlElement* pElement)

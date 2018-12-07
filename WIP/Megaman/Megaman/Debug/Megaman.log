@@ -1,13 +1,1 @@
-﻿  MegamanSprite.cpp
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(81): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Megaman.vcxproj -> D:\Game\GAME-SE102-\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe
+﻿  Megaman.vcxproj -> C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe
