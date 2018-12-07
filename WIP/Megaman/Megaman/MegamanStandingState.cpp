@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "MegamanStandingState.h"
+#include "MegamanRunningState.h"
 
 MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
@@ -13,7 +14,7 @@ MegamanStandingState::MegamanStandingState(MegamanData * data)
 void MegamanStandingState::onMovePressed(Direction d)
 {
 	pData->dir = d;
-	pData->setiCurrentArray(MegamanData::RUN);
+	transition(new MegamanRunningState(pData));
 }
 
 void MegamanStandingState::onJumpPressed()

@@ -193,6 +193,7 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MegamanRunningState.cpp" />
     <ClCompile Include="MegamanSprite.cpp" />
     <ClCompile Include="MegamanStandingState.cpp" />
     <ClCompile Include="ObjectData.cpp" />

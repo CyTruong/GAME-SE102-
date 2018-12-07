@@ -71,7 +71,7 @@ void Scene1::handlerInput()
 {
 	while (!KeyBoard::GetInstance()->isEmpty())
 	{
-		KeyEvent e = KeyBoard::GetInstance()->Read_Key();
+		KeyEvent e = KeyBoard::GetInstance()->ReadPop_Key();
 		
 			if (e.getCode() == UIComponents::getInstance()->getKey(UIComponents::SELECT, 0))
 			{

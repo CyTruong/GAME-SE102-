@@ -5,7 +5,7 @@
 #define SCREEN_HEIGHT 256
 #define SCREEN_WIDTH 256
 
-
+#define MEGAMANRUNSPEED 1
 
 #define max(a,b)            (((a) > (b)) ? (a) : (b))
 #define min(a,b)            (((a) < (b)) ? (a) : (b))

@@ -266,5 +266,8 @@
     <ClCompile Include="ObjectData.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="MegamanRunningState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
