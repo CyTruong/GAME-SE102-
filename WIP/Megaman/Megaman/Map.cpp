@@ -121,7 +121,7 @@ void Map::loadTileSet(TiXmlElement* e)
 {
 	TileSet* tileSet;
 	tileSet = new TileSet();
-	std::string s = std::string("Resources\\Maps\\") + (e->FirstChildElement()->Attribute("source"));
+	std::string s = std::string("Resource\\Map\\") + (e->FirstChildElement()->Attribute("source"));
 
 	std::wstring tileSetSource(s.begin(), s.end());
 

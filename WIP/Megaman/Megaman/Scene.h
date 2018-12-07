@@ -7,6 +7,6 @@ public:
 	Scene() {}
 	virtual ~Scene() {}
 	virtual void render() = 0;
-	virtual void Update() = 0;
+	virtual void onUpdate() = 0;
 };
 

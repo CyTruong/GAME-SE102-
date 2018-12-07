@@ -24,7 +24,7 @@ UIComponents::UIComponents()
 
 	loadHiScore();
 	currentStage = 1;
-	nPlayers = 0;
+	nPlayers = 1;
 
 
 

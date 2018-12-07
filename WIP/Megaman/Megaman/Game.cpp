@@ -19,7 +19,7 @@ void Game::Update()
 		SceneTransition::getInstance()->update();
 		SceneManager::getInstance()->updateWithEffect();
 	}*/
-	SceneManager::GetInstance()->GetCurScene()->Update();
+	SceneManager::GetInstance()->GetCurScene()->onUpdate();
 
 }
 

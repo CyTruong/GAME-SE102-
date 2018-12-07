@@ -1,4 +1,4 @@
-#include "Scene1.h"
+﻿#include "Scene1.h"
 
 
 Scene1::Scene1()
@@ -20,15 +20,15 @@ Scene1::Scene1()
 	// vpsize = tile size *15 o vuong  
 
 	int viewPortSize = pMap->getMapRect().width < pMap->getMapRect().height ? pMap->getMapRect().width : pMap->getMapRect().height;
-
+	 viewPortSize = 17 * 15; 
 	viewPort = new ViewPort(RectI(SCREEN_WIDTH / 2 - viewPortSize / 2, SCREEN_HEIGHT / 2 - viewPortSize / 2, viewPortSize, viewPortSize));
 
 
-	cam = new Camera(viewPort, pMap->getResX(), pMap->getResY(), pMap->getMapRect(), pMap->getCameraTranslatePoint());
+	cam = new Camera(viewPort,10,760, viewPort->getPort(), RectF(5,760,205,205));
 
 	pMegaman = new MegamanSprite*[1];
 
-	pMegaman[0] = new MegamanSprite(0, pMap->getResX(), pMap->getResY(), cam->getMoveDir());
+	pMegaman[0] = new MegamanSprite(0, 70,900, cam->getMoveDir());
 
 	
 	// Texture Hp 
@@ -39,7 +39,7 @@ Scene1::Scene1()
 	nTransitionFrames = 5 * 60;
 	count = 0;
 
-	//  Hcmt �o care 
+	//  Hcmt éo care 
 
 	//Sound::getInstance()->play("stage" + std::to_string(UIComponents::getInstance()->getCurrentStage()), true, 1);
 }
@@ -72,9 +72,8 @@ void Scene1::handlerInput()
 	while (!KeyBoard::GetInstance()->isEmpty())
 	{
 		KeyEvent e = KeyBoard::GetInstance()->Read_Key();
-		for (int i = 0; i < nPlayers; i++)
-		{
-			if (e.getCode() == UIComponents::getInstance()->getKey(UIComponents::SELECT, i))
+		
+			if (e.getCode() == UIComponents::getInstance()->getKey(UIComponents::SELECT, 0))
 			{
 				if (e.isReleased())
 				{
@@ -100,6 +99,8 @@ void Scene1::handlerInput()
 			else if (!isPause)
 			{
 				char keyCode = e.getCode();
+				//Nhớ sửa :d
+				int i = 0;
 				if (keyCode == UIComponents::getInstance()->getKey(UIComponents::RIGHT, i))
 				{
 					if (e.isPressed())
@@ -163,8 +164,6 @@ void Scene1::handlerInput()
 					}
 				}
 			}
-
-		}
 	}
 
 	KeyBoard::GetInstance()->Clean();
@@ -244,6 +243,7 @@ void Scene1::render()
 
 void Scene1::Update()
 {
+
 
 	pMap->onUpdatePlayerProperties(pMegaman[0], cam);
 	pMap->onUpdate(cam);

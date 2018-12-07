@@ -61,7 +61,7 @@ void TileLayer:: draw(Camera* cam)
 			int rowInSet = tileIDinSet / tileSet -> nColumns;
 			int dx =  tileSet -> margin + (colInSet) * ( tileSet ->spacing + tileSet -> tileWidth ) ;
 			int dy =  tileSet -> margin + (rowInSet) * ( tileSet ->spacing + tileSet -> tileHeight );
-			ppTileTmx[index ] -> draw( tileSet ->pTexture, tileSize, tileSize,dx, dy, cam);
+				ppTileTmx[index ] -> draw( tileSet ->pTexture, tileSize, tileSize,dx, dy, cam);
 		}
 	}
 }

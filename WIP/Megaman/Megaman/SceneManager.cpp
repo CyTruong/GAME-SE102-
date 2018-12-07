@@ -42,7 +42,7 @@ void SceneManager::createScene(Scene * scene)
 
 void SceneManager::Update(float dt)
 {
-	SceneManager::GetCurScene()->Update();
+	SceneManager::GetCurScene()->onUpdate();
 
 }
 
