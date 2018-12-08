@@ -4,7 +4,7 @@
 #define MSPF 1000.0f/ 60
 #define SCREEN_HEIGHT 256
 #define SCREEN_WIDTH 256
-
+#define RESOURCE_SPRITE "Resource\\Sprite\\"
 #define MEGAMANRUNSPEED 1
 
 #define max(a,b)            (((a) > (b)) ? (a) : (b))

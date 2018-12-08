@@ -6,6 +6,28 @@
 #include "Define.h"
 class MegamanData : public SpriteData
 {
+
+public:
+	RectF* bodyRects;
+	bool isFiring;
+	//std::vector<BulletSprite *> Bullets;
+	int nFiringHoldFrames;
+	int count;
+	RectF cameraRect;
+	///BulletTypes bulletType;
+	int hittableCounter;
+	int nonHittableFrames;
+	int nUndyingFrames;
+	int undyingCounter;
+	int index;
+	bool isOver;
+	bool isRapid;
+	bool isRespawn;
+	bool isUndying;
+	Direction movedir;
+
+	int isCharging;
+	int ChargingCount;
 public:
 	MegamanData()
 	{
@@ -23,7 +45,15 @@ public:
 	enum SpriteArrayIndex
 	{
 		STAND,
+		STANDSHOOT,
 		RUN,
+		RUNSHOOT,	
+		JUMP,
+		JUMPSHOOT,
+		FALL,
+		FALLSHOOT,
+		SLIDE,
+		SLIDESHOOT,
 		COUNT
 	};
 	virtual void setiCurrentArray(int index)
@@ -45,21 +75,5 @@ public:
 		//this->bulletType = BulletTypes::S;
 		this->isDead = false;
 	}
-	RectF* bodyRects;
-	bool isFiring;
-	//std::vector<BulletSprite *> Bullets;
-	int nFiringHoldFrames;
-	int count;
-	RectF cameraRect;
-	///BulletTypes bulletType;
-	int hittableCounter;
-	int nonHittableFrames;
-	int nUndyingFrames;
-	int undyingCounter;
-	int index;
-	bool isOver;
-	bool isRapid;
-	bool isRespawn;
-	bool isUndying;
-	Direction movedir;
+	
 };

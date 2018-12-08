@@ -19,9 +19,7 @@ void MegamanStandingState::onMovePressed(Direction d)
 
 void MegamanStandingState::onJumpPressed()
 {
-	hittableCalculation();
-	undyingCalculation();
-	pData->ppTextureArrays[pData->iCurrentArr]->update();
+	
 }
 
 void MegamanStandingState::onUpdate()

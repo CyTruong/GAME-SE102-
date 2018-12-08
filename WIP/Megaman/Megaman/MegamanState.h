@@ -41,7 +41,6 @@ public:
 			}
 		}
 	}
-
 	virtual void undyingCalculation()
 	{
 		if (pData->isUndying)

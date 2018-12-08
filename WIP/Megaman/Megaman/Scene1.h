@@ -26,7 +26,7 @@ public:
 
 
 private:
-	MegamanSprite** pMegaman;
+	MegamanSprite* pMegaman;
 	ViewPort* viewPort;
 	Camera* cam;
 	Map* pMap;

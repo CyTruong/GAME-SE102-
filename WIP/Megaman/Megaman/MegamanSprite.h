@@ -1,6 +1,7 @@
 #pragma once
 #include "Sprite.h"
 #include "MegamanState.h"
+#include "define.h"
 #include "MegamanRunningState.h"
 #include "MegamanStandingState.h"
 
