@@ -10,11 +10,11 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 	this->pData->movedir = movedir;
 	this->pData->ppTextureArrays = new TextureArray*[MegamanData::COUNT];
 
-	this->pData->ppTextureArrays[MegamanData::STAND] = new TextureArray("Resource\\Sprite\\", "Megaman", "Run", 4, 20);
+	this->pData->ppTextureArrays[MegamanData::STAND] = new TextureArray("Resource\\Sprite\\", "Megaman", "Stand", 4, 20);
 	this->pData->ppTextureArrays[MegamanData::STAND]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->bodyRects[MegamanData::STAND] = RectF(-15.0f , 30 , -35, 35 );
 
-	this->pData->ppTextureArrays[MegamanData::RUN] = new TextureArray("Resource\\Sprite\\", "Megaman", "Run", 4, 60);
+	this->pData->ppTextureArrays[MegamanData::RUN] = new TextureArray("Resource\\Sprite\\", "Megaman", "Run", 4, 20);
 	this->pData->ppTextureArrays[MegamanData::RUN]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->bodyRects[MegamanData::RUN] = RectF(-15.0f, 30, -35, 35);
 
