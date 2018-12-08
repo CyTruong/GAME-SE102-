@@ -244,14 +244,17 @@ void Scene1::render()
 void Scene1::Update()
 {
 
-
+	
 	pMap->onUpdatePlayerProperties(pMegaman[0], cam);
+	// update animation of tilesets in here
 	pMap->onUpdate(cam);
+
 	
-	
+	// check collision player and rect 
 			pMap->onSupportPlayer(pMegaman[0]);
 
-	
+	// check collision enemy, boss, object vs Map 
+
          	pMap->onSupportSprite();
 
 

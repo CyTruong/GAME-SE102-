@@ -83,20 +83,22 @@ public:
 	}
 	void update(float x, float y)
 	{
-
+		
 		if (moveDir.isRight())
 		{
-			if (this->x + getWidth() >= cameraTranslatePoint.x)
-			{
-				setPosition(this->x + getWidth() / 2 + vx, y);
-			}
-			else
-			{
-				setPosition(x, y);
-			}
+			//if (this->x + getWidth() >= cameraTranslatePoint.x)
+			//{
+			//	setPosition(this->x + getWidth() / 2 + vx, y);
+			//}
+			//else
+			//{
+			//	setPosition(x, y);
+			//}
+			//hCmt 
+			setPosition(x, y);
 		}
 		else
-		{
+		{/*
 			if (this->y <= cameraTranslatePoint.y + cameraTranslatePoint.height)
 			{
 
@@ -105,7 +107,9 @@ public:
 			else
 			{
 				setPosition(x, y);
-			}
+			}*/
+			setPosition(x, y); 
+
 		}
 	}
 

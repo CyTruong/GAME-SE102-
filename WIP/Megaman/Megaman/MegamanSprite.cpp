@@ -30,7 +30,12 @@ MegamanSprite::~MegamanSprite()
 
 void MegamanSprite::update()
 {
+	// update animation of cur state in pdata  
+
 	this->pData->pState->onUpdate();
+
+	// update bullet here 
+
 }
 
 void MegamanSprite::draw(Camera * cam)
