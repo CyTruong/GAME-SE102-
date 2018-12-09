@@ -23,35 +23,28 @@ public:
 		mapRect = rect;
 		this->x = x;
 		this->y = y;
-		this->x = x - (float)viewPort->getWidth() / 2.0f;
-		this->y = y - (float)viewPort->getHeight() / 2.0f;
+		//this->x = x - (float)viewPort->getWidth() / 2.0f;
+		//this->y = y - (float)viewPort->getHeight() / 2.0f;
 
-		this->x = max(this->x, mapRect.x);
-		this->y = max(this->y, mapRect.y);
+		//this->x = max(this->x, mapRect.x);
+		//this->y = max(this->y, mapRect.y);
 
-		this->x = min(this->x, mapRect.width + mapRect.x - viewPort->getWidth());
-		this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
+		//this->x = min(this->x, mapRect.width + mapRect.x - viewPort->getWidth());
+		//this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
 
-		moveDir = Direction::createRight();
-
-
-		/*if (this->y == cameraTranslatePoint.y)
+		if (this->y == cameraTranslatePoint.y)
 		{
 			moveDir = Direction::createRight();
 		}
 		else if (this->x == cameraTranslatePoint.x)
 		{
 			moveDir = Direction::createUp();
-		}*/
+		}
 		vx = vy = 1.0f;
 
 	}
 	void setPosition(float x, float y)
-	{ 
-		if (x>100)
-		{
-			
-		}
+	{
 		if (this->x < x - (float)viewPort->getWidth() / 2.0f && moveDir.isRight())
 		{
 			this->x = x - (float)viewPort->getWidth() / 2.0f;
