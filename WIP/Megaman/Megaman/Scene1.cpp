@@ -3,7 +3,7 @@
 
 Scene1::Scene1()
 {
-	std::string mapName = "BlastHornetStage"  ;
+	std::string mapName = "BlastHornetStage";
 
 	pMap = new Map(mapName);
 
@@ -17,20 +17,20 @@ Scene1::Scene1()
 	}
 */
 
-	// vpsize = tile size *15 o vuong  
+// vpsize = tile size *15 o vuong  
 
 	int viewPortSize = pMap->getMapRect().width < pMap->getMapRect().height ? pMap->getMapRect().width : pMap->getMapRect().height;
-	 viewPortSize = 17 * 15; 
+	viewPortSize = 17 * 15;
 	viewPort = new ViewPort(RectI(SCREEN_WIDTH / 2 - viewPortSize / 2, SCREEN_HEIGHT / 2 - viewPortSize / 2, viewPortSize, viewPortSize));
 
 
-	cam = new Camera(viewPort,10,760, viewPort->getPort(), RectF(5,760,205,205));
+	cam = new Camera(viewPort, 70, 900, RectF(0, 760, 760, 250), RectF(7700, 760, 50, 500));
 
 
 
-	pMegaman = new MegamanSprite(0, 70,900, cam->getMoveDir());
+	pMegaman = new MegamanSprite(0, 70, 900, cam->getMoveDir());
 
-	
+
 	// Texture Hp 
 
 	isPause = false;
@@ -55,16 +55,16 @@ Scene1 ::~Scene1()
 	cam = NULL;
 	delete pMap;
 	pMap = NULL;
-	
+
 	//del hp 
 
 }
 
 void Scene1::onCollision()
 {
-	
-		pMap->onCollisionvsPlayer(pMegaman, cam);
-	    pMap->onCollision(cam);
+
+	pMap->onCollisionvsPlayer(pMegaman, cam);
+	pMap->onCollision(cam);
 }
 
 void Scene1::handlerInput()
@@ -72,87 +72,83 @@ void Scene1::handlerInput()
 	while (!KeyBoard::GetInstance()->isEmpty())
 	{
 		KeyEvent e = KeyBoard::GetInstance()->ReadPop_Key();
-		
-			//xét is pause
+
+		//xét is pause
 
 
-			if (!isPause)
+		if (!isPause)
+		{
+			char keyCode = e.getCode();
+			//Lưu ý lỗi michale jack
+			if (keyCode == UIComponents::getInstance()->getKey(UIComponents::RIGHT))
 			{
-				char keyCode = e.getCode();
-				//Lưu ý lỗi michale jack
-				if (keyCode == UIComponents::getInstance()->getKey(UIComponents::RIGHT))
+				if (e.isPressed())
 				{
-					if (e.isPressed())
-					{
-						pMegaman->getState()->onMovePressed(Direction::createRight());
-					}
-					else
-					{
-						pMegaman->getState()->onMoveReleased(Direction::createRight());
-					}
+					pMegaman->getState()->onMovePressed(Direction::createRight());
 				}
-				else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::LEFT))
+				else
 				{
-					if (e.isPressed())
-					{
-						pMegaman->getState()->onMovePressed(Direction::createLeft());
-					}
-					else
-					{
-						pMegaman->getState()->onMoveReleased(Direction::createLeft());
-					}
-				}
-				else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::UP))
-				{
-					if (e.isPressed())
-					{
-						pMegaman->getState()->onVeticalDirectionPressed(Direction::createUp());
-					}
-					else
-					{
-						pMegaman->getState()->onVeticalDirectionReleased();
-					}
-				}
-				else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::DOWN))
-				{
-					if (e.isPressed())
-					{
-						pMegaman->getState()->onVeticalDirectionPressed(Direction::createDown());
-					}
-					else
-					{
-						pMegaman->getState()->onVeticalDirectionReleased();
-					}
-				}
-				else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::JUMP))
-				{
-					if (e.isPressed())
-					{
-						pMegaman->getState()->onJumpPressed();
-					}
-					else
-					{
-						pMegaman->getState()->onJumpRelease();
-					}
-				}
-				else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::FIRE))
-				{
-					if (e.isPressed())
-					{
-						pMegaman->getState()->onFirePressed();
-					}
-					else
-					{
-						pMegaman->getState()->onFireRelease();
-					}
-				}
-				else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::SLIDE)) {
-					if (e.isPressed()) 
-					{
-						pMegaman->getState()->onSlidePressed();
-					}
+					pMegaman->getState()->onMoveReleased(Direction::createRight());
 				}
 			}
+			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::LEFT))
+			{
+				if (e.isPressed())
+				{
+					pMegaman->getState()->onMovePressed(Direction::createLeft());
+				}
+				else
+				{
+					pMegaman->getState()->onMoveReleased(Direction::createLeft());
+				}
+			}
+			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::UP))
+			{
+				if (e.isPressed())
+				{
+					pMegaman->getState()->onVeticalDirectionPressed(Direction::createUp());
+				}
+				else
+				{
+					pMegaman->getState()->onVeticalDirectionReleased();
+				}
+			}
+			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::DOWN))
+			{
+				if (e.isPressed())
+				{
+					pMegaman->getState()->onVeticalDirectionPressed(Direction::createDown());
+				}
+				else
+				{
+					pMegaman->getState()->onVeticalDirectionReleased();
+				}
+			}
+			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::JUMP))
+			{
+				if (e.isPressed())
+				{
+					pMegaman->getState()->onJumpPressed();
+				}
+				else
+				{
+					pMegaman->getState()->onJumpRelease();
+				}
+			}
+			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::FIRE))
+			{
+				if (e.isPressed())
+				{
+					pMegaman->getState()->onFirePressed();
+				}
+			}
+			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::SLIDE)) {
+				if (e.isPressed())
+				{
+					pMegaman->getState()->onSlidePressed();
+				}
+			}
+		}
 	}
 
 	KeyBoard::GetInstance()->Clean();
@@ -160,35 +156,35 @@ void Scene1::handlerInput()
 }
 void Scene1::onUpdate()
 {
-//	if (isGameOver)
-//	{
-//		count++;
-//		if (count == nTransitionFrames)
-//		{
-//			//GameSaveLoad::getInstance()->checkAndSaveScore(UIComponents::getInstance()->getScore());
-//			SceneManager::getInstance()->createSceneWithRandomTransition(new GameOverScene());
-//			return;
-//		}
-//	}
-//	else if (isFinish)
-//	{
-//		count++;
-//		if (count == nTransitionFrames)
-//		{
-//			if (UIComponents::getInstance()->getCurrentStage() < 3)
-//			{
-//				UIComponents::getInstance()->setStage(UIComponents::getInstance()->getCurrentStage() + 1);
-//				SceneManager::getInstance()->createScene(new LoadingScene());
-//			}
-//			else
-//			{
-//				SceneManager::getInstance()->createScene(new EndingScene());
-//			}
-//			return;
-//		}
-//	}
+	//	if (isGameOver)
+	//	{
+	//		count++;
+	//		if (count == nTransitionFrames)
+	//		{
+	//			//GameSaveLoad::getInstance()->checkAndSaveScore(UIComponents::getInstance()->getScore());
+	//			SceneManager::getInstance()->createSceneWithRandomTransition(new GameOverScene());
+	//			return;
+	//		}
+	//	}
+	//	else if (isFinish)
+	//	{
+	//		count++;
+	//		if (count == nTransitionFrames)
+	//		{
+	//			if (UIComponents::getInstance()->getCurrentStage() < 3)
+	//			{
+	//				UIComponents::getInstance()->setStage(UIComponents::getInstance()->getCurrentStage() + 1);
+	//				SceneManager::getInstance()->createScene(new LoadingScene());
+	//			}
+	//			else
+	//			{
+	//				SceneManager::getInstance()->createScene(new EndingScene());
+	//			}
+	//			return;
+	//		}
+	//	}
 
-	this->handlerInput(); 
+	this->handlerInput();
 
 	// not nessc 
 
@@ -213,52 +209,54 @@ void Scene1::onUpdate()
 }
 void Scene1::render()
 {
-	
-		Graphics::getInstance()->beginRender();
-		Graphics::getInstance()->getSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
 
-		pMap->draw(cam);
-		
-		pMegaman->draw(cam);
+	Graphics::getInstance()->beginRender();
+	Graphics::getInstance()->getSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
 
-		//draw HP col 
+	pMap->draw(cam);
+
+	pMegaman->draw(cam);
+
+	//draw HP col 
 
 
-		Graphics::getInstance()->getSpriteHandler()->End();
-		Graphics::getInstance()->endRender();
-	
+	Graphics::getInstance()->getSpriteHandler()->End();
+	Graphics::getInstance()->endRender();
+
 
 }
 
 void Scene1::Update()
 {
 
-	
+
 	pMap->onUpdatePlayerProperties(pMegaman, cam);
 	// update animation of tilesets in here
 	pMap->onUpdate(cam);
 
-	
+
 	// check collision player and rect 
-			pMap->onSupportPlayer(pMegaman);
+	pMap->onSupportPlayer(pMegaman);
 
 	// check collision enemy, boss, object vs Map 
 
-         pMap->onSupportSprite();
+	pMap->onSupportSprite();
 
 
-		pMegaman->update();
+	pMegaman->update();
 
-	
 
-		cam->update(pMegaman->getX(), pMegaman->getY());
-	
+	if (pMegaman->getX() < 20)
+	{
+		int a = 0;
 
-		//update megaman theo cái cam
-		if (!pMegaman->isPlayerOver())
-		{
-			pMegaman->setCameraRect(cam->getRect());
-		}
+	}
+	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir());
+
+
+	//update megaman theo cái cam
+	pMegaman->setCameraRect(cam->getRect());
+
 
 
 

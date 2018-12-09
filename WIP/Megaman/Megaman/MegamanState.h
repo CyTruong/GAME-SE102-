@@ -55,8 +55,11 @@ public:
 	}
 	
 
-
-
+	/*virtual char getTypeofBullet(int count) {
+		if (count < MEGAMAN_CHARGE_LIMIT_S) {
+			
+		}
+	}*/
 protected:
 	MegamanData* pData;
 	//dùng để check xem khi phím dc release

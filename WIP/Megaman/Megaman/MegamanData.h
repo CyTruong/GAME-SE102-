@@ -9,7 +9,7 @@ class MegamanData : public SpriteData
 
 public:
 	RectF* bodyRects;
-	bool isFiring;
+	
 	//std::vector<BulletSprite *> Bullets;
 	int nFiringHoldFrames;
 	int count;
@@ -26,7 +26,7 @@ public:
 	bool isUndying;
 	Direction movedir;
 
-	int isCharging;
+	bool isCharging;
 	int ChargingCount;
 public:
 	MegamanData()

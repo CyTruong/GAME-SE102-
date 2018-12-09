@@ -38,17 +38,6 @@ void MegamanRunningState::onUpdate()
 	pData->vx = pData->transform(MEGAMANRUNSPEED);
 	pData->x += pData->vx;
 
-	if (pData->isFiring)
-	{
-		pData->count++;
-		pData->count %= pData->nFiringHoldFrames;
-		if (pData->count == 0)
-		{
-			pData->isFiring = false;
-
-			pData->setiCurrentArray(MegamanData::RUN);
-		}
-	}
 }
 
 void MegamanRunningState::onJumpPressed()

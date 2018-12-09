@@ -34,30 +34,12 @@ void MegamanStandingState::onUpdate()
 	hittableCalculation();
 	undyingCalculation();
 	pData->ppTextureArrays[pData->iCurrentArr]->update();
-	/*pData->x += (pData->cDynamicSupportRect) ? pData->cDynamicSupportRect->vx : 0.0f;
-	pData->y += (pData->cDynamicSupportRect) ? pData->cDynamicSupportRect->vy : 0.0f;*/
-	if (pData->isFiring)
-	{
-		pData->count++;
-		pData->count %= pData->nFiringHoldFrames;
-		if (pData->count == 0)
-		{
-			pData->isFiring = false;
 
-			/*if (pData->verticalDir.isDown())
-			{
-				pData->setiCurrentArray(PlayerData::STANDDOWN);
-			}
-
-			else if (pData->verticalDir.isUp())
-			{
-				pData->setiCurrentArray(PlayerData::STANDUP);
-			}
-			else
-				pData->setiCurrentArray(PlayerData::STAND);*/
-			pData->setiCurrentArray(MegamanData::STAND);
-		}
+	if (pData->isCharging) {
+		pData->ChargingCount++;
+		
 	}
+	
 }
 
 void MegamanStandingState::onVeticalDirectionPressed(Direction d)
@@ -73,7 +55,13 @@ void MegamanStandingState::onVeticalDirectionReleased()
 
 void MegamanStandingState::onFirePressed()
 {
+	pData->isCharging = true;
+}
 
+void MegamanStandingState::onFireRelease()
+{
+	pData->isCharging = false;
+	pData->ChargingCount = 0;
 }
 
 void MegamanStandingState::onFall()

@@ -21,25 +21,27 @@ public:
 		this->viewPort = viewPort;
 		this->cameraTranslatePoint = cameraTranslatePoint;
 		mapRect = rect;
-		this->x = x;
-		this->y = y;
-		//this->x = x - (float)viewPort->getWidth() / 2.0f;
-		//this->y = y - (float)viewPort->getHeight() / 2.0f;
+		/*this->x = x;
+		this->y = y;*/
+		this->x = x - (float)viewPort->getWidth() / 2.0f;
+		this->y = y - (float)viewPort->getHeight() / 2.0f;
 
-		//this->x = max(this->x, mapRect.x);
-		//this->y = max(this->y, mapRect.y);
+		this->x = max(this->x, mapRect.x);
+		this->y = max(this->y, mapRect.y);
 
-		//this->x = min(this->x, mapRect.width + mapRect.x - viewPort->getWidth());
-		//this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
+		this->x = min(this->x, mapRect.width + mapRect.x - viewPort->getWidth());
+		this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
 
-		if (this->y == cameraTranslatePoint.y)
-		{
-			moveDir = Direction::createRight();
-		}
-		else if (this->x == cameraTranslatePoint.x)
-		{
-			moveDir = Direction::createUp();
-		}
+		moveDir = Direction::createRight();
+		/*
+				if (this->y == cameraTranslatePoint.y)
+				{
+					moveDir = Direction::createRight();
+				}
+				else if (this->x == cameraTranslatePoint.x)
+				{
+					moveDir = Direction::createUp();
+				}*/
 		vx = vy = 1.0f;
 
 	}
@@ -51,6 +53,18 @@ public:
 			this->x = max(this->x, mapRect.x);
 			this->x = min(this->x, mapRect.width + mapRect.x - viewPort->getWidth());
 		}
+
+
+		else if (this->x > x - (float)viewPort->getWidth() / 2.0f && moveDir.isLeft())
+		{
+			this->x = x - (float)viewPort->getWidth() / 2.0f;
+			this->x = max(this->x, mapRect.x);
+			this->x = min(this->x, mapRect.width + mapRect.x - viewPort->getWidth());
+
+
+
+		}
+
 		else if (this->y > y - (float)viewPort->getHeight() / 2.0f && moveDir.isUp())
 		{
 			this->y = y - (float)viewPort->getHeight() / 2.0f;
@@ -81,19 +95,21 @@ public:
 	{
 		return RectF(x, y, getWidth(), getHeight());
 	}
-	void update(float x, float y)
+	void update(float x, float y, Direction d)
+
 	{
-		
+		moveDir = d;
+
 		if (moveDir.isRight())
 		{
-			//if (this->x + getWidth() >= cameraTranslatePoint.x)
-			//{
-			//	setPosition(this->x + getWidth() / 2 + vx, y);
-			//}
-			//else
-			//{
-			//	setPosition(x, y);
-			//}
+			if (this->x + getWidth() >= cameraTranslatePoint.x)
+			{
+				setPosition(this->x + getWidth() / 2 + vx, y);
+			}
+			else
+			{
+				setPosition(x, y);
+			}
 			//hCmt 
 			setPosition(x, y);
 		}
@@ -108,7 +124,7 @@ public:
 			{
 				setPosition(x, y);
 			}*/
-			setPosition(x, y); 
+			setPosition(x, y);
 
 		}
 	}

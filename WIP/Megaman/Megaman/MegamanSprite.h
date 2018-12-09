@@ -24,6 +24,10 @@ public:
 	virtual float getVy() { return pData->vy; }
 	virtual float getX() { return pData->x; }
 	virtual float getY() { return pData->y; }
+	//hcmt 
+	virtual Direction getMoveDir() { return pData->dir; }
+
+
 	virtual float getCenterX() { return pData->x; }
 	virtual float getCenterY() { return pData->y - pData->ppTextureArrays[pData->iCurrentArr]->getHeight() / 2; }
 	virtual void onUnsupported() { pData->pState->onFall(); }

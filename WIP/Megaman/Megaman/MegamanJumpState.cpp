@@ -201,15 +201,6 @@ void MegamanJumpState::onUpdate()
 	pData->x += pData->vx ;
 	pData->y += pData->vy ;
 
-	if (pData->isFiring)
-	{
-		pData->count++;
-		pData->count %= pData->nFiringHoldFrames;
-		if (pData->count == 0)
-		{
-			pData->isFiring = false;
-		}
-	}
 
 }
 

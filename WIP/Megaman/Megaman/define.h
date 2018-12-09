@@ -7,5 +7,9 @@
 #define RESOURCE_SPRITE "Resource\\Sprite\\"
 #define MEGAMANRUNSPEED 1
 
+#define MEGAMAN_CHARGE_LIMIT_S 10
+#define MEGAMAN_CHARGE_LIMIT_M 30
+#define MEGAMAN_CHARGE_LIMIT_L 50
+
 #define max(a,b)            (((a) > (b)) ? (a) : (b))
 #define min(a,b)            (((a) < (b)) ? (a) : (b))
