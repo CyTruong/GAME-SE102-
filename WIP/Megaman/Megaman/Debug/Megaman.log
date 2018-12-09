@@ -1,4 +1,4 @@
-﻿  MegamanRunningState.cpp
+﻿  MegamanJumpState.cpp
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(82): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [

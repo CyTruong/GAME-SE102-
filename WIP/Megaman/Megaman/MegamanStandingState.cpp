@@ -2,6 +2,7 @@
 #include "MegamanStandingState.h"
 #include "MegamanRunningState.h"
 #include "MegamanJumpState.h"
+#include "MegamanSlideState.h"
 
 MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
@@ -25,6 +26,7 @@ void MegamanStandingState::onJumpPressed()
 
 void MegamanStandingState::onSlidePressed()
 {
+	transition(new MegamanSlideState(this->pData));
 }
 
 void MegamanStandingState::onUpdate()

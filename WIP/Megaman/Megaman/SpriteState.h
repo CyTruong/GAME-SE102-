@@ -22,6 +22,7 @@ public:
 	virtual void onMoveVerticalPressed(Direction dir) {}
 	virtual void onMoveVerticalReleased(Direction dir) {}
 	virtual void onFirePressed() {}
+	virtual void onFireRelease() {}
 	virtual void onDead() {}
 	virtual void onCameraCollision(RectF cameraRect) {}
 	virtual void createBullet(float x, float y, float angle) {}

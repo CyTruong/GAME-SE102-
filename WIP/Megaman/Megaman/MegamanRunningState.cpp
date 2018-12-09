@@ -3,7 +3,7 @@
 #include "MegamanStandingState.h"
 #include "MegamanJumpState.h"
 #include "KeyBoard.h"
-
+#include "MegamanSlideState.h"
 
 MegamanRunningState::MegamanRunningState(MegamanData* data) 
 {
@@ -58,6 +58,7 @@ void MegamanRunningState::onJumpPressed()
 
 void MegamanRunningState::onSlidePressed()
 {
+	transition(new MegamanSlideState(this->pData));
 }
 
 void MegamanRunningState::onCollision(RectF rect)
@@ -90,6 +91,10 @@ void MegamanRunningState::onFall()
 }
 
 void MegamanRunningState::onFirePressed()
+{
+}
+
+void MegamanRunningState::onFireRelease()
 {
 }
 

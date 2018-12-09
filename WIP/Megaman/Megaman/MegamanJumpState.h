@@ -20,6 +20,7 @@ public:
 	void onDynamicObjectCollision(CollisionRectF* cRect);
 	void onUpdate();
 	void onFirePressed();
+	void onFireRelease();
 	void onVeticalDirectionPressed(Direction d);
 	void onVeticalDirectionReleased();
 	virtual void onDead();

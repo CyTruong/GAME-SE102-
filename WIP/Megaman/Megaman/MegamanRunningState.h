@@ -18,6 +18,7 @@ public:
 	void onDynamicObjectCollision(CollisionRectF* rect);
 	void onFall();
 	void onFirePressed();
+	void onFireRelease();
 	void onVeticalDirectionPressed( Direction d);
 	void onVeticalDirectionReleased();
 	virtual void onDead();

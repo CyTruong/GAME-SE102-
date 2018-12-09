@@ -141,6 +141,10 @@ void Scene1::handlerInput()
 					{
 						pMegaman->getState()->onFirePressed();
 					}
+					else
+					{
+						pMegaman->getState()->onFireRelease();
+					}
 				}
 				else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::SLIDE)) {
 					if (e.isPressed()) 

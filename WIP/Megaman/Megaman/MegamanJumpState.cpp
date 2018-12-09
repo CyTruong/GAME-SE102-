@@ -1,6 +1,6 @@
 ﻿#include "MegamanJumpState.h"
 // Note ; thêm sate là climpling, súng đạm, check collision
-
+#include "MegamanSlideState.h"
 
 MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy)
 {
@@ -10,7 +10,7 @@ MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy)
 	acceleration = 0.2f;
 
 	this->isMoving = ismove;
-	if (vy < 0) {
+	if (pData->vy < 0) {
 		pData->setiCurrentArray(MegamanData::JUMP);
 		isJumpingPress = true;
 	}
@@ -52,6 +52,7 @@ void MegamanJumpState::onJumpRelease()
 
 void MegamanJumpState::onSlidePressed()
 {
+	transition(new MegamanSlideState(pData));
 }
 
 void MegamanJumpState::onCollision(RectF rect)
@@ -192,6 +193,11 @@ void MegamanJumpState::onUpdate()
 	}
 	pData->vy += acceleration;
 
+	if (pData->vy>= 0) {
+		pData->setiCurrentArray(MegamanData::FALL);
+		isJumpingPress = false;
+	}
+
 	pData->x += pData->vx ;
 	pData->y += pData->vy ;
 
@@ -208,6 +214,10 @@ void MegamanJumpState::onUpdate()
 }
 
 void MegamanJumpState::onFirePressed()
+{
+}
+
+void MegamanJumpState::onFireRelease()
 {
 }
 

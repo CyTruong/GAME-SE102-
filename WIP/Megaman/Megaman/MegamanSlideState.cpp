@@ -1,7 +1,7 @@
 #include "MegamanSlideState.h"
 #include "MegamanJumpState.h"
 #include "MegamanRunningState.h"
-
+#include "MegamanStandingState.h"
 
 
 MegamanSlideState::~MegamanSlideState()
@@ -12,8 +12,8 @@ MegamanSlideState::MegamanSlideState(MegamanData* data)
 {
 	this->pData = data;
 	this->pData->setiCurrentArray(MegamanData::SLIDE);
-	speedSlideX = 5;
-	Friction = 4;
+	speedSlideX = 8;
+	Friction = 0.35f;
 }
 
 void MegamanSlideState::onMovePressed(Direction dir)
@@ -53,15 +53,22 @@ void MegamanSlideState::onUpdate()
 {
 	hittableCalculation();
 	undyingCalculation();
+	pData->ppTextureArrays[MegamanData::SLIDE]->update();
 	pData->vx = pData->transform(speedSlideX);
 	speedSlideX -= Friction;
 	pData->x += pData->vx;
-	if (pData->vy != 0) {
-		transition(new MegamanJumpState(pData, true, pData->vy));
-	}
-	else
+	
+	
+	if(speedSlideX<= 0)
 	{
-		transition(new MegamanRunningState(pData));
+		if (pData->vy != 0) {
+			transition(new MegamanJumpState(pData, true, pData->vy));
+		}
+		else
+		{
+			transition(new MegamanStandingState(pData));
+
+		}
 	}
 
 }

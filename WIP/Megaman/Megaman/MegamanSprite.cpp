@@ -42,7 +42,7 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 	this->pData->ppTextureArrays[MegamanData::FALLSHOOT]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->bodyRects[MegamanData::FALLSHOOT] = RectF(-17, -43, 41, 43);
 
-	this->pData->ppTextureArrays[MegamanData::SLIDE] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Slide", 5, 10);
+	this->pData->ppTextureArrays[MegamanData::SLIDE] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Slide", 5,6);
 	this->pData->ppTextureArrays[MegamanData::SLIDE]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->bodyRects[MegamanData::SLIDE] = RectF(-20, -25, 39, 35);
 
