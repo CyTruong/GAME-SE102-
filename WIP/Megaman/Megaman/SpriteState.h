@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "SpriteData.h"
 class SpriteState
 {
@@ -11,8 +11,11 @@ public:
 	virtual void onVeticalDirectionReleased() {}
 	virtual void onJumpPressed() {}
 	virtual void onJumpRelease() {}
+	virtual void onSlidePressed() {}
 	virtual void onUpdate() {}
+	//va chạm vs obj tĩnh
 	virtual void onCollision(RectF rect) {}
+	//va chạm vs các obj đông
 	virtual void onCollision(CollisionRectF rect) {}
 	virtual void onDynamicObjectCollision(CollisionRectF* rect) {}
 	virtual void onFall() {}

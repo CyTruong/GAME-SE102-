@@ -34,6 +34,7 @@ public:
 		DOWN,
 		FIRE,
 		JUMP,
+		SLIDE,
 		SELECT,
 		COUNT
 	} KEY;

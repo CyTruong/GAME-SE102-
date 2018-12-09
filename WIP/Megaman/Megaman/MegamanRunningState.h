@@ -5,7 +5,6 @@
 class MegamanRunningState : public MegamanState
 {
 
-private:
 
 public:
 	MegamanRunningState(MegamanData* data);
@@ -13,6 +12,7 @@ public:
 	void onMoveReleased(Direction d);
 	void onUpdate() ;
 	void onJumpPressed();
+	void onSlidePressed();
 	void onCollision(RectF rect );
 	void onCollision(CollisionRectF rect );
 	void onDynamicObjectCollision(CollisionRectF* rect);

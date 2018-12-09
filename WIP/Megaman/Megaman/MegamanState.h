@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "SpriteState.h"
 #include "MegamanData.h"
@@ -53,10 +53,12 @@ public:
 			}
 		}
 	}
-
+	
 
 
 
 protected:
 	MegamanData* pData;
+	//dùng để check xem khi phím dc release
+	Direction tempDir;
 };

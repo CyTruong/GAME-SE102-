@@ -73,33 +73,13 @@ void Scene1::handlerInput()
 	{
 		KeyEvent e = KeyBoard::GetInstance()->ReadPop_Key();
 		
-			if (e.getCode() == UIComponents::getInstance()->getKey(UIComponents::SELECT))
-			{
-				if (e.isReleased())
-				{
-					isPause = !isPause;
-				}
-				break;
-			}
-			else if (e.getCode() == VK_F1)
-			{
-				if (e.isReleased())
-				{
-					//Sound::getInstance()->mute();
-				}
-			}
-			else if (e.getCode() == VK_F2)
-			{
-				if (e.isReleased())
-				{
-					//Sound::getInstance()->unMute();
-				   //	Sound::getInstance()->play("stage" + std::to_string(UIComponents::getInstance()->getCurrentStage()), true, 1);
-				}
-			}
-			else if (!isPause)
+			//xét is pause
+
+
+			if (!isPause)
 			{
 				char keyCode = e.getCode();
-				//Nhớ sửa :d
+				//Lưu ý lỗi michale jack
 				if (keyCode == UIComponents::getInstance()->getKey(UIComponents::RIGHT))
 				{
 					if (e.isPressed())
@@ -160,6 +140,12 @@ void Scene1::handlerInput()
 					if (e.isPressed())
 					{
 						pMegaman->getState()->onFirePressed();
+					}
+				}
+				else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::SLIDE)) {
+					if (e.isPressed()) 
+					{
+						pMegaman->getState()->onSlidePressed();
 					}
 				}
 			}

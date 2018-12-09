@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "MegamanStandingState.h"
 #include "MegamanRunningState.h"
+#include "MegamanJumpState.h"
 
 MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
@@ -19,7 +20,11 @@ void MegamanStandingState::onMovePressed(Direction d)
 
 void MegamanStandingState::onJumpPressed()
 {
-	
+	transition(new MegamanJumpState(this->pData, true, -4.5f));
+}
+
+void MegamanStandingState::onSlidePressed()
+{
 }
 
 void MegamanStandingState::onUpdate()

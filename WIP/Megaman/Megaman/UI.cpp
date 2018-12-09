@@ -25,6 +25,7 @@ UIComponents::UIComponents()
 	configKeyBoard[DOWN] = defaultKeyBoard[DOWN] = VK_DOWN;
 	configKeyBoard[FIRE] = defaultKeyBoard[FIRE] = 0x43;  //C
 	configKeyBoard[JUMP] = defaultKeyBoard[JUMP] = 0x58;  //X
+	configKeyBoard[SLIDE] = defaultKeyBoard[SLIDE] = 0x5A; //Z	
 	configKeyBoard[SELECT] = defaultKeyBoard[SELECT] = VK_RETURN;
 }
 

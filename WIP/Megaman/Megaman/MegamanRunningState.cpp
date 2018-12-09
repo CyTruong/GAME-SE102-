@@ -1,8 +1,8 @@
 ﻿#include "MegamanRunningState.h"
 #include "define.h"
 #include "MegamanStandingState.h"
-
-
+#include "MegamanJumpState.h"
+#include "KeyBoard.h"
 
 
 MegamanRunningState::MegamanRunningState(MegamanData* data) 
@@ -10,17 +10,24 @@ MegamanRunningState::MegamanRunningState(MegamanData* data)
 	this->pData = data;
 	pData->setiCurrentArray(MegamanData::RUN);
 	pData->vy = 0;
-	pData->vx = 1.5;
+	tempDir = pData->dir;
 }
 
 void MegamanRunningState::onMovePressed(Direction d)
 {
 	pData->dir = d;
+	tempDir = d;
 }
 
 void MegamanRunningState::onMoveReleased(Direction d)
 {
-	transition(new MegamanStandingState(pData));
+	tempDir = tempDir ^ d;
+	if(!tempDir.isNone())
+	{		
+		pData -> dir = tempDir;
+	}
+	else
+	transition(new MegamanStandingState(pData)); // thả đúng phím
 }
 
 void MegamanRunningState::onUpdate()
@@ -46,7 +53,11 @@ void MegamanRunningState::onUpdate()
 
 void MegamanRunningState::onJumpPressed()
 {
-	//Jump
+	transition(new MegamanJumpState(this->pData, true, -4.5f));
+}
+
+void MegamanRunningState::onSlidePressed()
+{
 }
 
 void MegamanRunningState::onCollision(RectF rect)
