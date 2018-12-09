@@ -20,15 +20,15 @@ Scene1::Scene1()
 	// vpsize = tile size *15 o vuong  
 
 	int viewPortSize = pMap->getMapRect().width < pMap->getMapRect().height ? pMap->getMapRect().width : pMap->getMapRect().height;
-	 viewPortSize = 17 * 15; 
+	viewPortSize = 17 * 15;
 	viewPort = new ViewPort(RectI(SCREEN_WIDTH / 2 - viewPortSize / 2, SCREEN_HEIGHT / 2 - viewPortSize / 2, viewPortSize, viewPortSize));
 
 
-	cam = new Camera(viewPort,10,760, viewPort->getPort(), RectF(5,760,205,205));
+	cam = new Camera(viewPort, 70, 900, RectF(0, 760, 760, 250), RectF(7700, 760, 50, 500));
 
 
 
-	pMegaman = new MegamanSprite(0, 70,900, cam->getMoveDir());
+	pMegaman = new MegamanSprite(0, 70, 900, cam->getMoveDir());
 
 	
 	// Texture Hp 
@@ -256,19 +256,18 @@ void Scene1::Update()
 
          pMap->onSupportSprite();
 
-
+		 // update x,y,vx .... and update textture 
 		pMegaman->update();
 
 	
-
+		// update posittion of cam 
 		cam->update(pMegaman->getX(), pMegaman->getY());
 	
 
 		//update megaman theo cái cam
-		if (!pMegaman->isPlayerOver())
-		{
+	
 			pMegaman->setCameraRect(cam->getRect());
-		}
+	
 
 
 
