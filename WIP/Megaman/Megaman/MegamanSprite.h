@@ -58,44 +58,7 @@ public:
 	virtual bool isHittable() { return pData->isHittable; }
 	virtual int getDamage();
 	void setCameraRect(RectF r);
-	/*void setBulletType(BulletTypes type)
-	{
-
-		switch (type)
-		{
-		case M:
-			Sound::getInstance()->play("weaponM", false, 1);
-			pData->bulletType = type;
-			break;
-		case F:
-			Sound::getInstance()->play("weaponF", false, 1);
-			pData->bulletType = type;
-			break;
-		case S:
-			Sound::getInstance()->play("weaponS", false, 1);
-			pData->bulletType = type;
-			break;
-		case B:
-			Sound::getInstance()->play("weaponB", false, 1);
-			pData->isUndying = true;
-			break;
-		case L:
-			Sound::getInstance()->play("weaponL", false, 1);
-			pData->bulletType = type;
-			break;
-		case R:
-			Sound::getInstance()->play("weaponR", false, 1);
-			pData->isRapid = true;
-			break;
-		case N:
-			break;
-		case D:
-			Sound::getInstance()->play("weaponD", false, 1);
-			break;
-		default:
-			break;
-		}
-	}*/
+	
 	int getIndex()
 	{
 		return pData->index;

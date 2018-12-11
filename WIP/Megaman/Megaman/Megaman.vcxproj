@@ -149,6 +149,7 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Layer.h" />
+    <ClInclude Include="LogWriter.h" />
     <ClInclude Include="MegamanJumpState.h" />
     <ClInclude Include="MegamanSlideState.h" />
     <ClInclude Include="MegamanStandingState.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="MegamanData.h" />
     <ClInclude Include="MegamanSprite.h" />
     <ClInclude Include="MegamanState.h" />
+    <ClInclude Include="MegamanWallClimping.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectData.h" />
     <ClInclude Include="ObjectSprite.h" />
@@ -194,12 +196,14 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
+    <ClCompile Include="LogWriter.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MegamanJumpState.cpp" />
     <ClCompile Include="MegamanRunningState.cpp" />
     <ClCompile Include="MegamanSlideState.cpp" />
     <ClCompile Include="MegamanSprite.cpp" />
     <ClCompile Include="MegamanStandingState.cpp" />
+    <ClCompile Include="MegamanWallClimping.cpp" />
     <ClCompile Include="ObjectData.cpp" />
     <ClCompile Include="ObjectSprite.cpp" />
     <ClCompile Include="ObjectState.cpp" />

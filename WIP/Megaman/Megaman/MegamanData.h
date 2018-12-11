@@ -11,7 +11,6 @@ public:
 	RectF* bodyRects;
 	
 	//std::vector<BulletSprite *> Bullets;
-	int nFiringHoldFrames;
 	int count;
 	RectF cameraRect;
 	///BulletTypes bulletType;
@@ -28,12 +27,14 @@ public:
 
 	bool isCharging;
 	int ChargingCount;
+	bool isFrire;
+	int FireCountFrames;
+	int bulletType;
 public:
 	MegamanData()
 	{
 		hittableCounter = 0;
 		nonHittableFrames = 150;
-		nFiringHoldFrames = 15;
 		nUndyingFrames = 600;
 		undyingCounter = 0;
 		isOver = false;
@@ -54,6 +55,10 @@ public:
 		FALLSHOOT,
 		SLIDE,
 		SLIDESHOOT,
+		NOCHARGE,
+		CHARGING1,
+		CHARGING2,
+		CHARGING3,
 		COUNT
 	};
 	virtual void setiCurrentArray(int index)

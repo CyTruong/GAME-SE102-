@@ -717,7 +717,11 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 		if (std::find(throughRectVector.begin(), throughRectVector.end(), returnList[i]) == throughRectVector.end())
 		{
 			if (sprite->getBody().checkCollision(returnList[i].rect))
-			{
+			{  /*
+				if (returnList[i].type=="wall")
+				{
+					int a = 1; 
+				}*/
 				sprite->onCollision(returnList[i]);
 			}
 		}

@@ -25,6 +25,7 @@ public:
 	void onMoveVerticalPressed(Direction dir);
 	void onMoveVerticalReleased(Direction dir);
 	void onFirePressed();
+	void onFireRelease();
 	void onDead();
 	void onCameraCollision(RectF cameraRect);
 	void createBullet(float x, float y, float angle);

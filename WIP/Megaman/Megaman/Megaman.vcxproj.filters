@@ -177,6 +177,12 @@
     <ClInclude Include="MegamanSlideState.h">
       <Filter>Megaman</Filter>
     </ClInclude>
+    <ClInclude Include="MegamanWallClimping.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="LogWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -280,6 +286,12 @@
     </ClCompile>
     <ClCompile Include="MegamanSlideState.cpp">
       <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanWallClimping.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="LogWriter.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

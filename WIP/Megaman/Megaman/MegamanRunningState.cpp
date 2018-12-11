@@ -38,6 +38,27 @@ void MegamanRunningState::onUpdate()
 	pData->vx = pData->transform(MEGAMANRUNSPEED);
 	pData->x += pData->vx;
 
+
+	if (pData->isCharging) {
+		pData->ChargingCount++;
+		pData->bulletType = getTypeofBullet(pData->ChargingCount);
+		pData->ppTextureArrays[pData->bulletType]->update();
+	}
+
+	if (pData->isFrire && pData->iCurrentArr == MegamanData::RUN) {
+		pData->setiCurrentArray(MegamanData::RUNSHOOT);
+	}
+	if (!pData->isFrire && pData->iCurrentArr == MegamanData::RUNSHOOT) {
+		pData->setiCurrentArray(MegamanData::RUN);
+	}
+
+	if (pData->isFrire) {
+		pData->FireCountFrames++;
+		if (pData->FireCountFrames > FIRE_COUNTING_FRAME) {
+			pData->FireCountFrames = 0;
+			pData->isFrire = false;
+		}
+	}
 }
 
 void MegamanRunningState::onJumpPressed()
@@ -64,9 +85,19 @@ void MegamanRunningState::onCollision(RectF rect)
 	}
 }
 
-void MegamanRunningState::onCollision(CollisionRectF rect)
+void MegamanRunningState::onCollision(CollisionRectF crect)
 {
-	pData->cThroughRect.push_back(rect);
+	pData->cThroughRect.push_back(crect);
+	if (pData->vx > 0)
+	{
+		pData->x -= pData->getBody().x + pData->getBody().width - crect.rect.x;
+		pData->vx = 0;
+	}
+	else
+	{
+		pData->x += crect.rect.x + crect.rect.width - pData->getBody().x;
+		pData->vx = 0;
+	}
 }
 
 void MegamanRunningState::onDynamicObjectCollision(CollisionRectF * rect)
@@ -85,6 +116,9 @@ void MegamanRunningState::onFirePressed()
 
 void MegamanRunningState::onFireRelease()
 {
+	pData->isCharging = false;
+	pData->isFrire = true;
+	pData->ChargingCount = 0;
 }
 
 void MegamanRunningState::onVeticalDirectionPressed(Direction d)

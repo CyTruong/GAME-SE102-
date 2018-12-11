@@ -64,7 +64,7 @@ void Scene1::onCollision()
 {
 
 	pMap->onCollisionvsPlayer(pMegaman, cam);
-	pMap->onCollision(cam);
+	//pMap->onCollision(cam);
 }
 
 void Scene1::handlerInput()
@@ -140,6 +140,10 @@ void Scene1::handlerInput()
 				if (e.isPressed())
 				{
 					pMegaman->getState()->onFirePressed();
+				}
+				else
+				{
+					pMegaman->getState()->onFireRelease();
 				}
 			}
 			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::SLIDE)) {
@@ -245,12 +249,12 @@ void Scene1::Update()
 
 	pMegaman->update();
 
-
+/*
 	if (pMegaman->getX() < 20)
 	{
 		int a = 0;
 
-	}
+	}*/
 	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir());
 
 

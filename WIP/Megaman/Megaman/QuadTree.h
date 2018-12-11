@@ -39,25 +39,24 @@ public:
 		RectF  r[4];
 		float width = bounds.width / 2;
 		float height = bounds.height / 2;
-		// bounds of subNode 1
+		
 		r[0].x = bounds.x;
 		r[0].y = bounds.y;
 		r[0].height = height;
 		r[0].width = width;
 
-		// bounds of subNode 2
 		r[1].x = bounds.x + width;
 		r[1].y = bounds.y;
 		r[1].height = height;
 		r[1].width = width;
 
-		// bounds of subNode 3
+		
 		r[2].x = bounds.x + width;
 		r[2].y = bounds.y + height;
 		r[2].height = height;
 		r[2].width = width;
 
-		// bounds of subNode 4
+		
 		r[3].x = bounds.x;
 		r[3].y = bounds.y + height;
 		r[3].height = height;

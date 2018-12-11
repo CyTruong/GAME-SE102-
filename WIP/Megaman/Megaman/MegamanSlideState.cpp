@@ -59,6 +59,27 @@ void MegamanSlideState::onUpdate()
 	pData->x += pData->vx;
 	
 	
+	if (pData->isCharging) {
+		pData->ChargingCount++;
+		pData->bulletType = getTypeofBullet(pData->ChargingCount);
+		pData->ppTextureArrays[pData->bulletType]->update();
+	}
+
+	if (pData->isFrire && pData->iCurrentArr == MegamanData::SLIDE) {
+		pData->setiCurrentArray(MegamanData::SLIDESHOOT);
+	}
+	if (!pData->isFrire && pData->iCurrentArr == MegamanData::SLIDESHOOT) {
+		pData->setiCurrentArray(MegamanData::SLIDE);
+	}
+
+	if (pData->isFrire) {
+		pData->FireCountFrames++;
+		if (pData->FireCountFrames > FIRE_COUNTING_FRAME) {
+			pData->FireCountFrames = 0;
+			pData->isFrire = false;
+		}
+	}
+
 	if(speedSlideX<= 0)
 	{
 		if (pData->vy != 0) {
@@ -70,6 +91,8 @@ void MegamanSlideState::onUpdate()
 
 		}
 	}
+
+
 
 }
 
@@ -99,6 +122,13 @@ void MegamanSlideState::onMoveVerticalReleased(Direction dir)
 
 void MegamanSlideState::onFirePressed()
 {
+}
+
+void MegamanSlideState::onFireRelease()
+{
+	pData->isCharging = false;
+	pData->isFrire = true;
+	pData->ChargingCount = 0;
 }
 
 void MegamanSlideState::onDead()
