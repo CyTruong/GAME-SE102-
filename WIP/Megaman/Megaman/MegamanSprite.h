@@ -4,6 +4,7 @@
 #include "define.h"
 #include "MegamanRunningState.h"
 #include "MegamanStandingState.h"
+#include "MegamanStartState.h"
 
 class MegamanSprite : public Sprite
 {

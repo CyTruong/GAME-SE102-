@@ -19,7 +19,7 @@ void LogWriter::Creat()
 
 void LogWriter::write(string str) {
 	
-	myfile << getTimesys()<<"				"<< str << endl;
+	myfile << getTimesys()<<"	"<< str.c_str() << endl;
 }
 void LogWriter::write(float a, float b) {
 

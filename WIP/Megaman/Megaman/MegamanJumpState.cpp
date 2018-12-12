@@ -174,7 +174,7 @@ void MegamanJumpState::onCollision(RectF rect)
 
 void MegamanJumpState::onCollision(CollisionRectF rect)
 {
-
+	LogWriter::getInstance()->write("Jump collision"+ rect.type );
 	// có 4 trường hợp va chạm
 	float vx = pData->vx;
 	float vy = pData->vy;

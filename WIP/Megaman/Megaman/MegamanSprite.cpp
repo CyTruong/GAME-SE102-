@@ -50,6 +50,26 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 	this->pData->ppTextureArrays[MegamanData::SLIDESHOOT]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->bodyRects[MegamanData::SLIDESHOOT] = RectF(-26, -35, 48, 34);
 
+	this->pData->ppTextureArrays[MegamanData::WALLSLIDE] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Wallslide", 2, 20);
+	this->pData->ppTextureArrays[MegamanData::WALLSLIDE]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->bodyRects[MegamanData::WALLSLIDE] = RectF(-16, -42, 32, 42);
+	
+	this->pData->ppTextureArrays[MegamanData::WALLSLIDESHOOT] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Wallslide_Shoot", 2, 20);
+	this->pData->ppTextureArrays[MegamanData::WALLSLIDESHOOT]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->bodyRects[MegamanData::WALLSLIDESHOOT] = RectF(-11, -44, 32, 44);
+
+	this->pData->ppTextureArrays[MegamanData::START] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Start", 7, 20);
+	this->pData->ppTextureArrays[MegamanData::START]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->bodyRects[MegamanData::START] = RectF(0, -0, 1, 1);
+
+	this->pData->ppTextureArrays[MegamanData::DEAD] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Destroy", 2, 20);
+	this->pData->ppTextureArrays[MegamanData::DEAD]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->bodyRects[MegamanData::DEAD] = RectF(0, -0, 1, 1);
+
+	this->pData->ppTextureArrays[MegamanData::DAMAGED] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Damaged", 2, 20);
+	this->pData->ppTextureArrays[MegamanData::DAMAGED]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->bodyRects[MegamanData::DAMAGED] = RectF(0, -0, 1, 1);
+
 	this->pData->ppTextureArrays[MegamanData::NOCHARGE] = new TextureArray(RESOURCE_SPRITE, "Megaman", "NoCharge", 1, 4);
 	this->pData->ppTextureArrays[MegamanData::NOCHARGE]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->bodyRects[MegamanData::NOCHARGE] = RectF(-25, -55, 55, 55);
@@ -68,7 +88,7 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 
 	this->pData->dir = Direction::createRight();
 	this->pData->verticalDir = Direction::createNone();
-	this->pData->pState = new MegamanStandingState(pData);
+	this->pData->pState = new MegamanStartState(this->pData);
 }
 
 MegamanSprite::~MegamanSprite()
@@ -88,7 +108,7 @@ void MegamanSprite::update()
 
 void MegamanSprite::draw(Camera * cam)
 {
-	LogWriter::getInstance()->write(cam->getX(), cam->getY());
+	//LogWriter::getInstance()->write(cam->getX(), cam->getY());
 
 
 	int isDraw = 0;

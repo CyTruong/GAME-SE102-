@@ -10,6 +10,7 @@ public:
 	MegamanState() {}
 	virtual void transition(MegamanState* state)
 	{
+		LogWriter::getInstance()->write(-1, state->pData->iCurrentArr);
 		pData->pState = state;
 		delete this;
 	}

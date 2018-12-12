@@ -57,6 +57,14 @@ public:
 		return res;
 	}
 
+	bool operator == (const Direction& d2)
+	{
+		if ((DIR)this->dir == (DIR)(d2.dir)) {
+			return true;
+		}
+		return false;
+	}
+
 	static Direction createLeft()
 	{
 		Direction d;

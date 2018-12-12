@@ -183,6 +183,12 @@
     <ClInclude Include="LogWriter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MegamanStartState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanDeathState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -292,6 +298,12 @@
     </ClCompile>
     <ClCompile Include="LogWriter.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanStartState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanDeathState.cpp">
+      <Filter>Megaman</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
