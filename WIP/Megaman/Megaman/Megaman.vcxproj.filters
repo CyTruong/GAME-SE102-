@@ -34,6 +34,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Bullets\Megaman">
+      <UniqueIdentifier>{49a741b4-9f99-48f9-b27e-f8c96cd47715}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -156,12 +159,6 @@
     <ClInclude Include="BulletState.h">
       <Filter>Bullets</Filter>
     </ClInclude>
-    <ClInclude Include="BulletData.h">
-      <Filter>Bullets</Filter>
-    </ClInclude>
-    <ClInclude Include="S_Bullet.h">
-      <Filter>Bullets</Filter>
-    </ClInclude>
     <ClInclude Include="EnemySprite.h">
       <Filter>Enemies</Filter>
     </ClInclude>
@@ -188,6 +185,15 @@
     </ClInclude>
     <ClInclude Include="MegamanDeathState.h">
       <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletMovingState.h">
+      <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletData.h">
+      <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletSprite.h">
+      <Filter>Bullets\Megaman</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -251,18 +257,6 @@
     <ClCompile Include="TileLayer.cpp">
       <Filter>Gamecomponent</Filter>
     </ClCompile>
-    <ClCompile Include="BulletSpite.cpp">
-      <Filter>Bullets</Filter>
-    </ClCompile>
-    <ClCompile Include="BulletState.cpp">
-      <Filter>Bullets</Filter>
-    </ClCompile>
-    <ClCompile Include="BulletData.cpp">
-      <Filter>Bullets</Filter>
-    </ClCompile>
-    <ClCompile Include="S_Bullet.cpp">
-      <Filter>Bullets</Filter>
-    </ClCompile>
     <ClCompile Include="EnemySprite.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
@@ -304,6 +298,9 @@
     </ClCompile>
     <ClCompile Include="MegamanDeathState.cpp">
       <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="MgmNormalBulletSprite.cpp">
+      <Filter>Bullets\Megaman</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

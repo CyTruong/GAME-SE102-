@@ -720,6 +720,10 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 			{  
 				sprite->onCollision(returnList[i]);
 			}
+			else
+			{
+				sprite->onUnsupported(); 
+			}
 		}
 
 	}
@@ -926,6 +930,7 @@ void Map::onSupportPlayer(MegamanSprite* sprite)
 			isSupported = true;
 			break;
 		}
+
 	}
 	// player vs object Map
 	if (!isSupported)

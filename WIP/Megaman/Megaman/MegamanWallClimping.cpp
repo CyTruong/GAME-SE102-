@@ -60,8 +60,8 @@ void MegamanWallClimping::onSlidePressed()
 
 	if (pData->isCharging) {
 		pData->ChargingCount++;
-		pData->bulletType = getTypeofBullet(pData->ChargingCount);
-		pData->ppTextureArrays[pData->bulletType]->update();
+		pData->bulletSize = getSizeofBullet(pData->ChargingCount);
+		pData->ppTextureArrays[pData->bulletSize]->update();
 	}
 
 	if (pData->isFrire && pData->iCurrentArr == MegamanData::WALLSLIDE) {
@@ -113,6 +113,8 @@ void MegamanWallClimping::onMoveVerticalReleased(Direction dir)
 
 void MegamanWallClimping::onFirePressed()
 {
+	pData->isCharging = true;
+
 }
 
 void MegamanWallClimping::onFireRelease()

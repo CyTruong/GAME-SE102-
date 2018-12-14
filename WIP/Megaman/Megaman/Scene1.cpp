@@ -218,7 +218,7 @@ void Scene1::render()
 	Graphics::getInstance()->getSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
 
 	pMap->draw(cam);
-
+	
 	pMegaman->draw(cam);
 
 	//draw HP col 
@@ -240,6 +240,8 @@ void Scene1::Update()
 
 
 	// check collision player and rect 
+
+    
 	pMap->onSupportPlayer(pMegaman);
 
 	// check collision enemy, boss, object vs Map 

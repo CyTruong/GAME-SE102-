@@ -4,6 +4,7 @@
 //#include "SBullet.h"
 #include "CollisionRect.h"
 #include "Define.h"
+#include "BulletSprite.h"
 class MegamanData : public SpriteData
 {
 
@@ -13,7 +14,10 @@ public:
 	//std::vector<BulletSprite *> Bullets;
 	int count;
 	RectF cameraRect;
-	///BulletTypes bulletType;
+	BulletTypes bulletType;
+	int bulletSize;
+	std::vector<BulletSprite *> Bullets;
+
 	int hittableCounter;
 	int nonHittableFrames;
 	int nUndyingFrames;
@@ -29,7 +33,6 @@ public:
 	int ChargingCount;
 	bool isFrire;
 	int FireCountFrames;
-	int bulletType;
 public:
 	MegamanData()
 	{
@@ -82,7 +85,7 @@ public:
 			this->y = cameraRect.y + cameraRect.height / 2;
 		this->isRespawn = true;
 		this->isUndying = false;
-		//this->bulletType = BulletTypes::S;
+		this->bulletType = BulletTypes::NORMAL;
 		this->isDead = false;
 	}
 	

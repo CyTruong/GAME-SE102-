@@ -11,19 +11,19 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 	this->pData->ppTextureArrays = new TextureArray*[MegamanData::COUNT];
 
 	this->pData->ppTextureArrays[MegamanData::STAND] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Stand", 4, 12);
-	this->pData->ppTextureArrays[MegamanData::STAND]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::STAND]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::STAND] = RectF(-15.0f , -30 , 35, 35 );
 
 	this->pData->ppTextureArrays[MegamanData::STANDSHOOT] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Stand_Shoot", 2, 5);
-	this->pData->ppTextureArrays[MegamanData::STANDSHOOT]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::STANDSHOOT]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::STANDSHOOT] = RectF(-17.0f, -35.0f, 35, 35);
 
 	this->pData->ppTextureArrays[MegamanData::RUN] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Run", 11, 5);
-	this->pData->ppTextureArrays[MegamanData::RUN]->setAnchorPoint(0.5f, 1.0f);
-	this->pData->bodyRects[MegamanData::RUN] = RectF(-16.0f, -34, 37, 37);
+	this->pData->ppTextureArrays[MegamanData::RUN]->setAnchorPoint(0.5f,0.8f);
+	this->pData->bodyRects[MegamanData::RUN] = RectF(-16.0f, -47, 37, 30);
 	
 	this->pData->ppTextureArrays[MegamanData::RUNSHOOT] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Run_Shoot", 10, 5);
-	this->pData->ppTextureArrays[MegamanData::RUNSHOOT]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::RUNSHOOT]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::RUNSHOOT] = RectF(-14, -33, 39, 36);
 
 	this->pData->ppTextureArrays[MegamanData::JUMP] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Jump", 7, 10);
@@ -43,11 +43,11 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 	this->pData->bodyRects[MegamanData::FALLSHOOT] = RectF(-17, -43, 41, 43);
 
 	this->pData->ppTextureArrays[MegamanData::SLIDE] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Slide", 5,6);
-	this->pData->ppTextureArrays[MegamanData::SLIDE]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::SLIDE]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::SLIDE] = RectF(-20, -25, 44, 35);
 
 	this->pData->ppTextureArrays[MegamanData::SLIDESHOOT] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Slide_Shoot", 5, 10);
-	this->pData->ppTextureArrays[MegamanData::SLIDESHOOT]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::SLIDESHOOT]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::SLIDESHOOT] = RectF(-26, -35, 48, 34);
 
 	this->pData->ppTextureArrays[MegamanData::WALLSLIDE] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Wallslide", 2, 20);
@@ -59,7 +59,7 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 	this->pData->bodyRects[MegamanData::WALLSLIDESHOOT] = RectF(-11, -44, 32, 44);
 
 	this->pData->ppTextureArrays[MegamanData::START] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Start", 7, 20);
-	this->pData->ppTextureArrays[MegamanData::START]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::START]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::START] = RectF(0, -0, 1, 1);
 
 	this->pData->ppTextureArrays[MegamanData::DEAD] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Destroy", 2, 20);
@@ -138,6 +138,11 @@ void MegamanSprite::draw(Camera * cam)
 			}
 		}
 
+	}
+
+	for (int i = 0; i < pData->Bullets.size(); i++)
+	{
+		pData->Bullets[i]->draw(cam);
 	}
 
 

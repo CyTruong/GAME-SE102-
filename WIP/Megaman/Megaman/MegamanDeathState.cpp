@@ -8,8 +8,7 @@ MegamanDeathState::MegamanDeathState(MegamanData * data)
 	this->pData = data;
 	this->pData->setiCurrentArray(MegamanData::DEAD);
 	this->pData->isUndying = false;
-	nFrame = 60;
-	counter = 0;
+	
 }
 
 MegamanDeathState::~MegamanDeathState()
@@ -18,9 +17,14 @@ MegamanDeathState::~MegamanDeathState()
 
 void MegamanDeathState::onUpdate()
 {
-	hittableCalculation();
-	this->pData->ppTextureArrays[pData->iCurrentArr]->update();
-	if (counter++ > nFrame) {
-		//kết thúc
+	if (this->pData->ppTextureArrays[pData->iCurrentArr]->isLastTexture()) {
+		// chết cmn đi
 	}
+	else
+	{
+		hittableCalculation();
+		this->pData->ppTextureArrays[pData->iCurrentArr]->update();
+	}
+	
+	
 }

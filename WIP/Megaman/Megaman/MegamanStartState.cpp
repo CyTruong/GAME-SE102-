@@ -1,13 +1,12 @@
 #include "MegamanStartState.h"
 #include "MegamanStandingState.h"
-
+#include "MegamanJumpState.h"
 
 MegamanStartState::MegamanStartState(MegamanData* data)
 {
 	this->pData = data;
 	this->pData->setiCurrentArray(MegamanData::START);
 	this->pData->isUndying = false;
-	nFrame = 60;
 }
 
 
@@ -17,9 +16,13 @@ MegamanStartState::~MegamanStartState()
 
 void MegamanStartState::onUpdate()
 {
-	hittableCalculation();
-	this->pData->ppTextureArrays[pData->iCurrentArr]->update();
-	if (counter++ > nFrame) {
-		transition(new MegamanStandingState(this->pData));
+	if (pData->ppTextureArrays[pData->iCurrentArr]->isLastTexture()) {
+		transition(new MegamanJumpState(this->pData, false, 0));
 	}
+	else {
+		hittableCalculation();
+		this->pData->ppTextureArrays[pData->iCurrentArr]->update();
+	}
+	
+	
 }

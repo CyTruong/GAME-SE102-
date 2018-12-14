@@ -2,6 +2,7 @@
 
 #include "SpriteState.h"
 #include "MegamanData.h"
+#include "MgmNormalBulletSprite.h"
 //#include "Sound.h"
 
 class MegamanState : public SpriteState
@@ -27,8 +28,16 @@ public:
 	virtual void createBullet(float x, float y, float angle)
 	{
 		float speed = 0.0f;
-		
-		
+		switch (pData->bulletType)
+		{
+		case BulletTypes::NORMAL :
+			{
+			speed = 8;
+			speed *= (pData->isRapid) ? 1.25 : 1;
+			pData->Bullets.push_back(new MgmNormalBulletSprite(this->pData->bulletSize, x, y, speed, angle));
+			}
+		}
+		//thêm các loại đạn ở đây
 	}
 	virtual void hittableCalculation()
 	{
@@ -56,7 +65,7 @@ public:
 	}
 	
 
-	virtual char getTypeofBullet(int count) {
+	virtual char getSizeofBullet(int count) {
 		if (count < MEGAMAN_CHARGE_LIMIT_N) {
 			return MegamanData::NOCHARGE;
 		}

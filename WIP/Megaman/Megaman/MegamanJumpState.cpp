@@ -7,7 +7,6 @@
 #include "MegamanWallClimping.h"
 MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy)
 {
-	LogWriter::getInstance()->write("Start Jumpping");
 
 	this->pData = data;
 	speedX = 1;
@@ -16,11 +15,15 @@ MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy)
 
 	this->isMoving = ismove;
 	if (pData->vy < 0) {
+		LogWriter::getInstance()->write("Start Jumpping");
+
 		pData->setiCurrentArray(MegamanData::JUMP);
 		isJumpingPress = true;
 	}
 	else
 	{
+		LogWriter::getInstance()->write("Start Falling");
+
 		pData->setiCurrentArray(MegamanData::FALL);
 		isJumpingPress = false;
 	}
@@ -174,7 +177,7 @@ void MegamanJumpState::onCollision(RectF rect)
 
 void MegamanJumpState::onCollision(CollisionRectF rect)
 {
-	LogWriter::getInstance()->write("Jump collision"+ rect.type );
+	LogWriter::getInstance()->write("Jump collision "+ rect.type );
 	// có 4 trường hợp va chạm
 	float vx = pData->vx;
 	float vy = pData->vy;
@@ -185,7 +188,7 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 
 
 	float topR = rect.rect.y;
-	float leftR = rect.rect.y;
+	float leftR = rect.rect.x;
 	float rightR = leftR + rect.rect.width;
 	float bottomR = topR + rect.rect.height;
 
@@ -299,8 +302,8 @@ void MegamanJumpState::onUpdate()
 
 	if (pData->isCharging) {
 		pData->ChargingCount++;
-		pData->bulletType = getTypeofBullet(pData->ChargingCount);
-		pData->ppTextureArrays[pData->bulletType]->update();
+		pData->bulletSize = getSizeofBullet(pData->ChargingCount);
+		pData->ppTextureArrays[pData->bulletSize]->update();
 	}
 
 	
@@ -344,6 +347,8 @@ void MegamanJumpState::onUpdate()
 
 void MegamanJumpState::onFirePressed()
 {
+	pData->isCharging = true;
+
 }
 
 void MegamanJumpState::onFireRelease()

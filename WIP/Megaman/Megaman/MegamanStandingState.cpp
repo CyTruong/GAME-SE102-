@@ -8,6 +8,7 @@ MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
 	//đứng thui chứ có làm cc gì nửa đâu
 	// má đéo gán đối số :v 
+	LogWriter::getInstance()->write("Vào Standing state");
 	pData = data; 
 	pData->setiCurrentArray(MegamanData::STAND);
 	pData->vx = 0;
@@ -44,8 +45,8 @@ void MegamanStandingState::onUpdate()
 
 	if (pData->isCharging) {
 		pData->ChargingCount++;
-		pData->bulletType = getTypeofBullet(pData->ChargingCount);
-		pData->ppTextureArrays[pData->bulletType]->update();
+		pData->bulletSize = getSizeofBullet(pData->ChargingCount);
+		pData->ppTextureArrays[pData->bulletSize]->update();
 	}
 
 	if (pData->isFrire) {
@@ -79,10 +80,38 @@ void MegamanStandingState::onFireRelease()
 	pData->isCharging = false;
 	pData->isFrire = true;
 	pData->ChargingCount = 0;
+
+
+	float bulletX;
+	float bulletY;
+	float angle;
+
+	if (pData->dir.isRight())
+	{
+		bulletX = pData->ppTextureArrays[pData->iCurrentArr]->getWidth() / 2 + pData->x;
+	}
+	else
+	{
+		bulletX = -pData->ppTextureArrays[pData->iCurrentArr]->getWidth() / 2 + pData->x;
+	}
+
+	bulletY = pData->y - pData->ppTextureArrays[pData->iCurrentArr]->getHeight() / 2 - 5;
+
+
+	if (pData->dir.isRight())
+	{
+		angle = 0.0f;
+	}
+	else
+	{
+		angle = M_PI;
+	}
+	createBullet(bulletX, bulletY, angle);
 }
 
 void MegamanStandingState::onFall()
 {
+	
 }
 
 void MegamanStandingState::onDead()

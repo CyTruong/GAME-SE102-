@@ -1,10 +1,97 @@
-﻿  MegamanDeathState.cpp
+﻿  Game.cpp
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(13): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(172): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(300): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(426): warning C4018: '<': signed/unsigned mismatch
+  Map.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(172): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(300): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(426): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(74): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(81): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(268): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(272): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(273): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(287): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(297): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(524): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(555): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(702): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(714): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(908): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(925): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(973): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\map.cpp(1091): warning C4018: '<': signed/unsigned mismatch
+  MegamanDeathState.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  MegamanJumpState.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  MegamanRunningState.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  MegamanSlideState.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
   MegamanSprite.cpp
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
@@ -13,18 +100,92 @@ c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\m
           ]
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(13): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(126): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(128): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(135): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(137): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(143): warning C4018: '<': signed/unsigned mismatch
+  MegamanStandingState.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstandingstate.cpp(107): warning C4305: '=': truncation from 'double' to 'float'
   MegamanStartState.cpp
 c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(13): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  MegamanWallClimping.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanwallclimping.cpp(7): warning C4305: '=': truncation from 'double' to 'float'
+  MgmNormalBulletSprite.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\mgmnormalbulletsprite.cpp(14): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\mgmnormalbulletsprite.cpp(28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Scene1.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(172): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(300): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(426): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\scene1.cpp(22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  winmain.cpp
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(14): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(36): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(172): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(300): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\quadtree.h(426): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\winmain.cpp(148): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\winmain.cpp(149): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   Generating Code...
   Megaman.vcxproj -> C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe
