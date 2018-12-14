@@ -11,7 +11,7 @@ public:
 	MegamanState() {}
 	virtual void transition(MegamanState* state)
 	{
-		LogWriter::getInstance()->write(-1, state->pData->iCurrentArr);
+		//LogWriter::getInstance()->write(-1, state->pData->iCurrentArr);
 		pData->pState = state;
 		delete this;
 	}
@@ -25,8 +25,10 @@ public:
 			onDead();
 		}
 	}
+
 	virtual void createBullet(float x, float y, float angle)
 	{
+		LogWriter::getInstance()->write(" creat new bullet  ");
 		float speed = 0.0f;
 		switch (pData->bulletType)
 		{

@@ -40,7 +40,7 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 
 	this->pData->ppTextureArrays[MegamanData::FALLSHOOT] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Fall_Shoot", 1, 10);
 	this->pData->ppTextureArrays[MegamanData::FALLSHOOT]->setAnchorPoint(0.5f, 1.0f);
-	this->pData->bodyRects[MegamanData::FALLSHOOT] = RectF(-17, -43, 41, 43);
+	this->pData->bodyRects[MegamanData::FALLSHOOT] = RectF(-17, -43, 41, 47);
 
 	this->pData->ppTextureArrays[MegamanData::SLIDE] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Slide", 5,6);
 	this->pData->ppTextureArrays[MegamanData::SLIDE]->setAnchorPoint(0.5f, 0.8f);
@@ -98,11 +98,11 @@ MegamanSprite::~MegamanSprite()
 
 void MegamanSprite::update()
 {
-	// update animation of cur state in pdata  
-
-	this->pData->pState->onUpdate();
-
-	// update bullet here 
+	pData->pState->onUpdate();
+	for (int i = 0; i < pData->Bullets.size(); i++)
+	{
+		pData->Bullets[i]->update();
+	}
 
 }
 
@@ -133,8 +133,9 @@ void MegamanSprite::draw(Camera * cam)
 				pData->ppTextureArrays[pData->iCurrentArr]->draw(pData->x, pData->y, cam);
 			else if (pData->dir.isLeft())
 				pData->ppTextureArrays[pData->iCurrentArr]->drawFlipX(pData->x, pData->y, cam);
+		
 			if (pData->isCharging) {
-				pData->ppTextureArrays[pData->bulletType]->draw(pData->x, pData->y + pData->body.width/2, cam);
+				pData->ppTextureArrays[pData->bulletSize]->draw(pData->x, pData->y + pData->body.width/2, cam);
 			}
 		}
 

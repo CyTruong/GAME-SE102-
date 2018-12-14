@@ -8,6 +8,9 @@ MgmNormalBulletSprite::MgmNormalBulletSprite(int size, float x, float y, float s
 	this->pData = new MgmNormalBulletData();
 	this->pData->isDesTroyed = false;
 	this->pData->ppTextureArrays = new TextureArray*[MgmNormalBulletData::COUNT ];
+	this->pData->bodyRects = new RectF[MegamanData::COUNT];
+
+
 
 	this->pData->ppTextureArrays[MgmNormalBulletData::SMALL] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalS", 1, 500);
 	this->pData->ppTextureArrays[MgmNormalBulletData::SMALL]->setAnchorPoint(0.5f, 0.5f);

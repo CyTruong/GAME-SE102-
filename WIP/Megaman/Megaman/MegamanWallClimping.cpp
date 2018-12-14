@@ -119,6 +119,38 @@ void MegamanWallClimping::onFirePressed()
 
 void MegamanWallClimping::onFireRelease()
 {
+	if (!this->pData->isFrire) {
+		pData->isCharging = false;
+		pData->isFrire = true;
+		pData->ChargingCount = 0;
+
+
+		float bulletX;
+		float bulletY;
+		float angle;
+
+		if (pData->dir.isRight())
+		{
+			bulletX = pData->ppTextureArrays[pData->iCurrentArr]->getWidth() / 2 + pData->x;
+		}
+		else
+		{
+			bulletX = -pData->ppTextureArrays[pData->iCurrentArr]->getWidth() / 2 + pData->x;
+		}
+
+		bulletY = pData->y - pData->ppTextureArrays[pData->iCurrentArr]->getHeight() * 5 / 12 + 3;
+
+
+		if (pData->dir.isRight())
+		{
+			angle = 0.0f;
+		}
+		else
+		{
+			angle = M_PI;
+		}
+		createBullet(bulletX, bulletY, angle);
+	}	 
 }
 
 void MegamanWallClimping::onDead()

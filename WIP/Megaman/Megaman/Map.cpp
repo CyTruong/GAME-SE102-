@@ -720,10 +720,7 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 			{  
 				sprite->onCollision(returnList[i]);
 			}
-			else
-			{
-				sprite->onUnsupported(); 
-			}
+			
 		}
 
 	}
@@ -911,7 +908,7 @@ void Map::onSupportPlayer(MegamanSprite* sprite)
 	}
 
 
-#pragma region
+#pragma region mapvsPlayer
 
 	// player vs CollisionRects
 	RectF r = sprite->getBody();
@@ -961,7 +958,7 @@ void Map::onSupportPlayer(MegamanSprite* sprite)
 		sprite->setSupportCollisionRect(NULL);
 	}
 
-#pragma endregion mapvsPlayer
+#pragma endregion 
 
 
 
