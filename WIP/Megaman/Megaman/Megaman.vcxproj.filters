@@ -37,6 +37,9 @@
     <Filter Include="Bullets\Megaman">
       <UniqueIdentifier>{49a741b4-9f99-48f9-b27e-f8c96cd47715}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enemies\SingleGun">
+      <UniqueIdentifier>{e903e5c2-abaf-4eaf-ac5d-80d632cf5f43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -153,21 +156,6 @@
     <ClInclude Include="ObjectState.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="BulletSprite.h">
-      <Filter>Bullets</Filter>
-    </ClInclude>
-    <ClInclude Include="BulletState.h">
-      <Filter>Bullets</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemySprite.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyState.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyData.h">
-      <Filter>Enemies</Filter>
-    </ClInclude>
     <ClInclude Include="MegamanJumpState.h">
       <Filter>Megaman</Filter>
     </ClInclude>
@@ -186,14 +174,38 @@
     <ClInclude Include="MegamanDeathState.h">
       <Filter>Megaman</Filter>
     </ClInclude>
-    <ClInclude Include="MgmNormalBulletMovingState.h">
+    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletData.h">
       <Filter>Bullets\Megaman</Filter>
     </ClInclude>
-    <ClInclude Include="MgmNormalBulletData.h">
+    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletMovingState.h">
       <Filter>Bullets\Megaman</Filter>
     </ClInclude>
-    <ClInclude Include="MgmNormalBulletSprite.h">
+    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletSprite.h">
       <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletSprite.h">
+      <Filter>Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletState.h">
+      <Filter>Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunData.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunSprite.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyData.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemySprite.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyState.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.h">
+      <Filter>Gamecomponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -257,15 +269,6 @@
     <ClCompile Include="TileLayer.cpp">
       <Filter>Gamecomponent</Filter>
     </ClCompile>
-    <ClCompile Include="EnemySprite.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyData.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyState.cpp">
-      <Filter>Enemies</Filter>
-    </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -299,8 +302,17 @@
     <ClCompile Include="MegamanDeathState.cpp">
       <Filter>Megaman</Filter>
     </ClCompile>
-    <ClCompile Include="MgmNormalBulletSprite.cpp">
+    <ClCompile Include="G:\Game\Megaman\MgmNormalBulletSprite.cpp">
       <Filter>Bullets\Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunData.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunSprite.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Loader.cpp">
+      <Filter>Gamecomponent</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

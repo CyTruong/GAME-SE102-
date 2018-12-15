@@ -136,7 +136,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="base64.h" />
-    <ClInclude Include="MgmNormalBulletData.h" />
     <ClInclude Include="BulletSprite.h" />
     <ClInclude Include="BulletState.h" />
     <ClInclude Include="Camera.h" />
@@ -145,10 +144,14 @@
     <ClInclude Include="EnemyData.h" />
     <ClInclude Include="EnemySprite.h" />
     <ClInclude Include="EnemyState.h" />
+    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletData.h" />
+    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletMovingState.h" />
+    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletSprite.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Layer.h" />
+    <ClInclude Include="Loader.h" />
     <ClInclude Include="LogWriter.h" />
     <ClInclude Include="MegamanDeathState.h" />
     <ClInclude Include="MegamanJumpState.h" />
@@ -160,8 +163,6 @@
     <ClInclude Include="MegamanStartState.h" />
     <ClInclude Include="MegamanState.h" />
     <ClInclude Include="MegamanWallClimping.h" />
-    <ClInclude Include="MgmNormalBulletSprite.h" />
-    <ClInclude Include="MgmNormalBulletMovingState.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectData.h" />
     <ClInclude Include="ObjectSprite.h" />
@@ -173,6 +174,8 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SingleGunData.h" />
+    <ClInclude Include="SingleGunSprite.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteData.h" />
     <ClInclude Include="SpriteState.h" />
@@ -190,12 +193,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base64.cpp" />
-    <ClCompile Include="EnemyData.cpp" />
-    <ClCompile Include="EnemySprite.cpp" />
-    <ClCompile Include="EnemyState.cpp" />
+    <ClCompile Include="G:\Game\Megaman\MgmNormalBulletSprite.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
+    <ClCompile Include="Loader.cpp" />
     <ClCompile Include="LogWriter.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MegamanDeathState.cpp" />
@@ -206,13 +208,14 @@
     <ClCompile Include="MegamanStandingState.cpp" />
     <ClCompile Include="MegamanStartState.cpp" />
     <ClCompile Include="MegamanWallClimping.cpp" />
-    <ClCompile Include="MgmNormalBulletSprite.cpp" />
     <ClCompile Include="ObjectData.cpp" />
     <ClCompile Include="ObjectSprite.cpp" />
     <ClCompile Include="ObjectState.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SingleGunData.cpp" />
+    <ClCompile Include="SingleGunSprite.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureArray.cpp" />
     <ClCompile Include="TileLayer.cpp" />

@@ -6,7 +6,7 @@
 #define SCREEN_HEIGHT 272
 #define SCREEN_WIDTH 272
 #define RESOURCE_SPRITE "Resource\\Sprite\\"
-#define MEGAMANRUNSPEED 1
+#define MEGAMANRUNSPEED 3
 
 #define MEGAMAN_CHARGE_LIMIT_N 10
 #define MEGAMAN_CHARGE_LIMIT_S 40
@@ -20,6 +20,14 @@ enum BulletTypes
 {
 	NORMAL
 };
+
+enum BulletSize
+{
+	SMALL,
+	MEDIUM,
+	LARGE
+};
+
 
 #define max(a,b)            (((a) > (b)) ? (a) : (b))
 #define min(a,b)            (((a) < (b)) ? (a) : (b))

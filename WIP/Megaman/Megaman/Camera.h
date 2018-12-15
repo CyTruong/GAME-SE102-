@@ -65,11 +65,19 @@ public:
 
 		}
 
-		else if (this->y > y - (float)viewPort->getHeight() / 2.0f && moveDir.isUp())
+		 if (this->y > y - (float)viewPort->getHeight() / 2.0f && moveDir.isUp())
 		{
 			this->y = y - (float)viewPort->getHeight() / 2.0f;
-			this->y = max(this->y, mapRect.y);
-			this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
+			//this->y = max(this->y, mapRect.y);
+			//this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
+		}
+   
+		else if (this->y < y - (float)viewPort->getHeight() / 2.0f && moveDir.isDown())
+		{
+			this->y = y - (float)viewPort->getHeight() / 2.0f;
+			//this->y = max(this->y, mapRect.y);
+			//this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
+
 		}
 	}
 
@@ -102,28 +110,13 @@ public:
 
 		if (moveDir.isRight())
 		{
-			if (this->x + getWidth() >= cameraTranslatePoint.x)
-			{
-				setPosition(this->x + getWidth() / 2 + vx, y);
-			}
-			else
-			{
-				setPosition(x, y);
-			}
+			
 			//hCmt 
 			setPosition(x, y);
 		}
 		else
-		{/*
-			if (this->y <= cameraTranslatePoint.y + cameraTranslatePoint.height)
-			{
-
-				setPosition(x, this->y + getHeight() / 2 - vy);
-			}
-			else
-			{
-				setPosition(x, y);
-			}*/
+		{
+			
 			setPosition(x, y);
 
 		}

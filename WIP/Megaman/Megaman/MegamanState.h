@@ -8,7 +8,11 @@
 class MegamanState : public SpriteState
 {
 public:
-	MegamanState() {}
+	MegamanState() {
+	
+		acceleration = 0.2f; 
+
+	}
 	virtual void transition(MegamanState* state)
 	{
 		//LogWriter::getInstance()->write(-1, state->pData->iCurrentArr);
@@ -83,4 +87,5 @@ protected:
 	MegamanData* pData;
 	//dùng để check xem khi phím dc release
 	Direction tempDir;
+	float acceleration; 
 };

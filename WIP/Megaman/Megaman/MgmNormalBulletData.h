@@ -7,9 +7,8 @@ public:
 	RectF* bodyRects;
 	enum SpriteArrayIndex
 	{
-		SMALL,
-		MEDIUM,
-		LAGRE,
+		FLY,
+		DESTROY,
 		COUNT
 	};
 public :

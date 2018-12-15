@@ -7,7 +7,7 @@ private:
 	bool isMoving;
 	bool isJumpingPress;
 	float speedX;
-	float acceleration;
+	//float acceleration;
 public:
 	MegamanJumpState(MegamanData * data, bool isMoving = false , float vy =-5.0f);
 	~MegamanJumpState();

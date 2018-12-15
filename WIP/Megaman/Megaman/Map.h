@@ -10,7 +10,7 @@
 #include "base64.h"
 #include "QuadTree.h"
 #include "MegamanSprite.h"
-//#include "EnermyCreator.h"
+//#include "EnemyCreator.h"
 #include "ObjectSprite.h"
 #include "UI.h"
 
@@ -57,7 +57,7 @@ private:
 	//std::vector < BulletSprite* > bulletSprites;
 	std::vector < Object*> Objects;
 	std::vector < std::string> spriteNames;
-//	std::map < int, EnermySprite* > enermyMap;
+//	std::map < int, EnemySprite* > EnemyMap;
 	//std::map < int, ObjectSprite* > objectMap;
 	int tileSize;
 	int width; // number of tile in row

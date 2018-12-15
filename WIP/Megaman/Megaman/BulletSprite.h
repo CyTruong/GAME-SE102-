@@ -13,5 +13,5 @@ public :
 	virtual bool isDesTroyed() { return pData->isDesTroyed; }
 	virtual bool isHittable() { return pData->isHittable; }
 	virtual void destroy() { pData->isDesTroyed = true; }
-	virtual int ConvertSizeIndex(int size) { return 0;  };
+	virtual BulletSize ConvertSizeIndex(int size) { return BulletSize::SMALL;  };
 };

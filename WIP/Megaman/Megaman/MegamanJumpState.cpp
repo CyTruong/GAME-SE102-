@@ -11,13 +11,14 @@ MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy)
 	this->pData = data;
 	speedX = 1;
 	pData->vy = vy;
-	acceleration = 0.2f;
+//	acceleration = 0.2f;
 
 	this->isMoving = ismove;
 	if (pData->vy < 0) {
 		LogWriter::getInstance()->write("Start Jumpping");
 
 		pData->setiCurrentArray(MegamanData::JUMP);
+		pData->movedir = Direction::createUp(); 
 		isJumpingPress = true;
 	}
 	else
@@ -25,6 +26,7 @@ MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy)
 		LogWriter::getInstance()->write("Start Falling");
 
 		pData->setiCurrentArray(MegamanData::FALL);
+		pData->movedir = Direction::createDown();
 		isJumpingPress = false;
 	}
 	tempDir = pData->dir;
@@ -39,7 +41,11 @@ void MegamanJumpState::onMovePressed(Direction dir)
 {
 	pData->dir = dir;
 	tempDir = dir;
+	//hcmt cam move 
+	//pData->movedir = dir;
 	isMoving = true;
+	
+
 }
 
 void MegamanJumpState::onMoveReleased(Direction dir)

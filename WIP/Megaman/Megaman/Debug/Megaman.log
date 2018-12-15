@@ -1,17 +1,361 @@
-﻿  MegamanSprite.cpp
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\camera.h(96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  Game.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamanstate.h(38): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(102): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(126): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(128): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(135): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(138): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\admin\onedrive - gm.uit.edu.vn\đồ án\game\game-se102-\wip\megaman\megaman\megamansprite.cpp(144): warning C4018: '<': signed/unsigned mismatch
-  Megaman.vcxproj -> C:\Users\Admin\OneDrive - gm.uit.edu.vn\Đồ án\GAME\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(172): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(300): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(426): warning C4018: '<': signed/unsigned mismatch
+  Graphics.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(149): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(150): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(151): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(152): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(156): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(160): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(163): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(178): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(179): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(180): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(181): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(183): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(185): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(192): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(217): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(218): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(227): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(229): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(230): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(235): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(239): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(242): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(268): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(269): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(270): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(271): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(275): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(279): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(282): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(288): warning C4244: 'argument': conversion from 'LONG' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(302): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(303): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(304): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(305): warning C4244: '=': conversion from 'T' to 'LONG', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(308): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(312): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(315): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\graphics.cpp(321): warning C4244: 'argument': conversion from 'LONG' to 'FLOAT', possible loss of data
+  Map.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(172): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(300): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(426): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(39): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(74): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(81): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(268): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(272): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(273): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(287): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(297): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(524): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(555): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(702): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(714): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(905): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(922): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(970): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\map.cpp(1088): warning C4018: '<': signed/unsigned mismatch
+  MegamanDeathState.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  MegamanJumpState.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanjumpstate.cpp(390): warning C4305: '=': truncation from 'double' to 'float'
+  MegamanRunningState.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanrunningstate.cpp(179): warning C4305: '=': truncation from 'double' to 'float'
+  MegamanSlideState.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanslidestate.cpp(164): warning C4305: '=': truncation from 'double' to 'float'
+  MegamanSprite.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(105): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(129): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(131): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(136): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(138): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(141): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamansprite.cpp(147): warning C4018: '<': signed/unsigned mismatch
+  MegamanStandingState.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstandingstate.cpp(122): warning C4305: '=': truncation from 'double' to 'float'
+  MegamanStartState.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  MegamanWallClimping.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanwallclimping.cpp(7): warning C4305: '=': truncation from 'double' to 'float'
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanwallclimping.cpp(150): warning C4305: '=': truncation from 'double' to 'float'
+  Scene1.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(172): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(300): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(426): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\scene1.cpp(22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  SingleGunData.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+  SingleGunSprite.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\enemysprite.h(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\enemysprite.h(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\enemysprite.h(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\enemysprite.h(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\enemysprite.h(69): warning C4018: '<': signed/unsigned mismatch
+  Texture.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\texture.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\texture.cpp(36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\texture.cpp(79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  TextureArray.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\texturearray.cpp(17): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\texturearray.cpp(27): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\texturearray.cpp(57): warning C4018: '<': signed/unsigned mismatch
+  TileLayer.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tilelayer.cpp(12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tilelayer.cpp(16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tilelayer.cpp(23): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tilelayer.cpp(28): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tilelayer.cpp(80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tilelayer.cpp(86): warning C4018: '<': signed/unsigned mismatch
+  TileTmx.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tiletmx.cpp(5): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tiletmx.cpp(6): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tiletmx.cpp(19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Viewport.cpp
+  winmain.cpp
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\camera.h(104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(53): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\sprite.h(61): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\megamanstate.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(172): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(300): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\quadtree.h(426): warning C4018: '<': signed/unsigned mismatch
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\winmain.cpp(148): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\winmain.cpp(149): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+d:\game\game-se102-\game-se102-\wip\megaman\megaman\tilelayer.cpp(93): warning C4715: 'TileLayer::getTileSet': not all control paths return a value
+  Megaman.vcxproj -> D:\Game\GAME-SE102-\GAME-SE102-\WIP\Megaman\Debug\Megaman.exe

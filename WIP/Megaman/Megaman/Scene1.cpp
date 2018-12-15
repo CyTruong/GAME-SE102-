@@ -242,7 +242,7 @@ void Scene1::Update()
 	// check collision player and rect 
 
     
-	pMap->onSupportPlayer(pMegaman);
+	//pMap->onSupportPlayer(pMegaman);
 
 	// check collision enemy, boss, object vs Map 
 
@@ -251,12 +251,12 @@ void Scene1::Update()
 
 	pMegaman->update();
 
-/*
-	if (pMegaman->getX() < 20)
+
+	if (pMegaman->getMoveDir().isUp() )
 	{
 		int a = 0;
 
-	}*/
+	}
 	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir());
 
 

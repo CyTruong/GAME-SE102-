@@ -18,6 +18,7 @@ MegamanSlideState::MegamanSlideState(MegamanData* data)
 
 void MegamanSlideState::onMovePressed(Direction dir)
 {
+	pData->movedir = dir; 
 	pData->dir = dir;
 }
 
@@ -28,7 +29,7 @@ void MegamanSlideState::onMoveReleased(Direction dir)
 
 void MegamanSlideState::onVeticalDirectionPressed(Direction dir)
 {
-	pData->dir = dir;
+//	pData->dir = dir;
 }
 
 void MegamanSlideState::onVeticalDirectionReleased()

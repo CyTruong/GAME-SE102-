@@ -6,10 +6,10 @@ class MgmNormalBulletMovingState : public BulletState
 private:
 	float speed;
 public:
-	MgmNormalBulletMovingState(MgmNormalBulletData * pdata, float speed, float angle, int iCurentArr) {
+	MgmNormalBulletMovingState(MgmNormalBulletData * pdata, float speed, float angle, int icurent = 0) {
 
 		this->pData = pdata;
-		pData->iCurrentArr = iCurentArr;
+		pData->iCurrentArr = icurent;
 		this->speed = speed;
 
 		pData->vy = sin(angle) * speed;

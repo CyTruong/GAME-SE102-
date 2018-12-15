@@ -9,7 +9,8 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 	this->pData->y = respawnY;
 	this->pData->movedir = movedir;
 	this->pData->ppTextureArrays = new TextureArray*[MegamanData::COUNT];
-
+	
+	
 	this->pData->ppTextureArrays[MegamanData::STAND] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Stand", 4, 12);
 	this->pData->ppTextureArrays[MegamanData::STAND]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::STAND] = RectF(-15.0f , -30 , 35, 35 );
@@ -60,7 +61,9 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 
 	this->pData->ppTextureArrays[MegamanData::START] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Start", 7, 20);
 	this->pData->ppTextureArrays[MegamanData::START]->setAnchorPoint(0.5f, 0.8f);
+	//hcmt 
 	this->pData->bodyRects[MegamanData::START] = RectF(0, -0, 1, 1);
+	//this->pData->bodyRects[MegamanData::START] = RectF(-15.0f, -30, 35, 35);
 
 	this->pData->ppTextureArrays[MegamanData::DEAD] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Destroy", 2, 20);
 	this->pData->ppTextureArrays[MegamanData::DEAD]->setAnchorPoint(0.5f, 1.0f);
@@ -88,7 +91,7 @@ MegamanSprite::MegamanSprite(int index, float respawnX, float respawnY, Directio
 
 	this->pData->dir = Direction::createRight();
 	this->pData->verticalDir = Direction::createNone();
-	this->pData->pState = new MegamanStartState(this->pData);
+	this->pData->pState = new MegamanStandingState(this->pData);
 }
 
 MegamanSprite::~MegamanSprite()

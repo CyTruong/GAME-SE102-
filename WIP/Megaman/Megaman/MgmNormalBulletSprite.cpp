@@ -3,34 +3,51 @@
 
 MgmNormalBulletSprite::MgmNormalBulletSprite(int size, float x, float y, float speed, float angle)
 {
-	this->bulletSize = size;
+
+	this->bulletSize = this->ConvertSizeIndex(size);
 
 	this->pData = new MgmNormalBulletData();
 	this->pData->isDesTroyed = false;
 	this->pData->ppTextureArrays = new TextureArray*[MgmNormalBulletData::COUNT ];
 	this->pData->bodyRects = new RectF[MegamanData::COUNT];
 
+	if (bulletSize == BulletSize::SMALL) {
+		this->pData->ppTextureArrays[MgmNormalBulletData::FLY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalS_fly", 1, 500);
+		this->pData->ppTextureArrays[MgmNormalBulletData::FLY]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[MgmNormalBulletData::FLY] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::FLY]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::FLY]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::FLY]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::FLY]->getHeight());
 
+		this->pData->ppTextureArrays[MgmNormalBulletData::DESTROY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalS_des", 1, 500);
+		this->pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[MgmNormalBulletData::DESTROY] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getHeight());
+	}
+	if (bulletSize == BulletSize::MEDIUM) {
+		this->pData->ppTextureArrays[MgmNormalBulletData::FLY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalM_fly", 1, 500);
+		this->pData->ppTextureArrays[MgmNormalBulletData::FLY]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[MgmNormalBulletData::FLY] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::FLY]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::FLY]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::FLY]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::FLY]->getHeight());
 
-	this->pData->ppTextureArrays[MgmNormalBulletData::SMALL] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalS", 1, 500);
-	this->pData->ppTextureArrays[MgmNormalBulletData::SMALL]->setAnchorPoint(0.5f, 0.5f);
-	this->pData->bodyRects[MgmNormalBulletData::SMALL] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::SMALL]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::SMALL]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::SMALL]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::SMALL]->getHeight());
+		this->pData->ppTextureArrays[MgmNormalBulletData::DESTROY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalM_des", 1, 500);
+		this->pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[MgmNormalBulletData::DESTROY] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getHeight());
+	}
+	if (bulletSize == BulletSize::LARGE) {
+		this->pData->ppTextureArrays[MgmNormalBulletData::FLY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalL_fly", 1, 500);
+		this->pData->ppTextureArrays[MgmNormalBulletData::FLY]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[MgmNormalBulletData::FLY] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::FLY]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::FLY]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::FLY]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::FLY]->getHeight());
 
-	this->pData->ppTextureArrays[MgmNormalBulletData::MEDIUM] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalM", 1, 500);
-	this->pData->ppTextureArrays[MgmNormalBulletData::MEDIUM]->setAnchorPoint(0.5f, 0.5f);
-	this->pData->bodyRects[MgmNormalBulletData::MEDIUM] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::MEDIUM]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::MEDIUM]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::MEDIUM]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::MEDIUM]->getHeight());
+		this->pData->ppTextureArrays[MgmNormalBulletData::DESTROY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalL_des", 1, 500);
+		this->pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[MgmNormalBulletData::DESTROY] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::DESTROY]->getHeight());
+	}
 
-	this->pData->ppTextureArrays[MgmNormalBulletData::LAGRE] = new TextureArray(RESOURCE_SPRITE, "Bullet", "MgmNormalL", 1, 500);
-	this->pData->ppTextureArrays[MgmNormalBulletData::LAGRE]->setAnchorPoint(0.5f, 0.5f);
-	this->pData->bodyRects[MgmNormalBulletData::LAGRE] = RectF(-pData->ppTextureArrays[MgmNormalBulletData::LAGRE]->getWidth() / 2, -pData->ppTextureArrays[MgmNormalBulletData::LAGRE]->getHeight(), pData->ppTextureArrays[MgmNormalBulletData::LAGRE]->getWidth(), pData->ppTextureArrays[MgmNormalBulletData::LAGRE]->getHeight());
+	
+	
 
 
 	pData->x = x;
 	pData->y = y;
 
-	size = this->ConvertSizeIndex(size);
 
-	pData->pState = new MgmNormalBulletMovingState(pData, speed, angle, size);
+	pData->pState = new MgmNormalBulletMovingState(pData, speed, angle, MgmNormalBulletData::FLY);
 
 }
 

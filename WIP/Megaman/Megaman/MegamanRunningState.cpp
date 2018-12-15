@@ -18,6 +18,9 @@ void MegamanRunningState::onMovePressed(Direction d)
 {
 	pData->dir = d;
 	tempDir = d;
+	// hcmt cam move 
+	pData->movedir = d; 
+
 }
 
 void MegamanRunningState::onMoveReleased(Direction d)
@@ -26,6 +29,11 @@ void MegamanRunningState::onMoveReleased(Direction d)
 	if(!tempDir.isNone())
 	{		
 		pData -> dir = tempDir;
+
+		// hcmt cam move 
+		pData->movedir = tempDir;
+
+
 	}
 	else
 	transition(new MegamanStandingState(pData)); // thả đúng phím
@@ -33,11 +41,21 @@ void MegamanRunningState::onMoveReleased(Direction d)
 
 void MegamanRunningState::onUpdate()
 {
+	// cai nay thay lun OnFall 
+	if (pData->vy > 0)
+	{
+		transition(new MegamanJumpState(pData, true, pData->vy));
+		return; 
+	}
+
 	hittableCalculation();
 	undyingCalculation();	
 	pData->ppTextureArrays[pData->iCurrentArr]->update();
 	pData->vx = pData->transform(MEGAMANRUNSPEED);
 	pData->x += pData->vx;
+	
+	pData->vy += acceleration; 
+	pData->y += pData->vy; 
 
 
 	if (pData->isCharging) {
@@ -78,19 +96,25 @@ void MegamanRunningState::onCollision(RectF rect)
 	{
 		pData->x -= pData->getBody().x + pData->getBody().width - rect.x;
 		pData->vx = 0;
-		
+		pData->vy -= acceleration; 
+		pData->y -=pData-> vy; 
+
+
 	} 
 	else
 	{
 		pData->x += rect.x + rect.width - pData->getBody().x;
 		pData->vx = 0;
+		pData->vy -= acceleration;
+		pData->y -= pData->vy;
+
 	}
 }
 
 void MegamanRunningState::onCollision(CollisionRectF crect)
 {
 	LogWriter::getInstance()->write("Ruuning state collision");
-	/*pData->cThroughRect.push_back(crect);
+	//pData->cThroughRect.push_back(crect);
 	if (pData->vx > 0)
 	{
 		pData->x -= pData->getBody().x + pData->getBody().width - crect.rect.x;
@@ -100,7 +124,11 @@ void MegamanRunningState::onCollision(CollisionRectF crect)
 	{
 		pData->x += crect.rect.x + crect.rect.width - pData->getBody().x;
 		pData->vx = 0;
-	}*/
+	}
+
+
+
+
 }
 
 void MegamanRunningState::onDynamicObjectCollision(CollisionRectF * rect)

@@ -4,6 +4,7 @@
 #include "MegamanJumpState.h"
 #include "MegamanSlideState.h"
 
+
 MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
 	//đứng thui chứ có làm cc gì nửa đâu
@@ -17,12 +18,14 @@ MegamanStandingState::MegamanStandingState(MegamanData * data)
 void MegamanStandingState::onMovePressed(Direction d)
 {
 	pData->dir = d;
+	// hcmt cam move 
+	pData->movedir = d; 
 	transition(new MegamanRunningState(pData));
 }
 
 void MegamanStandingState::onJumpPressed()
-{
-	transition(new MegamanJumpState(this->pData, true, -4.5f));
+{   // hcmt 
+	transition(new MegamanJumpState(this->pData, false, -4.5f));
 }
 
 void MegamanStandingState::onSlidePressed()
@@ -34,6 +37,10 @@ void MegamanStandingState::onUpdate()
 {
 	hittableCalculation();
 	undyingCalculation();
+
+	pData->vy += acceleration; 
+    //	pData->y += pData->vy; 
+
 	if (pData->isFrire && pData->iCurrentArr == MegamanData::STAND) {
 		pData->setiCurrentArray(MegamanData::STANDSHOOT);
 	}
@@ -57,6 +64,13 @@ void MegamanStandingState::onUpdate()
 		}
 	}
 	
+}
+
+void MegamanStandingState::onCollision(CollisionRectF cRect )
+{
+	pData->vy -= acceleration; 
+	//pData->y -= pData->vy;
+
 }
 
 void MegamanStandingState::onVeticalDirectionPressed(Direction d)

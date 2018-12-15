@@ -3,11 +3,13 @@
 #include "MgmNormalBulletData.h"
 #include "MegamanData.h"
 
-	class MgmNormalBulletSprite :
+
+
+class MgmNormalBulletSprite :
 	public BulletSprite
 {
 public:
-	int bulletSize;
+	BulletSize bulletSize;
 private:
 	MgmNormalBulletData *pData;
 public:
@@ -19,11 +21,17 @@ public:
 		return pData->pState;
 	}
 
-	int ConvertSizeIndex(int size) override {
+	BulletSize ConvertSizeIndex(int size) override {
 		if ((MegamanData::SpriteArrayIndex)size == MegamanData::CHARGING1 ) {
-			return MgmNormalBulletData::SMALL;
+			return BulletSize::SMALL;
 		}
-		return 0;
+		if ((MegamanData::SpriteArrayIndex)size == MegamanData::CHARGING2) {
+			return BulletSize::MEDIUM;
+		}
+		if ((MegamanData::SpriteArrayIndex)size == MegamanData::CHARGING3) {
+			return BulletSize::LARGE;
+		}
+		return BulletSize::SMALL;
 		//... tiếp tục convert
 	}
 	~MgmNormalBulletSprite();
