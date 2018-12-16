@@ -25,7 +25,7 @@ public:
 	/*virtual RectF getLastFrameBody() {return pData ->getLastFrameBody();}*/
 	virtual float getVx() { return pData->vx; }
 	virtual float getVy() { return pData->vy; }
-	virtual void onUnsupported() { pData->pState->onFall(); }
+//hcmt 	virtual void onUnsupported() { pData->pState->onFall(); }
 	virtual void setPlayerX(int x) { pData->Megaman_X = x; }
 	virtual void setPlayerY(int y) { pData->Megaman_Y = y; }
 	virtual void setPlayerProperties(float x, float y, bool isDead)

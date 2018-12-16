@@ -64,7 +64,7 @@ void Scene1::onCollision()
 {
 
 	pMap->onCollisionvsPlayer(pMegaman, cam);
-	//pMap->onCollision(cam);
+	 pMap->onCollision(cam);
 }
 
 void Scene1::handlerInput()

@@ -559,13 +559,14 @@ void Map::onCollision(Camera* cam)
 
 #pragma region
 
-	/*for (std::map < int, EnemySprite* > ::iterator EnemyIt = EnemyMap.begin(); EnemyIt != EnemyMap.end(); EnemyIt++)
+	for (std::map < int, EnemySprite* > ::iterator EnemyIt = EnemyMap.begin(); EnemyIt != EnemyMap.end(); EnemyIt++)
 	{
 		std::vector < CollisionRectF > returnLists;
 		mapCollisionTree->getObjectlist(returnLists, EnemyIt->second->getBody());
 
 		for (int i = 0; i < returnLists.size(); i++)
 		{
+			//hcmt thourng ? ?? 
 
 			std::vector < CollisionRectF > throughRectVector = EnemyIt->second->getThroughRect();
 			if (std::find(throughRectVector.begin(), throughRectVector.end(), returnLists[i]) == throughRectVector.end())
@@ -579,7 +580,7 @@ void Map::onCollision(Camera* cam)
 		}
 
 
-		for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
+	/*	for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
 		{
 			if (objectIt->second->isEnemyCollisionable())
 			{
@@ -593,10 +594,10 @@ void Map::onCollision(Camera* cam)
 			}
 
 		}
+*/
 
 
-
-	}*/
+	}
 #pragma endregion EnemyvsMap
 
 #pragma region

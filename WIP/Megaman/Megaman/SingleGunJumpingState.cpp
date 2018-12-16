@@ -1,5 +1,7 @@
-#include "SingleGunJumpingState.h"
+﻿#include "SingleGunJumpingState.h"
 #include "SingleGunData.h"
+#include "SingleGunStandState.h" 
+
 
 
 
@@ -23,11 +25,108 @@ void SingleGunJumpingState::onUpdate()
 	pData->y += pData->vy;
 }
 
-void SingleGunJumpingState::onCollision(RectF rect)
+void SingleGunJumpingState::onCollision(CollisionRectF rect)
 {
+
+	// có 4 trường hợp va chạm
+	float vx = pData->vx;
+	float vy = pData->vy;
+	float top = pData->getBody().y;
+	float left = pData->getBody().x;
+	float right = left + pData->getBody().width;
+	float bottom = top + pData->getBody().height;
+
+
+	float topR = rect.rect.y;
+	float leftR = rect.rect.x;
+	float rightR = leftR + rect.rect.width;
+	float bottomR = topR + rect.rect.height;
+
+	if (vx > 0.0f)
+	{
+		if (vy > 0.0f)
+		{
+			float px = right - leftR;
+			float py = bottom - topR;
+			if (vy * px > vx * py)
+			{
+				// va chạm phía trên 
+				pData->vy = 0.0f;
+				pData->y -= py;
+
+				
+					transition(new SingleGunStandState(pData));
+				
+			}
+			else
+			{
+				// va chạm bên phải
+				pData->x -= px;
+				pData->vx = 0.0f;
+			}
+		}
+		else // vy <= 0.0f
+		{
+			float px = right - leftR;
+			float py = bottomR - top;
+			if ((-vy * px) > vx * py)
+			{
+				//va chạm trên
+				pData->y += py;
+				pData->vy = 0.0f;
+			}
+			else
+			{
+				//va chạm bên trái
+				pData->x -= px;
+				pData->vx = 0.0f;
+			}
+		}
+	}
+	else // vx <= 0.0f
+	{
+		if (vy > 0.0f)
+		{
+			float px = rightR - left;
+			float py = bottom - topR;
+			if (vy * px > (-vx * py))
+			{
+				// top collision
+
+				pData->y -= py;
+				pData->vy = 0.0f;
+
+				transition(new SingleGunStandState(pData));
+			}
+			else
+			{
+				// side collision
+				pData->x += px;
+				pData->vx = 0.0f;
+			}
+		}
+		else // vy <= 0.0f
+		{
+			float px = rightR - left;
+			float py = bottomR - top;
+			if ((-vy * px) > (-vx * py))
+			{
+				// top collision
+				pData->y += py;
+				pData->vy = 0.0f;
+			}
+			else
+			{
+				// side collision
+				pData->x += px;
+				pData->vx = 0.0f;
+			}
+		}
+	}
+
 }
 
-void SingleGunJumpingState::onCollision(CollisionRectF rect)
+void SingleGunJumpingState::onCollision(RectF rect)
 {
 }
 

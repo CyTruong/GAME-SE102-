@@ -31,6 +31,8 @@ void SingleGunStandState::onUpdate()
 
 void SingleGunStandState::onCollision(RectF rect)
 {
+
+
 }
 
 void SingleGunStandState::onCollision(CollisionRectF rect)
