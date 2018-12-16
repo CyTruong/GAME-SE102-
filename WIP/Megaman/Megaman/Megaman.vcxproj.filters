@@ -174,15 +174,6 @@
     <ClInclude Include="MegamanDeathState.h">
       <Filter>Megaman</Filter>
     </ClInclude>
-    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletData.h">
-      <Filter>Bullets\Megaman</Filter>
-    </ClInclude>
-    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletMovingState.h">
-      <Filter>Bullets\Megaman</Filter>
-    </ClInclude>
-    <ClInclude Include="G:\Game\Megaman\MgmNormalBulletSprite.h">
-      <Filter>Bullets\Megaman</Filter>
-    </ClInclude>
     <ClInclude Include="BulletSprite.h">
       <Filter>Bullets</Filter>
     </ClInclude>
@@ -206,6 +197,24 @@
     </ClInclude>
     <ClInclude Include="Loader.h">
       <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletData.h">
+      <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletMovingState.h">
+      <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletSprite.h">
+      <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyCreator.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunStandState.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunJumpingState.h">
+      <Filter>Enemies\SingleGun</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,9 +311,6 @@
     <ClCompile Include="MegamanDeathState.cpp">
       <Filter>Megaman</Filter>
     </ClCompile>
-    <ClCompile Include="G:\Game\Megaman\MgmNormalBulletSprite.cpp">
-      <Filter>Bullets\Megaman</Filter>
-    </ClCompile>
     <ClCompile Include="SingleGunData.cpp">
       <Filter>Enemies\SingleGun</Filter>
     </ClCompile>
@@ -313,6 +319,18 @@
     </ClCompile>
     <ClCompile Include="Loader.cpp">
       <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="MgmNormalBulletSprite.cpp">
+      <Filter>Bullets\Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyCreator.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunStandState.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunJumpingState.cpp">
+      <Filter>Enemies\SingleGun</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

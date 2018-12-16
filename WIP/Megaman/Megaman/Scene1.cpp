@@ -233,8 +233,9 @@ void Scene1::render()
 void Scene1::Update()
 {
 
-
+	//update vị trí của ng chơi cho enemy
 	pMap->onUpdatePlayerProperties(pMegaman, cam);
+	
 	// update animation of tilesets in here
 	pMap->onUpdate(cam);
 

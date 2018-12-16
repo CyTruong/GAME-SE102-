@@ -10,6 +10,7 @@ SingleGunData::SingleGunData(std::vector<BulletSprite*> bullet)
 	this->isDesTroyed = false;
 	this->isThrougable = false;
 	this->bulletsVector = bullet;
+
 }
 
 SingleGunData::~SingleGunData()

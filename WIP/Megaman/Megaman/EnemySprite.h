@@ -27,11 +27,11 @@ public:
 	virtual float getVy() { return pData->vy; }
 	virtual void onUnsupported() { pData->pState->onFall(); }
 	virtual void setPlayerX(int x) { pData->Megaman_X = x; }
-	virtual void setPlayerY(int y) { pData->MEgaman_Y = y; }
+	virtual void setPlayerY(int y) { pData->Megaman_Y = y; }
 	virtual void setPlayerProperties(float x, float y, bool isDead)
 	{
 		pData->Megaman_X = x;
-		pData->MEgaman_Y = y;
+		pData->Megaman_Y = y;
 		pData->isPlayerDead = isDead;
 	}
 

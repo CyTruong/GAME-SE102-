@@ -1,5 +1,5 @@
 ﻿#include "SingleGunSprite.h"
-
+#include "SingleGunStandState.h"
 
 
 SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter, std::vector<BulletSprite*> bullet)
@@ -17,6 +17,9 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 	this->pData->isHittable = true;
 	this->pData->HP = 5;
 	this->pData->isShooter = true;
+	this->pData->respawnX = x;
+	this->pData->respawnY = y;
+
 
 	this->pData->ppTextureArrays = new TextureArray*[SingleGunData::COUNT];
 	//Nếu muốn thêm cái Recfs thì thêm trong SingelGData
@@ -28,9 +31,11 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 	this->pData->ppTextureArrays[SingleGunData::DIE]->setAnchorPoint(0.5f, 1.0f);
 
 	this->pData->body = RectF(-10.0f, -20.0f, 20.0f, 20.0f);
-	this->pData->vx = pData->vy = 0;
 
-	//Thêm state khơi đầu vào
+	this->pData->x = this->pData->respawnX;
+	this->pData->y = this->pData->respawnY;
+
+	this->pData->pState = new SingleGunStandState(this->pData);
 
 }
 

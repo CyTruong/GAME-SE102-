@@ -12,14 +12,14 @@ class EnemyData : public SpriteData
 
 public :
 	float Megaman_X;
-	float MEgaman_Y;
+	float Megaman_Y;
 	
 	bool isPlayerDead;
 	
 	std::string botName;
 	int HP;
 	bool isThrougable;
-	std::vector < BulletSprite* >& bulletsVector;
+	std::vector < BulletSprite* > bulletsVector;
 	int score;
 	Direction appearDir;
 	int stage; 

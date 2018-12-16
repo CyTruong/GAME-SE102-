@@ -10,7 +10,8 @@
 #include "base64.h"
 #include "QuadTree.h"
 #include "MegamanSprite.h"
-//#include "EnemyCreator.h"
+#include "EnemyCreator.h"
+#include "EnemySprite.h"
 #include "ObjectSprite.h"
 #include "UI.h"
 
@@ -42,7 +43,6 @@ public:
 	void onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam);
 	void onSupportPlayer(MegamanSprite* sprite);
 	void onSupportSprite();
-	void onUpdatePlayerProperties(MegamanSprite* sprite, MegamanSprite* sprite2, Camera* cam);
 	void onUpdatePlayerProperties(MegamanSprite* sprite, Camera* cam);
 	void onUpdate(Camera* cam);
 	float getResX();
@@ -54,11 +54,11 @@ private:
 	std::vector< TileSet* > tileSets; // vector of TileSet Pointer
 	std::vector< Layer* > layers; // vector of Layer pointer
 	std::vector < CollisionRectF > collisionRectFs;
-	//std::vector < BulletSprite* > bulletSprites;
+	std::vector < BulletSprite* > bulletSprites;
 	std::vector < Object*> Objects;
 	std::vector < std::string> spriteNames;
-//	std::map < int, EnemySprite* > EnemyMap;
-	//std::map < int, ObjectSprite* > objectMap;
+	std::map < int, EnemySprite* > EnemyMap;
+	std::map < int, ObjectSprite* > objectMap;
 	int tileSize;
 	int width; // number of tile in row
 	int height; // number of tile in col

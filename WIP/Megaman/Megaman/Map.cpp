@@ -51,13 +51,13 @@ Map::Map(std::string mapName)
 		}
 	}
 
-	/*for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+	for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
-		if (e->Value() == std::string("objectgroup") && e->Attribute("name") == std::string("ObjectLayer"))
+		if (e->Value() == std::string("objectgroup") && e->Attribute("name") == std::string("ObjLayer"))
 		{
 			loadObject(e);
 		}
-	}*/
+	}
 
 
 
@@ -396,127 +396,127 @@ void Map::cleanPlayerBullet(Camera* cam, MegamanSprite* sprite)
 
 void Map::addEToMap(Camera* cam)
 {
-	//RectF camRect = cam->getRect();
-	//mapCollisionTree->clear();
-	//for (int i = 0; i < Objects.size(); i++)
-	//{
+	RectF camRect = cam->getRect();
+	mapCollisionTree->clear();
+	for (int i = 0; i < Objects.size(); i++)
+	{
 
-	//	if (EnemyMap.find(Objects[i]->id) == EnemyMap.end() && objectMap.find(Objects[i]->id) == objectMap.end())
-	//		mapCollisionTree->insert(Objects[i]);
+		if (EnemyMap.find(Objects[i]->id) == EnemyMap.end() && objectMap.find(Objects[i]->id) == objectMap.end())
+			mapCollisionTree->insert(Objects[i]);
 
-	//}
-	//std::vector < Object * > returnList;
-	//mapCollisionTree->getObjectlist(returnList, camRect);
+	}
+	std::vector < Object * > returnList;
+	mapCollisionTree->getObjectlist(returnList, camRect);
 
-	//for (int i = 0; i < returnList.size(); i++)
-	//{
-	//	RectF body = returnList[i]->body;
-	//	std::string type = returnList[i]->type;
-	//	if (camRect.checkCollision(body))
-	//	{
-	//		Direction appearDir = EnemyCreator::getInstance()->getAppearDir(returnList[i]->name);
-	//		if (appearDir.isNone())
-	//		{
-	//			if (type == "enemy")
-	//			{
-	//				EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-	//				if (EnemySprite != nullptr)
-	//					EnemyMap[returnList[i]->id] = EnemySprite;
-	//			}
-	//			else
-	//			{
-	//				ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-	//				if (objectSprite != nullptr)
-	//					objectMap[returnList[i]->id] = objectSprite;
-	//			}
-	//			continue;
-	//		}
-	//		if (appearDir.isRight())
-	//		{
-	//			if ((body.x <= camRect.x + camRect.width) && (body.x >= camRect.x + camRect.width - 10))
-	//			{
-	//				if (type == "enemy")
-	//				{
-	//					EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-	//					if (EnemySprite != nullptr)
-	//						EnemyMap[returnList[i]->id] = EnemySprite;
-	//				}
-	//				else
-	//				{
-	//					ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-	//					if (objectSprite != nullptr)
-	//						objectMap[returnList[i]->id] = objectSprite;
-	//				}
-	//			}
-	//		}
+	for (int i = 0; i < returnList.size(); i++)
+	{
+		RectF body = returnList[i]->body;
+		std::string type = returnList[i]->type;
+		if (camRect.checkCollision(body))
+		{
+			Direction appearDir = EnemyCreator::getInstance()->getAppearDir(returnList[i]->name);
+			if (1)
+			{
+				if (type == "enemy")
+				{
+					EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+					if (EnemySprite != nullptr)
+						EnemyMap[returnList[i]->id] = EnemySprite;
+				}
+				/*else
+				{
+					ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+					if (objectSprite != nullptr)
+						objectMap[returnList[i]->id] = objectSprite;
+				}*/
+				continue;
+			}
+			//if (appearDir.isRight())
+			//{
+			//	if ((body.x <= camRect.x + camRect.width) && (body.x >= camRect.x + camRect.width - 10))
+			//	{
+			//		if (type == "enemy")
+			//		{
+			//			EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+			//			if (EnemySprite != nullptr)
+			//				EnemyMap[returnList[i]->id] = EnemySprite;
+			//		}
+			//	/*	else
+			//		{
+			//			ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+			//			if (objectSprite != nullptr)
+			//				objectMap[returnList[i]->id] = objectSprite;
+			//		}*/
+			//	}
+			//}
 
-	//		if (appearDir.isLeft())
-	//		{
-	//			if (
-	//				((body.x + body.width >= camRect.x) && (body.x + body.width <= camRect.x + 10))
-	//				)
-	//			{
-	//				if (type == "enemy")
-	//				{
-	//					EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-	//					if (EnemySprite != nullptr)
-	//						EnemyMap[returnList[i]->id] = EnemySprite;
-	//				}
-	//				else
-	//				{
-	//					ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-	//					if (objectSprite != nullptr)
-	//						objectMap[returnList[i]->id] = objectSprite;
-	//				}
-	//			}
-	//		}
+			//if (appearDir.isLeft())
+			//{
+			//	if (
+			//		((body.x + body.width >= camRect	.x) && (body.x + body.width <= camRect.x + 10))
+			//		)
+			//	{
+			//		if (type == "enemy")
+			//		{
+			//			EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+			//			if (EnemySprite != nullptr)
+			//				EnemyMap[returnList[i]->id] = EnemySprite;
+			//		}
+			//		/*else
+			//		{
+			//			ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+			//			if (objectSprite != nullptr)
+			//				objectMap[returnList[i]->id] = objectSprite;
+			//		}*/
+			//	}
+			//}
 
-	//		if (appearDir.isUp())
-	//		{
-	//			if ((body.y + body.height >= camRect.y) && (body.y + body.height <= camRect.y + 20))
-	//			{
-	//				if (type == "enemy")
-	//				{
-	//					EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-	//					if (EnemySprite != nullptr)
-	//						EnemyMap[returnList[i]->id] = EnemySprite;
-	//				}
-	//				else
-	//				{
-	//					ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-	//					if (objectSprite != nullptr)
-	//						objectMap[returnList[i]->id] = objectSprite;
-	//				}
-	//			}
-	//		}
+			//if (appearDir.isUp())
+			//{
+			//	if ((body.y + body.height >= camRect.y) && (body.y + body.height <= camRect.y + 20))
+			//	{
+			//		if (type == "enemy")
+			//		{
+			//			EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+			//			if (EnemySprite != nullptr)
+			//				EnemyMap[returnList[i]->id] = EnemySprite;
+			//		}
+			//	/*	else
+			//		{
+			//			ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+			//			if (objectSprite != nullptr)
+			//				objectMap[returnList[i]->id] = objectSprite;
+			//		}*/
+			//	}
+			//}
 
 
-	//		if (appearDir.isDown())
-	//		{
-	//			if ((body.y <= camRect.y + camRect.height) && (body.y >= camRect.y + camRect.height - 20))
-	//			{
-	//				if (type == "enemy")
-	//				{
-	//					EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
-	//					if (EnemySprite != nullptr)
-	//						EnemyMap[returnList[i]->id] = EnemySprite;
-	//				}
-	//				else
-	//				{
-	//					ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
-	//					if (objectSprite != nullptr)
-	//						objectMap[returnList[i]->id] = objectSprite;
-	//				}
-	//			}
-	//		}
+			//if (appearDir.isDown())
+			//{
+			//	if ((body.y <= camRect.y + camRect.height) && (body.y >= camRect.y + camRect.height - 20))
+			//	{
+			//		if (type == "enemy")
+			//		{
+			//			EnemySprite* EnemySprite = EnemyCreator::getInstance()->createEnemySprite(returnList[i]->name, returnList[i]->x, returnList[i]->y, bulletSprites);
+			//			if (EnemySprite != nullptr)
+			//				EnemyMap[returnList[i]->id] = EnemySprite;
+			//		}
+			//		/*else
+			//		{
+			//			ObjectSprite* objectSprite = EnemyCreator::getInstance()->createObjectSprite(returnList[i]->name, returnList[i]->x, returnList[i]->y);
+			//			if (objectSprite != nullptr)
+			//				objectMap[returnList[i]->id] = objectSprite;
+			//		}*/
+			//	}
+			//}
 
-	//	}
-	//}
+		}
+	}
 }
 
-#pragma endregion helperFunction
 
-#pragma region
+
+
 
 
 void Map::draw(Camera* cam)
@@ -526,21 +526,21 @@ void Map::draw(Camera* cam)
 		if (layers[i]->getName() == "BackgroundLayer")
 			layers[i]->draw(cam);
 	}
-/*
+
 	for (std::map < int, EnemySprite* > ::reverse_iterator it = EnemyMap.rbegin(); it != EnemyMap.rend(); ++it)
 	{
 		it->second->draw(cam);
 	}
 
-	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); ++it)
-	{
-		it->second->draw(cam);
-	}
+	//for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); ++it)
+	//{
+	//	it->second->draw(cam);
+	//}
 
-	for (int i = 0; i < bulletSprites.size(); i++)
-	{
-		bulletSprites[i]->draw(cam);
-	}*/
+	//for (int i = 0; i < bulletSprites.size(); i++)
+	//{
+	//	bulletSprites[i]->draw(cam);
+	//
 
 
 }
@@ -1032,50 +1032,17 @@ void Map::onSupportSprite()
 #pragma endregion EnemyvsMap
 }
 
-void Map::onUpdatePlayerProperties(MegamanSprite* sprite, MegamanSprite* sprite2, Camera* cam)
-{
-	cleanPlayerBullet(cam, sprite);
-	if (sprite2)
-	{
-		cleanPlayerBullet(cam, sprite2);
-	}
-	// update Enemy
-	/*for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
-	{
-		if (sprite2)
-		{
-			it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY(), sprite->isDead(), sprite2->getCenterX(), sprite2->getCenterY(), sprite2->isDead());
-		}
-		else
-		{
-			it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY(), sprite->isDead());
-		}
 
-	}
-
-	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
-	{
-		if (sprite2)
-		{
-			it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY(), sprite2->getCenterX(), sprite2->getCenterY());
-		}
-		else
-		{
-			it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY());
-		}
-
-	}*/
-}
 void Map::onUpdatePlayerProperties(MegamanSprite* sprite, Camera* cam)
 {
 	cleanPlayerBullet(cam, sprite);
 
-	//// update Enemy
-	//for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
-	//{
-	//	it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY(), sprite->isDead());
+	// update Enemy
+	for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
+	{
+		it->second->setPlayerProperties(sprite->getCenterX(), sprite->getCenterY(), sprite->isDead());
 
-	//}
+	}
 
 	//for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
 	//{
@@ -1097,12 +1064,12 @@ void Map::onUpdate(Camera* cam)
 
 
 
-	//// update Enemy
-	//for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
-	//{
-	//	//it ->second ->setPlayerProperties(sprite -> getCenterX(), sprite ->getCenterY(), sprite -> isDead());
-	//	it->second->update();
-	//}
+	// update Enemy
+	for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
+	{
+		//it ->second ->setPlayerProperties(sprite -> getCenterX(), sprite ->getCenterY(), sprite -> isDead());
+		it->second->update();
+	}
 
 
 	//for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
@@ -1113,10 +1080,10 @@ void Map::onUpdate(Camera* cam)
 	//}
 
 
-	//for (std::vector < BulletSprite* > ::iterator it = bulletSprites.begin(); it != bulletSprites.end(); it++)
-	//{
-	//	(*it)->update();
-	//}
+	for (std::vector < BulletSprite* > ::iterator it = bulletSprites.begin(); it != bulletSprites.end(); it++)
+	{
+		(*it)->update();
+	}
 }
 float Map::getResX()
 {
