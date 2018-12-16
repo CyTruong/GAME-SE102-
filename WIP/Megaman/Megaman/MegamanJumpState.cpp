@@ -42,7 +42,7 @@ void MegamanJumpState::onMovePressed(Direction dir)
 	pData->dir = dir;
 	tempDir = dir;
 	//hcmt cam move 
-	//pData->movedir = dir;
+	pData->movedir = dir;
 	isMoving = true;
 	
 
@@ -54,6 +54,8 @@ void MegamanJumpState::onMoveReleased(Direction dir)
 	if (!tempDir.isNone())
 	{
 		pData->dir = tempDir;
+		pData->movedir = tempDir; 
+
 	}
 	else
 		isMoving = false;
@@ -146,7 +148,8 @@ void MegamanJumpState::onCollision(RectF rect)
 				pData->y -= py;
 				pData->vy = 0.0f;
 				if (isMoving)
-				{
+				{ 
+
 					transition(new MegamanRunningState(pData));
 				}
 				else
@@ -323,6 +326,24 @@ void MegamanJumpState::onUpdate()
 		pData->vx = 0.0f;
 	}
 	pData->vy += acceleration;
+
+	//hcmt 
+	pData->movedir = pData->dir; 
+
+	if (pData->vy < 0)
+	{
+
+		pData->movedir = Direction::createUp();
+
+
+	}
+	if (pData->vy>0)
+	{
+
+		pData->movedir = Direction::createDown();
+
+	}
+
 
 	if (pData->vy>= 0 && !pData->isFrire) {
 		pData->setiCurrentArray(MegamanData::FALL);

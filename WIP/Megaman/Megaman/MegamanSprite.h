@@ -26,7 +26,7 @@ public:
 	virtual float getX() { return pData->x; }
 	virtual float getY() { return pData->y; }
 	//hcmt 
-	virtual Direction getMoveDir() { return pData->dir; }
+	virtual Direction getMoveDir() { return pData->movedir; }
 
 
 	virtual float getCenterX() { return pData->x; }

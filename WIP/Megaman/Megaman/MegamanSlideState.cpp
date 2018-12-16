@@ -44,6 +44,7 @@ void MegamanSlideState::onJumpPressed()
 
 void MegamanSlideState::onJumpRelease()
 {
+
 	transition(new MegamanJumpState(this->pData, true, -4.5f));
 }
 
@@ -60,6 +61,8 @@ void MegamanSlideState::onUpdate()
 	speedSlideX -= Friction;
 	pData->x += pData->vx;
 	
+	pData->movedir = pData->dir; 
+
 	
 	if (pData->isCharging) {
 		pData->ChargingCount++;

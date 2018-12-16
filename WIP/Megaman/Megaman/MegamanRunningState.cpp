@@ -56,6 +56,7 @@ void MegamanRunningState::onUpdate()
 	
 	pData->vy += acceleration; 
 	pData->y += pData->vy; 
+	pData->movedir = pData->dir; 
 
 
 	if (pData->isCharging) {
