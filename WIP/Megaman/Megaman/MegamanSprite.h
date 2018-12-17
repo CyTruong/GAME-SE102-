@@ -20,7 +20,6 @@ public:
 	}
 	virtual RectF getBody() { return pData->getBody(); }
 	virtual void setBody(RectF r) { pData->body = r; }
-	/*virtual RectF getLastFrameBody() {return pData ->getLastFrameBody();}*/
 	virtual float getVx() { return pData->vx; }
 	virtual float getVy() { return pData->vy; }
 	virtual float getX() { return pData->x; }
@@ -32,11 +31,7 @@ public:
 	virtual float getCenterX() { return pData->x; }
 	virtual float getCenterY() { return pData->y - pData->ppTextureArrays[pData->iCurrentArr]->getHeight() / 2; }
 	virtual void onUnsupported() { pData->pState->onFall(); }
-	/*virtual void updateLastFrame()
-	{
-		pData -> lx = pData -> x;
-		pData -> ly = pData -> y;
-	}*/
+	
 	virtual void onCollision(RectF r) { pData->pState->onCollision(r); }
 	virtual void onCollision(CollisionRectF r) { pData->pState->onCollision(r); }
 	virtual void onDynamicObjectCollision(CollisionRectF* r) { pData->pState->onDynamicObjectCollision(r); }
@@ -48,11 +43,13 @@ public:
 	{
 		pData->cDynamicSupportRect = rect;
 	}
-	//hcmt 
-	//virtual std::vector< CollisionRectF>& getThroughRect();
-	//virtual std::vector< CollisionRectF* >&  getDynamicThroughRect();
+	
 	virtual void updateThroughRect();
-	//std::vector<BulletSprite* >& getBullets();
+
+	std::vector<BulletSprite* >& getBullets() {
+		return this->pData->Bullets;
+	};
+
 	virtual void die();
 	virtual void onCameraCollision(RectF cameraRect);
 	virtual bool isDesTroyed() { return pData->isDesTroyed; }
@@ -60,6 +57,8 @@ public:
 	virtual int getDamage();
 	void setCameraRect(RectF r);
 	
+	
+
 	int getIndex()
 	{
 		return pData->index;

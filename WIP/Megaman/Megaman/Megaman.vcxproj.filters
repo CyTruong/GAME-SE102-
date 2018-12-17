@@ -40,6 +40,9 @@
     <Filter Include="Enemies\SingleGun">
       <UniqueIdentifier>{e903e5c2-abaf-4eaf-ac5d-80d632cf5f43}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\Elevator">
+      <UniqueIdentifier>{3fe20ada-85ef-48c4-9fe0-0f44914c5f1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -147,15 +150,6 @@
     <ClInclude Include="Layer.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectData.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectSprite.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectState.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
     <ClInclude Include="MegamanJumpState.h">
       <Filter>Megaman</Filter>
     </ClInclude>
@@ -215,6 +209,24 @@
     </ClInclude>
     <ClInclude Include="SingleGunJumpingState.h">
       <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectData.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectSprite.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectState.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ElevatorSprite.h">
+      <Filter>Objects\Elevator</Filter>
+    </ClInclude>
+    <ClInclude Include="ElevatorData.h">
+      <Filter>Objects\Elevator</Filter>
+    </ClInclude>
+    <ClInclude Include="ElevatorWaittingState.h">
+      <Filter>Objects\Elevator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -281,15 +293,6 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectSprite.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjectState.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjectData.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="MegamanRunningState.cpp">
       <Filter>Megaman</Filter>
     </ClCompile>
@@ -331,6 +334,15 @@
     </ClCompile>
     <ClCompile Include="SingleGunJumpingState.cpp">
       <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="ElevatorSprite.cpp">
+      <Filter>Objects\Elevator</Filter>
+    </ClCompile>
+    <ClCompile Include="ElevatorData.cpp">
+      <Filter>Objects\Elevator</Filter>
+    </ClCompile>
+    <ClCompile Include="ElevatorWaittingState.cpp">
+      <Filter>Objects\Elevator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

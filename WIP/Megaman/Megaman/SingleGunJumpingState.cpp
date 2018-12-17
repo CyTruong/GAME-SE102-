@@ -10,7 +10,7 @@ SingleGunJumpingState::SingleGunJumpingState(EnemyData * pData)
 	this->gravity = 0.2;
 	this->pData = pData;
 	this->pData->iCurrentArr = SingleGunData::JUMP;
-	this->pData->vy = -3.0f;
+	this->pData->vy = -4.0f;
 }
 
 void SingleGunJumpingState::onUpdate()

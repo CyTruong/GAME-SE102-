@@ -141,6 +141,9 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionRect.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="ElevatorData.h" />
+    <ClInclude Include="ElevatorSprite.h" />
+    <ClInclude Include="ElevatorWaittingState.h" />
     <ClInclude Include="EnemyCreator.h" />
     <ClInclude Include="EnemyData.h" />
     <ClInclude Include="EnemySprite.h" />
@@ -196,6 +199,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base64.cpp" />
+    <ClCompile Include="ElevatorData.cpp" />
+    <ClCompile Include="ElevatorSprite.cpp" />
+    <ClCompile Include="ElevatorWaittingState.cpp" />
     <ClCompile Include="EnemyCreator.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
@@ -212,9 +218,6 @@
     <ClCompile Include="MegamanStartState.cpp" />
     <ClCompile Include="MegamanWallClimping.cpp" />
     <ClCompile Include="MgmNormalBulletSprite.cpp" />
-    <ClCompile Include="ObjectData.cpp" />
-    <ClCompile Include="ObjectSprite.cpp" />
-    <ClCompile Include="ObjectState.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />

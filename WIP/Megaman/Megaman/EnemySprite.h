@@ -91,6 +91,14 @@ public:
 	{
 		return pData->score;
 	}
+	virtual void beShooted(int damage)
+	{
+		pData->HP -= damage;
+		if (pData->HP <= 0)
+		{
+			die();
+		}
+	}
 	virtual bool isDead()
 	{
 		return pData->isDead;

@@ -19,15 +19,10 @@ public:
 	}
 	virtual RectF getBody() { return pData->getBody(); }
 	virtual void setBody(RectF r) { pData->body = r; }
-	/*virtual RectF getLastFrameBody() {return pData ->getLastFrameBody();}*/
 	virtual float getVx() { return pData->vx; }
 	virtual float getVy() { return pData->vy; }
 	virtual void onUnsupported() { pData->pState->onFall(); }
-	/*virtual void updateLastFrame()
-	{
-		pData -> lx = pData -> x;
-		pData -> ly = pData -> y;
-	}*/
+	
 	virtual void onCollision(RectF r) { pData->pState->onCollision(r); }
 	virtual void onCollision(CollisionRectF r) { pData->pState->onCollision(r); }
 	virtual void setSupportCollisionRect(CollisionRectF rect)

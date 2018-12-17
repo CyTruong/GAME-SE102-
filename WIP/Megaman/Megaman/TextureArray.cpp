@@ -17,7 +17,7 @@ TextureArray::TextureArray(std::string fileName, std::string name, std::string s
 	for (int i = 0; i < nTextures; i++)
 	{
 		std::stringstream s;
-		s << std::setw(1) << i;
+		s << std::setw(2) << std::setfill('0') << i;
 		ppTextures[i] = new Texture(fileName + "\\" + name + "\\" + name +"_"+ state + s.str() + std::string(".png"), name + state + s.str(), colorKey);
 	}
 }

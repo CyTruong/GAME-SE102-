@@ -1,6 +1,6 @@
 ﻿#include "SingleGunSprite.h"
 #include "SingleGunStandState.h"
-
+#include "SingleGunJumpingState.h"
 
 SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter, std::vector<BulletSprite*> bullet)
 {
@@ -23,19 +23,19 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 
 	this->pData->ppTextureArrays = new TextureArray*[SingleGunData::COUNT];
 	//Nếu muốn thêm cái Recfs thì thêm trong SingelGData
-	this->pData->ppTextureArrays[SingleGunData::STAND] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Stand", 1, 50);
+	this->pData->ppTextureArrays[SingleGunData::STAND] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Stand", 3, 20);
 	this->pData->ppTextureArrays[SingleGunData::STAND]->setAnchorPoint(0.5f, 1.0f);
-	this->pData->ppTextureArrays[SingleGunData::JUMP] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Jump", 1, 50);
+	this->pData->ppTextureArrays[SingleGunData::JUMP] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Jump", 4, 20);
 	this->pData->ppTextureArrays[SingleGunData::JUMP]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->ppTextureArrays[SingleGunData::DIE] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Die", 1, 50);
 	this->pData->ppTextureArrays[SingleGunData::DIE]->setAnchorPoint(0.5f, 1.0f);
 
-	this->pData->body = RectF(-10.0f, -20.0f, 20.0f, 20.0f);
+	this->pData->body = RectF(-24.0f, -48.0f, 48.0f, 48.0f);
 
 	this->pData->x = this->pData->respawnX;
 	this->pData->y = this->pData->respawnY;
 
-	this->pData->pState = new SingleGunStandState(this->pData);
+	this->pData->pState = new SingleGunJumpingState(this->pData);
 
 }
 

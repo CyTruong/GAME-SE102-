@@ -1,12 +1,14 @@
 #include "EnemyCreator.h"
 #include "SingleGunSprite.h"
-
+#include "ElevatorSprite.h"
 EnemyCreator* EnemyCreator::instance = nullptr;
 
 
 EnemyCreator::EnemyCreator()
 {
-	addAppearDirection("SingleGun", Direction::createLeft());
+	addAppearDirection("SingleGun", Direction::createRight());
+	addAppearDirection("Elevator", Direction::createRight());
+	addAppearDirection("DoubleGun", Direction::createRight());
 }
 
 void EnemyCreator::addAppearDirection(std::string name, Direction dir)
@@ -28,11 +30,17 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 	if (enemyName == "SingleGun") {
 		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true);
 	}
+	if (enemyName == "DoubleGun") {
+		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true);
+	}
+
 }
 
 ObjectSprite * EnemyCreator::createObjectSprite(std::string name, int respawnX, int respawnY)
 {
-	return nullptr;
+	if (name == "Elevator") {
+		return new ElevatorSprite(respawnX, respawnY);
+	}
 }
 
 Direction EnemyCreator::getAppearDir(std::string name)
