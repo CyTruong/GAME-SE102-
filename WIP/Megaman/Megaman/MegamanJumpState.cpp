@@ -5,20 +5,48 @@
 #include"MegamanStandingState.h"
 #include"MegamanStandShootState.h"
 #include "MegamanWallClimping.h"
-MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy)
-{
+//MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy,)
+//{
+//
+//	this->pData = data;
+//	speedX = 1;
+//	pData->vy = vy;
+//	acceleration = 0.2f;
+//
+//	this->isMoving = ismove;
+//	if (pData->vy < 0) {
+//		LogWriter::getInstance()->write("Start Jumpping");
+//
+//		pData->setiCurrentArray(MegamanData::JUMP);
+//		pData->movedir = Direction::createUp(); 
+//		isJumpingPress = true;
+//	}
+//	else
+//	{
+//		LogWriter::getInstance()->write("Start Falling");
+//
+//		pData->setiCurrentArray(MegamanData::FALL);
+//		pData->movedir = Direction::createDown();
+//		isJumpingPress = false;
+//	}
+//	tempDir = pData->dir;
+//}
 
+
+MegamanJumpState::MegamanJumpState(MegamanData * data, bool isMoving, float vy, bool isCimping)
+{
 	this->pData = data;
 	speedX = 1;
 	pData->vy = vy;
-//	acceleration = 0.2f;
+	//	acceleration = 0.2f;
 
-	this->isMoving = ismove;
+	this->isMoving = isMoving; 
+	this->isCimping = isCimping; 
 	if (pData->vy < 0) {
 		LogWriter::getInstance()->write("Start Jumpping");
 
 		pData->setiCurrentArray(MegamanData::JUMP);
-		pData->movedir = Direction::createUp(); 
+		pData->movedir = Direction::createUp();
 		isJumpingPress = true;
 	}
 	else
@@ -33,6 +61,7 @@ MegamanJumpState::MegamanJumpState(MegamanData* data, bool ismove , float vy)
 }
 
 
+
 MegamanJumpState::~MegamanJumpState()
 {
 }
@@ -44,6 +73,19 @@ void MegamanJumpState::onMovePressed(Direction dir)
 	//hcmt cam move 
 	pData->movedir = dir;
 	isMoving = true;
+
+	if (isCimping)
+	{
+		pData->dir.reverse(); 
+		pData->movedir = pData->dir;  
+		pData->vx = 0; 
+		//pData->vy += 0.2; 
+		
+		transition(new MegamanWallClimping(pData)); 
+
+
+	}
+	
 	
 
 }
@@ -59,6 +101,15 @@ void MegamanJumpState::onMoveReleased(Direction dir)
 	}
 	else
 		isMoving = false;
+}
+
+void MegamanJumpState::onJumpPressed()
+{
+	if (isCimping)
+	{
+		transition(new MegamanJumpState(pData, true));
+	}
+
 }
 
 void MegamanJumpState::onJumpRelease()
@@ -188,6 +239,12 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 {
 	LogWriter::getInstance()->write("Jump collision "+ rect.type );
 	// có 4 trường hợp va chạm
+	//hcmt 
+	if (rect.type=="wall")
+	{
+		int a = 1; 
+
+	}
 	float vx = pData->vx;
 	float vy = pData->vy;
 	float top = pData->getBody().y;
@@ -223,10 +280,23 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 					}
 			}
 			else
-			{
-				// va chạm bên phải
+			{// va chạm bên phải
 				pData->x -= px;
 				pData->vx = 0.0f;
+
+
+				if (rect.type=="wall")
+
+				{ 
+					pData->x -= 2; 
+					isCimping = true; 
+
+					pData->movedir = Direction::createUp(); 
+
+					//transition(new MegamanWallClimping(pData)); 
+
+				}
+				 
 			}
 		}
 		else // vy <= 0.0f
@@ -241,9 +311,20 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 			}
 			else
 			{
-				//va chạm bên trái
 				pData->x -= px;
 				pData->vx = 0.0f;
+
+				if (rect.type == "wall")
+				{  
+					isCimping = true; 
+
+					pData->movedir = Direction::createUp();
+
+				//	transition(new MegamanWallClimping(pData));
+
+				}
+				//va chạm bên trái
+				;
 			}
 		}
 	}
@@ -325,6 +406,7 @@ void MegamanJumpState::onUpdate()
 	{
 		pData->vx = 0.0f;
 	}
+
 	pData->vy += acceleration;
 
 	//hcmt 

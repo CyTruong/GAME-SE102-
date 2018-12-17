@@ -7,12 +7,21 @@ private:
 	bool isMoving;
 	bool isJumpingPress;
 	float speedX;
+
+	// hcmt 
+	bool isCimping; 
+
+
 	//float acceleration;
 public:
-	MegamanJumpState(MegamanData * data, bool isMoving = false , float vy =-5.0f);
+	//MegamanJumpState(MegamanData * data, bool isMoving = false , float vy =-5.0f);
+	// hcmt 
+	MegamanJumpState(MegamanData *data, bool isMoving = false, float vy = -5.0f, bool isCimping = false);
 	~MegamanJumpState();
 	void onMovePressed(Direction dir);
 	void onMoveReleased(Direction dir);
+	// hcmt climping 
+	void onJumpPressed(); 
 	void onJumpRelease();
 	void onSlidePressed();
 	void onCollision(RectF rect);

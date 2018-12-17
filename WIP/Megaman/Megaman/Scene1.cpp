@@ -24,7 +24,7 @@ Scene1::Scene1()
 	viewPort = new ViewPort(RectI(SCREEN_WIDTH / 2 - viewPortSize / 2, SCREEN_HEIGHT / 2 - viewPortSize / 2, viewPortSize, viewPortSize));
 
 
-	cam = new Camera(viewPort, 70, 900, RectF(0, 760, 760, 250), RectF(7700, 760, 50, 500));
+	cam = new Camera(viewPort, 70, 900, RectF(0, 760, 7000, 250), RectF(7700, 760, 50, 500));
 
 
 

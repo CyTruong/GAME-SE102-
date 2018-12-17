@@ -1,14 +1,15 @@
-#include "MegamanWallClimping.h"
+﻿#include "MegamanWallClimping.h"
 
 
 
 MegamanWallClimping::MegamanWallClimping(MegamanData * data)
 {
-	DownGraviy = 0.3;
-	data->dir.reverse();
-	this->pData = data;
-	this->pData->setiCurrentArray(MegamanData::WALLSLIDE);
-	this->pData->vy = 1;
+	//DownGraviy = 0.3;
+//	data->dir.reverse();
+	this->pData = data; 
+
+	//this->pData->setiCurrentArray(MegamanData::WALLSLIDE);
+	this->pData->vy = 0.01;
 }
 
 
@@ -18,13 +19,15 @@ MegamanWallClimping::~MegamanWallClimping()
 
 void MegamanWallClimping::onMovePressed(Direction dir)
 {
-	if (this->pData->dir == dir) {
-		transition(new MegamanJumpState(this->pData, true, 0));
-	}
+	
 }
 
 void MegamanWallClimping::onMoveReleased(Direction dir)
 {
+	// - x ra 
+	// -> rơi 
+
+
 }
 
 void MegamanWallClimping::onVeticalDirectionPressed(Direction dir)
@@ -40,7 +43,8 @@ void MegamanWallClimping::onVeticalDirectionReleased()
 
 void MegamanWallClimping::onJumpPressed()
 {
-	transition(new MegamanJumpState(this->pData, true));
+	pData->vy -= acceleration; 
+	transition(new MegamanJumpState(this->pData, true ,pData->vy ));
 }
 
 void MegamanWallClimping::onJumpRelease()
@@ -49,14 +53,22 @@ void MegamanWallClimping::onJumpRelease()
 
 void MegamanWallClimping::onSlidePressed()
 {
-	transition(new MegamanSlideState(this->pData));
+	
 
 	hittableCalculation();
 	undyingCalculation();
 	pData->ppTextureArrays[pData->iCurrentArr]->update();
 
-	this->pData->vy += DownGraviy;
-	this->pData->y += pData->vy;
+	pData->vx = pData->transform(0.5); 
+	
+	pData->vy += acceleration; 
+
+
+	pData->x += pData-> vx; 
+	pData->y += pData->vy;
+
+
+	
 
 	if (pData->isCharging) {
 		pData->ChargingCount++;
@@ -79,12 +91,55 @@ void MegamanWallClimping::onSlidePressed()
 		}
 	}
 
-	this->pData->y += pData->vy;
+	
 
 }
 
 void MegamanWallClimping::onUpdate()
 {
+
+	hittableCalculation();
+	undyingCalculation();
+	pData->ppTextureArrays[pData->iCurrentArr]->update();
+
+	//pData->vx = pData->transform(0.5);
+	pData->vx = 0; 
+	pData->vy += acceleration;
+
+
+	pData->x += pData->vx;
+	pData->y += pData->vy;
+
+	if (1)
+	{
+		transition(new MegamanJumpState(pData, false, pData->vy)); 
+
+	}
+
+
+
+
+	//if (pData->isCharging) {
+	//	pData->ChargingCount++;
+	//	pData->bulletSize = getSizeofBullet(pData->ChargingCount);
+	//	pData->ppTextureArrays[pData->bulletSize]->update();
+	//}
+
+	//if (pData->isFrire && pData->iCurrentArr == MegamanData::WALLSLIDE) {
+	//	pData->setiCurrentArray(MegamanData::WALLSLIDESHOOT);
+	//}
+	//if (!pData->isFrire && pData->iCurrentArr == MegamanData::WALLSLIDESHOOT) {
+	//	pData->setiCurrentArray(MegamanData::WALLSLIDE);
+	//}
+
+	//if (pData->isFrire) {
+	//	pData->FireCountFrames++;
+	//	if (pData->FireCountFrames > FIRE_COUNTING_FRAME) {
+	//		pData->FireCountFrames = 0;
+	//		pData->isFrire = false;
+	//	}
+	//}
+
 }
 
 void MegamanWallClimping::onCollision(RectF rect)
