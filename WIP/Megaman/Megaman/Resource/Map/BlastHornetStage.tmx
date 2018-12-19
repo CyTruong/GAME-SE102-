@@ -208,7 +208,7 @@
   <object id="32" name="DoubleGun" type="enemy" x="6073" y="1915.5" width="42" height="40.5"/>
   <object id="70" name="Elevator" type="object" x="862.333" y="942.061" width="94" height="74"/>
  </objectgroup>
- <objectgroup id="3" name="CollisionLayer">
+ <objectgroup id="3" name="CollisionLayer" locked="1">
   <object id="36" type="ground" x="24" y="933.5" width="171.167" height="19.8333"/>
   <object id="42" type="ground" x="367.583" y="888.75" width="149.333" height="15.9167"/>
   <object id="45" type="ground" x="529.333" y="840.666" width="117.33" height="20"/>
