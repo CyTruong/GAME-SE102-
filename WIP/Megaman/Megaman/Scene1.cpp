@@ -1,4 +1,5 @@
-﻿#include "Scene1.h"
+﻿
+#include "Scene1.h"
 
 
 Scene1::Scene1()
@@ -20,15 +21,15 @@ Scene1::Scene1()
 // vpsize = tile size *15 o vuong  
 
 	int viewPortSize = pMap->getMapRect().width < pMap->getMapRect().height ? pMap->getMapRect().width : pMap->getMapRect().height;
-	viewPortSize = 17 * 15;
-	viewPort = new ViewPort(RectI(SCREEN_WIDTH / 2 - viewPortSize / 2, SCREEN_HEIGHT / 2 - viewPortSize / 2, viewPortSize, viewPortSize));
+	viewPortSize = 16 * 15;
+	viewPort = new ViewPort(RectI(0, 0, 272, 272));
 
 
-	cam = new Camera(viewPort, 70, 900, RectF(0, 760, 7000, 250), RectF(7700, 760, 50, 500));
+	cam = new Camera(viewPort, 0, 44 * 16, RectF(0, 760, 7000, 250), RectF(7700, 760, 50, 500));
 
 
 
-	pMegaman = new MegamanSprite(0, 70, 900, cam->getMoveDir());
+	pMegaman = new MegamanSprite(0, 136, 44 * 16 + 136, cam->getMoveDir());
 
 
 	// Texture Hp 
@@ -64,7 +65,7 @@ void Scene1::onCollision()
 {
 
 	pMap->onCollisionvsPlayer(pMegaman, cam);
-	 pMap->onCollision(cam);
+	// pMap->onCollision(cam);
 }
 
 void Scene1::handlerInput()
@@ -218,7 +219,7 @@ void Scene1::render()
 	Graphics::getInstance()->getSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
 
 	pMap->draw(cam);
-	
+
 	pMegaman->draw(cam);
 
 	//draw HP col 
@@ -235,14 +236,14 @@ void Scene1::Update()
 
 	//update vị trí của ng chơi cho enemy
 	pMap->onUpdatePlayerProperties(pMegaman, cam);
-	
+
 	// update animation of tilesets in here
 	pMap->onUpdate(cam);
 
 
 	// check collision player and rect 
 
-    
+
 	//pMap->onSupportPlayer(pMegaman);
 
 	// check collision enemy, boss, object vs Map 
@@ -253,7 +254,7 @@ void Scene1::Update()
 	pMegaman->update();
 
 
-	if (pMegaman->getMoveDir().isUp() )
+	if (pMegaman->getMoveDir().isUp())
 	{
 		int a = 0;
 
@@ -268,3 +269,4 @@ void Scene1::Update()
 
 
 }
+
