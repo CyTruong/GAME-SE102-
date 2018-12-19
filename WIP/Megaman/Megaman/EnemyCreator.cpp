@@ -5,7 +5,9 @@ EnemyCreator* EnemyCreator::instance = nullptr;
 
 
 EnemyCreator::EnemyCreator()
-{
+{ 
+
+
 	addAppearDirection("SingleGun", Direction::createRight());
 	addAppearDirection("Elevator", Direction::createRight());
 	addAppearDirection("DoubleGun", Direction::createRight());
