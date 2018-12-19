@@ -7,7 +7,7 @@
 
 MegamanRunningState::MegamanRunningState(MegamanData* data) 
 {
-	LogWriter::getInstance()->write("Vào Running state");
+	//LogWriter::getInstance()->write("Vào Running state");
 	this->pData = data;
 	pData->setiCurrentArray(MegamanData::RUN);
 	pData->vy = 0;
@@ -114,7 +114,7 @@ void MegamanRunningState::onCollision(RectF rect)
 
 void MegamanRunningState::onCollision(CollisionRectF crect)
 {
-	LogWriter::getInstance()->write("Ruuning state collision");
+//	LogWriter::getInstance()->write("Ruuning state collision");
 	//pData->cThroughRect.push_back(crect);
 	if (pData->vx > 0)
 	{

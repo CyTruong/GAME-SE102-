@@ -15,6 +15,7 @@ public:
 	void onUpdate();
 	// hcmt add physic 
 	void onCollision(CollisionRectF cRect ); 
+	void onDynamicObjectCollision(CollisionRectF* rect);
 
 	void onVeticalDirectionPressed(Direction d);
 	void onVeticalDirectionReleased();

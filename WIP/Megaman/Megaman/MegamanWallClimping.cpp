@@ -4,12 +4,12 @@
 
 MegamanWallClimping::MegamanWallClimping(MegamanData * data)
 {
-	//DownGraviy = 0.3;
-//	data->dir.reverse();
-	this->pData = data; 
+	DownGraviy = 0.02;
+	data->dir.reverse();
+	this->pData = data;
 
-	//this->pData->setiCurrentArray(MegamanData::WALLSLIDE);
-	this->pData->vy = 0.01;
+	this->pData->setiCurrentArray(MegamanData::WALLSLIDE);
+	this->pData->vy = 0.00;
 }
 
 
@@ -19,7 +19,9 @@ MegamanWallClimping::~MegamanWallClimping()
 
 void MegamanWallClimping::onMovePressed(Direction dir)
 {
-	
+	if ( (dir == this->pData->dir) ) {
+		transition(new MegamanJumpState(this->pData, true,-2.0f));
+	}
 }
 
 void MegamanWallClimping::onMoveReleased(Direction dir)
@@ -43,8 +45,10 @@ void MegamanWallClimping::onVeticalDirectionReleased()
 
 void MegamanWallClimping::onJumpPressed()
 {
-	pData->vy -= acceleration; 
-	transition(new MegamanJumpState(this->pData, true ,pData->vy ));
+	
+	this->pData->dir.reverse();
+	this->pData->x -= 8;
+	transition(new MegamanJumpState(this->pData, true));
 }
 
 void MegamanWallClimping::onJumpRelease()
@@ -53,22 +57,22 @@ void MegamanWallClimping::onJumpRelease()
 
 void MegamanWallClimping::onSlidePressed()
 {
-	
+
 
 	hittableCalculation();
 	undyingCalculation();
 	pData->ppTextureArrays[pData->iCurrentArr]->update();
 
-	pData->vx = pData->transform(0.5); 
-	
-	pData->vy += acceleration; 
+	pData->vx = pData->transform(0.5);
+
+	pData->vy += DownGraviy;
 
 
-	pData->x += pData-> vx; 
+	pData->x += pData->vx;
 	pData->y += pData->vy;
 
 
-	
+
 
 	if (pData->isCharging) {
 		pData->ChargingCount++;
@@ -91,7 +95,7 @@ void MegamanWallClimping::onSlidePressed()
 		}
 	}
 
-	
+
 
 }
 
@@ -102,43 +106,43 @@ void MegamanWallClimping::onUpdate()
 	undyingCalculation();
 	pData->ppTextureArrays[pData->iCurrentArr]->update();
 
-	//pData->vx = pData->transform(0.5);
-	pData->vx = 0; 
-	pData->vy += acceleration;
+
+	pData->vx = 0;
+	pData->vy += DownGraviy;
 
 
 	pData->x += pData->vx;
 	pData->y += pData->vy;
 
-	if (1)
+	/*if (1)
 	{
-		transition(new MegamanJumpState(pData, false, pData->vy)); 
+		transition(new MegamanJumpState(pData, false, pData->vy));
 
+	}*/
+
+
+
+
+	if (pData->isCharging) {
+		pData->ChargingCount++;
+		pData->bulletSize = getSizeofBullet(pData->ChargingCount);
+		pData->ppTextureArrays[pData->bulletSize]->update();
 	}
 
+	if (pData->isFrire && pData->iCurrentArr == MegamanData::WALLSLIDE) {
+		pData->setiCurrentArray(MegamanData::WALLSLIDESHOOT);
+	}
+	if (!pData->isFrire && pData->iCurrentArr == MegamanData::WALLSLIDESHOOT) {
+		pData->setiCurrentArray(MegamanData::WALLSLIDE);
+	}
 
-
-
-	//if (pData->isCharging) {
-	//	pData->ChargingCount++;
-	//	pData->bulletSize = getSizeofBullet(pData->ChargingCount);
-	//	pData->ppTextureArrays[pData->bulletSize]->update();
-	//}
-
-	//if (pData->isFrire && pData->iCurrentArr == MegamanData::WALLSLIDE) {
-	//	pData->setiCurrentArray(MegamanData::WALLSLIDESHOOT);
-	//}
-	//if (!pData->isFrire && pData->iCurrentArr == MegamanData::WALLSLIDESHOOT) {
-	//	pData->setiCurrentArray(MegamanData::WALLSLIDE);
-	//}
-
-	//if (pData->isFrire) {
-	//	pData->FireCountFrames++;
-	//	if (pData->FireCountFrames > FIRE_COUNTING_FRAME) {
-	//		pData->FireCountFrames = 0;
-	//		pData->isFrire = false;
-	//	}
-	//}
+	if (pData->isFrire) {
+		pData->FireCountFrames++;
+		if (pData->FireCountFrames > FIRE_COUNTING_FRAME) {
+			pData->FireCountFrames = 0;
+			pData->isFrire = false;
+		}
+	}
 
 }
 
@@ -205,7 +209,7 @@ void MegamanWallClimping::onFireRelease()
 			angle = M_PI;
 		}
 		createBullet(bulletX, bulletY, angle);
-	}	 
+	}
 }
 
 void MegamanWallClimping::onDead()
@@ -216,6 +220,3 @@ void MegamanWallClimping::onCameraCollision(RectF cameraRect)
 {
 }
 
-void MegamanWallClimping::createBullet(float x, float y, float angle)
-{
-}

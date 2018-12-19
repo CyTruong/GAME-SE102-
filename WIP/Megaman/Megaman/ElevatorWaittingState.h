@@ -5,6 +5,8 @@
 class ElevatorWaittingState :
 	public ObjectState
 {
+private:
+	bool isMegamanStanding;
 public:
 	ElevatorWaittingState(ObjectData* data) ;
 	void onUpdate() override ;

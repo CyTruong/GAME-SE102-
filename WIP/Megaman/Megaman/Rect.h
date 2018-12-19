@@ -42,7 +42,7 @@ public:
 		sRight = min(sRight, rRight);
 		sBottom = min(sBottom, rBottom);
 		width = sRight - this->x;
-		width = sBottom - this->y;
+		height = sBottom - this->y;
 	}
 
 	bool operator == (const Rect< T > rect)

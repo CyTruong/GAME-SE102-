@@ -33,11 +33,11 @@ public:
 	virtual void update()
 	{
 		pData->pState->onUpdate();
-		pData->collisionRect = CollisionRectF(pData->getBody(), "throughable", pData->vx, pData->vy);
+		pData->collisionRect = CollisionRectF(pData->getBody(), "elevator", pData->vx, pData->vy);
 	}
 
 	virtual void draw(Camera *cam)
-	{
+	{	
 		if (pData->dir.isRight())
 			pData->ppTextureArrays[pData->iCurrentArr]->draw(pData->x, pData->y, cam);
 		else if (pData->dir.isLeft())

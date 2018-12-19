@@ -43,7 +43,7 @@ MegamanJumpState::MegamanJumpState(MegamanData * data, bool isMoving, float vy, 
 	this->isMoving = isMoving; 
 	this->isCimping = isCimping; 
 	if (pData->vy < 0) {
-		LogWriter::getInstance()->write("Start Jumpping");
+		//LogWriter::getInstance()->write("Start Jumpping");
 
 		pData->setiCurrentArray(MegamanData::JUMP);
 		pData->movedir = Direction::createUp();
@@ -51,7 +51,7 @@ MegamanJumpState::MegamanJumpState(MegamanData * data, bool isMoving, float vy, 
 	}
 	else
 	{
-		LogWriter::getInstance()->write("Start Falling");
+	//	LogWriter::getInstance()->write("Start Falling");
 
 		pData->setiCurrentArray(MegamanData::FALL);
 		pData->movedir = Direction::createDown();
@@ -110,11 +110,13 @@ void MegamanJumpState::onJumpPressed()
 		transition(new MegamanJumpState(pData, true));
 	}
 
+	// -> truovc
+
 }
 
 void MegamanJumpState::onJumpRelease()
 {
-	//shott here
+	this->pData->vy = 0;
 }
 
 void MegamanJumpState::onSlidePressed()
@@ -237,14 +239,9 @@ void MegamanJumpState::onCollision(RectF rect)
 
 void MegamanJumpState::onCollision(CollisionRectF rect)
 {
-	LogWriter::getInstance()->write("Jump collision "+ rect.type );
+	//LogWriter::getInstance()->write("Jump collision "+ rect.type );
 	// có 4 trường hợp va chạm
 	//hcmt 
-	if (rect.type=="wall")
-	{
-		int a = 1; 
-
-	}
 	float vx = pData->vx;
 	float vy = pData->vy;
 	float top = pData->getBody().y;
@@ -289,11 +286,10 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 
 				{ 
 					pData->x -= 2; 
-					isCimping = true; 
 
 					pData->movedir = Direction::createUp(); 
 
-					//transition(new MegamanWallClimping(pData)); 
+					transition(new MegamanWallClimping(pData)); 
 
 				}
 				 
@@ -316,11 +312,10 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 
 				if (rect.type == "wall")
 				{  
-					isCimping = true; 
 
 					pData->movedir = Direction::createUp();
 
-				//	transition(new MegamanWallClimping(pData));
+					transition(new MegamanWallClimping(pData));
 
 				}
 				//va chạm bên trái
@@ -379,7 +374,117 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 
 void MegamanJumpState::onDynamicObjectCollision(CollisionRectF * cRect)
 {
-	// va chạm vs đám obj
+	//LogWriter::getInstance()->write("Jump collision object " +cRect->type);
+	// có 4 trường hợp va chạm
+	//hcmt 
+	float vx = pData->vx;
+	float vy = pData->vy;
+	float top = pData->getBody().y;
+	float left = pData->getBody().x;
+	float right = left + pData->getBody().width;
+	float bottom = top + pData->getBody().height;
+
+
+	float topR = cRect->rect.y;
+	float leftR = cRect->rect.x;
+	float rightR = leftR + cRect->rect.width;
+	float bottomR = topR + cRect->rect.height;
+
+	if (vx > 0.0f)
+	{
+		if (vy > 0.0f)
+		{
+			float px = right - leftR;
+			float py = bottom - topR;
+			if (vy * px > vx * py)
+			{
+				// va chạm phía trên 
+				pData->vy = 0.0f;
+				pData->y -= py;
+
+				if (isMoving)
+				{
+					transition(new MegamanRunningState(pData));
+				}
+				else
+				{
+					transition(new MegamanStandingState(pData));
+				}
+			}
+			else
+			{// va chạm bên phải
+				pData->x -= px;
+				pData->vx = 0.0f;
+
+
+
+			}
+		}
+		else // vy <= 0.0f
+		{
+			float px = right - leftR;
+			float py = bottomR - top;
+			if ((-vy * px) > vx * py)
+			{
+				//va chạm trên
+				pData->y += py;
+				pData->vy = 0.0f;
+			}
+			else
+			{
+				pData->x -= px;
+				pData->vx = 0.0f;
+
+			}
+		}
+	}
+	else // vx <= 0.0f
+	{
+		if (vy > 0.0f)
+		{
+			float px = rightR - left;
+			float py = bottom - topR;
+			if (vy * px > (-vx * py))
+			{
+				// top collision
+
+				pData->y -= py;
+				pData->vy = 0.0f;
+
+				if (isMoving)
+				{
+					transition(new MegamanRunningState(pData));
+				}
+				else
+				{
+					transition(new MegamanStandingState(pData));
+				}
+			}
+			else
+			{
+				// side collision
+				pData->x += px;
+				pData->vx = 0.0f;
+			}
+		}
+		else // vy <= 0.0f
+		{
+			float px = rightR - left;
+			float py = bottomR - top;
+			if ((-vy * px) > (-vx * py))
+			{
+				// top collision
+				pData->y += py;
+				pData->vy = 0.0f;
+			}
+			else
+			{
+				// side collision
+				pData->x += px;
+				pData->vx = 0.0f;
+			}
+		}
+	}
 
 }
 

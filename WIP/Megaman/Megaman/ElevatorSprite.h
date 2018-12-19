@@ -5,7 +5,7 @@ class ElevatorSprite :
 {
 public:
 	ElevatorSprite(float x,float y);
-	void update();
+	void onUpdate();
 	~ElevatorSprite();
 };
 

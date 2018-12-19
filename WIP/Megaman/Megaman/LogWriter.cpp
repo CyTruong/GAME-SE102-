@@ -25,3 +25,10 @@ void LogWriter::write(float a, float b) {
 
 	myfile << getTimesys()<< "		" << a <<" "<<b<< endl;
 }
+
+void LogWriter::write(string s, float a, float b)
+{
+	myfile << getTimesys() << "	" << s.c_str() << " ";
+	myfile  << a << " " << b << endl;
+
+}

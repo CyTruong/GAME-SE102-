@@ -37,4 +37,6 @@ public:
 
 	 void write(string str);
 	 void write(float a, float b);
+	 void write(string s, float a, float b);
+
 };

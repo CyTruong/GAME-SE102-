@@ -9,7 +9,7 @@ MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
 	//đứng thui chứ có làm cc gì nửa đâu
 	// má đéo gán đối số :v 
-	LogWriter::getInstance()->write("Vào Standing state");
+//LogWriter::getInstance()->write("Vào Standing state");
 	pData = data; 
 	pData->setiCurrentArray(MegamanData::STAND);
 	pData->vx = 0;
@@ -39,7 +39,7 @@ void MegamanStandingState::onUpdate()
 	undyingCalculation();
 
 	pData->vy += acceleration; 
-    //	pData->y += pData->vy; 
+    pData->y += pData->vy; 
 
 	if (pData->isFrire && pData->iCurrentArr == MegamanData::STAND) {
 		pData->setiCurrentArray(MegamanData::STANDSHOOT);
@@ -68,9 +68,20 @@ void MegamanStandingState::onUpdate()
 
 void MegamanStandingState::onCollision(CollisionRectF cRect )
 {
-	pData->vy -= acceleration; 
-	//pData->y -= pData->vy;
+	pData->y -= pData->vy;
+	pData->vy -= acceleration;
+}
 
+void MegamanStandingState::onDynamicObjectCollision(CollisionRectF * rect)
+{
+	if (rect->type== "elevator") {
+		pData->y = pData->y - pData->vy - 1;
+
+	}
+	else
+		pData->y -= pData->vy;
+
+	pData->vy -= acceleration;
 }
 
 void MegamanStandingState::onVeticalDirectionPressed(Direction d)
@@ -127,7 +138,7 @@ void MegamanStandingState::onFireRelease()
 
 void MegamanStandingState::onFall()
 {
-	LogWriter::getInstance()->write("Falling in standing state");
+	//LogWriter::getInstance()->write("Falling in standing state");
 }
 
 void MegamanStandingState::onDead()

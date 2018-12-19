@@ -32,7 +32,7 @@ public:
 
 	virtual void createBullet(float x, float y, float angle)
 	{
-		LogWriter::getInstance()->write(" creat new bullet  ");
+		//3LogWriter::getInstance()->write(" creat new bullet  ");
 		float speed = 0.0f;
 		switch (pData->bulletType)
 		{

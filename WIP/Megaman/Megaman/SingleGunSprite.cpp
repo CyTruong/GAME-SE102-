@@ -30,7 +30,7 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 	this->pData->ppTextureArrays[SingleGunData::DIE] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Die", 1, 50);
 	this->pData->ppTextureArrays[SingleGunData::DIE]->setAnchorPoint(0.5f, 1.0f);
 
-	this->pData->body = RectF(-24.0f, -48.0f, 48.0f, 48.0f);
+	this->pData->body = RectF(-pData->ppTextureArrays[SingleGunData::STAND]->getWidth() / 2, -pData->ppTextureArrays[SingleGunData::STAND]->getHeight(), pData->ppTextureArrays[SingleGunData::STAND]->getWidth(), pData->ppTextureArrays[SingleGunData::STAND]->getHeight());
 
 	this->pData->x = this->pData->respawnX;
 	this->pData->y = this->pData->respawnY;
