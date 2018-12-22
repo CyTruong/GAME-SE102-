@@ -7,17 +7,21 @@
 
 SingleGunJumpingState::SingleGunJumpingState(EnemyData * pData)
 {
+
+	LogWriter::getInstance()->write("SingleGun Jump State");
+	LogWriter::getInstance()->write(6, (int)pData->dir.dir);
 	this->gravity = 0.2;
 	this->pData = pData;
 	this->pData->iCurrentArr = SingleGunData::JUMP;
 	this->pData->vy = -4.0f;
+		pData->vx = pData->transform(SINGLEGUNRUNSPEED);
+
 }
 
 void SingleGunJumpingState::onUpdate()
 {
 
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
-
 	pData->vx = pData->transform(SINGLEGUNRUNSPEED);
 	pData->x += pData->vx;
 
@@ -54,8 +58,8 @@ void SingleGunJumpingState::onCollision(CollisionRectF rect)
 				pData->vy = 0.0f;
 				pData->y -= py;
 
+				transition(new SingleGunStandState(pData));
 				
-					transition(new SingleGunStandState(pData));
 				
 			}
 			else
@@ -63,6 +67,7 @@ void SingleGunJumpingState::onCollision(CollisionRectF rect)
 				// va chạm bên phải
 				pData->x -= px;
 				pData->vx = 0.0f;
+
 			}
 		}
 		else // vy <= 0.0f
@@ -123,6 +128,7 @@ void SingleGunJumpingState::onCollision(CollisionRectF rect)
 			}
 		}
 	}
+	//transition(new SingleGunStandState(pData));
 
 }
 

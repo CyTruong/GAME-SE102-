@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -151,9 +151,12 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="HPBarSprite.h" />
+    <ClInclude Include="HPSprite.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="LogWriter.h" />
+    <ClInclude Include="MegamanDamagedState.h" />
     <ClInclude Include="MegamanDeathState.h" />
     <ClInclude Include="MegamanJumpState.h" />
     <ClInclude Include="MegamanSlideState.h" />
@@ -178,10 +181,21 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ShurikanBounceAttackState.h" />
+    <ClInclude Include="ShurikanData.h" />
+    <ClInclude Include="ShurikanRunningAttackState.h" />
+    <ClInclude Include="ShurikanSprite.h" />
+    <ClInclude Include="ShurikanStartState.h" />
+    <ClInclude Include="ShurikanWallAttackState.h" />
     <ClInclude Include="SingleGunData.h" />
+    <ClInclude Include="SingleGunFireState.h" />
     <ClInclude Include="SingleGunJumpingState.h" />
+    <ClInclude Include="SingleGunNormalBulletData.h" />
+    <ClInclude Include="SingleGunNormalBulletMovingState.h" />
+    <ClInclude Include="SingleGunNormalBulletSprite.h" />
     <ClInclude Include="SingleGunSprite.h" />
     <ClInclude Include="SingleGunStandState.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteData.h" />
     <ClInclude Include="SpriteState.h" />
@@ -205,10 +219,13 @@
     <ClCompile Include="EnemyCreator.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="HPBarSprite.cpp" />
+    <ClCompile Include="HPSprite.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="LogWriter.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MegamanDamagedState.cpp" />
     <ClCompile Include="MegamanDeathState.cpp" />
     <ClCompile Include="MegamanJumpState.cpp" />
     <ClCompile Include="MegamanRunningState.cpp" />
@@ -221,10 +238,19 @@
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ShurikanBounceAttackState.cpp" />
+    <ClCompile Include="ShurikanData.cpp" />
+    <ClCompile Include="ShurikanRunningAttackState.cpp" />
+    <ClCompile Include="ShurikanSprite.cpp" />
+    <ClCompile Include="ShurikanStartState.cpp" />
+    <ClCompile Include="ShurikanWallAttackState.cpp" />
     <ClCompile Include="SingleGunData.cpp" />
+    <ClCompile Include="SingleGunFireState.cpp" />
     <ClCompile Include="SingleGunJumpingState.cpp" />
+    <ClCompile Include="SingleGunNormalBulletSprite.cpp" />
     <ClCompile Include="SingleGunSprite.cpp" />
     <ClCompile Include="SingleGunStandState.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureArray.cpp" />
     <ClCompile Include="TileLayer.cpp" />

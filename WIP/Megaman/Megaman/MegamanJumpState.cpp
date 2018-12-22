@@ -116,7 +116,7 @@ void MegamanJumpState::onJumpPressed()
 
 void MegamanJumpState::onJumpRelease()
 {
-	this->pData->vy = 0;
+	this->pData->vy =  max(this->pData->vy,0);
 }
 
 void MegamanJumpState::onSlidePressed()
@@ -350,6 +350,15 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 				// side collision
 				pData->x += px;
 				pData->vx = 0.0f;
+
+				if (rect.type == "wall")
+				{
+
+					pData->movedir = Direction::createUp();
+
+					transition(new MegamanWallClimping(pData));
+
+				}
 			}
 		}
 		else // vy <= 0.0f
@@ -367,6 +376,15 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 				// side collision
 				pData->x += px;
 				pData->vx = 0.0f;
+
+				if (rect.type == "wall")
+				{
+
+					pData->movedir = Direction::createUp();
+
+					transition(new MegamanWallClimping(pData));
+
+				}
 			}
 		}
 	}
@@ -487,6 +505,7 @@ void MegamanJumpState::onDynamicObjectCollision(CollisionRectF * cRect)
 	}
 
 }
+
 
 void MegamanJumpState::onUpdate()
 {

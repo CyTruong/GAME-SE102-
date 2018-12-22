@@ -3,6 +3,7 @@
 #include "SpriteData.h"
 #include "SpriteState.h"
 #include "Camera.h"
+#include "Sound.h"
 class Sprite
 {
 public:

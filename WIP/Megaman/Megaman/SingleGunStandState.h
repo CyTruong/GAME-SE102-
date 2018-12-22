@@ -14,6 +14,7 @@ public:
 	void onUpdate();
 	void onCollision(RectF rect);
 	void onCollision(CollisionRectF rect);
+	
 	~SingleGunStandState();
 };
 

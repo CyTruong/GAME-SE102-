@@ -22,13 +22,13 @@ public:
 	}
 
 	BulletSize ConvertSizeIndex(int size) override {
-		if ((MegamanData::SpriteArrayIndex)size == MegamanData::CHARGING1 ) {
+		if ((MegamanData::SpriteArrayIndex)size == MegamanData::NOCHARGE ) {
 			return BulletSize::SMALL;
 		}
-		if ((MegamanData::SpriteArrayIndex)size == MegamanData::CHARGING2) {
+		if ((MegamanData::SpriteArrayIndex)size == MegamanData::CHARGING1) {
 			return BulletSize::MEDIUM;
 		}
-		if ((MegamanData::SpriteArrayIndex)size == MegamanData::CHARGING3) {
+		if ((MegamanData::SpriteArrayIndex)size == MegamanData::CHARGING2) {
 			return BulletSize::LARGE;
 		}
 		return BulletSize::SMALL;

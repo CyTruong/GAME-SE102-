@@ -41,15 +41,36 @@ public:
 
 	virtual void update()
 	{
+		
+		for (int i = 0; i < pData->bulletsVector.size(); i++)
+		{
+			if (pData->bulletsVector[i]->isDesTroyed()) {
+				pData->bulletsVector.erase(pData->bulletsVector.begin() + i);
+				continue;
+			}
+			pData->bulletsVector[i]->update();
+		}
+
 		pData->pState->onUpdate();
 	}
 
 	virtual void draw(Camera *cam)
 	{
 		if (pData->dir.isRight())
+		{
+			
 			pData->ppTextureArrays[pData->iCurrentArr]->draw(pData->x, pData->y, cam);
-		else if (pData->dir.isLeft())
-			pData->ppTextureArrays[pData->iCurrentArr]->drawFlipX(pData->x, pData->y, cam);
+		}
+		else
+		{
+			if (pData->dir.isLeft())
+				pData->ppTextureArrays[pData->iCurrentArr]->drawFlipX(pData->x, pData->y, cam);
+		}
+
+		for (int i = 0; i < pData->bulletsVector.size(); i++)
+		{
+			pData->bulletsVector[i]->draw(cam);
+		}
 	}
 
 	virtual void onUpdate() {}
@@ -107,6 +128,8 @@ public:
 	{
 		return pData->appearDir;
 	}
-
+	virtual vector < BulletSprite* > getBullets() {
+		return  pData->bulletsVector;
+	}
 
 };

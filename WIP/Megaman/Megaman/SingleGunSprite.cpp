@@ -2,7 +2,7 @@
 #include "SingleGunStandState.h"
 #include "SingleGunJumpingState.h"
 
-SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter, std::vector<BulletSprite*> bullet)
+SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter, std::vector<BulletSprite*>& bullet)
 {
 	if (isShoter) {
 		this->pData = new SingleGunData(bullet);
@@ -13,7 +13,7 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 	}
 	this->pData->isDead = false;
 	this->pData->isDesTroyed = false;
-	this->pData->appearDir = dir;
+	this->pData->dir = dir;
 	this->pData->isHittable = true;
 	this->pData->HP = 5;
 	this->pData->isShooter = true;
@@ -23,10 +23,12 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 
 	this->pData->ppTextureArrays = new TextureArray*[SingleGunData::COUNT];
 	//Nếu muốn thêm cái Recfs thì thêm trong SingelGData
-	this->pData->ppTextureArrays[SingleGunData::STAND] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Stand", 3, 20);
+	this->pData->ppTextureArrays[SingleGunData::STAND] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Stand",1, 20);
 	this->pData->ppTextureArrays[SingleGunData::STAND]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->ppTextureArrays[SingleGunData::JUMP] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Jump", 4, 20);
 	this->pData->ppTextureArrays[SingleGunData::JUMP]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[SingleGunData::FIRE] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Fire", 4, 15);
+	this->pData->ppTextureArrays[SingleGunData::FIRE]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->ppTextureArrays[SingleGunData::DIE] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Die", 1, 50);
 	this->pData->ppTextureArrays[SingleGunData::DIE]->setAnchorPoint(0.5f, 1.0f);
 
@@ -41,6 +43,7 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 
 void SingleGunSprite::setCollisionRect(CollisionRectF crect)
 {
+
 }
 
 void SingleGunSprite::onCameraCollision(RectF cameraRect)

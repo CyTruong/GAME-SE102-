@@ -1,6 +1,8 @@
 ﻿#include "UI.h"
 //#include "Sound.h"
 #include <time.h>
+#include "LogWriter.h"
+ 
 UIComponents* UIComponents::instance = nullptr;
 
 UIComponents* UIComponents::getInstance()
@@ -15,9 +17,8 @@ UIComponents* UIComponents::getInstance()
 UIComponents::UIComponents()
 {
 	score = 0;
-	lifes = 10;
+	Megamanhp = 10;
 	currentStage = 1;
-	nPlayers = 1;
 
 	configKeyBoard[LEFT] = defaultKeyBoard[LEFT] = VK_LEFT;
 	configKeyBoard[RIGHT] = defaultKeyBoard[RIGHT] = VK_RIGHT;
@@ -29,15 +30,15 @@ UIComponents::UIComponents()
 	configKeyBoard[SELECT] = defaultKeyBoard[SELECT] = VK_RETURN;
 }
 
-
+ 
 UIComponents::~UIComponents()
 {
 }
 
 
-int UIComponents::getLifes()
+int UIComponents::getMegamanHp()
 {
-	return lifes;
+	return Megamanhp;
 }
 int UIComponents::getScore()
 {
@@ -46,15 +47,16 @@ int UIComponents::getScore()
 
 
 // Inscrease Hp 
-void UIComponents::inscreaseLifes()
+void UIComponents::inscreaseMegamanHp()
 {
 	//play sound nếu có
-	lifes++;
+	Megamanhp++;
 }
 // descrease Hp 
-void UIComponents::descreaseLifes()
+void UIComponents::descreaseMegamanHp()
 {
-	lifes--;
+	LogWriter::getInstance()->write("Da bi thông -1hp ");
+	Megamanhp--;
 		
 		//Sound::getInstance()->stop();
 

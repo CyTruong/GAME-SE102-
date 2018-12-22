@@ -1,27 +1,7 @@
 #pragma once
-//#include "Sound.h"
+#include "Sound.h"
 #include "Windows.h"
 #include<string> 
-
-// Hp 
-
-//class Hp
-//{
-//public: 
-//	Hp();
-//	~Hp();
-//
-//private:
-//
-//};
-//
-//Hp::Hp()
-//{
-//}
-//
-//Hp::~Hp()
-//{
-//}
 
 class UIComponents
 {
@@ -40,10 +20,10 @@ public:
 	} KEY;
 	~UIComponents();
 	static UIComponents* getInstance();
-	int getLifes();
+	int getMegamanHp();
 	int getScore();
-	void inscreaseLifes();
-	void descreaseLifes();
+	void inscreaseMegamanHp();
+	void descreaseMegamanHp();
 	void addScore(int val);
 	void setStage(int val);
 	void gameOverReset();
@@ -59,8 +39,7 @@ private:
 	UIComponents();
 	int score;
 	int currentStage;
-	int lifes;
-	unsigned int nPlayers;
+	int Megamanhp;
 	char configKeyBoard[COUNT];
 	char defaultKeyBoard[COUNT];
 };

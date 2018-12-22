@@ -7,9 +7,17 @@
 
 MegamanRunningState::MegamanRunningState(MegamanData* data) 
 {
-	//LogWriter::getInstance()->write("Vào Running state");
+	LogWriter::getInstance()->write("Vào Running state");
 	this->pData = data;
-	pData->setiCurrentArray(MegamanData::RUN);
+
+	if (pData->isFrire) {
+		pData->setiCurrentArray(MegamanData::RUNSHOOT);
+	}
+	else
+	{
+		pData->setiCurrentArray(MegamanData::RUN);
+
+	}
 	pData->vy = 0;
 	tempDir = pData->dir;
 }
@@ -45,31 +53,32 @@ void MegamanRunningState::onUpdate()
 	if (pData->vy > 0)
 	{
 		transition(new MegamanJumpState(pData, true, pData->vy));
-		return; 
+		return;
+	}
+
+	if (pData->isFrire && pData->iCurrentArr == MegamanData::RUN) {
+		pData->setiCurrentArray(MegamanData::RUNSHOOT);
+	}
+
+	if ((!pData->isFrire) && pData->iCurrentArr == MegamanData::RUNSHOOT) {
+		pData->setiCurrentArray(MegamanData::RUN);
 	}
 
 	hittableCalculation();
-	undyingCalculation();	
+	undyingCalculation();
 	pData->ppTextureArrays[pData->iCurrentArr]->update();
 	pData->vx = pData->transform(MEGAMANRUNSPEED);
 	pData->x += pData->vx;
-	
-	pData->vy += acceleration; 
-	pData->y += pData->vy; 
-	pData->movedir = pData->dir; 
+
+	pData->vy += acceleration;
+	pData->y += pData->vy;
+	pData->movedir = pData->dir;
 
 
 	if (pData->isCharging) {
 		pData->ChargingCount++;
 		pData->bulletSize = getSizeofBullet(pData->ChargingCount);
 		pData->ppTextureArrays[pData->bulletSize]->update();
-	}
-
-	if (pData->isFrire && pData->iCurrentArr == MegamanData::RUN) {
-		pData->setiCurrentArray(MegamanData::RUNSHOOT);
-	}
-	if (!pData->isFrire && pData->iCurrentArr == MegamanData::RUNSHOOT) {
-		pData->setiCurrentArray(MegamanData::RUN);
 	}
 
 	if (pData->isFrire) {
@@ -80,6 +89,7 @@ void MegamanRunningState::onUpdate()
 		}
 	}
 }
+
 
 void MegamanRunningState::onJumpPressed()
 {
@@ -134,7 +144,7 @@ void MegamanRunningState::onCollision(CollisionRectF crect)
 
 void MegamanRunningState::onDynamicObjectCollision(CollisionRectF * rect)
 {
-	pData->dynamicThroughRect.push_back(rect);
+	//pData->dynamicThroughRect.push_back(rect);
 }
 
 void MegamanRunningState::onFall()
@@ -149,7 +159,7 @@ void MegamanRunningState::onFirePressed()
 
 void MegamanRunningState::onFireRelease()
 {
-	if (this->pData->isFrire) {
+	if (!this->pData->isFrire) {
 		pData->isCharging = false;
 		pData->isFrire = true;
 		pData->ChargingCount = 0;
@@ -191,7 +201,6 @@ void MegamanRunningState::onVeticalDirectionPressed(Direction d)
 void MegamanRunningState::onVeticalDirectionReleased()
 {
 	pData->verticalDir = Direction::createNone();
-	pData->setiCurrentArray(MegamanData::RUN);
 }
 
 void MegamanRunningState::onDead()

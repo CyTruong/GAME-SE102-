@@ -167,7 +167,7 @@ public:
 
 
 	}
-	void getAllSubObject(std::vector <RectF >& returnList)
+	void getAllSubObject(std::vector <RectF >& returnList, RectF camRect)
 	{
 		for (int i = 0; i < RectFs.size(); i++)
 		{
@@ -177,20 +177,20 @@ public:
 		{
 			for (int i = 0; i < 4; i++)
 			{
-				subNodes[i]->getAllSubObject(returnList);
+				subNodes[i]->getAllSubObject(returnList,camRect);
 			}
 		}
 
 
 	}
-	void getObjectlist(std::vector <RectF >& returnList, RectF object)
+	void getObjectlist(std::vector <RectF >& returnList, RectF object, RectF camRect)
 	{
 		int index = getIndex(object);
 		if (index != -1)
 		{
 			if (subNodes[0] != NULL)
 			{
-				subNodes[index]->getObjectlist(returnList, object);
+				subNodes[index]->getObjectlist(returnList, object,camRect);
 			}
 
 			for (std::vector<RectF>::iterator i = RectFs.begin(); i != RectFs.end(); i++)
@@ -201,7 +201,7 @@ public:
 		}
 		else
 		{
-			getAllSubObject(returnList);
+			getAllSubObject(returnList,camRect);
 		}
 	}
 	//CollisionRectF
@@ -295,7 +295,7 @@ public:
 		//}
 
 	}
-	void getAllSubObject(std::vector < CollisionRectF >& returnList,RectF camRect)
+	void getAllSubObject(std::vector < CollisionRectF >& returnList, RectF camRect)
 	{
 		for (int i = 0; i < cRectFs.size(); i++)
 		{   if(camRect.checkCollision(cRectFs[i].rect))
@@ -446,14 +446,14 @@ public:
 			}
 		}
 	}
-	void getObjectlist(std::vector < Object* >& returnList, RectF object)
+	void getObjectlist(std::vector < Object* >& returnList,RectF camRect)
 	{
-		int index = getIndex(object);
+		int index = getIndex(camRect);
 		if (index != -1)
 		{
 			if (subNodes[0] != NULL)
 			{
-				subNodes[index]->getObjectlist(returnList, object);
+				subNodes[index]->getObjectlist(returnList ,camRect);
 			}
 
 			for (std::vector<Object* >::iterator i = Objects.begin(); i != Objects.end(); i++)

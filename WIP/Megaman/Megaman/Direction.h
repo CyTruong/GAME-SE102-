@@ -97,7 +97,7 @@ public:
 		return d;
 	}
 
-private:
+public:
 	enum DIR
 	{
 		Left = 0x001,

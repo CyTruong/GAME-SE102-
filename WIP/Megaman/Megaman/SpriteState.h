@@ -5,6 +5,7 @@ class SpriteState
 public:
 	SpriteState() {}
 	virtual ~SpriteState() {}
+	virtual void damaged() {};
 	virtual void onMovePressed(Direction dir) {}
 	virtual void onMoveReleased(Direction dir) {}
 	virtual void onVeticalDirectionPressed(Direction dir) {}

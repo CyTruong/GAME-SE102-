@@ -43,6 +43,18 @@
     <Filter Include="Objects\Elevator">
       <UniqueIdentifier>{3fe20ada-85ef-48c4-9fe0-0f44914c5f1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bullets\SingleGun">
+      <UniqueIdentifier>{6fa566df-d716-489d-9402-de3acee9eb62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\Shurikan">
+      <UniqueIdentifier>{a48d0ace-734e-41dc-a05b-969875785312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies\Shurikan">
+      <UniqueIdentifier>{9561de0f-dfa6-4bfd-a7ca-bfaa6d99a759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\HPBar">
+      <UniqueIdentifier>{1cab95ac-f361-498d-ad41-21e8acc85d86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -225,8 +237,50 @@
     <ClInclude Include="ElevatorData.h">
       <Filter>Objects\Elevator</Filter>
     </ClInclude>
+    <ClInclude Include="SingleGunNormalBulletData.h">
+      <Filter>Bullets\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunNormalBulletSprite.h">
+      <Filter>Bullets\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunNormalBulletMovingState.h">
+      <Filter>Bullets\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunFireState.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanData.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanSprite.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanStartState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanRunningAttackState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanWallAttackState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanBounceAttackState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanDamagedState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="HPBarSprite.h">
+      <Filter>Objects\HPBar</Filter>
+    </ClInclude>
+    <ClInclude Include="HPSprite.h">
+      <Filter>Objects\HPBar</Filter>
+    </ClInclude>
     <ClInclude Include="ElevatorWaittingState.h">
-      <Filter>Objects\Elevator</Filter>
+      <Filter>Objects\HPBar</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -343,6 +397,42 @@
     </ClCompile>
     <ClCompile Include="ElevatorWaittingState.cpp">
       <Filter>Objects\Elevator</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunNormalBulletSprite.cpp">
+      <Filter>Bullets\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunFireState.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanData.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanSprite.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanStartState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanRunningAttackState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanWallAttackState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanBounceAttackState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanDamagedState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="HPBarSprite.cpp">
+      <Filter>Objects\HPBar</Filter>
+    </ClCompile>
+    <ClCompile Include="HPSprite.cpp">
+      <Filter>Objects\HPBar</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

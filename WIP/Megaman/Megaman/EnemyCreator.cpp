@@ -1,6 +1,8 @@
 #include "EnemyCreator.h"
 #include "SingleGunSprite.h"
 #include "ElevatorSprite.h"
+#include "ShurikanSprite.h"
+
 EnemyCreator* EnemyCreator::instance = nullptr;
 
 
@@ -11,6 +13,8 @@ EnemyCreator::EnemyCreator()
 	addAppearDirection("SingleGun", Direction::createRight());
 	addAppearDirection("Elevator", Direction::createRight());
 	addAppearDirection("DoubleGun", Direction::createRight());
+	addAppearDirection("Shurikan", Direction::createRight());
+
 }
 
 void EnemyCreator::addAppearDirection(std::string name, Direction dir)
@@ -30,12 +34,14 @@ EnemyCreator * EnemyCreator::getInstance()
 EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawnX, int respawnY, std::vector<BulletSprite*>& bulletSprites)
 {
 	if (enemyName == "SingleGun") {
-		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true);
+		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
 	if (enemyName == "DoubleGun") {
-		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true);
+		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
-
+	if (enemyName == "Shurikan") {
+		return new ShurikanSprite(respawnX, respawnY);
+	}
 }
 
 ObjectSprite * EnemyCreator::createObjectSprite(std::string name, int respawnX, int respawnY)

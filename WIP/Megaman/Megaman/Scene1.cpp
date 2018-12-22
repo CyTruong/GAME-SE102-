@@ -1,38 +1,43 @@
 ﻿
 #include "Scene1.h"
+#include "Sound.h"
+#include "define.h"
 
+void Scene1::loadSound()
+{
+	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalMFire.wav","MgmBulletNormalMFire");
+	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalSFire.wav","MgmBulletNormalSFire");
+	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalLFire.wav", "MgmBulletNormalLFire");
+	Sound::getInstance()->loadSound("Resource\\Sound\\MgmWallJump.wav", "MgmBulletNormalLFire");
+	Sound::getInstance()->loadSound("Resource\\Sound\\MgmTakeDameged.wav", "MgmTakeDameged");
+	Sound::getInstance()->loadSound("Resource\\Sound\\MgmCharge.wav", "MgmCharge");
+	Sound::getInstance()->loadSound("Resource\\Sound\\SingleGunFire.wav", "SingleGunFire");
+	Sound::getInstance()->loadSound("Resource\\Sound\\BlastHornet.wav", "BlastHornet");
+}
 
 Scene1::Scene1()
 {
-	std::string mapName = "BlastHornetStage";
+	std::string mapName = "BlastHornetStage2";
 
 	pMap = new Map(mapName);
 
-	//Hcmt lifetexture -> HPTexture 
 
-	/*lifeTexture = new Texture*[2];
-
-	for (int i = 0; i < 2; i++)
-	{
-		lifeTexture[i] = NULL;
-	}
-*/
-
-// vpsize = tile size *15 o vuong  
+	loadSound();
 
 	int viewPortSize = pMap->getMapRect().width < pMap->getMapRect().height ? pMap->getMapRect().width : pMap->getMapRect().height;
 	viewPortSize = 16 * 15;
-	viewPort = new ViewPort(RectI(0, 0, 272, 272));
+	viewPort = new ViewPort(RectI(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
 
 
-	cam = new Camera(viewPort, 0, 44 * 16, RectF(0, 760, 7000, 250), RectF(7700, 760, 50, 500));
+	cam = new Camera(viewPort, 0, 48* 16, RectF(0, 760, 7000, 250), RectF(7700, 760, 50, 500));
 
 
 
-	pMegaman = new MegamanSprite(0, 136, 44 * 16 + 136, cam->getMoveDir());
-
+	pMegaman = new MegamanSprite(120, 48* 16 + 120, cam->getMoveDir());
+	//pMegaman = new MegamanSprite( 2340, 1145, cam->getMoveDir());
 
 	// Texture Hp 
+	hpHub = new HPBarSprite(cam, 50, 50);
 
 	isPause = false;
 	isFinish = false;
@@ -40,9 +45,9 @@ Scene1::Scene1()
 	nTransitionFrames = 5 * 60;
 	count = 0;
 
-	//  Hcmt éo care 
 
 	//Sound::getInstance()->play("stage" + std::to_string(UIComponents::getInstance()->getCurrentStage()), true, 1);
+	//Sound::getInstance()->play("BlastHornet", true, 1);
 }
 
 Scene1 ::~Scene1()
@@ -65,7 +70,7 @@ void Scene1::onCollision()
 {
 
 	pMap->onCollisionvsPlayer(pMegaman, cam);
-	// pMap->onCollision(cam);
+	pMap->onCollision(cam);
 }
 
 void Scene1::handlerInput()
@@ -129,6 +134,7 @@ void Scene1::handlerInput()
 			{
 				if (e.isPressed())
 				{
+					Sound::getInstance()->play("MgmWallJump", false, 1);
 					pMegaman->getState()->onJumpPressed();
 				}
 				else
@@ -145,6 +151,7 @@ void Scene1::handlerInput()
 				else
 				{
 					pMegaman->getState()->onFireRelease();
+					Sound::getInstance()->stop("MgmCharge");
 				}
 			}
 			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::SLIDE)) {
@@ -189,7 +196,7 @@ void Scene1::onUpdate()
 	//		}
 	//	}
 
-	this->handlerInput();
+	this->handlerInput(); 
 
 	// not nessc 
 
@@ -218,12 +225,16 @@ void Scene1::render()
 	Graphics::getInstance()->beginRender();
 	Graphics::getInstance()->getSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
 
-	pMap->draw(cam);
+	//pMap->draw(cam);
+	pMap->drawTile(cam);
+	pMap->drawEnemy(cam);
 
 	pMegaman->draw(cam);
 
+	pMap->drawObj(cam);
 	//draw HP col 
-
+	
+	hpHub->draw(cam);
 
 	Graphics::getInstance()->getSpriteHandler()->End();
 	Graphics::getInstance()->endRender();
@@ -248,6 +259,7 @@ void Scene1::Update()
 
 	// check collision enemy, boss, object vs Map 
 
+	// thang nay update quadtree affter clear () 
 	pMap->onSupportSprite();
 
 
@@ -265,8 +277,6 @@ void Scene1::Update()
 	//update megaman theo cái cam
 	pMegaman->setCameraRect(cam->getRect());
 
-
-
-
+	hpHub->update();
 }
 

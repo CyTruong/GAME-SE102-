@@ -7,13 +7,14 @@
 #include "KeyBoard.h" 
 #include"define.h"
 #include"Map.h"
-
+#include "HPBarSprite.h"
 
 class Scene1 : public Scene
 {
+private:
+	void loadSound();
+
 public: 
-
-
 
 	Scene1();
 	virtual ~Scene1();
@@ -30,7 +31,7 @@ private:
 	ViewPort* viewPort;
 	Camera* cam;
 	Map* pMap;
-
+	HPBarSprite* hpHub;
 	
 	
 	//->texture **hp 

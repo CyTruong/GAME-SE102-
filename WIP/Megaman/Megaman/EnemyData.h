@@ -30,10 +30,20 @@ public :
 public:
 	
 
-	EnemyData(std::vector < BulletSprite* > bulletsVector = vector < BulletSprite*>())
+	EnemyData(std::vector < BulletSprite* >& bulletsVector)
 		:
 		bulletsVector(bulletsVector)
 	{
+		isDesTroyed = false;
+		isHittable = true;
+		appearDir = Direction::createRight();
+		isDead = false;
+		score = 0;
+	}
+
+	EnemyData()
+	{
+		bulletsVector = std::vector < BulletSprite* >();
 		isDesTroyed = false;
 		isHittable = true;
 		appearDir = Direction::createRight();

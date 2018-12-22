@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "tinyxml.h"
 #include "TileLayer.h"
@@ -25,6 +25,11 @@ public:
 	Map(std::string mapName);
 	~Map();
 	void draw(Camera* cam);
+	void drawTile(Camera* cam);
+	void drawEnemy(Camera* cam);
+	void drawObj(Camera* cam);
+	//chưa có quản lí dc đạn của map
+	//void drawBullet(Camera* cam);
 	std::vector< TileSet* >* getTileSets() // return the address of this vector
 	{
 		return &tileSets;

@@ -3,7 +3,7 @@
 #include "iostream"
 #include "Direction.h"
 
-#define ss 8
+#define ss 14
 class CamPos
 {
 public:

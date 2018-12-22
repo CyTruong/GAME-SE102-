@@ -1,4 +1,4 @@
-#include "Map.h"
+﻿#include "Map.h"
 #include <algorithm> 
 #include <typeinfo>
 
@@ -14,6 +14,7 @@ Map::Map(std::string mapName)
 	pRoot->Attribute("tilewidth", &tileSize);
 	pRoot->Attribute("width", &width);
 	pRoot->Attribute("height", &height);
+
 
 	// load tile set
 	for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
@@ -66,6 +67,7 @@ Map::Map(std::string mapName)
 	createMapCollsionTree();
 	bIsFinish = false;
 
+	bulletSprites = std::vector < BulletSprite* >();
 }
 
 
@@ -295,6 +297,14 @@ void Map::loadObject(TiXmlElement* pElement)
 void Map::createMapCollsionTree()
 {
 	mapCollisionTree = new QuadTree(0, RectF(0.0f, 0.0f, tileSize * width, tileSize * height));
+	
+	mapCollisionTree->clear();
+
+	for (int i = 0; i < collisionRectFs.size(); i++)
+	{
+		mapCollisionTree->insert(collisionRectFs[i]);
+	}
+
 }
 
 void Map::cleanMap(Camera* cam)
@@ -396,7 +406,9 @@ void Map::cleanPlayerBullet(Camera* cam, MegamanSprite* sprite)
 
 void Map::addEToMap(Camera* cam)
 {
-	RectF camRect = cam->getRect();
+	
+
+
 	mapCollisionTree->clear();
 	for (int i = 0; i < Objects.size(); i++)
 	{
@@ -406,6 +418,8 @@ void Map::addEToMap(Camera* cam)
 
 	}
 	std::vector < Object * > returnList;
+
+	RectF camRect = cam->getRect();
 	mapCollisionTree->getObjectlist(returnList, camRect);
 
 	for (int i = 0; i < returnList.size(); i++)
@@ -466,6 +480,32 @@ void Map::draw(Camera* cam)
 		bulletSprites[i]->draw(cam);
 	}
 
+}
+
+void Map::drawTile(Camera * cam)
+{
+	for (int i = 0; i < layers.size(); i++)
+	{
+		if (layers[i]->getName() == "BackgroundLayer")
+			layers[i]->draw(cam);
+	}
+}
+
+void Map::drawEnemy(Camera * cam)
+{
+	for (std::map < int, EnemySprite* > ::reverse_iterator it = EnemyMap.rbegin(); it != EnemyMap.rend(); ++it)
+	{
+		it->second->draw(cam);
+	}
+
+}
+
+void Map::drawObj(Camera * cam)
+{
+	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); ++it)
+	{
+		it->second->draw(cam);
+	}
 
 }
 
@@ -474,24 +514,21 @@ void Map::draw(Camera* cam)
 void Map::onCollision(Camera* cam)
 {
 	// map collision vs Player
-	mapCollisionTree->clear();
-
-	for (int i = 0; i < collisionRectFs.size(); i++)
-	{
-		mapCollisionTree->insert(collisionRectFs[i]);
-	}
+	
 
 #pragma region EnemyvsMap
+	//hcmt 
+	RectF camRect = cam->getRect();
 
 	for (std::map < int, EnemySprite* > ::iterator EnemyIt = EnemyMap.begin(); EnemyIt != EnemyMap.end(); EnemyIt++)
 	{
 		std::vector < CollisionRectF > returnLists;
-		mapCollisionTree->getObjectlist(returnLists, EnemyIt->second->getBody());
 
+		
+		mapCollisionTree->getObjectlist(returnLists, EnemyIt->second->getBody(), camRect);
+	
 		for (int i = 0; i < returnLists.size(); i++)
 		{
-			//hcmt thourng ? ?? 
-
 			std::vector < CollisionRectF > throughRectVector = EnemyIt->second->getThroughRect();
 			if (std::find(throughRectVector.begin(), throughRectVector.end(), returnLists[i]) == throughRectVector.end())
 			{
@@ -517,7 +554,7 @@ void Map::onCollision(Camera* cam)
 
 		}
 
-
+		
 
 	}
 #pragma endregion 
@@ -525,34 +562,40 @@ void Map::onCollision(Camera* cam)
 #pragma region EnemyBulletvsMap
 
 
-	for (int i = 0; i < bulletSprites.size(); i++)
+	for (std::map < int, EnemySprite* > ::iterator EnemyIt = EnemyMap.begin(); EnemyIt != EnemyMap.end(); EnemyIt++)
 	{
-		std::vector < CollisionRectF > returnLists;
-		mapCollisionTree->getObjectlist(returnLists, bulletSprites[i]->getBody());
-		for (int j = 0; j < returnLists.size(); j++)
-		{
-			std::vector < CollisionRectF > throughRectVector = bulletSprites[i]->getThroughRect();
-			if (std::find(throughRectVector.begin(), throughRectVector.end(), returnLists[j]) == throughRectVector.end())
+		vector<BulletSprite* > bullets = EnemyIt->second->getBullets();
+		for (int i = 0; i < bullets.size(); i++) {
+			std::vector < CollisionRectF > returnLists;
+
+
+			mapCollisionTree->getObjectlist(returnLists, bullets[i]->getBody(), camRect);
+			for (int j = 0; j < returnLists.size(); j++)
 			{
-				if (bulletSprites[i]->getBody().checkCollision(returnLists[j].rect))
+				LogWriter::getInstance()->write("Bullet pos");
+				LogWriter::getInstance()->write(bullets[i]->getBody().x, bullets[i]->getBody().y);
+			
+				if (bullets[i]->getBody().checkCollision(returnLists[j].rect))
 				{
-					bulletSprites[i]->onCollision(returnLists[j]);
+					bullets[i]->onCollision(returnLists[j]);
 				}
 			}
 		}
 	}
+
+
 #pragma endregion 
 
 #pragma region ObjectvsMap
 
 	//obj vs obj
-	//c� 4tree
+	//có 4tree
 	
 	for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
 	{
 		std::vector < CollisionRectF > objectCollisionReturnList;
 
-		mapCollisionTree->getObjectlist(objectCollisionReturnList, objectIt->second->getBody());
+		mapCollisionTree->getObjectlist(objectCollisionReturnList, objectIt->second->getBody(), camRect);
 
 		for (int i = 0; i < objectCollisionReturnList.size(); i++)
 		{
@@ -572,43 +615,40 @@ void Map::onCollision(Camera* cam)
 
 #pragma region EnemyObjectvsCamera
 
-	/*for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
-	{
-		it->second->onCameraCollision(cameraRect);
-	}
-	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
-	{
-		it->second->onCameraCollision(cameraRect);
-	}
-*/
-#pragma endregion 
-
-	// update through rect list of Enemy
 	for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
 	{
-		it->second->updateThroughRect();
+		it->second->onCameraCollision(cameraRect);
 	}
-	// update through rect list of object
 	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
 	{
-		it->second->updateThroughRect();
+		it->second->onCameraCollision(cameraRect);
 	}
+
+#pragma endregion 
+
+	//// update through rect list of Enemy
+	//for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
+	//{
+	//	it->second->updateThroughRect();
+	//}
+	//// update through rect list of object
+	//for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
+	//{
+	//	it->second->updateThroughRect();
+	//}
 }
 
 void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 {
-	mapCollisionTree->clear();
-
-	for (int i = 0; i < collisionRectFs.size(); i++)
-	{
-		mapCollisionTree->insert(collisionRectFs[i]);
-	}
+	
 #pragma region mapvsPlayer
 
 
 	// player vs Collision Rect
 	std::vector < CollisionRectF > returnList;
-	mapCollisionTree->getObjectlist(returnList, sprite->getBody());
+	
+	RectF camRect = RectF( cam->getX(), cam->getY(), cam->getWidth(), cam->getHeight() );
+	mapCollisionTree->getObjectlist(returnList, sprite->getBody(), camRect);
 
 
 	for (int i = 0; i < returnList.size(); i++)
@@ -642,44 +682,7 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 					sprite->onDynamicObjectCollision(r);
 					CollisionRectF cRect = CollisionRectF(sprite->getBody(), "Megaman");
 					objectIt->second->onCollision(cRect);
-				/*	if (objectIt->second->getName().find("weapon") != std::string::npos)
-					{
-						ObjectStaticWeapon * weapon = dynamic_cast<ObjectStaticWeapon *> (objectIt->second);
-						if (weapon)
-						{
-							sprite->setBulletType(weapon->getBulletType());
-							objectIt->second->die();
-						}
-						else
-						{
-							ObjectCapsuleWeapon * weaponAnother = dynamic_cast<ObjectCapsuleWeapon *> (objectIt->second);
-							if (weaponAnother->getBulletType() == BulletTypes::D)
-							{
-								Sound::getInstance()->play("weaponD", false, 1);
-								for (int i = 0; i < bulletSprites.size(); i++)
-								{
-										bulletSprites[i]->die();
-								}
-
-								for (auto it = EnemyMap.begin(); it != EnemyMap.end(); it++)
-								{
-										it->second->die();
-								}
-
-								for (auto it = objectMap.begin(); it != objectMap.end(); it++)
-								{
-										it->second->die();
-								}
-							}
-							else
-							{
-									sprite->setBulletType(weaponAnother->getBulletType());
-							}
-
-							objectIt->second->die();
-						}
-					}
-					*/
+					// Xét nhặt item here
 				}
 			}
 		}
@@ -692,21 +695,20 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 
 
 #pragma region EnemyvsPlayer
-	/*for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
+	for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
 	{
 		RectF r = it->second->getBody();
 		if (sprite->isHittable() && r.checkCollision(sprite->getBody()) && !it->second->isThroughable())
 		{
-			if (sprite->isUndying())
+			if (!sprite->isUndying())
 			{
 				if (it->second->isHittable())
-					it->second->die();
+					UIComponents::getInstance()->descreaseMegamanHp();
+					sprite->damaged();
 			}
-			else
-				sprite->die();
 		}
 
-	}*/
+	}
 #pragma endregion 
 
 
@@ -801,62 +803,56 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 
 void Map::onSupportPlayer(MegamanSprite* sprite)
 {
-	mapCollisionTree->clear();
-	for (int i = 0; i < collisionRectFs.size(); i++)
-	{
-		mapCollisionTree->insert(collisionRectFs[i]);
-	}
-
 
 #pragma region mapvsPlayer
 
-	// player vs CollisionRects
-	RectF r = sprite->getBody();
-	//r.height += 1;
-	r.y += r.height;
-	r.height = 1;
-	std::vector < CollisionRectF > returnList;
-	mapCollisionTree->getObjectlist(returnList, r);
+	//// player vs CollisionRects
+	//RectF r = sprite->getBody();
+	////r.height += 1;
+	//r.y += r.height;
+	//r.height = 1;
+	//std::vector < CollisionRectF > returnList;
+	//mapCollisionTree->getObjectlist(returnList, r);
 
-	bool isSupported = false;
-	for (int i = 0; i < returnList.size(); i++)
-	{
-		if (r.checkCollision(returnList[i].rect))
-		{
-			sprite->setSupportCollisionRect(returnList[i]);
-			isSupported = true;
-			break;
-		}
+	//bool isSupported = false;
+	//for (int i = 0; i < returnList.size(); i++)
+	//{
+	//	if (r.checkCollision(returnList[i].rect))
+	//	{
+	//		sprite->setSupportCollisionRect(returnList[i]);
+	//		isSupported = true;
+	//		break;
+	//	}
 
-	}
-	// player vs object Map
-	if (!isSupported)
-	{
-		/*for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
-		{
-			if (objectIt->second->isPlayerCollisionable())
-			{
-				CollisionRectF* collisionRect = objectIt->second->getRefCollisionRect();
-				if (r.checkCollision(collisionRect->rect))
-				{
+	//}
+	//// player vs object Map
+	//if (!isSupported)
+	//{
+	//	/*for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
+	//	{
+	//		if (objectIt->second->isPlayerCollisionable())
+	//		{
+	//			CollisionRectF* collisionRect = objectIt->second->getRefCollisionRect();
+	//			if (r.checkCollision(collisionRect->rect))
+	//			{
 
-					if (objectIt->second->isAffectble())
-						sprite->setSupportCollisionRect(collisionRect);
-					isSupported = true;
-					break;
-				}
-			}
+	//				if (objectIt->second->isAffectble())
+	//					sprite->setSupportCollisionRect(collisionRect);
+	//				isSupported = true;
+	//				break;
+	//			}
+	//		}
 
-		}*/
-	}
+	//	}*/
+	//}
 
 
-	if (!isSupported)
-	{
-		sprite->onUnsupported();
-		sprite->setSupportCollisionRect(CollisionRectF());
-		sprite->setSupportCollisionRect(NULL);
-	}
+	//if (!isSupported)
+	//{
+	//	sprite->onUnsupported();
+	//	sprite->setSupportCollisionRect(CollisionRectF());
+	//	sprite->setSupportCollisionRect(NULL);
+	//}
 
 #pragma endregion 
 
@@ -975,15 +971,9 @@ void Map::onUpdate(Camera* cam)
 
 	for (std::map < int, ObjectSprite* > ::iterator it = objectMap.begin(); it != objectMap.end(); it++)
 	{
-		
 		it->second->update();
 	}
 
-
-	for (std::vector < BulletSprite* > ::iterator it = bulletSprites.begin(); it != bulletSprites.end(); it++)
-	{
-		(*it)->update();
-	}
 }
 
 float Map::getResX()

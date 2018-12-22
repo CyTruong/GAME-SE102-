@@ -4,8 +4,8 @@
 
 
 Graphics*  Graphics::instance = nullptr;
-const unsigned int SCWIDTH = 256;
-const unsigned int SCHEIGHT = 256;
+const unsigned int SCWIDTH = SCREEN_WIDTH;
+const unsigned int SCHEIGHT = SCREEN_HEIGHT;
 Graphics::Graphics(HWND hWnd)
 {
 	pD3D9 = Direct3DCreate9(D3D_SDK_VERSION);

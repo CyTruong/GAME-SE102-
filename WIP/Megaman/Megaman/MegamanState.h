@@ -13,6 +13,7 @@ public:
 		acceleration = 0.2f; 
 
 	}
+   
 	virtual void transition(MegamanState* state)
 	{
 		//LogWriter::getInstance()->write(-1, state->pData->iCurrentArr);
@@ -47,13 +48,14 @@ public:
 	}
 	virtual void hittableCalculation()
 	{
-		if (pData->isRespawn)
+		if (!pData->isHittable)
 		{
 			pData->hittableCounter++;
 			if ((pData->hittableCounter >= pData->nonHittableFrames))
 			{
+				pData->hittableCounter = 0;
 				pData->isHittable = true;
-				pData->isRespawn = false;
+
 			}
 		}
 	}
@@ -64,24 +66,27 @@ public:
 			pData->undyingCounter++;
 			if ((pData->undyingCounter >= pData->nUndyingFrames))
 			{
+				pData->undyingCounter = 0;
 				pData->isUndying = false;
-
 			}
 		}
 	}
 	
 
 	virtual char getSizeofBullet(int count) {
+		
 		if (count < MEGAMAN_CHARGE_LIMIT_N) {
+			if (MEGAMAN_CHARGE_LIMIT_N - count < 2) {
+				Sound::getInstance()->play("MgmCharge", true, 1);
+			}
 			return MegamanData::NOCHARGE;
 		}
 		if (count < MEGAMAN_CHARGE_LIMIT_S) {
 			return MegamanData::CHARGING1;
 		}
-		if (count < MEGAMAN_CHARGE_LIMIT_M) {
+		else
 			return MegamanData::CHARGING2;
-		}
-		return MegamanData::CHARGING3;
+		
 	}
 protected:
 	MegamanData* pData;

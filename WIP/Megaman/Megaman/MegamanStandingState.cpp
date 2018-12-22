@@ -3,7 +3,7 @@
 #include "MegamanRunningState.h"
 #include "MegamanJumpState.h"
 #include "MegamanSlideState.h"
-
+#include "MegamanDamagedState.h"
 
 MegamanStandingState::MegamanStandingState(MegamanData * data)
 {
@@ -76,13 +76,14 @@ void MegamanStandingState::onDynamicObjectCollision(CollisionRectF * rect)
 {
 	if (rect->type== "elevator") {
 		pData->y = pData->y - pData->vy - 1;
-
+		pData->movedir = Direction::createUp();
 	}
 	else
 		pData->y -= pData->vy;
 
 	pData->vy -= acceleration;
 }
+
 
 void MegamanStandingState::onVeticalDirectionPressed(Direction d)
 {
@@ -144,3 +145,4 @@ void MegamanStandingState::onFall()
 void MegamanStandingState::onDead()
 {
 }
+

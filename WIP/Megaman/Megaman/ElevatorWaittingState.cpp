@@ -28,9 +28,7 @@ void ElevatorWaittingState::onCollision(RectF rect)
 
 void ElevatorWaittingState::onCollision(CollisionRectF rect)
 {
-	LogWriter::getInstance()->write("Elevator collision");
-	LogWriter::getInstance()->write(rect.type);
-	LogWriter::getInstance()->write(rect.rect.x,rect.rect.y);
+
 	if (rect.type == "Megaman") {
 		isMegamanStanding = true;
 	}

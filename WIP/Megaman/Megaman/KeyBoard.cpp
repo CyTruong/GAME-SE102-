@@ -18,6 +18,8 @@ bool KeyEvent::isPressed() {
 
 bool KeyEvent::isReleased() {
 	return type == KeyEvent::RELEASE;
+
+
 }
 
 #pragma endregion
@@ -57,7 +59,7 @@ void KeyBoard::onKeyReleased(int keycode) {
 KeyEvent KeyBoard::Read_Key()
 {
 	if (keyEventQueue.size() > 0) {
-		return keyEventQueue.front();
+		return keyEventQueue.top();
 	}
 	else
 	{
@@ -68,7 +70,7 @@ KeyEvent KeyBoard::Read_Key()
 KeyEvent KeyBoard::ReadPop_Key()
 {
 	if (keyEventQueue.size() > 0) {
-		KeyEvent temp = keyEventQueue.front();
+		KeyEvent temp = keyEventQueue.top();
 		keyEventQueue.pop();
 		return temp;
 	}

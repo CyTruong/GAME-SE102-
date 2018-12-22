@@ -1,5 +1,5 @@
 ﻿#include "MegamanWallClimping.h"
-
+#include "MegamanStandingState.h"
 
 
 MegamanWallClimping::MegamanWallClimping(MegamanData * data)
@@ -45,9 +45,8 @@ void MegamanWallClimping::onVeticalDirectionReleased()
 
 void MegamanWallClimping::onJumpPressed()
 {
-	
 	this->pData->dir.reverse();
-	this->pData->x -= 8;
+	this->pData->x -= this->pData->transform(8);
 	transition(new MegamanJumpState(this->pData, true));
 }
 
@@ -152,6 +151,42 @@ void MegamanWallClimping::onCollision(RectF rect)
 
 void MegamanWallClimping::onCollision(CollisionRectF rect)
 {
+	//LogWriter::getInstance()->write("Jump collision "+ rect.type );
+	// có 4 trường hợp va chạm
+	//hcmt 
+	float vx = pData->vx;
+	float vy = pData->vy;
+	float top = pData->getBody().y;
+	float left = pData->getBody().x;
+	float right = left + pData->getBody().width;
+	float bottom = top + pData->getBody().height;
+
+
+	float topR = rect.rect.y;
+	float leftR = rect.rect.x;
+	float rightR = leftR + rect.rect.width;
+	float bottomR = topR + rect.rect.height;
+
+	float px = rightR - left;
+	float py = bottom - topR;
+	if (vy * px > (-vx * py))
+	{
+		// top collision
+
+		pData->y -= py;
+		pData->vy = 0.0f;
+
+		
+		transition(new MegamanStandingState(pData));
+	
+	}
+	else
+	{
+			// side collision
+			pData->x += px;
+			pData->vx = 0.0f;
+	}
+	
 }
 
 void MegamanWallClimping::onDynamicObjectCollision(CollisionRectF * rect)

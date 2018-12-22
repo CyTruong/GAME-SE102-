@@ -1,11 +1,11 @@
 #include "Game.h"
-
+#include "Sound.h"
 
 
 Game::Game(HWND hWnd)
 {
 	Graphics::create(hWnd);
-	//Sound::create(hWnd);
+	Sound::create(hWnd);
 	SceneManager::GetInstance()->createScene(new Scene1());
 }
 void Game::Update()

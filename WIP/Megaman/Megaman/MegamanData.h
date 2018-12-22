@@ -22,7 +22,6 @@ public:
 	int nonHittableFrames;
 	int nUndyingFrames;
 	int undyingCounter;
-	int index;
 	bool isOver;
 	bool isRapid;
 	bool isRespawn;
@@ -38,7 +37,7 @@ public:
 	{
 		hittableCounter = 0;
 		nonHittableFrames = 150;
-		nUndyingFrames = 600;
+		nUndyingFrames = 150;
 		undyingCounter = 0;
 		isOver = false;
 		isRapid = false;

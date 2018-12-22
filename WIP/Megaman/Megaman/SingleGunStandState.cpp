@@ -1,21 +1,23 @@
 ﻿#include "SingleGunStandState.h"
 #include "SingleGunJumpingState.h"
-
-
+#include "SingleGunNormalBulletSprite.h"
+#include "SingleGunFireState.h"
 
 SingleGunStandState::SingleGunStandState(EnemyData * pData)
 {
+	//LogWriter::getInstance()->write("SingleGun Standing State");
+	//LogWriter::getInstance()->write(6,(int)pData->dir.dir);
 	this->pData = pData;
 	this->pData->iCurrentArr = SingleGunData::STAND;
-	this->pData->dir = this->pData->appearDir; // để xác định hướng cho creep khi vẽ
-
-	this->waittingFrame = 300;
+	this->waittingFrame =30;
 	this->waittingCount = 0;
 }
 
 void SingleGunStandState::onUpdate()
 {
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
+	
+
 	if (pData->Megaman_X > this->pData->x) {
 		this->pData->dir = Direction::createRight();
 	}
@@ -25,19 +27,28 @@ void SingleGunStandState::onUpdate()
 	}
 
 	if (waittingCount++ > waittingFrame) {
-		transition(new SingleGunJumpingState(this->pData));
+		if (abs(this->pData->Megaman_X - this->pData->x) <= SINGLEGUN_FIRE_RANGE)
+		{
+			transition(new SingleGunFireState(this->pData));
+		}else
+			transition(new SingleGunJumpingState(this->pData));
 	}
+
 }
 
 void SingleGunStandState::onCollision(RectF rect)
 {
 
 
+
 }
 
 void SingleGunStandState::onCollision(CollisionRectF rect)
 {
+	
 }
+
+
 
 SingleGunStandState::~SingleGunStandState()
 {

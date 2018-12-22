@@ -1,6 +1,9 @@
 #pragma once
 #include "EnemyData.h"
 
+#define SINGLEGUN_TURN_RANGE 20
+#define SINGLEGUN_FIRE_RANGE 80
+
 class SingleGunData :
 	public EnemyData
 {
@@ -14,8 +17,9 @@ public:
 		COUNT
 	};
 public:
-	SingleGunData(std::vector<BulletSprite*> bullet = std::vector<BulletSprite*>());
-	
+	SingleGunData(std::vector<BulletSprite*>& bullet );
+	SingleGunData();
+
 
 	~SingleGunData();
 };

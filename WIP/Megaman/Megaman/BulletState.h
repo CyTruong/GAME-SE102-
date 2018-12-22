@@ -1,11 +1,12 @@
 #pragma once
 #include "SpriteState.h"
+#include "SpriteData.h"
 #include "MgmNormalBulletData.h"
 
 class BulletState : public SpriteState 
 {
 protected:
-	MgmNormalBulletData *pData;
+	SpriteData *pData;
 
 public:
 	BulletState() {}

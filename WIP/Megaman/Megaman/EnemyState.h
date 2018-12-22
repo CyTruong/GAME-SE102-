@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "SpriteState.h"
 #include "EnemyData.h"
@@ -18,6 +18,7 @@ public:
 		pData->pState = state;
 		delete this;
 	}
+	
 
 	virtual void onCollision() {}
 protected:
