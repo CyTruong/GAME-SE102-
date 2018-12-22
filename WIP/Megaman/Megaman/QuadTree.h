@@ -13,7 +13,7 @@ public:
 		level(level)
 
 	{
-		subNodes = new QuadTree*[4];
+		subNodes = new QuadTree*[5];
 		for (int i = 0; i < 4; i++)
 		{
 			subNodes[i] = NULL;
@@ -295,39 +295,50 @@ public:
 		//}
 
 	}
-	void getAllSubObject(std::vector < CollisionRectF >& returnList)
+	void getAllSubObject(std::vector < CollisionRectF >& returnList,RectF camRect)
 	{
 		for (int i = 0; i < cRectFs.size(); i++)
-		{
-			returnList.push_back(cRectFs[i]);
+		{   if(camRect.checkCollision(cRectFs[i].rect))
+			{
+				returnList.push_back(cRectFs[i]);
+			}
+
+			
 		}
+
+
 		if (subNodes[0] != NULL)
 		{
 			for (int i = 0; i < 4; i++)
 			{
-				subNodes[i]->getAllSubObject(returnList);
+				subNodes[i]->getAllSubObject(returnList,camRect);
 			}
 		}
+	
 	}
-	void getObjectlist(std::vector < CollisionRectF >& returnList, RectF object)
+	void getObjectlist(std::vector < CollisionRectF >& returnList, RectF object, RectF camRect)
 	{
 		int index = getIndex(object);
 		if (index != -1)
 		{
 			if (subNodes[0] != NULL)
 			{
-				subNodes[index]->getObjectlist(returnList, object);
+				subNodes[index]->getObjectlist(returnList, object,camRect);
 			}
 
 			for (std::vector<CollisionRectF >::iterator i = cRectFs.begin(); i != cRectFs.end(); i++)
 			{
-				returnList.push_back(*i);
+				if (camRect.checkCollision((*i).rect))
+				{
+					returnList.push_back(*i);
+				}
+				//returnList.push_back(*i);
 			}
 
 		}
 		else
 		{
-			getAllSubObject(returnList);
+			getAllSubObject(returnList,camRect);
 		}
 	}
 	//Object 
