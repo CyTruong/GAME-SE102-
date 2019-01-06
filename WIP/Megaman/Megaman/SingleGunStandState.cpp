@@ -2,7 +2,7 @@
 #include "SingleGunJumpingState.h"
 #include "SingleGunNormalBulletSprite.h"
 #include "SingleGunFireState.h"
-
+#include "SingleGunDeadState.h"
 SingleGunStandState::SingleGunStandState(EnemyData * pData)
 {
 	//LogWriter::getInstance()->write("SingleGun Standing State");
@@ -17,6 +17,8 @@ void SingleGunStandState::onUpdate()
 {
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	
+	pData->vy += 0.2;
+	pData->y += pData->vy;
 
 	if (pData->Megaman_X > this->pData->x) {
 		this->pData->dir = Direction::createRight();
@@ -45,7 +47,13 @@ void SingleGunStandState::onCollision(RectF rect)
 
 void SingleGunStandState::onCollision(CollisionRectF rect)
 {
-	
+	pData->y -= pData->vy;
+	pData->vy -= 0.2;
+}
+
+void SingleGunStandState::onDead()
+{
+	transition(new SingleGunDeadState(this->pData));
 }
 
 

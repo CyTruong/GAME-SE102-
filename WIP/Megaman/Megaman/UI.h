@@ -24,6 +24,12 @@ public:
 	int getScore();
 	void inscreaseMegamanHp();
 	void descreaseMegamanHp();
+
+	void descreaseShurikanHp();
+	int  getShurikanHp(); 
+	void setShurikanHp(int hp ); 
+
+
 	void addScore(int val);
 	void setStage(int val);
 	void gameOverReset();
@@ -40,6 +46,9 @@ private:
 	int score;
 	int currentStage;
 	int Megamanhp;
+	// boss hp 
+	int Shurikanhp; 
+
 	char configKeyBoard[COUNT];
 	char defaultKeyBoard[COUNT];
 };

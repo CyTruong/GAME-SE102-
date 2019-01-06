@@ -8,7 +8,11 @@ ShurikanSprite::ShurikanSprite(float x, float y)
 	this->pData->isDead = false;
 	this->pData->isDesTroyed = false;
 	this->pData->isHittable = true;
+	
 	this->pData->HP = 40;
+	UIComponents::getInstance()->setShurikanHp(this->pData->HP); 
+
+
 	this->pData->isShooter = true;
 	this->pData->respawnX = x;
 	this->pData->respawnY = y;
@@ -24,7 +28,7 @@ ShurikanSprite::ShurikanSprite(float x, float y)
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::BOUNCE_START]->setAnchorPoint(0.5f, 0.5f);
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::BOUNCE_RUN] = new TextureArray(RESOURCE_SPRITE, "Shuriken", "BounceRun", 19, 1);
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::BOUNCE_RUN]->setAnchorPoint(0.5f, 0.5f);
-	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::START] = new TextureArray(RESOURCE_SPRITE, "Shuriken", "Spin", 61, 1);
+	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::START] = new TextureArray(RESOURCE_SPRITE, "Shuriken", "Spin", 61, 3);
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::START]->setAnchorPoint(0.5f, 0.5f);
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::WALLSPIN] = new TextureArray(RESOURCE_SPRITE, "Shuriken", "WallSpin", 3, 2);
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::WALLSPIN]->setAnchorPoint(0.5f, 0.5f);
@@ -47,9 +51,7 @@ void ShurikanSprite::onCameraCollision(RectF cameraRect)
 {
 }
 
-void ShurikanSprite::die()
-{
-}
+
 
 
 ShurikanSprite::~ShurikanSprite()

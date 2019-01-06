@@ -12,13 +12,16 @@ ElevatorWaittingState::ElevatorWaittingState(ObjectData * pdata)
 }
 
 void ElevatorWaittingState::onUpdate()
-{
+{  
+
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	if (isMegamanStanding) {
 
 		this->pData->y += this->pData->vy;
 		isMegamanStanding = false;
 	}
+	// hcmt 
+	pData->collisionRect = CollisionRectF(pData->getBody(), "elevator", pData->vx, pData->vy);
 }
 
 void ElevatorWaittingState::onCollision(RectF rect)

@@ -18,12 +18,30 @@ public:
 
 	virtual void onUpdate() override
 	{
+		/*if (this->pData->iCurrentArr == MgmNormalBulletData::DESTROY && this->pData->ppTextureArrays[this->pData->iCurrentArr]->isLastTexture()) {
+			this->pData->isDesTroyed = true;
+		}*/
+
 		pData->ppTextureArrays[pData->iCurrentArr]->update();
 
 		pData->x += pData->vx;
 
 		pData->y += pData->vy;
+
 	}
-	
+
+	void onCollision(CollisionRectF rect) override
+	{	
+		/*char* str = _strdup(rect.type.c_str());
+		if (str[0]=='e' && str[1] == 'n' && str[2] == 'e' && str[3] == 'm' && str[4] == 'y')
+		{
+			this->pData->iCurrentArr = MgmNormalBulletData::SpriteArrayIndex::DESTROY;
+		}*/
+		if (rect.type== "enemy") {
+			//this->pData->iCurrentArr = MgmNormalBulletData::SpriteArrayIndex::DESTROY;
+			this->pData->isDesTroyed = true;
+
+		}
+	}
 };
 

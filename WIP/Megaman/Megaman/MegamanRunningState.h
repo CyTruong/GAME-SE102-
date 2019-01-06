@@ -1,7 +1,7 @@
 #pragma once
 #include "MegamanState.h"
 #include "MegamanData.h"
-
+#include "MegamanDamagedState.h"
 class MegamanRunningState : public MegamanState
 {
 
@@ -22,5 +22,8 @@ public:
 	void onVeticalDirectionPressed( Direction d);
 	void onVeticalDirectionReleased();
 	virtual void onDead();
+	void damaged() override {
+		transition(new MegamanDamagedState(this->pData));
+	}
 };
 

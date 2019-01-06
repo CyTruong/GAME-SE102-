@@ -7,6 +7,7 @@
 #include "KeyBoard.h" 
 #include"define.h"
 #include"Map.h"
+#include "BackGround.h"
 #include "HPBarSprite.h"
 
 class Scene1 : public Scene
@@ -31,6 +32,7 @@ private:
 	ViewPort* viewPort;
 	Camera* cam;
 	Map* pMap;
+	BackGround* bg;
 	HPBarSprite* hpHub;
 	
 	

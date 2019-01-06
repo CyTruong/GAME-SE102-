@@ -12,6 +12,7 @@ public:
 	void onCollision(RectF rect);
 	void onCollision(CollisionRectF rect);
 	void createBullet();
+	void onDead() override;
 	~SingleGunFireState();
 };
 

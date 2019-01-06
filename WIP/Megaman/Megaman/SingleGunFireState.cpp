@@ -1,6 +1,7 @@
 ﻿#include "SingleGunFireState.h"
 #include "SingleGunNormalBulletSprite.h"
 #include "SingleGunStandState.h"
+#include "SingleGunDeadState.h"
 
 SingleGunFireState::SingleGunFireState(EnemyData *pData)
 {
@@ -53,6 +54,11 @@ void SingleGunFireState::createBullet()
 		angle = - 2* M_PI /3 ;
 	}
 	this->pData->bulletsVector.push_back(new SingleGunNormalBulletSprite(this->pData->x, this->pData->y - this->pData->body.height , angle));
+}
+
+void SingleGunFireState::onDead()
+{
+	transition(new SingleGunDeadState(this->pData));
 }
 
 SingleGunFireState::~SingleGunFireState()

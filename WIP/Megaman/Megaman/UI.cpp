@@ -17,8 +17,11 @@ UIComponents* UIComponents::getInstance()
 UIComponents::UIComponents()
 {
 	score = 0;
-	Megamanhp = 10;
+	Megamanhp = 16;
 	currentStage = 1;
+	Shurikanhp = 0; 
+	//boss2HP  here 
+
 
 	configKeyBoard[LEFT] = defaultKeyBoard[LEFT] = VK_LEFT;
 	configKeyBoard[RIGHT] = defaultKeyBoard[RIGHT] = VK_RIGHT;
@@ -59,6 +62,24 @@ void UIComponents::descreaseMegamanHp()
 	Megamanhp--;
 		
 		//Sound::getInstance()->stop();
+
+}
+
+void UIComponents::descreaseShurikanHp()
+{
+}
+
+int UIComponents::getShurikanHp()
+{
+	return Shurikanhp  ; 
+
+
+}
+
+void UIComponents::setShurikanHp(int hp)
+{
+	Shurikanhp = hp; 
+
 
 }
 

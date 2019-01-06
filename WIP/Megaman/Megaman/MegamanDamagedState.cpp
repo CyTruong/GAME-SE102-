@@ -19,9 +19,8 @@ MegamanDamagedState::MegamanDamagedState(MegamanData * pData)
 
 void MegamanDamagedState::onUpdate()
 {
-	if (this->pData->y < lastY) {
+	if (this->pData->y < lastY- this->pData->vy) {
 		this->pData->y += this->pData->vy;
-
 	}
 
 	hittableCalculation();

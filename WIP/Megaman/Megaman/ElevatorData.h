@@ -9,7 +9,7 @@ public:
 		WAITTING,
 		RUNNING,
 		COUNT
-	};
+	};		
 public:
 	ElevatorData();
 	~ElevatorData();

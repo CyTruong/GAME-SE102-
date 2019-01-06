@@ -8,8 +8,7 @@ class ShurikanSprite :
 public:
 	ShurikanSprite(float x, float y);
 	void setCollisionRect(CollisionRectF rect);
-	void onCameraCollision(RectF cameraRect);
-	void die();
+	void onCameraCollision(RectF cameraRect) ;
 	~ShurikanSprite();
 };
 

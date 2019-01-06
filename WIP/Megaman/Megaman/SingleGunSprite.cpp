@@ -11,6 +11,7 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 	{
 		this->pData = new SingleGunData();
 	}
+	
 	this->pData->isDead = false;
 	this->pData->isDesTroyed = false;
 	this->pData->dir = dir;
@@ -29,15 +30,15 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 	this->pData->ppTextureArrays[SingleGunData::JUMP]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->ppTextureArrays[SingleGunData::FIRE] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Fire", 4, 15);
 	this->pData->ppTextureArrays[SingleGunData::FIRE]->setAnchorPoint(0.5f, 1.0f);
-	this->pData->ppTextureArrays[SingleGunData::DIE] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Die", 1, 50);
+	this->pData->ppTextureArrays[SingleGunData::DIE] = new TextureArray(RESOURCE_SPRITE, "SingleGun", "Die", 2, 50);
 	this->pData->ppTextureArrays[SingleGunData::DIE]->setAnchorPoint(0.5f, 1.0f);
 
-	this->pData->body = RectF(-pData->ppTextureArrays[SingleGunData::STAND]->getWidth() / 2, -pData->ppTextureArrays[SingleGunData::STAND]->getHeight(), pData->ppTextureArrays[SingleGunData::STAND]->getWidth(), pData->ppTextureArrays[SingleGunData::STAND]->getHeight());
+	this->pData->body = RectF(-pData->ppTextureArrays[SingleGunData::STAND]->getWidth() / 2 , -pData->ppTextureArrays[SingleGunData::STAND]->getHeight(), pData->ppTextureArrays[SingleGunData::STAND]->getWidth(), pData->ppTextureArrays[SingleGunData::STAND]->getHeight());
 
 	this->pData->x = this->pData->respawnX;
 	this->pData->y = this->pData->respawnY;
 
-	this->pData->pState = new SingleGunJumpingState(this->pData);
+	this->pData->pState = new SingleGunStandState(this->pData);
 
 }
 
@@ -48,24 +49,24 @@ void SingleGunSprite::setCollisionRect(CollisionRectF crect)
 
 void SingleGunSprite::onCameraCollision(RectF cameraRect)
 {
-	if ((cameraRect.x + cameraRect.width) - this->pData->x  <= SINGLEGUN_TURN_RANGE)
+	/*if ((cameraRect.x + cameraRect.width) - this->pData->x  <= SINGLEGUN_TURN_RANGE)
 	{
 		if (this->pData->dir.isRight())
 			this->pData->dir = Direction::createLeft();
-	}
+	}*/
 
-	if (this->pData->dir.isLeft())
-	{
+	
 		if (this->pData->x <= cameraRect.x)
 		{
 			this->pData->isDesTroyed = true;
 		}
-	}
+	
+
+
+
 }
 
-void SingleGunSprite::die()
-{
-}
+
 
 SingleGunSprite::~SingleGunSprite()
 {

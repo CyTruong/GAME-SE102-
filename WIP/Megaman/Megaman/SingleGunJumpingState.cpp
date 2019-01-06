@@ -3,6 +3,8 @@
 #include "SingleGunStandState.h" 
 
 
+#include "SingleGunDeadState.h"
+
 
 
 SingleGunJumpingState::SingleGunJumpingState(EnemyData * pData)
@@ -13,7 +15,7 @@ SingleGunJumpingState::SingleGunJumpingState(EnemyData * pData)
 	this->gravity = 0.2;
 	this->pData = pData;
 	this->pData->iCurrentArr = SingleGunData::JUMP;
-	this->pData->vy = -4.0f;
+	this->pData->vy = -6.0f;
 		pData->vx = pData->transform(SINGLEGUNRUNSPEED);
 
 }
@@ -76,15 +78,17 @@ void SingleGunJumpingState::onCollision(CollisionRectF rect)
 			float py = bottomR - top;
 			if ((-vy * px) > vx * py)
 			{
-				//va chạm trên
-				pData->y += py;
-				pData->vy = 0.0f;
+				////va chạm trên
+				//pData->y += py;
+				//pData->vy = 0.0f;
 			}
 			else
 			{
 				//va chạm bên trái
 				pData->x -= px;
 				pData->vx = 0.0f;
+				transition(new SingleGunStandState(pData));
+
 			}
 		}
 	}
@@ -117,18 +121,26 @@ void SingleGunJumpingState::onCollision(CollisionRectF rect)
 			if ((-vy * px) > (-vx * py))
 			{
 				// top collision
-				pData->y += py;
-				pData->vy = 0.0f;
+			/*	pData->y += py;
+				pData->vy = 0.0f;*/
 			}
 			else
 			{
 				// side collision
 				pData->x += px;
 				pData->vx = 0.0f;
+				transition(new SingleGunStandState(pData));
+
 			}
 		}
 	}
 	//transition(new SingleGunStandState(pData));
+
+}
+
+void SingleGunJumpingState::onDead()
+{
+	transition(new SingleGunDeadState(this->pData));
 
 }
 

@@ -70,18 +70,18 @@ MegamanSprite::MegamanSprite(float respawnX, float respawnY, Direction movedir)
 
 	this->pData->ppTextureArrays[MegamanData::DAMAGED] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Damaged", 2, 60);
 	this->pData->ppTextureArrays[MegamanData::DAMAGED]->setAnchorPoint(0.5f, 0.8f);
-	this->pData->bodyRects[MegamanData::DAMAGED] = RectF(0, -0, 1, 1);
+	this->pData->bodyRects[MegamanData::DAMAGED] = RectF(-15.0f, -30, 35, 35);
 
 	this->pData->ppTextureArrays[MegamanData::NOCHARGE] = new TextureArray(RESOURCE_SPRITE, "Megaman", "NoCharge", 1, 4);
-	this->pData->ppTextureArrays[MegamanData::NOCHARGE]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::NOCHARGE]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::NOCHARGE] = RectF(-25, -55, 55, 55);
 
 	this->pData->ppTextureArrays[MegamanData::CHARGING1] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Charge0", 10, 4);
-	this->pData->ppTextureArrays[MegamanData::CHARGING1]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::CHARGING1]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::CHARGING1] = RectF(-25, -55, 55, 55);
 
 	this->pData->ppTextureArrays[MegamanData::CHARGING2] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Charge1", 10, 4);
-	this->pData->ppTextureArrays[MegamanData::CHARGING2]->setAnchorPoint(0.5f, 1.0f);
+	this->pData->ppTextureArrays[MegamanData::CHARGING2]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::CHARGING2] = RectF(-25, -55, 55, 55);
 
 	this->pData->ppTextureArrays[MegamanData::CHARGING3] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Charge2", 10, 4);
@@ -103,7 +103,9 @@ void MegamanSprite::update()
 	pData->pState->onUpdate();
 	for (int i = 0; i < pData->Bullets.size(); i++)
 	{
-		pData->Bullets[i]->update();
+		if (!pData->Bullets[i]->isDesTroyed()) {
+			pData->Bullets[i]->update();
+		}
 	}
 
 }
@@ -136,7 +138,9 @@ void MegamanSprite::draw(Camera * cam)
 			pData->ppTextureArrays[pData->iCurrentArr]->drawFlipX(pData->x, pData->y, cam, 1.0f, 1.0f, D3DCOLOR_ARGB(255, 255, 0, 60));*/
 	for (int i = 0; i < pData->Bullets.size(); i++)
 	{
-		pData->Bullets[i]->draw(cam);
+		if (!pData->Bullets[i]->isDesTroyed()) {
+			pData->Bullets[i]->draw(cam);
+		}
 	}
 
 

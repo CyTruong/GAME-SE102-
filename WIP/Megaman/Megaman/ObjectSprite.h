@@ -13,6 +13,7 @@ public:
 
 	//EnermySprite(std::string mapName){}
 
+
 	virtual RectF getBody() { return pData->getBody(); }
 	virtual CollisionRectF getCollisionRect() { return CollisionRectF(getBody(), "throughable", this->pData->vx, this->pData->vy); }
 	virtual CollisionRectF* getRefCollisionRect() { return &pData->collisionRect; }
@@ -33,7 +34,11 @@ public:
 	virtual void update()
 	{
 		pData->pState->onUpdate();
-		pData->collisionRect = CollisionRectF(pData->getBody(), "elevator", pData->vx, pData->vy);
+
+		//hcmt chuyen toi onupdate cua state elevator onUpdate 
+
+		// 		pData->collisionRect = CollisionRectF(pData->getBody(), "elevator", pData->vx, pData->vy);
+
 	}
 
 	virtual void draw(Camera *cam)

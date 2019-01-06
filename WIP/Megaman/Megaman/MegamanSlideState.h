@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "MegamanState.h"
+#include "MegamanDamagedState.h"
 class MegamanSlideState :
 	public MegamanState
 {
@@ -29,6 +30,9 @@ public:
 	void onDead();
 	void onCameraCollision(RectF cameraRect);
 	void createBullet(float x, float y, float angle);
+	void damaged() override {
+		transition(new MegamanDamagedState(this->pData));
+	}
 	~MegamanSlideState();
 };
 

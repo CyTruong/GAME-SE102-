@@ -15,8 +15,10 @@ public:
 	virtual void update();
 	virtual void draw(Camera* cam);
 	virtual void damaged() {
+
 		Sound::getInstance()->play("MgmTakeDameged", false, 1);
 		this->pData->pState->damaged();
+
 	};
 	void setCameraTo(Camera* cam);
 	virtual SpriteState* getState()
@@ -34,8 +36,10 @@ public:
 	virtual float getY() { return pData->y; }
 	//hcmt 
 	virtual Direction getMoveDir() { return pData->movedir; }
+
 	virtual float getCenterX() { return pData->x; }
 	virtual float getCenterY() { return pData->y - pData->ppTextureArrays[pData->iCurrentArr]->getHeight() / 2; }
+	
 	virtual void onUnsupported() { pData->pState->onFall(); }
 	virtual void onCollision(RectF r) { pData->pState->onCollision(r); }
 	virtual void onCollision(CollisionRectF r) { pData->pState->onCollision(r); }

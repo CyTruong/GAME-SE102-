@@ -29,15 +29,19 @@ Scene1::Scene1()
 	viewPort = new ViewPort(RectI(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
 
 
-	cam = new Camera(viewPort, 0, 48* 16, RectF(0, 760, 7000, 250), RectF(7700, 760, 50, 500));
+	cam = new Camera(viewPort, 0, 48* 16, RectF(0, 760, 8000, 250), RectF(8000, 760, 50, 500));
 
 
 
 	pMegaman = new MegamanSprite(120, 48* 16 + 120, cam->getMoveDir());
-	//pMegaman = new MegamanSprite( 2340, 1145, cam->getMoveDir());
+	//pMegaman = new MegamanSprite(7500, 1924, cam->getMoveDir());
+	//pMegaman = new MegamanSprite( 1940, 1035, cam->getMoveDir());
 
 	// Texture Hp 
-	hpHub = new HPBarSprite(cam, 50, 50);
+	hpHub = new HPBarSprite(cam, 15, 80);
+
+	bg = new BackGround(pMegaman);
+
 
 	isPause = false;
 	isFinish = false;
@@ -224,6 +228,7 @@ void Scene1::render()
 
 	Graphics::getInstance()->beginRender();
 	Graphics::getInstance()->getSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
+	bg->draw(cam);
 
 	//pMap->draw(cam);
 	pMap->drawTile(cam);
@@ -271,12 +276,37 @@ void Scene1::Update()
 		int a = 0;
 
 	}
-	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir());
+
+	// add stoppoint 0 1 2 
+	int isCamStop = 0; 
+	
+	if (UIComponents::getInstance()->getShurikanHp()!=0 )
+	{ 
+		isCamStop = 1;
+
+	}
+	else
+	{    // const is range of boss1 room 
+
+		if (pMegaman->getX()>2320&& pMegaman->getX()<2544)
+		{
+			isCamStop = 1; 
+
+
+		}
+	}
+  
+
+	
+
+	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir(),isCamStop );
 
 
 	//update megaman theo cái cam
 	pMegaman->setCameraRect(cam->getRect());
 
 	hpHub->update();
+
+	bg->update();
 }
 

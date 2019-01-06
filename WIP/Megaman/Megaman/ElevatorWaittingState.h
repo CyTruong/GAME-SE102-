@@ -11,7 +11,7 @@ public:
 	ElevatorWaittingState(ObjectData* data) ;
 	void onUpdate() override ;
 	void onCollision(RectF rect) override;
-	void onCollision(CollisionRectF rect) override;
+	void onCollision(CollisionRectF rect) override;		
 	~ElevatorWaittingState() {} ;
 };
 

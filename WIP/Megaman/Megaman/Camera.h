@@ -3,7 +3,7 @@
 #include "iostream"
 #include "Direction.h"
 
-#define ss 14
+#define ss 12
 class CamPos
 {
 public:
@@ -55,7 +55,7 @@ public:
 		mapRect = rect;
 		this->x =0;
 		this->y = 16*48;
-		NumberOfcamPos = 12;
+		NumberOfcamPos = 17;
 		pCamPos = new CamPos[NumberOfcamPos];
 
 		pCamPos[0] = CamPos(48,0 ,48,0);
@@ -68,35 +68,36 @@ public:
 
 
 
-
-		pCamPos[5] = CamPos(74, 0,16 , 1);
-
-		
-		pCamPos[6] = CamPos(74, 0, 6, 1); 
-
-		pCamPos[7] = CamPos(6, 74, 99, 0);
-
-
-		pCamPos[8] = CamPos(74, 0, 16, 1);
-
 		
 
-		pCamPos[9] = CamPos(16, 74, 99, 0);
+		pCamPos[5] = CamPos(16, 74, 99, 0);
 
 
 
-      pCamPos[10] = CamPos(96, 32, 70, 1); 
+//pCamPos[10] = CamPos(96, 32, 70, 1); 
 	  
 
-		pCamPos[11] = CamPos(97,96 ,125 , 0);
+		pCamPos[6] = CamPos(64,99 ,112 , 0);
 		
-		//pCamPos[9] = CamPos(48, 0, 48, 0);
-		//pCamPos[10] = CamPos(46, 14, 59, 1);
+		pCamPos[7] = CamPos(64, 112, 145, 0);
+		//boss 1 
+		pCamPos[8] = CamPos(64, 144.5, 0, 2); 
+
+		pCamPos[9] = CamPos(64, 159, 185, 0);
+
+		pCamPos[10] = CamPos(64, 185, 261, 0);
+		pCamPos[11] = CamPos(64, 261, 368, 0);
+
+		pCamPos[12] = CamPos(67, 261, 368, 0);
+		pCamPos[13] = CamPos(64, 266, 368, 0);
+
 		//pCamPos[11] = CamPos(48, 0, 48, 0);
 		//pCamPos[12] = CamPos(46, 14, 59, 1);
-		//pCamPos[13] = CamPos(48, 0, 48, 0);
-		//pCamPos[14] = CamPos(46, 14, 59, 1);
-		//pCamPos[15] = CamPos(46, 14, 59, 1);
+		pCamPos[14] = CamPos(368, 64, 106, 1);
+
+		pCamPos[15] = CamPos(106,368 ,480 , 0);
+
+		pCamPos[16] = CamPos(108, 368, 480, 0);
 
 		/*this->x = x - (float)viewPort->getWidth() / 2.0f;
 		this->y = y - (float)viewPort->getHeight() / 2.0f*/;
@@ -229,9 +230,11 @@ public:
 	{
 		return RectF(x, y, getWidth(), getHeight());
 	}
-	void update(float x, float y, Direction d)
+	void update(float x, float y, Direction d, int isCamStop )
 
 	{
+		
+
 		// kiem tra nam trong trục x or y 
 		// thì chỉ thay đổi trục ngược lại
 		string xx = to_string(x); 
@@ -245,17 +248,60 @@ public:
 
 
 
-		// 
+		// var xac dinh di qua boss1 chua va toi boss 2 chua 
+
+
+
 		int f = 0; 
 		int j = 0; 
 		for (int  i = 0; i <NumberOfcamPos; i++)
-		{
-			
+		{  
+			if (j < NumberOfcamPos - 1)
+			{
+
+				if (f == 1 && pCamPos[j].d == 0 && pCamPos[j + 1].d == 0)
+				{
+					if (pCamPos[j + 1].a - pCamPos[j].a < 120 / 16)
+					{
+						this->y = pCamPos[j + 1].a;
+						f = 1;
+						break;
 
 
-			if (pCamPos[i].d==0&&this->y==pCamPos[i].a&& a>=pCamPos[i].b-ss && a <=pCamPos[i].c+ ss)
+					}
+
+
+				}
+				else
+					if (f == 2 && pCamPos[j].d == 1 && pCamPos[j + 1].d == 1)
+					{
+						if (pCamPos[j + 1].a - pCamPos[j].a < 120 / 16)
+						{
+							this->x = pCamPos[j + 1].a;
+							f = 2;
+							break;
+
+						}
+					}
+
+			}
+
+			if (isCamStop==1)
+			{
+			if (pCamPos[i].d==2&&this->x==pCamPos[i].b&&this->y == pCamPos[i].a)
+			{ 
+	     		f = 3; 
+				j = i; 
+				break;
+			}
+
+			}
+
+
+			if (f!=2&&pCamPos[i].d==0&&this->y==pCamPos[i].a&& a>=pCamPos[i].b-ss && a <=pCamPos[i].c+ ss)
 			{  
 				
+			
 
 				if (a<pCamPos[i].b)
 				{
@@ -270,8 +316,8 @@ public:
 				j = i; 
 				setPosX(x); 
 				f = 1; 
-				LogWriter::getInstance()->write("xxxxxxxxx" + to_string(x) );
-				LogWriter::getInstance()->write("yyyyyy" + to_string(y));
+				
+				
 			}
 			
 		
@@ -289,10 +335,11 @@ public:
 				j = i;
 				setPosY(y);
 				f = 2;
-				LogWriter::getInstance()->write("yyyyyy" + to_string(y));
+
+			
 
 			}
-
+		
 			
 			
 		/*	if (f == 1)
@@ -302,35 +349,26 @@ public:
 
 
 		}
-		if (j<3)
-		{
-
 		
-		if ( f == 1 && pCamPos[j].d == 0 && pCamPos[j + 1].d == 0)
-		{
-			this->y = pCamPos[j + 1].a;
 
-		}
-		else
-			if (f == 2 && pCamPos[j].d == 1 && pCamPos[j + 1].d == 1)
-			{
-				this->x = pCamPos[j + 1].a;
-			}
 
-		}
 		if (f==0)
 		{    
 			setPosX(x);
 			setPosY(y);
+
 		}
 	
 
 
 		
 		//setPosition(x, y);
-
+		LogWriter::getInstance()->write(this->x, this->y);
+		LogWriter::getInstance()->write("xy cam ");
 	}
 
+
+	
 
 	Direction getMoveDir() { return moveDir; }
 	ViewPort* getViewport() { return viewPort; }

@@ -74,7 +74,9 @@ public:
 	}
 
 	virtual void onUpdate() {}
-	virtual void die() { pData->pState->onDead(); }
+	virtual void die() {
+		pData->pState->onDead(); 
+	}
 	virtual bool isDesTroyed() { return pData->isDesTroyed; }
 	virtual bool isHittable() { return pData->isHittable; }
 	virtual void setSupportCollisionRect(CollisionRectF rect)
@@ -105,8 +107,8 @@ public:
 	}
 	virtual void onCameraCollision(RectF cameraRect)
 	{
-		if (!pData->getBody().checkCollision(cameraRect))
-			pData->isDesTroyed = true;
+	/*	if (!pData->getBody().checkCollision(cameraRect))
+			pData->isDesTroyed = true;*/
 	}
 	virtual int getScore()
 	{

@@ -130,21 +130,44 @@ void MegamanRunningState::onCollision(CollisionRectF crect)
 	{
 		pData->x -= pData->getBody().x + pData->getBody().width - crect.rect.x;
 		pData->vx = 0;
+		pData->y -= pData->vy;
+		pData->vy -= acceleration;
+		
+
+
 	}
 	else
 	{
-		pData->x += crect.rect.x + crect.rect.width - pData->getBody().x;
+		pData->x += crect.rect.x + crect.rect.width- pData->getBody().x;
 		pData->vx = 0;
+		pData->y -= pData->vy;
+		pData->vy -= acceleration;
 	}
-
-
 
 
 }
 
-void MegamanRunningState::onDynamicObjectCollision(CollisionRectF * rect)
+void MegamanRunningState::onDynamicObjectCollision(CollisionRectF * crect)
 {
 	//pData->dynamicThroughRect.push_back(rect);
+
+	if (pData->vx > 0)
+	{
+		/*pData->x -= pData->getBody().x + pData->getBody().width - crect->rect.x;
+		pData->vx = 0;
+		pData->y -= pData->vy;
+		pData->vy -= acceleration;
+*/
+
+
+	}
+	else
+	{
+		pData->x += crect->rect.x + crect->rect.width - pData->getBody().x;
+		pData->vx = 0;
+		pData->y -= pData->vy;
+		pData->vy -= acceleration;
+	}
 }
 
 void MegamanRunningState::onFall()

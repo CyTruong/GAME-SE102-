@@ -135,12 +135,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BackGround.h" />
     <ClInclude Include="base64.h" />
     <ClInclude Include="BulletSprite.h" />
     <ClInclude Include="BulletState.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionRect.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="DoorData.h" />
+    <ClInclude Include="DoorSprite.h" />
+    <ClInclude Include="DoorState.h" />
+    <ClInclude Include="DoubleRocketData.h" />
+    <ClInclude Include="DoubleRocketFireState.h" />
+    <ClInclude Include="DoubleRocketNormalBulletData.h" />
+    <ClInclude Include="DoubleRocketNormalBulletMovingState.h" />
+    <ClInclude Include="DoubleRocketNormalBulletSprite.h" />
+    <ClInclude Include="DoubleRocketSprite.h" />
     <ClInclude Include="ElevatorData.h" />
     <ClInclude Include="ElevatorSprite.h" />
     <ClInclude Include="ElevatorWaittingState.h" />
@@ -188,6 +198,7 @@
     <ClInclude Include="ShurikanStartState.h" />
     <ClInclude Include="ShurikanWallAttackState.h" />
     <ClInclude Include="SingleGunData.h" />
+    <ClInclude Include="SingleGunDeadState.h" />
     <ClInclude Include="SingleGunFireState.h" />
     <ClInclude Include="SingleGunJumpingState.h" />
     <ClInclude Include="SingleGunNormalBulletData.h" />
@@ -210,9 +221,27 @@
     <ClInclude Include="Viewport.h" />
     <ClInclude Include="zconf.h" />
     <ClInclude Include="zlib.h" />
+    <ClInclude Include="ZuliaAlphaFlyState.h" />
+    <ClInclude Include="ZuliaData.h" />
+    <ClInclude Include="ZuliaNormalBulletData.h" />
+    <ClInclude Include="ZuliaNormalBulletSprite.h" />
+    <ClInclude Include="ZuliaNormalFlyState.h" />
+    <ClInclude Include="ZuliaNormalBulletMovingState.h" />
+    <ClInclude Include="ZuliaShoot2State.h" />
+    <ClInclude Include="ZuliaShootState.h" />
+    <ClInclude Include="ZuliaSmartBulletData.h" />
+    <ClInclude Include="ZuliaSprite.h" />
+    <ClInclude Include="ZuliaStingState.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base64.cpp" />
+    <ClCompile Include="DoorData.cpp" />
+    <ClCompile Include="DoorSprite.cpp" />
+    <ClCompile Include="DoorState.cpp" />
+    <ClCompile Include="DoubleRocketData.cpp" />
+    <ClCompile Include="DoubleRocketFireState.cpp" />
+    <ClCompile Include="DoubleRocketNormalBulletSprite.cpp" />
+    <ClCompile Include="DoubleRocketSprite.cpp" />
     <ClCompile Include="ElevatorData.cpp" />
     <ClCompile Include="ElevatorSprite.cpp" />
     <ClCompile Include="ElevatorWaittingState.cpp" />
@@ -245,6 +274,7 @@
     <ClCompile Include="ShurikanStartState.cpp" />
     <ClCompile Include="ShurikanWallAttackState.cpp" />
     <ClCompile Include="SingleGunData.cpp" />
+    <ClCompile Include="SingleGunDeadState.cpp" />
     <ClCompile Include="SingleGunFireState.cpp" />
     <ClCompile Include="SingleGunJumpingState.cpp" />
     <ClCompile Include="SingleGunNormalBulletSprite.cpp" />
@@ -262,6 +292,14 @@
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Viewport.cpp" />
     <ClCompile Include="winmain.cpp" />
+    <ClCompile Include="ZuliaAlphaFlyState.cpp" />
+    <ClCompile Include="ZuliaData.cpp" />
+    <ClCompile Include="ZuliaNormalBulletSprite.cpp" />
+    <ClCompile Include="ZuliaNormalFlyState.cpp" />
+    <ClCompile Include="ZuliaShoot2State.cpp" />
+    <ClCompile Include="ZuliaShootState.cpp" />
+    <ClCompile Include="ZuliaSprite.cpp" />
+    <ClCompile Include="ZuliaStingState.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

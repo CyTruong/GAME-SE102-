@@ -2,6 +2,10 @@
 #include "SingleGunSprite.h"
 #include "ElevatorSprite.h"
 #include "ShurikanSprite.h"
+#include "ZuliaSprite.h"
+#include "DoubleRocketSprite.h"
+
+#include"DoorSprite.h"
 
 EnemyCreator* EnemyCreator::instance = nullptr;
 
@@ -12,8 +16,9 @@ EnemyCreator::EnemyCreator()
 
 	addAppearDirection("SingleGun", Direction::createRight());
 	addAppearDirection("Elevator", Direction::createRight());
-	addAppearDirection("DoubleGun", Direction::createRight());
+	addAppearDirection("DoubleRocket", Direction::createRight());
 	addAppearDirection("Shurikan", Direction::createRight());
+	addAppearDirection("Zulia", Direction::createLeft());
 
 }
 
@@ -36,11 +41,14 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 	if (enemyName == "SingleGun") {
 		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
-	if (enemyName == "DoubleGun") {
-		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
+	if (enemyName == "DoubleRocket") {
+		return new DoubleRocketSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
 	if (enemyName == "Shurikan") {
 		return new ShurikanSprite(respawnX, respawnY);
+	}
+	if (enemyName == "Zulia") {
+		return new ZuliaSprite(respawnX, respawnY, getAppearDir(enemyName), bulletSprites);
 	}
 }
 
@@ -48,6 +56,10 @@ ObjectSprite * EnemyCreator::createObjectSprite(std::string name, int respawnX, 
 {
 	if (name == "Elevator") {
 		return new ElevatorSprite(respawnX, respawnY);
+	}
+
+	if (name == "Door") {
+		return new DoorSprite (respawnX, respawnY);
 	}
 }
 

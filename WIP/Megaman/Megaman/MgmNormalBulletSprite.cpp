@@ -1,4 +1,4 @@
-#include "MgmNormalBulletSprite.h"
+﻿#include "MgmNormalBulletSprite.h"
 #include "MgmNormalBulletMovingState.h"
 #include <math.h>
 
@@ -6,7 +6,6 @@ MgmNormalBulletSprite::MgmNormalBulletSprite(int size, float x, float y, float s
 {
 
 	this->bulletSize = this->ConvertSizeIndex(size);
-
 	this->pData = new MgmNormalBulletData();
 	this->pData->isDesTroyed = false;
 	this->pData->ppTextureArrays = new TextureArray*[MgmNormalBulletData::COUNT ];
@@ -57,6 +56,9 @@ MgmNormalBulletSprite::MgmNormalBulletSprite(int size, float x, float y, float s
 
 
 	pData->pState = new MgmNormalBulletMovingState(pData, speed ,angle, MgmNormalBulletData::FLY);
+
+	//lưu ý dòng này để link con trỏ datat đến bullet sprite
+	BulletSprite::pData = pData;
 
 }
 

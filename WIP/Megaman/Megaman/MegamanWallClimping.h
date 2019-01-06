@@ -2,7 +2,7 @@
 #include "MegamanState.h"
 #include "MegamanJumpState.h"
 #include "MegamanSlideState.h"
-
+#include "MegamanDamagedState.h"
 class MegamanWallClimping :
 	public MegamanState
 {
@@ -31,5 +31,8 @@ public:
 	void onFireRelease();
 	void onDead();
 	void onCameraCollision(RectF cameraRect);
+	void damaged() override {
+		transition(new MegamanDamagedState(this->pData));
+	}
 };
 
