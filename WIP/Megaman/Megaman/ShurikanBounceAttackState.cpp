@@ -24,6 +24,8 @@ void ShurikanBounceAttackState::onUpdate()
 	}
 	if (jumpCount > 8) {
 		transition(new ShurikanWallAttackState(this->pData));
+		return; 
+
 	}
 
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
@@ -33,7 +35,7 @@ void ShurikanBounceAttackState::onUpdate()
 		this->pData->x += this->pData->vx;
 
 		if (pData->vy != 0) {
-			this->pData->vy += .8;
+			this->pData->vy += 0.8;
 		}
 		this->pData->y += this->pData->vy;
 	}
