@@ -1,4 +1,5 @@
 ﻿#include "ShurikanWallAttackState.h"
+#include "ShurikanBounceAttackState.h"
 #include "ShurikanData.h"
 
 
@@ -9,10 +10,10 @@ ShurikanWallAttackState::ShurikanWallAttackState(EnemyData * pData)
 	this->pData->iCurrentArr = ShurikanData::SurikenAniIndex::WALLSPIN;
 	this->pData->vx = -1;
 	this->pData->vy = 0;
-	
+	waitting2changecount = 0;
 	
 	midX = 2432;
-	midY = 1137;
+	midY = 1120;
 
 	speed = 3;
 
@@ -23,6 +24,10 @@ void ShurikanWallAttackState::onUpdate()
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::WALLSPIN]->update();
 	this->pData->x += this->pData->vx * speed;
 	this->pData->y += this->pData->vy * speed;
+
+	if (waitting2changecount++ > 500   && this->pData->vy ==0 && this->pData->y > midY) {
+		transition(new ShurikanBounceAttackState(this -> pData));
+	}
 }
 
 void ShurikanWallAttackState::onCollision(RectF rect)

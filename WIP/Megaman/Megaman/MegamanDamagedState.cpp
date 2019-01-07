@@ -3,6 +3,7 @@
 #include "MegamanRunningState.h"
 #include "MegamanJumpState.h"
 #include "MegamanSlideState.h"
+#include "MegamanStandingState.h"
 
 MegamanDamagedState::MegamanDamagedState(MegamanData * pData)
 {
@@ -10,24 +11,24 @@ MegamanDamagedState::MegamanDamagedState(MegamanData * pData)
 	this->pData->iCurrentArr = MegamanData::DAMAGED;
 	this->pData->isUndying = true;
 	this->pData->isHittable = false;
-	lastY = this->pData->y;
+	/*lastY = this->pData->y;
 	this->pData->y -= 8;
 	this->pData->vy = 1;
-	
+	*/
 	
 }
 
 void MegamanDamagedState::onUpdate()
 {
-	if (this->pData->y < lastY- this->pData->vy) {
+	/*if (this->pData->y < lastY- this->pData->vy) {
 		this->pData->y += this->pData->vy;
 	}
-
+*/
 	hittableCalculation();
 	undyingCalculation();
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	if (this->pData->ppTextureArrays[this->pData->iCurrentArr]->isLastTexture()) {
-		transition(new MegamanJumpState(this->pData, true, 0));
+		transition(new MegamanStandingState(this->pData));
 	}
 }
 

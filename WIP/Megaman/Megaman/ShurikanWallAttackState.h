@@ -7,6 +7,7 @@ private:
 	float midX, midY;
 	RectF BoundingRect;
 	float speed;
+	long waitting2changecount;
 public:
 	ShurikanWallAttackState(EnemyData * );
 	void onUpdate();
