@@ -11,17 +11,19 @@ public:
 
 	DoorState(ObjectData * pdata);
 	~DoorState();
-	void onUpdate();
+	void onUpdate() override;
 	void onCollision(RectF rect) ;
-	void onCollision(CollisionRectF rect);
+	void onCollision(CollisionRectF rect) override;
 	void onCollision(Object  obj);
 
-	
 	
 
 
 private:
 	bool isMegamanPassing; 
+	bool isMegamanCollision; 
+
+	bool isClosed; 
 
 	int counting; 
 

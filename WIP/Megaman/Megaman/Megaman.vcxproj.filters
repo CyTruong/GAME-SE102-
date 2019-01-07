@@ -297,9 +297,6 @@
     <ClInclude Include="HPSprite.h">
       <Filter>Objects\HPBar</Filter>
     </ClInclude>
-    <ClInclude Include="ElevatorWaittingState.h">
-      <Filter>Objects\HPBar</Filter>
-    </ClInclude>
     <ClInclude Include="ZuliaData.h">
       <Filter>Enemies\Zulia</Filter>
     </ClInclude>
@@ -365,6 +362,9 @@
     </ClInclude>
     <ClInclude Include="DoorState.h">
       <Filter>Objects\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="ElevatorWaittingState.h">
+      <Filter>Objects\Elevator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

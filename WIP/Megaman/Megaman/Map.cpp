@@ -692,7 +692,7 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 				{
 					sprite->onDynamicObjectCollision(r);
 					CollisionRectF cRect = CollisionRectF(sprite->getBody(), "Megaman");
-					objectIt->second->onCollision(cRect);
+   			  	objectIt->second->onCollision(cRect);
 					// Xét nhặt item here
 				}
 			}
