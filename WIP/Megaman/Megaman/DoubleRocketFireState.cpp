@@ -57,9 +57,13 @@ void DoubleRocketFireState::onCollision(CollisionRectF rect)
 
 void DoubleRocketFireState::createBullet()
 {
-	float x = -this->pData->Megaman_X + this->pData->x;
-	float y = -this->pData->Megaman_Y + this->pData->y;
-	float angle = atan(x / y);
+	float x = this->pData->Megaman_X - this->pData->x;
+	float y = this->pData->Megaman_Y - this->pData->y;
+	float angle = atan(y/x);
+	if (x < 0 ) {
+		angle += M_PI;
+	}
+	LogWriter::getInstance()->write(9999, angle);
 	this->pData->bulletsVector.push_back(new DoubleRocketNormalBulletSprite(this->pData->x, this->pData->y, angle));
 }
 
