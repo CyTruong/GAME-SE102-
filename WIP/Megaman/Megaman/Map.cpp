@@ -550,14 +550,14 @@ void Map::onCollision(Camera* cam)
 
 			for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
 			{
-				if (objectIt->second->isEnemyCollisionable())
-				{
+				// if  cho phep va cham hay k 
+
 					CollisionRectF r = objectIt->second->getCollisionRect();
 					if (EnemyIt->second->getBody().checkCollision(r.rect))
 					{
 						EnemyIt->second->onCollision(r);
 					}
-				}
+				
 
 			}
 
