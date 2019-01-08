@@ -227,6 +227,9 @@
     <ClInclude Include="Viewport.h" />
     <ClInclude Include="zconf.h" />
     <ClInclude Include="zlib.h" />
+    <ClInclude Include="ZuliaAimData.h" />
+    <ClInclude Include="ZuliaAimMovingState.h" />
+    <ClInclude Include="ZuliaAimSprite.h" />
     <ClInclude Include="ZuliaAlphaFlyState.h" />
     <ClInclude Include="ZuliaData.h" />
     <ClInclude Include="ZuliaDeadState.h" />
@@ -236,6 +239,7 @@
     <ClInclude Include="ZuliaNormalBulletMovingState.h" />
     <ClInclude Include="ZuliaShoot2State.h" />
     <ClInclude Include="ZuliaShootState.h" />
+    <ClInclude Include="ZuliaSpecialBulletData.h" />
     <ClInclude Include="ZuliaSpecialBulletMovingState.h" />
     <ClInclude Include="ZuliaSpecialBulletSprite.h" />
     <ClInclude Include="ZuliaSprite.h" />
@@ -306,6 +310,7 @@
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Viewport.cpp" />
     <ClCompile Include="winmain.cpp" />
+    <ClCompile Include="ZuliaAimSprite.cpp" />
     <ClCompile Include="ZuliaAlphaFlyState.cpp" />
     <ClCompile Include="ZuliaData.cpp" />
     <ClCompile Include="ZuliaDeadState.cpp" />

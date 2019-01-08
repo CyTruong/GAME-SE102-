@@ -53,7 +53,12 @@ public:
 	float getMegamanY() {
 		return this->Megaman_Y;
 	}
-	
+	void setisTargeting(bool is) {
+		this->isTargetting = is;
+	}
+	bool isTargeting() {
+		return this->isTargetting;
+	}
 private:
 	static UIComponents* instance;
 	UIComponents();
@@ -62,6 +67,7 @@ private:
 	int Megamanhp;
 	float Megaman_X;
 	float Megaman_Y;
+	bool isTargetting;
 	// boss hp 
 	int Shurikanhp; 
 

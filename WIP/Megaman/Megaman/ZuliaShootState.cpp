@@ -2,6 +2,7 @@
 #include "ZuliaData.h"
 #include "ZuliaNormalBulletSprite.h"
 #include "ZuliaSpecialBulletSprite.h"
+#include "ZuliaAimSprite.h"
 #include "ZuliaNormalFlyState.h"
 #include "EnemyCreator.h"
 #include <random>
@@ -44,13 +45,15 @@ void ZuliaShootState::createBee()
 	{
 		alpha = 0;
 	}
-	this->pData->bulletsVector.push_back(new ZuliaNormalBulletSprite(this->pData->x,this->pData->y,alpha,range));
+	/*this->pData->bulletsVector.push_back(new ZuliaNormalBulletSprite(this->pData->x,this->pData->y,alpha,range));
 	this->pData->bulletsVector.push_back(new ZuliaNormalBulletSprite(this->pData->x, this->pData->y, alpha - M_PI_2 / 9, range));
 	this->pData->bulletsVector.push_back(new ZuliaNormalBulletSprite(this->pData->x, this->pData->y, alpha - 2*M_PI_2 / 9, range));
 	this->pData->bulletsVector.push_back(new ZuliaNormalBulletSprite(this->pData->x, this->pData->y, alpha + M_PI_2 / 9, range));
 	this->pData->bulletsVector.push_back(new ZuliaNormalBulletSprite(this->pData->x, this->pData->y, alpha + 2 * M_PI_2 / 9, range));
-
+*/
 	//this->pData->bulletsVector.push_back(new ZuliaSpecialBulletSprite(this->pData->x, this->pData->y));
+	this->pData->bulletsVector.push_back(new ZuliaAimSprite(this->pData->x, this->pData->y));
+
 }
 
 void ZuliaShootState::onCollision(RectF rect)

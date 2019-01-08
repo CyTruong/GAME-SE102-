@@ -20,6 +20,7 @@ UIComponents::UIComponents()
 	Megamanhp = 16;
 	currentStage = 1;
 	Shurikanhp = 0; 
+	this->isTargetting = false;
 	//this->EnemyMap = nullptr;
 	//boss2HP  here 
 

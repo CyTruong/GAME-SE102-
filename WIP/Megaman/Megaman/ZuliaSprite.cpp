@@ -51,7 +51,7 @@ void ZuliaSprite::draw(Camera * cam)
 
 	pData->ppTextureArrays[ZuliaData::WINGS]->draw(pData->x, pData->y - 30, cam);
 
-	if (this->pData->isTargetting) {
+	if (UIComponents::getInstance()->isTargeting()) {
 		pData->ppTextureArrays[ZuliaData::AIM]->draw(pData->Megaman_X, pData->Megaman_Y+5, cam);
 		pData->ppTextureArrays[ZuliaData::AIM]->update();
 	}

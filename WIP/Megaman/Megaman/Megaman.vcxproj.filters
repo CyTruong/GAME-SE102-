@@ -393,6 +393,18 @@
     <ClInclude Include="DoubleRocketDeadState.h">
       <Filter>Enemies\DoubleRocket</Filter>
     </ClInclude>
+    <ClInclude Include="ZuliaSpecialBulletData.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaAimData.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaAimSprite.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaAimMovingState.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -616,6 +628,9 @@
     </ClCompile>
     <ClCompile Include="DoubleRocketDeadState.cpp">
       <Filter>Enemies\DoubleRocket</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaAimSprite.cpp">
+      <Filter>Bullets\Zulia</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
