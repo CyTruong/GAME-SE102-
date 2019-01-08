@@ -6,7 +6,7 @@
 float ZuliaAlphaFlyState::getYfromX(float X)
 {
 
-	float value = 2 * sin(X/10);
+	float value =3 * sin(X/15);
 	if ( (this->pData->dir.isLeft() && X < Range.x+Range.width/2)  || (this->pData->dir.isRight() && X > Range.x + Range.width / 2)) {
 		return -value;
 	}
@@ -35,6 +35,7 @@ void ZuliaAlphaFlyState::onUpdate()
 	this->pData->vx = this->pData->transform(speed);
 
 	this->pData->x += this->pData->vx;
+
 	this->pData->y += getYfromX(this->pData->x);
 	
 	if (mechCounter ++ > 200) {
@@ -45,7 +46,6 @@ void ZuliaAlphaFlyState::onUpdate()
 		else
 		{
 			transition(new ZuliaNormalFlyState(this->pData, Range.x+ Range.width, Range.y, Range,(int)ZuliaData::ZuliaMechIndex::STING_PLAYER));
-
 		}
 	}
 }

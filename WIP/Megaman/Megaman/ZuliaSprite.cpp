@@ -32,9 +32,9 @@ ZuliaSprite::ZuliaSprite(float x, float y,Direction dir, std::vector<BulletSprit
 	this->pData->x = this->pData->respawnX;
 	this->pData->y = this->pData->respawnY;
 
-	RectF Range = RectF(351, 800, 159, 80);
+	RectF Range = RectF(7673, 1718, 215, 146);
 
-	this->pData->pState = new ZuliaNormalFlyState(this->pData, Range.x + 10, Range.y +10, Range ,ZuliaData::ZuliaMechIndex::ALPHAFLY);
+	this->pData->pState = new ZuliaNormalFlyState(this->pData, Range.x + 20 , Range.y +20  , Range ,ZuliaData::ZuliaMechIndex::STING_PLAYER);
 }
 
 void ZuliaSprite::setCollisionRect(CollisionRectF rect)
@@ -47,6 +47,11 @@ void ZuliaSprite::draw(Camera * cam)
 	LogWriter::getInstance()->write(this->pData->x, this->pData->y);
 
 	pData->ppTextureArrays[ZuliaData::WINGS]->draw(pData->x, pData->y - 30, cam);
+
+	if (this->pData->isTargetting) {
+		pData->ppTextureArrays[ZuliaData::AIM]->draw(pData->Megaman_X, pData->Megaman_Y+5, cam);
+		pData->ppTextureArrays[ZuliaData::AIM]->update();
+	}
 
 	if (pData->Megaman_X < this->pData->x)
 	{

@@ -33,9 +33,10 @@ Scene1::Scene1()
 
 
 
-	pMegaman = new MegamanSprite(120, 48* 16 + 120, cam->getMoveDir());
+	//pMegaman = new MegamanSprite(120, 48* 16 + 120, cam->getMoveDir());
 	//pMegaman = new MegamanSprite(7500, 1924, cam->getMoveDir());
 	//pMegaman = new MegamanSprite( 1940, 1035, cam->getMoveDir());
+	pMegaman = new MegamanSprite(7300, 1300, cam->getMoveDir());
 
 	// Texture Hp 
 	hpHub = new HPBarSprite(cam, 15, 80);
@@ -232,9 +233,12 @@ void Scene1::render()
 
 	//pMap->draw(cam);
 	pMap->drawTile(cam);
-	pMap->drawEnemy(cam);
 
 	pMegaman->draw(cam);
+
+	pMap->drawEnemy(cam);
+
+	
 
 	pMap->drawObj(cam);
 	//draw HP col 

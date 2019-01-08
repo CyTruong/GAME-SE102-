@@ -21,6 +21,19 @@ float ZuliaNormalFlyState::getYfromX(float X)
 	return A * X + B;
 }
 
+void ZuliaNormalFlyState::doMech()
+{
+	if (nextMech == ZuliaData::ZuliaMechIndex::ALPHAFLY) {
+		transition(new ZuliaAlphaFlyState(this->pData, Range));
+	}
+	if (nextMech == ZuliaData::ZuliaMechIndex::STING_PLAYER) {
+		transition(new ZuliaStingState(this->pData, Range));
+	}
+	if (nextMech == ZuliaData::ZuliaMechIndex::BEESHOOT) {
+		transition(new ZuliaShootState(this->pData, Range));
+	}
+}
+
 ZuliaNormalFlyState::ZuliaNormalFlyState(EnemyData *pData, float desX, float desY,RectF Range,int nextMech )
 {
 
@@ -31,7 +44,7 @@ ZuliaNormalFlyState::ZuliaNormalFlyState(EnemyData *pData, float desX, float des
 
 	this->pData = pData;
 	this->pData->iCurrentArr = ZuliaData::ZuliaAniIndex::NORMALFLY;
-	this->speed = 0.5;
+	this->speed = 0.8;
 	this->xa = pData->x;
 	this->ya = pData->y;
 	this->xb = desX;
@@ -47,29 +60,30 @@ ZuliaNormalFlyState::ZuliaNormalFlyState(EnemyData *pData, float desX, float des
 
 void ZuliaNormalFlyState::onUpdate()
 {
+	if (1) {
+		this->pData->isTargetting = true;
+	}
+
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	this->pData->ppTextureArrays[ZuliaData::WINGS]->update();
 
 	this->pData->vx = this->pData->transform(speed);
+
 	if (this->pData->x + this->pData->vx > Range.x &&
-		this->pData->x + this->pData->body.width + this->pData->vx < Range.x + Range.width &&
+		this->pData->x + this->pData->vx < Range.x + Range.width &&
 		this->pData->y + this->pData->vy > Range.y &&
-		this->pData->y + this->pData->body.height + this->pData->vy < Range.y + Range.height)
+		this->pData->y + this->pData->vy < Range.y + Range.height)
 	{
 		this->pData->x += this->pData->vx;
 		this->pData->y = getYfromX(this->pData->x);
+
+		if (sqrt( (this->pData->x - xb)*(this->pData->x - xb) + (this->pData->y - yb)*(this->pData->y - yb)) < 5) {
+			doMech();
+		}
 	}
 	else 
 	{
-		if (nextMech == ZuliaData::ZuliaMechIndex::ALPHAFLY) {
-			transition(new ZuliaAlphaFlyState(this->pData,Range));
-		}
-		if (nextMech == ZuliaData::ZuliaMechIndex::STING_PLAYER) {
-			transition(new ZuliaStingState(this->pData, Range));
-		}
-		if (nextMech == ZuliaData::ZuliaMechIndex::BEESHOOT) {
-			transition(new ZuliaShootState(this->pData, Range));
-		}
+		doMech();
 	}
 
 }

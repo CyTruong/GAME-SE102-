@@ -28,11 +28,7 @@ void ShurikanStartState::onCollision(CollisionRectF rect)
 }
 
 
-void ShurikanStartState::onDead()
-{
-	transition(new ShurikanDeadState(this->pData));
 
-}
 
 ShurikanStartState::~ShurikanStartState()
 {

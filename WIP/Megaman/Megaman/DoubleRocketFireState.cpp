@@ -63,7 +63,6 @@ void DoubleRocketFireState::createBullet()
 	if (x < 0 ) {
 		angle += M_PI;
 	}
-	LogWriter::getInstance()->write(9999, angle);
 	this->pData->bulletsVector.push_back(new DoubleRocketNormalBulletSprite(this->pData->x, this->pData->y, angle));
 }
 

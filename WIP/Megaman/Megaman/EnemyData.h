@@ -22,7 +22,7 @@ public :
 	std::vector < BulletSprite* > bulletsVector;
 	int score;
 	Direction appearDir;
-	int stage; 
+	int isTargetting; 
 	bool isShooter;
 	float respawnX;
 	float respawnY;

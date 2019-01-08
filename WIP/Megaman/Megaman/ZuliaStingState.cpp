@@ -2,16 +2,19 @@
 #include "ZuliaData.h"
 #include "ZuliaAlphaFlyState.h"
 #include "ZuliaNormalFlyState.h"
+#include <random>
 
 float ZuliaStingState::getYfromX(float X)
 {
+
 	this->A = (ya - yb) / (xa - xb);
-	this->B = ya - A * xa;
+	this->B = yb - A * xb;
 	return A * X + B;
 }
 
 ZuliaStingState::ZuliaStingState(EnemyData * pData, RectF Range)
 {
+	LogWriter::getInstance()->write("Sting player :>  :> :> :> :>");
 	this->Range = Range;
 	waiiting2stingcount = 0;
 	this->pData = pData;
@@ -40,9 +43,11 @@ void ZuliaStingState::onUpdate()
 		this->pData->x += this->pData->vx;
 		this->pData->y = getYfromX(this->pData->x);
 	}
-	if( abs(this->pData->y -  yb) <= 5 && abs(this->pData->x - xb) <= 5)
+	if(this->pData->y >  yb )
 	{ 
-		transition(new ZuliaNormalFlyState(this->pData, Range.x+5, Range.y + 5, Range, (int)ZuliaData::ZuliaMechIndex::BEESHOOT));
+		int ran1 = rand() % 100 + 1 - 50;
+		int ran2 = rand() % 100 + 1 - 50;
+		transition(new ZuliaNormalFlyState(this->pData, 7800 + ran1,1783 + ran2, Range, (int)ZuliaData::ZuliaMechIndex::BEESHOOT));
 
 		/*if (this->pData->x < Range.x + Range.width) {
 			transition(new ZuliaNormalFlyState(this->pData, Range.x+50, Range.y+ 50, Range, (int)ZuliaData::ZuliaMechIndex::BEESHOOT));

@@ -2,7 +2,7 @@
 #include "ZuliaData.h"
 #include "ZuliaNormalBulletSprite.h"
 #include "ZuliaNormalFlyState.h"
-
+#include <random>
 
 ZuliaShootState::ZuliaShootState(EnemyData * enemydata, RectF Range)
 {
@@ -23,8 +23,15 @@ void ZuliaShootState::onUpdate()
 		if(counterFrame == 0)
 			createBee();
 		this->pData->ppTextureArrays[this->pData->iCurrentArr]->resetIndex();
-		if (counterFrame++ > 15) {
-			transition(new ZuliaNormalFlyState(this->pData, range.x+5, range.y , range, ZuliaData::ZuliaMechIndex::STING_PLAYER));
+		if (counterFrame++ > 4) {
+			if (rand() % 2) {
+				transition(new ZuliaNormalFlyState(this->pData, range.x + 20, range.y + 20, range, ZuliaData::ZuliaMechIndex::STING_PLAYER));
+				return;
+			}
+			else
+			{
+				transition(new ZuliaNormalFlyState(this->pData, range.x + range.width - 20, range.y + 20, range, ZuliaData::ZuliaMechIndex::STING_PLAYER));
+			}
 		}
 	}
 	else
