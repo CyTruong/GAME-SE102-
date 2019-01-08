@@ -390,6 +390,9 @@
     <ClInclude Include="RocketFlyDeadState.h">
       <Filter>Enemies\RocketFly</Filter>
     </ClInclude>
+    <ClInclude Include="DoubleRocketDeadState.h">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -610,6 +613,9 @@
     </ClCompile>
     <ClCompile Include="RocketFlyDeadState.cpp">
       <Filter>Enemies\RocketFly</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleRocketDeadState.cpp">
+      <Filter>Enemies\DoubleRocket</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -146,6 +146,7 @@
     <ClInclude Include="DoorSprite.h" />
     <ClInclude Include="DoorState.h" />
     <ClInclude Include="DoubleRocketData.h" />
+    <ClInclude Include="DoubleRocketDeadState.h" />
     <ClInclude Include="DoubleRocketFireState.h" />
     <ClInclude Include="DoubleRocketNormalBulletData.h" />
     <ClInclude Include="DoubleRocketNormalBulletMovingState.h" />
@@ -246,6 +247,7 @@
     <ClCompile Include="DoorSprite.cpp" />
     <ClCompile Include="DoorState.cpp" />
     <ClCompile Include="DoubleRocketData.cpp" />
+    <ClCompile Include="DoubleRocketDeadState.cpp" />
     <ClCompile Include="DoubleRocketFireState.cpp" />
     <ClCompile Include="DoubleRocketNormalBulletSprite.cpp" />
     <ClCompile Include="DoubleRocketSprite.cpp" />

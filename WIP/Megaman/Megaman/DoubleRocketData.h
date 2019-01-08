@@ -10,6 +10,7 @@ public:
 	{
 		FIRE_TOP,
 		FIRE_BOT,
+		DIE,
 		COUNT
 	};
 public:

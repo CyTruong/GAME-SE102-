@@ -1,6 +1,7 @@
 ﻿#include "RocketFlyState.h"
 #include "DoubleRocketNormalBulletSprite.h"
 #include "RocketFlyData.h"
+#include"RocketFlyDeadState.h"
 #include <math.h>
 RocketFlyState::RocketFlyState(EnemyData * pData)
 {
@@ -22,6 +23,11 @@ void RocketFlyState::onUpdate()
 		this->pData->dir = Direction::createLeft();
 	}
 
+	if (this->pData->y -this->pData->respawnY <16*4 )
+	{
+		this->pData->y += 0.5f; 
+
+	}
 
 
 	if (waittingframe == 1) //cho nó update 1 frame để kịp cập nhật pos X Y 
@@ -67,6 +73,7 @@ void RocketFlyState::createBullet()
 
 void RocketFlyState::onDead()
 {
+	transition(new RocketFlyDeadState(this->pData));
 }
 
 RocketFlyState::~RocketFlyState()

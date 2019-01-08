@@ -2,6 +2,7 @@
 #include "DoubleRocketNormalBulletSprite.h"
 #include "DoubleRocketData.h"
 #include <math.h>
+#include "DoubleRocketDeadState.h"
 DoubleRocketFireState::DoubleRocketFireState(EnemyData * pData)
 {
 	this->pData = pData;
@@ -68,6 +69,8 @@ void DoubleRocketFireState::createBullet()
 
 void DoubleRocketFireState::onDead()
 {
+	transition(new DoubleRocketDeadState(this->pData)); 
+
 }
 
 DoubleRocketFireState::~DoubleRocketFireState()

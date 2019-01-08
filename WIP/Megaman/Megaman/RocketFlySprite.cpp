@@ -26,8 +26,8 @@ RocketFlySprite::RocketFlySprite(float x, float y, Direction dir, bool isShoter,
 	this->pData->ppTextureArrays[RocketFlyData::FIRE] = new TextureArray(RESOURCE_SPRITE, "RocketFly", "", 5, 4);
 	this->pData->ppTextureArrays[RocketFlyData::FIRE]->setAnchorPoint(0.5f, 1);
 
-	this->pData->ppTextureArrays[RocketFlyData::DIE] = new TextureArray(RESOURCE_SPRITE, "Destruction", "", 6, 10);
-	this->pData->ppTextureArrays[RocketFlyData::DIE]->setAnchorPoint(0.5f, 1);
+	this->pData->ppTextureArrays[RocketFlyData::DIE] = new TextureArray(RESOURCE_SPRITE, "Destruction", "", 6, 6);
+	this->pData->ppTextureArrays[RocketFlyData::DIE]->setAnchorPoint(0.5f, 1); 
 
 	this->pData->body = RectF(-pData->ppTextureArrays[RocketFlyData::FIRE]->getWidth() / 2, -pData->ppTextureArrays[RocketFlyData::FIRE]->getHeight(), pData->ppTextureArrays[RocketFlyData::FIRE]->getWidth(), pData->ppTextureArrays[RocketFlyData::FIRE]->getHeight());
 

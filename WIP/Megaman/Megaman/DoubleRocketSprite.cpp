@@ -28,6 +28,9 @@ DoubleRocketSprite::DoubleRocketSprite(float x, float y, Direction dir, bool isS
 	this->pData->ppTextureArrays[DoubleRocketData::FIRE_BOT] = new TextureArray(RESOURCE_SPRITE, "DoubleRocket", "Bot", 3, 5);
 	this->pData->ppTextureArrays[DoubleRocketData::FIRE_BOT]->setAnchorPoint(0.5f, 1);
 
+	this->pData->ppTextureArrays[DoubleRocketData::DIE] = new TextureArray(RESOURCE_SPRITE, "Destruction", "", 6, 6);
+	this->pData->ppTextureArrays[DoubleRocketData::DIE]->setAnchorPoint(0.5f, 1);
+
 	this->pData->body = RectF(-pData->ppTextureArrays[DoubleRocketData::FIRE_TOP]->getWidth() / 2, -pData->ppTextureArrays[DoubleRocketData::FIRE_BOT]->getHeight(), pData->ppTextureArrays[DoubleRocketData::FIRE_BOT]->getWidth(), pData->ppTextureArrays[DoubleRocketData::FIRE_BOT]->getHeight());
 
 	this->pData->x = this->pData->respawnX;
