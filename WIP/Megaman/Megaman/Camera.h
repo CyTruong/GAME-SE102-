@@ -72,8 +72,8 @@ public:
 		//boss1 vs2 
 		pCamPos[4] = CamPos(64, 145, 145, 2);
 
-		pCamPos[5] = CamPos(64, 160, 185, 0);
-		pCamPos[6] = CamPos(64, 262, 364, 0);
+		pCamPos[5] = CamPos(64, 159, 185, 0);
+		pCamPos[6] = CamPos(64, 262, 364 , 0);
 		pCamPos[7] = CamPos(369, 68, 100, 1); 
 		pCamPos[8] = CamPos(106,369 ,473 , 0);
 		pCamPos[9] = CamPos(106, 479, 479, 2); 

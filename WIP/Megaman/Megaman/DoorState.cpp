@@ -29,7 +29,7 @@ void DoorState::onUpdate() {
 
 	// check va cham voi gate nua 
 
-	if (isMegamanCollision &&UIComponents::getInstance()->getShurikanHp() == 0)
+	if (isMegamanCollision &&UIComponents::getInstance()->getShurikanHp() == 0&&pData->playerX <pData->x)
 	{
 		// set đang mở -> sau bao nhieu fam ->set mở 	
 		this->pData->iCurrentArr = DoorData::OPEN;
@@ -38,7 +38,7 @@ void DoorState::onUpdate() {
 	// if megaman pos x > set dang đóng .... (đóng xong 1 lần là đóng ->set đóng )
 	  // set biến đã mở và đóng 
 
-	if ((pData->playerX > pData->x &&UIComponents::getInstance()->getShurikanHp() != 0)||(pData->playerX>159*16))
+	if ((pData->playerX > pData->x  &&UIComponents::getInstance()->getShurikanHp() != 0)||(pData->playerX>159*16&& pData->playerX < 165 * 16 && UIComponents::getInstance()->getShurikanHp() == 0))
 	{
 		this->pData->iCurrentArr = DoorData::CLOSE;
 
@@ -52,6 +52,7 @@ void DoorState::onUpdate() {
 
 	pData->collisionRect = CollisionRectF(pData->getBody(), "door", pData->vx, pData->vy);
 
+	isMegamanCollision = 0; 
 
 
 }
