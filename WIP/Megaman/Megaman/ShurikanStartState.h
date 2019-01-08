@@ -10,6 +10,7 @@ public:
 	void onUpdate();
 	void onCollision(RectF rect);
 	void onCollision(CollisionRectF rect);
+	void onDead() override; 
 
 	~ShurikanStartState();
 };
