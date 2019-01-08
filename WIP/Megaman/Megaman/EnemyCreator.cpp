@@ -4,6 +4,7 @@
 #include "ShurikanSprite.h"
 #include "ZuliaSprite.h"
 #include "DoubleRocketSprite.h"
+#include	"RocketFlySprite.h"
 
 #include"DoorSprite.h"
 
@@ -49,6 +50,11 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 	}
 	if (enemyName == "Zulia") {
 		return new ZuliaSprite(respawnX, respawnY, getAppearDir(enemyName), bulletSprites);
+	}
+
+	if (enemyName=="RocketFly")
+	{
+		return new RocketFlySprite(respawnX, respawnY, getAppearDir(enemyName),true, bulletSprites);
 	}
 }
 

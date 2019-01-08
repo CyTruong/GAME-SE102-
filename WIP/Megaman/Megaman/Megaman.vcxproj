@@ -188,6 +188,10 @@
     <ClInclude Include="Rect.h" />
     <ClInclude Include="KeyBoard.h" />
     <ClInclude Include="MegamanRunningState.h" />
+    <ClInclude Include="RocketFlyData.h" />
+    <ClInclude Include="RocketFlyDeadState.h" />
+    <ClInclude Include="RocketFlySprite.h" />
+    <ClInclude Include="RocketFlyState.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="SceneManager.h" />
@@ -268,6 +272,10 @@
     <ClCompile Include="MegamanWallClimping.cpp" />
     <ClCompile Include="MgmNormalBulletSprite.cpp" />
     <ClCompile Include="QuadTree.cpp" />
+    <ClCompile Include="RocketFlyData.cpp" />
+    <ClCompile Include="RocketFlyDeadState.cpp" />
+    <ClCompile Include="RocketFlySprite.cpp" />
+    <ClCompile Include="RocketFlyState.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="ShurikanBounceAttackState.cpp" />

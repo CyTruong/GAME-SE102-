@@ -73,6 +73,9 @@
     <Filter Include="Objects\Door">
       <UniqueIdentifier>{e8e1c539-e798-47bd-b98f-1629548df9ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enemies\RocketFly">
+      <UniqueIdentifier>{d4df4ac9-e670-4178-a1a1-e1cfb230d822}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -375,6 +378,18 @@
     <ClInclude Include="ZuliaDeadState.h">
       <Filter>Enemies\Zulia</Filter>
     </ClInclude>
+    <ClInclude Include="RocketFlySprite.h">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketFlyState.h">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketFlyData.h">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketFlyDeadState.h">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -583,6 +598,18 @@
     </ClCompile>
     <ClCompile Include="ZuliaDeadState.cpp">
       <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketFlySprite.cpp">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketFlyState.cpp">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketFlyData.cpp">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketFlyDeadState.cpp">
+      <Filter>Enemies\RocketFly</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
