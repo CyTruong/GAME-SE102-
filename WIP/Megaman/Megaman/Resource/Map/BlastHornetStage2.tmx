@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="497" height="129" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="244">
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="497" height="129" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="247">
  <tileset firstgid="1" name="BlastHornetStage2" tilewidth="16" tileheight="16" tilecount="64113" columns="497">
   <image source="BlastHornetStage2.png" width="7952" height="2064"/>
  </tileset>
@@ -26,6 +26,7 @@
   <object id="239" name="Door" type="object" x="2546.17" y="1151.5" width="31.6667" height="48.5"/>
   <object id="242" name="Door" type="object" x="229.417" y="889.917" width="17.1667" height="44.1667"/>
   <object id="243" name="Door" type="object" x="7648.67" y="1825.59" width="12.6667" height="47.5"/>
+  <object id="246" name="Zulia" type="enemy" x="7782" y="1766"/>
  </objectgroup>
  <objectgroup id="4" name="camRect" locked="1">
   <object id="69" x="7.33333" y="774"/>
@@ -108,7 +109,7 @@
   <object id="213" type="wall" x="5887.58" y="1302.58" width="13.5" height="640.166"/>
   <object id="214" type="wall" x="6132.58" y="1402.58" width="13.5" height="339.499"/>
   <object id="216" type="wall" x="7896.25" y="1703.92" width="13.5" height="163.499"/>
-  <object id="218" type="wall" x="7654.92" y="1698.25" width="13.5" height="123.499"/>
+  <object id="218" type="wall" x="7652.92" y="1698.25" width="13.5" height="123.499"/>
   <object id="219" type="wall" x="7653.33" y="1692.83" width="254" height="17.6667"/>
   <object id="225" type="wall" x="1093.08" y="390.75" width="16.5" height="87.833"/>
  </objectgroup>

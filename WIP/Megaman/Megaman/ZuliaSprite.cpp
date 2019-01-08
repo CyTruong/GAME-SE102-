@@ -32,7 +32,7 @@ ZuliaSprite::ZuliaSprite(float x, float y,Direction dir, std::vector<BulletSprit
 	this->pData->x = this->pData->respawnX;
 	this->pData->y = this->pData->respawnY;
 
-	RectF Range = RectF(7684, 1716, 214, 147);
+	RectF Range = RectF(7673, 1718, 215, 146);
 
 	this->pData->pState = new ZuliaNormalFlyState(this->pData, Range.x + 20 , Range.y +20  , Range ,ZuliaData::ZuliaMechIndex::STING_PLAYER);
 }
