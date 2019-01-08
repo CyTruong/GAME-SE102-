@@ -34,6 +34,9 @@ ZuliaStingState::ZuliaStingState(EnemyData * pData, RectF Range)
 
 void ZuliaStingState::onUpdate()
 {
+
+	UIComponents::getInstance()->setShurikanHp(pData->HP);
+
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	this->pData->ppTextureArrays[ZuliaData::WINGS]->update();
 
@@ -45,11 +48,11 @@ void ZuliaStingState::onUpdate()
 	}
 	if(this->pData->y >  yb )
 	{ 
-		/*int ran1 = rand() % 100 + 1 - 50;
+		int ran1 = rand() % 100 + 1 - 50;
 		int ran2 = rand() % 100 + 1 - 50;
-		transition(new ZuliaNormalFlyState(this->pData, 7781 + ran1,1786 + ran2, Range, (int)ZuliaData::ZuliaMechIndex::ALPHAFLY));
-*/
-		transition(new ZuliaNormalFlyState(this->pData, 7781 , 1786, Range, (int)ZuliaData::ZuliaMechIndex::ALPHAFLY));
+		transition(new ZuliaNormalFlyState(this->pData, 7781 + ran1, 1786 + ran2, Range, (int)ZuliaData::ZuliaMechIndex::BEESHOOT));
+
+		//transition(new ZuliaNormalFlyState(this->pData, 7781 , 1786, Range, (int)ZuliaData::ZuliaMechIndex::ALPHAFLY));
 		/*if (this->pData->x < Range.x + Range.width) {
 			transition(new ZuliaNormalFlyState(this->pData, Range.x+50, Range.y+ 50, Range, (int)ZuliaData::ZuliaMechIndex::BEESHOOT));
 		}

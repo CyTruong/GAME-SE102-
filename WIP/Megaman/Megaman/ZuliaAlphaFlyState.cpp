@@ -23,6 +23,8 @@ ZuliaAlphaFlyState::ZuliaAlphaFlyState(EnemyData * pData,RectF Range)
 
 void ZuliaAlphaFlyState::onUpdate()
 {
+	UIComponents::getInstance()->setShurikanHp(pData->HP);
+
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	this->pData->ppTextureArrays[ZuliaData::WINGS]->update();
 

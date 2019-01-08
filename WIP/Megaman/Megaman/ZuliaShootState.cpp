@@ -1,7 +1,9 @@
 #include "ZuliaShootState.h"
 #include "ZuliaData.h"
 #include "ZuliaNormalBulletSprite.h"
+#include "ZuliaSpecialBulletSprite.h"
 #include "ZuliaNormalFlyState.h"
+#include "EnemyCreator.h"
 #include <random>
 
 ZuliaShootState::ZuliaShootState(EnemyData * enemydata, RectF Range)
@@ -14,6 +16,7 @@ ZuliaShootState::ZuliaShootState(EnemyData * enemydata, RectF Range)
 
 void ZuliaShootState::onUpdate()
 {
+	UIComponents::getInstance()->setShurikanHp(pData->HP);
 
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	this->pData->ppTextureArrays[ZuliaData::WINGS]->update();
@@ -23,15 +26,8 @@ void ZuliaShootState::onUpdate()
 		if(counterFrame == 0)
 			createBee();
 		this->pData->ppTextureArrays[this->pData->iCurrentArr]->resetIndex();
-		if (counterFrame++ > 4) {
-			if (rand() % 2) {
-				transition(new ZuliaNormalFlyState(this->pData, range.x + 20, range.y + 20, range, ZuliaData::ZuliaMechIndex::STING_PLAYER));
-				return;
-			}
-			else
-			{
-				transition(new ZuliaNormalFlyState(this->pData, range.x + range.width - 20, range.y + 20, range, ZuliaData::ZuliaMechIndex::STING_PLAYER));
-			}
+		if (counterFrame++ > 5) {
+			transition(new ZuliaNormalFlyState(this->pData, 7781, 1786, range, (int)ZuliaData::ZuliaMechIndex::ALPHAFLY));
 		}
 	}
 	else
@@ -54,6 +50,7 @@ void ZuliaShootState::createBee()
 	this->pData->bulletsVector.push_back(new ZuliaNormalBulletSprite(this->pData->x, this->pData->y, alpha + M_PI_2 / 9, range));
 	this->pData->bulletsVector.push_back(new ZuliaNormalBulletSprite(this->pData->x, this->pData->y, alpha + 2 * M_PI_2 / 9, range));
 
+	//this->pData->bulletsVector.push_back(new ZuliaSpecialBulletSprite(this->pData->x, this->pData->y));
 }
 
 void ZuliaShootState::onCollision(RectF rect)

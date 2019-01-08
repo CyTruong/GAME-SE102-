@@ -37,8 +37,8 @@ ZuliaSprite::ZuliaSprite(float x, float y,Direction dir, std::vector<BulletSprit
 
 	RectF Range = RectF(7673, 1718, 215, 146);
 
-	this->pData->pState = new ZuliaNormalFlyState(this->pData, Range.x + 20 , Range.y +20  , Range ,ZuliaData::ZuliaMechIndex::STING_PLAYER);
-}
+	this->pData->pState = new ZuliaNormalFlyState(this->pData, Range.x + Range.width / 2, Range.y + Range.height /2  , Range ,ZuliaData::ZuliaMechIndex::STING_PLAYER);
+} 
 
 void ZuliaSprite::setCollisionRect(CollisionRectF rect)
 {

@@ -13,6 +13,8 @@ ZuliaShoot2State::ZuliaShoot2State(EnemyData * enemydata, RectF Range)
 
 void ZuliaShoot2State::onUpdate()
 {
+	UIComponents::getInstance()->setShurikanHp(pData->HP);
+
 }
 
 void ZuliaShoot2State::createBee()

@@ -20,6 +20,7 @@ public :
 	int HP;
 	bool isThrougable;
 	std::vector < BulletSprite* > bulletsVector;
+
 	int score;
 	Direction appearDir;
 	int isTargetting; 

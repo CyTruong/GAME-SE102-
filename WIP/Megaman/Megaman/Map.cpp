@@ -945,6 +945,8 @@ void Map::onUpdatePlayerProperties(MegamanSprite* sprite, Camera* cam)
 {
 	cleanPlayerBullet(cam, sprite);
 
+	UIComponents::getInstance()->setMegamanX(sprite->getCenterX());
+	UIComponents::getInstance()->setMegamanY(sprite->getCenterY());
 	// update Enemy
 	for (std::map < int, EnemySprite* > ::iterator it = EnemyMap.begin(); it != EnemyMap.end(); it++)
 	{

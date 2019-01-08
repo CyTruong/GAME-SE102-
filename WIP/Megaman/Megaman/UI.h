@@ -1,6 +1,7 @@
 #pragma once
 #include "Sound.h"
 #include "Windows.h"
+//#include "EnemySprite.h"
 #include<string> 
 
 class UIComponents
@@ -29,7 +30,6 @@ public:
 	int  getShurikanHp(); 
 	void setShurikanHp(int hp ); 
 
-
 	void addScore(int val);
 	void setStage(int val);
 	void gameOverReset();
@@ -40,14 +40,31 @@ public:
 	void resetStage();
 	bool isAllowedKey(char keyCode);
 	void cleanUp();
+
+	void setMegamanX(float x) {
+		this->Megaman_X = x;
+	}
+	void setMegamanY(float y) {
+		this->Megaman_Y = y;
+	}
+	float getMegamanX() {
+		return this->Megaman_X;
+	}
+	float getMegamanY() {
+		return this->Megaman_Y;
+	}
+	
 private:
 	static UIComponents* instance;
 	UIComponents();
 	int score;
 	int currentStage;
 	int Megamanhp;
+	float Megaman_X;
+	float Megaman_Y;
 	// boss hp 
 	int Shurikanhp; 
+
 
 	char configKeyBoard[COUNT];
 	char defaultKeyBoard[COUNT];

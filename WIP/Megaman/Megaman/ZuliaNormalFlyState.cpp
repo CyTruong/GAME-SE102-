@@ -60,6 +60,8 @@ ZuliaNormalFlyState::ZuliaNormalFlyState(EnemyData *pData, float desX, float des
 
 void ZuliaNormalFlyState::onUpdate()
 {
+	UIComponents::getInstance()->setShurikanHp(pData->HP);
+
 	if (1) {
 		this->pData->isTargetting = true;
 	}
