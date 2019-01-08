@@ -327,9 +327,6 @@
     <ClInclude Include="ZuliaShoot2State.h">
       <Filter>Enemies\Zulia</Filter>
     </ClInclude>
-    <ClInclude Include="ZuliaSmartBulletData.h">
-      <Filter>Bullets\Zulia</Filter>
-    </ClInclude>
     <ClInclude Include="BackGround.h">
       <Filter>Gamecomponent</Filter>
     </ClInclude>
@@ -368,6 +365,12 @@
     </ClInclude>
     <ClInclude Include="ShurikanDeadState.h">
       <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaSpecialBulletMovingState.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaSpecialBulletSprite.h">
+      <Filter>Bullets\Zulia</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -571,6 +574,9 @@
     </ClCompile>
     <ClCompile Include="ShurikanDeadState.cpp">
       <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaSpecialBulletSprite.cpp">
+      <Filter>Bullets\Zulia</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
