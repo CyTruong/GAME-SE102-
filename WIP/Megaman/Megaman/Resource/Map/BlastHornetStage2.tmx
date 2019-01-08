@@ -21,7 +21,7 @@
   <object id="27" name="SingleGun" type="enemy" x="5949.25" y="1430.92" width="17.5" height="19.5"/>
   <object id="28" name="SingleGun" type="enemy" x="6032.58" y="1529.58" width="17.5" height="19.5"/>
   <object id="31" name="Elevator" type="object" x="858" y="993" width="84" height="31"/>
-  <object id="228" name="Door" type="object" x="2305.16" y="1155.16" width="22.6667" height="44.1667"/>
+  <object id="228" name="Door" type="object" x="2312.66" y="1155.16" width="15.1667" height="44.1667"/>
   <object id="238" name="Shurikan" type="enemy" x="2487.5" y="1126"/>
   <object id="239" name="Door" type="object" x="2546.17" y="1151.5" width="31.6667" height="48.5"/>
   <object id="242" name="Door" type="object" x="229.417" y="889.917" width="17.1667" height="44.1667"/>

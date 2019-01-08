@@ -52,9 +52,11 @@ void SingleGunStandState::onCollision(CollisionRectF rect)
 }
 
 void SingleGunStandState::onDead()
+
 {
 	transition(new SingleGunDeadState(this->pData));
 }
+	
 
 
 

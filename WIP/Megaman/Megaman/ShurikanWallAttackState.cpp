@@ -1,7 +1,7 @@
 ﻿#include "ShurikanWallAttackState.h"
 #include "ShurikanBounceAttackState.h"
 #include "ShurikanData.h"
-
+#include"ShurikanDeadState.h"
 
 
 ShurikanWallAttackState::ShurikanWallAttackState(EnemyData * pData)
@@ -22,6 +22,11 @@ ShurikanWallAttackState::ShurikanWallAttackState(EnemyData * pData)
 void ShurikanWallAttackState::onUpdate()
 {
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::WALLSPIN]->update();
+	UIComponents::getInstance()->setShurikanHp(pData->HP);
+
+
+
+
 	this->pData->x += this->pData->vx * speed;
 	this->pData->y += this->pData->vy * speed;
 
@@ -196,6 +201,12 @@ void ShurikanWallAttackState::onCollision(CollisionRectF rect)
 			}
 		}
 	}
+}
+
+void ShurikanWallAttackState::onDead()
+{
+	transition(new ShurikanDeadState(this->pData));
+
 }
 
 ShurikanWallAttackState::~ShurikanWallAttackState()

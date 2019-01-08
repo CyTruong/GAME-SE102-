@@ -4,8 +4,11 @@
 
 SingleGunDeadState::SingleGunDeadState(EnemyData *pData)
 {
+
+
 	this->pData = pData;
 	this->pData->iCurrentArr = SingleGunData::SingleGunArrindex::DIE;
+
 }
 
 
