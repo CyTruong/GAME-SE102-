@@ -33,6 +33,7 @@ public:
 		else
 		{
 			if (this->pData->ppTextureArrays[SingelGunNormalBulletData::DESTROY]->isLastTexture()) {
+				Sound::getInstance()->play("BulletDestroy", false, 1);
 				this->pData->isDesTroyed = true;
 			}
 		}

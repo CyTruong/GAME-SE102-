@@ -13,6 +13,10 @@ void Scene1::loadSound()
 	Sound::getInstance()->loadSound("Resource\\Sound\\MgmCharge.wav", "MgmCharge");
 	Sound::getInstance()->loadSound("Resource\\Sound\\SingleGunFire.wav", "SingleGunFire");
 	Sound::getInstance()->loadSound("Resource\\Sound\\stage1.wav", "BlastHornet");
+	Sound::getInstance()->loadSound("Resource\\Sound\\Bullet_Destroy.wav", "BulletDestroy");
+	Sound::getInstance()->loadSound("Resource\\Sound\\Dash.wav", "Dash");
+
+	
 }
 
 Scene1::Scene1()
@@ -162,6 +166,7 @@ void Scene1::handlerInput()
 			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::SLIDE)) {
 				if (e.isPressed())
 				{
+					Sound::getInstance()->play("Dash",false,1);
 					pMegaman->getState()->onSlidePressed();
 				}
 			}

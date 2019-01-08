@@ -581,12 +581,11 @@ void Map::onCollision(Camera* cam)
 				mapCollisionTree->getObjectlist(returnLists, bullets[i]->getBody(), camRect);
 				for (int j = 0; j < returnLists.size(); j++)
 				{
-					LogWriter::getInstance()->write("Bullet pos");
-					LogWriter::getInstance()->write(bullets[i]->getBody().x, bullets[i]->getBody().y);
-
 					if (bullets[i]->getBody().checkCollision(returnLists[j].rect))
 					{
-						bullets[i]->onCollision(returnLists[j]);
+						if (!bullets[i]->isDesTroyed()) {
+							bullets[i]->onCollision(returnLists[j]);
+						}
 					}
 				}
 			}
