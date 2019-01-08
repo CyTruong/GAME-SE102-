@@ -33,7 +33,10 @@ private:
 	Camera* cam;
 	Map* pMap;
 	BackGround* bg;
+	//Hp
 	HPBarSprite* hpHub;
+	HPBarSprite* hpHubBoss;
+
 	
 	
 	//->texture **hp 

@@ -22,7 +22,7 @@ ShurikanWallAttackState::ShurikanWallAttackState(EnemyData * pData)
 void ShurikanWallAttackState::onUpdate()
 {
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::WALLSPIN]->update();
-	UIComponents::getInstance()->setShurikanHp(pData->HP);
+	UIComponents::getInstance()->setBossHp(pData->HP);
 
 
 

@@ -10,7 +10,7 @@ ShurikanSprite::ShurikanSprite(float x, float y)
 	this->pData->isHittable = true;
 	
 	this->pData->HP = 15;
-	UIComponents::getInstance()->setShurikanHp(this->pData->HP); 
+	UIComponents::getInstance()->setBossHp(this->pData->HP); 
 
 
 	this->pData->isShooter = true;

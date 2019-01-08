@@ -17,7 +17,7 @@ ZuliaShootState::ZuliaShootState(EnemyData * enemydata, RectF Range)
 
 void ZuliaShootState::onUpdate()
 {
-	UIComponents::getInstance()->setShurikanHp(pData->HP);
+	UIComponents::getInstance()->setBossHp(pData->HP);
 
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	this->pData->ppTextureArrays[ZuliaData::WINGS]->update();

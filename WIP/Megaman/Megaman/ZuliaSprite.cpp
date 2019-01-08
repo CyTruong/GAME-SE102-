@@ -9,7 +9,7 @@ ZuliaSprite::ZuliaSprite(float x, float y,Direction dir, std::vector<BulletSprit
 	this->pData->isDesTroyed = false;
 	this->pData->dir = dir;
 	this->pData->isHittable = true;
-	this->pData->HP = 50;
+	this->pData->HP = 30;
 	this->pData->isShooter = true;
 	this->pData->respawnX = x;
 	this->pData->respawnY = y;

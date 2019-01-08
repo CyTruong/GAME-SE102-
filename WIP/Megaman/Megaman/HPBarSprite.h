@@ -9,8 +9,9 @@ class HPBarSprite :
 private:
 	float posX, posY;
 	vector<HPSprite*> hpSprites;
+	int hubType; 
 public:
-	HPBarSprite(Camera * & cam,float posX, float posY);
+	HPBarSprite(Camera * & cam,float posX, float posY,int hubType );
 	void onUpdate();
 	void draw(Camera *cam) override;
 	~HPBarSprite();

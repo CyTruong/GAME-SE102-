@@ -434,7 +434,14 @@ void MegamanJumpState::onDynamicObjectCollision(CollisionRectF * cRect)
 				pData->x -= px;
 				pData->vx = 0.0f;
 
+				if (cRect->type == "door")
+				{
 
+					pData->movedir = Direction::createUp();
+
+					transition(new MegamanWallClimping(pData));
+
+				}
 
 			}
 		}
@@ -453,6 +460,14 @@ void MegamanJumpState::onDynamicObjectCollision(CollisionRectF * cRect)
 				pData->x -= px;
 				pData->vx = 0.0f;
 
+				if (cRect->type == "door")
+				{
+
+					pData->movedir = Direction::createUp();
+
+					transition(new MegamanWallClimping(pData));
+
+				}
 			}
 		}
 	}
@@ -483,6 +498,14 @@ void MegamanJumpState::onDynamicObjectCollision(CollisionRectF * cRect)
 				// side collision
 				pData->x += px;
 				pData->vx = 0.0f;
+				if (cRect->type == "door")
+				{
+
+					pData->movedir = Direction::createUp();
+
+					transition(new MegamanWallClimping(pData));
+
+				}
 			}
 		}
 		else // vy <= 0.0f
@@ -500,6 +523,14 @@ void MegamanJumpState::onDynamicObjectCollision(CollisionRectF * cRect)
 				// side collision
 				pData->x += px;
 				pData->vx = 0.0f;
+				if (cRect->type == "door")
+				{
+
+					pData->movedir = Direction::createUp();
+
+					transition(new MegamanWallClimping(pData));
+
+				}
 			}
 		}
 	}

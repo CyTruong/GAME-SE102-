@@ -26,9 +26,9 @@ public:
 	void inscreaseMegamanHp();
 	void descreaseMegamanHp();
 
-	void descreaseShurikanHp();
-	int  getShurikanHp(); 
-	void setShurikanHp(int hp ); 
+	void descreaseBossHp();
+	int  getBossHp(); 
+	void setBossHp(int hp ); 
 
 	void addScore(int val);
 	void setStage(int val);
@@ -69,7 +69,7 @@ private:
 	float Megaman_Y;
 	bool isTargetting;
 	// boss hp 
-	int Shurikanhp; 
+	int BossHp; 
 
 
 	char configKeyBoard[COUNT];

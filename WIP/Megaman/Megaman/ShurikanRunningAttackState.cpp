@@ -15,7 +15,7 @@ ShurikanRunningAttackState::ShurikanRunningAttackState(EnemyData * pData)
 void ShurikanRunningAttackState::onUpdate()
 {
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
-	UIComponents::getInstance()->setShurikanHp(pData->HP);
+	UIComponents::getInstance()->setBossHp(pData->HP);
 
 
 	this->pData->vx = this->pData->transform(speed);

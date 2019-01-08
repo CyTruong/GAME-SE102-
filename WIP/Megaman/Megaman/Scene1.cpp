@@ -5,24 +5,22 @@
 
 void Scene1::loadSound()
 {
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalMFire.wav","MgmBulletNormalMFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalSFire.wav","MgmBulletNormalSFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalLFire.wav", "MgmBulletNormalLFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmWallJump.wav", "MgmBulletNormalLFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmTakeDameged.wav", "MgmTakeDameged");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmCharge.wav", "MgmCharge");
-	Sound::getInstance()->loadSound("Resource\\Sound\\SingleGunFire.wav", "SingleGunFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\stage1.wav", "BlastHornet");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Bullet_Destroy.wav", "BulletDestroy");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Bullet_Destroy2.wav", "BulletDestroy2");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Dash.wav", "Dash");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Jump.wav", "Jump");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Elevator.wav", "Elevator");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Enemy_Destroy.wav", "Enemy_Destroy");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Death.wav", "Death");
+	Sound::getInstance()->loadSound("Resource\Sound\MgmBulletNormalMFire.wav", "MgmBulletNormalMFire");
+	Sound::getInstance()->loadSound("Resource\Sound\MgmBulletNormalSFire.wav", "MgmBulletNormalSFire");
+	Sound::getInstance()->loadSound("Resource\Sound\MgmBulletNormalLFire.wav", "MgmBulletNormalLFire");
+	Sound::getInstance()->loadSound("Resource\Sound\MgmWallJump.wav", "MgmBulletNormalLFire");
+	Sound::getInstance()->loadSound("Resource\Sound\MgmTakeDameged.wav", "MgmTakeDameged");
+	Sound::getInstance()->loadSound("Resource\Sound\MgmCharge.wav", "MgmCharge");
+	Sound::getInstance()->loadSound("Resource\Sound\SingleGunFire.wav", "SingleGunFire");
+	Sound::getInstance()->loadSound("Resource\Sound\stage1.wav", "BlastHornet");
+	Sound::getInstance()->loadSound("Resource\Sound\Bullet_Destroy.wav", "BulletDestroy");
+	Sound::getInstance()->loadSound("Resource\Sound\Bullet_Destroy2.wav", "BulletDestroy2");
+	Sound::getInstance()->loadSound("Resource\Sound\Dash.wav", "Dash");
+	Sound::getInstance()->loadSound("Resource\Sound\Jump.wav", "Jump");
+	Sound::getInstance()->loadSound("Resource\Sound\Elevator.wav", "Elevator");
+	Sound::getInstance()->loadSound("Resource\Sound\Enemy_Destroy.wav", "Enemy_Destroy");
+	Sound::getInstance()->loadSound("Resource\Sound\Death.wav", "Death");
 
-
-	
 	
 }
 
@@ -44,13 +42,18 @@ Scene1::Scene1()
 
 
 
-	pMegaman = new MegamanSprite(120, 48* 16 + 120, cam->getMoveDir());
+	//pMegaman = new MegamanSprite(120, 48* 16 + 120, cam->getMoveDir());
 	//pMegaman = new MegamanSprite(7500, 1924, cam->getMoveDir());
 	//pMegaman = new MegamanSprite( 1940, 1035, cam->getMoveDir());
-	//pMegaman = new MegamanSprite(7300, 1300, cam->getMoveDir());
+	pMegaman = new MegamanSprite(120, 120+16*48, cam->getMoveDir());
 
 	// Texture Hp 
-	hpHub = new HPBarSprite(cam, 15, 80);
+	hpHub = new HPBarSprite(cam, 15, 80,1);
+	
+	hpHubBoss = new HPBarSprite(cam,210, 80,0); 
+
+
+
 
 	bg = new BackGround(pMegaman);
 
@@ -257,6 +260,15 @@ void Scene1::render()
 	
 	hpHub->draw(cam);
 
+	if (pMegaman->getX() > 478 * 16)
+	{
+		hpHubBoss->draw(cam); 
+
+
+
+	}
+
+
 	Graphics::getInstance()->getSpriteHandler()->End();
 	Graphics::getInstance()->endRender();
 
@@ -290,7 +302,7 @@ void Scene1::Update()
 	// add stoppoint 0 1 2 
 	int isCamStop = 0; 
 	
-	if (UIComponents::getInstance()->getShurikanHp()!=0 )
+	if (UIComponents::getInstance()->getBossHp()!=0 )
 	{ 
 		isCamStop = 1;
 
@@ -351,6 +363,14 @@ void Scene1::Update()
 	pMegaman->setCameraRect(cam->getRect());
 
 	hpHub->update();
+
+	if (pMegaman->getX() > 478 * 16 )
+	{
+		hpHubBoss->update();
+
+
+	}
+
 
 	bg->update();
 }

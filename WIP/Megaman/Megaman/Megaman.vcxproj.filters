@@ -76,6 +76,9 @@
     <Filter Include="Enemies\RocketFly">
       <UniqueIdentifier>{d4df4ac9-e670-4178-a1a1-e1cfb230d822}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enemies\Box">
+      <UniqueIdentifier>{f1c29448-3824-40ef-918a-3b18bca3daa5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -405,6 +408,18 @@
     <ClInclude Include="ZuliaAimMovingState.h">
       <Filter>Bullets\Zulia</Filter>
     </ClInclude>
+    <ClInclude Include="BoxState.h">
+      <Filter>Enemies\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxData.h">
+      <Filter>Enemies\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxDeadState.h">
+      <Filter>Enemies\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxSprite.h">
+      <Filter>Enemies\Box</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -631,6 +646,18 @@
     </ClCompile>
     <ClCompile Include="ZuliaAimSprite.cpp">
       <Filter>Bullets\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxState.cpp">
+      <Filter>Enemies\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxData.cpp">
+      <Filter>Enemies\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxSprite.cpp">
+      <Filter>Enemies\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxDeadState.cpp">
+      <Filter>Enemies\Box</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

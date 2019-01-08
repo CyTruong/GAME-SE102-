@@ -19,7 +19,7 @@ UIComponents::UIComponents()
 	score = 0;
 	Megamanhp = 16;
 	currentStage = 1;
-	Shurikanhp = 0; 
+	BossHp = 0; 
 	this->isTargetting = false;
 	//this->EnemyMap = nullptr;
 	//boss2HP  here 
@@ -67,20 +67,20 @@ void UIComponents::descreaseMegamanHp()
 
 }
 
-void UIComponents::descreaseShurikanHp()
+void UIComponents::descreaseBossHp()
 {
 }
 
-int UIComponents::getShurikanHp()
+int UIComponents::getBossHp()
 {
-	return Shurikanhp  ; 
+	return BossHp  ; 
 
 
 }
 
-void UIComponents::setShurikanHp(int hp)
+void UIComponents::setBossHp(int hp)
 {
-	Shurikanhp = hp; 
+	BossHp = hp; 
 
 
 }

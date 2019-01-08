@@ -15,7 +15,7 @@ ShurikanDeadState::ShurikanDeadState(EnemyData *pData)
 
 void ShurikanDeadState::onUpdate()
 {
-	UIComponents::getInstance()->setShurikanHp(0);
+	UIComponents::getInstance()->setBossHp(0);
 
 
 	if (this->pData->ppTextureArrays[this->pData->iCurrentArr]->isLastTexture()) {

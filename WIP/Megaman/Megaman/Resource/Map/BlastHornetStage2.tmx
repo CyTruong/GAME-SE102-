@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="497" height="129" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="256">
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="497" height="129" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="263">
  <tileset firstgid="1" name="BlastHornetStage2" tilewidth="16" tileheight="16" tilecount="64113" columns="497">
   <image source="BlastHornetStage2.png" width="7952" height="2064"/>
  </tileset>
@@ -22,16 +22,15 @@
   <object id="28" name="SingleGun" type="enemy" x="6032.58" y="1529.58" width="17.5" height="19.5"/>
   <object id="31" name="Elevator" type="object" x="858" y="993" width="84" height="31"/>
   <object id="228" name="Door" type="object" x="2312.66" y="1155.16" width="15.1667" height="44.1667"/>
-  <object id="238" name="Shurikan" type="enemy" x="2487.5" y="1126"/>
+  <object id="238" name="Shurikan" type="enemy" x="2459" y="1161.5"/>
   <object id="239" name="Door" type="object" x="2546.17" y="1151.5" width="31.6667" height="48.5"/>
-  <object id="242" name="Door" type="object" x="229.417" y="889.917" width="17.1667" height="44.1667"/>
   <object id="243" name="Door" type="object" x="7654.34" y="1825.92" width="12.6667" height="45.1667"/>
   <object id="246" name="Zulia" type="enemy" x="7782" y="1766"/>
-  <object id="249" name="RocketFly" type="enemy" x="3360" y="880"/>
-  <object id="250" name="RocketFly" type="enemy" x="3556.67" y="878"/>
-  <object id="253" name="SingleGun" type="enemy" x="7556.02" y="1833.75" width="17.5" height="19.5"/>
-  <object id="254" name="DoubleRocket" type="enemy" x="7414.25" y="1832.75" width="17.5" height="19.5"/>
-  <object id="255" name="RocketFly" type="enemy" x="7330.25" y="1817.75" width="17.5" height="19.5"/>
+  <object id="249" name="RocketFly" type="enemy" x="3366" y="836"/>
+  <object id="250" name="RocketFly" type="enemy" x="3562.67" y="822"/>
+  <object id="253" name="RocketFly" type="enemy" x="3914" y="818"/>
+  <object id="261" name="Box" type="enemy" x="168" y="896"/>
+  <object id="262" name="Door" type="object" x="7097" y="1796.08" width="12.6667" height="76.5"/>
  </objectgroup>
  <objectgroup id="4" name="camRect" locked="1">
   <object id="69" x="7.33333" y="774"/>
@@ -114,7 +113,7 @@
   <object id="213" type="wall" x="5887.58" y="1302.58" width="13.5" height="640.166"/>
   <object id="214" type="wall" x="6132.58" y="1402.58" width="13.5" height="339.499"/>
   <object id="216" type="wall" x="7893.58" y="1703.92" width="22.1667" height="175.832"/>
-  <object id="218" type="wall" x="7649.25" y="1698.58" width="18.1667" height="125.499"/>
+  <object id="218" type="wall" x="7649.25" y="1698.58" width="18.1667" height="123.499"/>
   <object id="219" type="ground" x="7653.33" y="1688.83" width="254" height="21.6667"/>
   <object id="225" type="wall" x="1093.08" y="390.75" width="16.5" height="87.833"/>
  </objectgroup>

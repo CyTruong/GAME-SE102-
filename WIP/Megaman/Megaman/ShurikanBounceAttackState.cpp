@@ -16,7 +16,7 @@ ShurikanBounceAttackState::ShurikanBounceAttackState(EnemyData * pData)
 
 void ShurikanBounceAttackState::onUpdate()
 {
-	UIComponents::getInstance()->setShurikanHp(pData->HP);
+	UIComponents::getInstance()->setBossHp(pData->HP);
 
 	if (FrameRun++ > 120) {
 		this->pData->iCurrentArr = ShurikanData::SurikenAniIndex::BOUNCE_RUN;

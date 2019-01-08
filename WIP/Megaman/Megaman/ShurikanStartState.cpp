@@ -10,8 +10,10 @@ ShurikanStartState::ShurikanStartState(EnemyData* pData)
 
 void ShurikanStartState::onUpdate()
 {
+
+
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
-	UIComponents::getInstance()->setShurikanHp(pData->HP);
+	UIComponents::getInstance()->setBossHp(pData->HP);
 
 
 	if (this->pData->ppTextureArrays[this->pData->iCurrentArr]->isLastTexture()) {
