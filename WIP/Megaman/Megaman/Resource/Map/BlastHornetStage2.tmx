@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="497" height="129" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="243">
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="497" height="129" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="244">
  <tileset firstgid="1" name="BlastHornetStage2" tilewidth="16" tileheight="16" tilecount="64113" columns="497">
   <image source="BlastHornetStage2.png" width="7952" height="2064"/>
  </tileset>
@@ -9,7 +9,6 @@
   </data>
  </layer>
  <objectgroup id="2" name="ObjLayer">
-  <object id="11" name="SingleGun" type="enemy" x="665.75" y="904.75" width="17.5" height="19.5"/>
   <object id="13" name="SingleGun" type="enemy" x="1933.25" y="648.75" width="17.5" height="19.5"/>
   <object id="14" name="SingleGun" type="enemy" x="1583.25" y="653.25" width="17.5" height="24"/>
   <object id="15" name="SingleGun" type="enemy" x="1581.75" y="775.25" width="17.5" height="19.5"/>
@@ -21,12 +20,12 @@
   <object id="26" name="SingleGun" type="enemy" x="6065.92" y="1334.25" width="17.5" height="19.5"/>
   <object id="27" name="SingleGun" type="enemy" x="5949.25" y="1430.92" width="17.5" height="19.5"/>
   <object id="28" name="SingleGun" type="enemy" x="6032.58" y="1529.58" width="17.5" height="19.5"/>
-  <object id="31" name="Elevator" type="object" x="856.5" y="981" width="84" height="31"/>
-  <object id="228" name="Door" type="object" x="2291.16" y="1153.16" width="17.1667" height="44.1667"/>
+  <object id="31" name="Elevator" type="object" x="858" y="993" width="84" height="31"/>
+  <object id="228" name="Door" type="object" x="2305.16" y="1155.16" width="22.6667" height="44.1667"/>
   <object id="238" name="Shurikan" type="enemy" x="2487.5" y="1126"/>
   <object id="239" name="Door" type="object" x="2546.17" y="1151.5" width="31.6667" height="48.5"/>
-  <object id="240" name="Door" type="object" x="2148.33" y="1107.17" width="28.6667" height="41.6667"/>
-  <object id="242" name="Door" type="object" x="301.417" y="889.917" width="17.1667" height="44.1667"/>
+  <object id="242" name="Door" type="object" x="229.417" y="889.917" width="17.1667" height="44.1667"/>
+  <object id="243" name="Door" type="object" x="7663.67" y="1827.92" width="12.6667" height="44.1667"/>
  </objectgroup>
  <objectgroup id="4" name="camRect" locked="1">
   <object id="69" x="7.33333" y="774"/>
@@ -77,7 +76,7 @@
   <object id="125" type="ground" x="1717" y="698.667" width="282" height="17.6667"/>
   <object id="126" type="ground" x="1568" y="826.167" width="319" height="17.6667"/>
   <object id="127" type="ground" x="1719" y="955.167" width="282" height="17.6667"/>
-  <object id="128" type="ground" x="1890" y="1202.84" width="4186.34" height="17.6667"/>
+  <object id="128" type="ground" x="1890" y="1202.84" width="4149.01" height="17.6667"/>
   <object id="129" type="ground" x="1571.33" y="691.667" width="59.3336" height="10.6667"/>
   <object id="130" type="ground" x="1939.33" y="822.667" width="59.3336" height="10.6667"/>
   <object id="131" type="ground" x="1569.33" y="952.667" width="59.3336" height="10.6667"/>

@@ -3,7 +3,7 @@
 #include "iostream"
 #include "Direction.h"
 
-#define ss 12
+#define ss 0
 class CamPos
 {
 public:
@@ -42,13 +42,18 @@ private:
 	float vy;
 	RectF cameraTranslatePoint;
 	Direction moveDir;
-	CamPos * pCamPos; 
+	
 	int NumberOfcamPos; 
+	int f;
+	int isGate1; 
+
 
 public:
 
+	CamPos * pCamPos;
 	Camera(ViewPort* viewPort, float x, float y, RectF rect, RectF cameraTranslatePoint)
 	{
+		f = 0;
 
 		this->viewPort = viewPort;
 		this->cameraTranslatePoint = cameraTranslatePoint;
@@ -58,49 +63,33 @@ public:
 		NumberOfcamPos = 17;
 		pCamPos = new CamPos[NumberOfcamPos];
 
-		pCamPos[0] = CamPos(48,0 ,48,0);
-		pCamPos[1] = CamPos(48 ,24,64, 1);
-		pCamPos[2] = CamPos(24, 48, 63, 0);
-	    pCamPos[3] = CamPos(16, 48, 63, 0);
+		pCamPos[0] = CamPos(48,0 ,41,0);
+		pCamPos[1] = CamPos(48 ,32,64, 1);
+		pCamPos[2] = CamPos(16, 48, 98, 0);
+	    pCamPos[3] = CamPos(64, 104, 138, 0);
 		//pCamPos[4] = CamPos(24, 56, 63, 0); 
 		
-		pCamPos[4] = CamPos(16, 63, 74, 0);
+		//boss1 vs2 
+		pCamPos[4] = CamPos(64, 145, 145, 2);
+
+		pCamPos[5] = CamPos(64, 160, 185, 0);
+		pCamPos[6] = CamPos(64, 262, 364, 0);
+		pCamPos[7] = CamPos(369, 68, 100, 1); 
+		pCamPos[8] = CamPos(106,369 ,473 , 0);
+		pCamPos[9] = CamPos(106, 479, 479, 2); 
 
 
 
-		
 
-		pCamPos[5] = CamPos(16, 74, 99, 0);
 
 
 
 //pCamPos[10] = CamPos(96, 32, 70, 1); 
 	  
 
-		pCamPos[6] = CamPos(64,99 ,112 , 0);
-		
-		pCamPos[7] = CamPos(64, 112, 145, 0);
-		//boss 1 
-		pCamPos[8] = CamPos(64, 144.5, 0, 2); 
-
-		pCamPos[9] = CamPos(64, 159, 185, 0);
-
-		pCamPos[10] = CamPos(64, 185, 261, 0);
-		pCamPos[11] = CamPos(64, 261, 368, 0);
-
-		pCamPos[12] = CamPos(67, 261, 368, 0);
-		pCamPos[13] = CamPos(64, 266, 368, 0);
-
-		//pCamPos[11] = CamPos(48, 0, 48, 0);
-		//pCamPos[12] = CamPos(46, 14, 59, 1);
-		pCamPos[14] = CamPos(368, 64, 106, 1);
-
-		pCamPos[15] = CamPos(106,368 ,480 , 0);
-
-		pCamPos[16] = CamPos(108, 368, 480, 0);
 
 		/*this->x = x - (float)viewPort->getWidth() / 2.0f;
-		this->y = y - (float)viewPort->getHeight() / 2.0f*/;
+		this->y = y - (float)viewPort->getHeight() / 2.0f*/
 
 		//this->x = max(this->x, mapRect.x);
 		//this->y = max(this->y, mapRect.y);
@@ -121,11 +110,15 @@ public:
 		vx = vy = 1.0f;
 
 	}
-	void setPosX(float x )
+	void setPosX(float x, bool c )
 	{
-		int a = x - viewPort->getWidth() / 2.0f;
+		int a = x - 120;
 
-		
+		if (c==1 )
+		{
+			return ; 
+
+		}
 		if (this->x < a && moveDir.isRight())
 		{  
 			//
@@ -150,21 +143,21 @@ public:
 
 	
 	}
-	void setPosY ( float y )
+	void setPosY ( float y , bool c )
 	{
 	
-		int b = y - viewPort->getHeight() / 2.0f;
+		int b = y - 120;
 
-		if (this->y > y - (float)viewPort->getHeight() / 2.0f && moveDir.isUp())
+		if (this->y > b && moveDir.isUp())
 		{
-			this->y = y - (float)viewPort->getHeight() / 2.0f;
+			this->y = b;
 			//this->y = max(this->y, mapRect.y);
 			//this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
 		}
 
-		else if (this->y < y - (float)viewPort->getHeight() / 2.0f && moveDir.isDown())
+		else if (this->y < b && moveDir.isDown())
 		{
-			this->y = y - (float)viewPort->getHeight() / 2.0f;
+			this->y = b;
 			//this->y = max(this->y, mapRect.y);
 			//this->y = min(this->y, mapRect.height + mapRect.y - viewPort->getHeight());
 
@@ -230,8 +223,8 @@ public:
 	{
 		return RectF(x, y, getWidth(), getHeight());
 	}
-	void update(float x, float y, Direction d, int isCamStop )
 
+	void update(float x, float y, Direction d, int isCamStop ,int i )
 	{
 		
 
@@ -241,9 +234,16 @@ public:
 
 
 	
+		int da = x - this->x; 
+		int db = y - this->y; 
 
+		/*
 		int a = x - (float)viewPort->getWidth()/2; 
-		int b = y - (float)viewPort->getHeight()/2;
+		int b = y - (float)viewPort->getHeight()/2;*/
+
+
+		int a = x-120;
+		int b = y-120;
 		moveDir = d;
 
 
@@ -251,114 +251,59 @@ public:
 		// var xac dinh di qua boss1 chua va toi boss 2 chua 
 
 
+		if (i == -1)
+		{
+			setPosX(x, 0);
+			setPosY(y, 0);
+			return; 
 
-		int f = 0; 
-		int j = 0; 
-		for (int  i = 0; i <NumberOfcamPos; i++)
-		{  
-			if (j < NumberOfcamPos - 1)
+		}
+			
+			if (pCamPos[i].d==2)
 			{
-
-				if (f == 1 && pCamPos[j].d == 0 && pCamPos[j + 1].d == 0)
-				{
-					if (pCamPos[j + 1].a - pCamPos[j].a < 120 / 16)
-					{
-						this->y = pCamPos[j + 1].a;
-						f = 1;
-						break;
-
-
-					}
-
-
-				}
-				else
-					if (f == 2 && pCamPos[j].d == 1 && pCamPos[j + 1].d == 1)
-					{
-						if (pCamPos[j + 1].a - pCamPos[j].a < 120 / 16)
-						{
-							this->x = pCamPos[j + 1].a;
-							f = 2;
-							break;
-
-						}
-					}
+				this->y = pCamPos[i].a;
+				this->x = pCamPos[i].b;
 
 			}
 
-			if (isCamStop==1)
-			{
-			if (pCamPos[i].d==2&&this->x==pCamPos[i].b&&this->y == pCamPos[i].a)
-			{ 
-	     		f = 3; 
-				j = i; 
-				break;
-			}
-
-			}
+			
 
 
-			if (f!=2&&pCamPos[i].d==0&&this->y==pCamPos[i].a&& a>=pCamPos[i].b-ss && a <=pCamPos[i].c+ ss)
+			if (pCamPos[i].d==0)
 			{  
-				
+				this->y =pCamPos[i].a;
+
+				if (a >= pCamPos[i].b - ss && a <= pCamPos[i].c + ss)
+				{
+					setPosX(x, 0);
+				}
+
 			
-
-				if (a<pCamPos[i].b)
-				{
-					x = 120 + pCamPos[i].b; 
-				}
-				if (a>pCamPos[i].c)
-				{
-					x = 120 + pCamPos[i].c;
-
-				}
-
-				j = i; 
-				setPosX(x); 
-				f = 1; 
-				
-				
 			}
 			
 		
-			if (f!=1 &&pCamPos[i].d == 1 && this->x==pCamPos[i].a && b>= pCamPos[i].b- ss && b<= pCamPos[i].c+ ss)
+			if (pCamPos[i].d == 1 )
 			{
-				if (b < pCamPos[i].b)
-				{
-					y = 120 + pCamPos[i].b;
-				}
-				if (b > pCamPos[i].c)
-				{
-					y = 120 + pCamPos[i].c;
 
+				this->x = pCamPos[i].a; 
+
+				if (b >= pCamPos[i].b - ss && b <= pCamPos[i].c + ss)
+				{
+					setPosY(y, 0);
 				}
-				j = i;
-				setPosY(y);
-				f = 2;
+
 
 			
 
 			}
-		
+
+
 			
+
 			
-		/*	if (f == 1)
-			{
-				break;
-			}*/
 
-
-		}
+		//}
 		
-
-
-		if (f==0)
-		{    
-			setPosX(x);
-			setPosY(y);
-
-		}
-	
 
 
 		

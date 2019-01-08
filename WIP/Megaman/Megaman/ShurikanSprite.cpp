@@ -9,7 +9,7 @@ ShurikanSprite::ShurikanSprite(float x, float y)
 	this->pData->isDesTroyed = false;
 	this->pData->isHittable = true;
 	
-	this->pData->HP = 40;
+	this->pData->HP = 15;
 	UIComponents::getInstance()->setShurikanHp(this->pData->HP); 
 
 
@@ -35,6 +35,9 @@ ShurikanSprite::ShurikanSprite(float x, float y)
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::SPIN] = new TextureArray(RESOURCE_SPRITE, "Shuriken", "Spin_Attack", 10, 1);
 	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::SPIN]->setAnchorPoint(0.5f, 0.5f);
 	
+	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::DIE] = new TextureArray(RESOURCE_SPRITE, "Shuriken", "Dead", 1, 30);
+	this->pData->ppTextureArrays[ShurikanData::SurikenAniIndex::DIE]->setAnchorPoint(0.5f, 0.5f);
+
 	this->pData->body = RectF(-pData->ppTextureArrays[ShurikanData::SurikenAniIndex::SPIN]->getWidth() / 2, -pData->ppTextureArrays[ShurikanData::SurikenAniIndex::SPIN]->getHeight() /2 , pData->ppTextureArrays[ShurikanData::SurikenAniIndex::SPIN]->getWidth(), pData->ppTextureArrays[ShurikanData::SurikenAniIndex::SPIN]->getHeight());
 
 	this->pData->x = this->pData->respawnX;

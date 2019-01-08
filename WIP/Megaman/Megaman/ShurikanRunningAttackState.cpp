@@ -2,6 +2,7 @@
 #include "ShurikanData.h"
 #include "ShurikanWallAttackState.h"
 #include "ShurikanBounceAttackState.h"
+#include"ShurikanDeadState.h"
 ShurikanRunningAttackState::ShurikanRunningAttackState(EnemyData * pData)
 {
 	this->pData = pData;
@@ -14,6 +15,9 @@ ShurikanRunningAttackState::ShurikanRunningAttackState(EnemyData * pData)
 void ShurikanRunningAttackState::onUpdate()
 {
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
+	UIComponents::getInstance()->setShurikanHp(pData->HP);
+
+
 	this->pData->vx = this->pData->transform(speed);
 	this->pData->x += this->pData->vx;
 	
@@ -137,6 +141,12 @@ void ShurikanRunningAttackState::onCollision(CollisionRectF rect)
 			}
 		}
 	}
+}
+
+void ShurikanRunningAttackState::onDead()
+{
+	transition(new ShurikanDeadState(this->pData));
+
 }
 
 ShurikanRunningAttackState::~ShurikanRunningAttackState()

@@ -271,12 +271,6 @@ void Scene1::Update()
 	pMegaman->update();
 
 
-	if (pMegaman->getMoveDir().isUp())
-	{
-		int a = 0;
-
-	}
-
 	// add stoppoint 0 1 2 
 	int isCamStop = 0; 
 	
@@ -296,10 +290,45 @@ void Scene1::Update()
 		}
 	}
   
+	// truyen vao not tiep theo 
+	int Mx = pMegaman->getX();
+	int My = pMegaman->getY();
+	int i = -1; 
 
-	
+	//
+	for (int  j = 0; j < 10; j++)
+	{
+		if (cam->pCamPos[j].d==0)
+		{
+			if (My > cam->pCamPos[j].a &&My<cam->pCamPos[j].a + 240 && Mx>cam->pCamPos[j].b&&Mx <= cam->pCamPos[j].c + 120)
+			{
 
-	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir(),isCamStop );
+				i = j;
+			}
+		}
+		if (cam->pCamPos[j].d == 1)
+		{
+			if (Mx > cam->pCamPos[j].a &&Mx<cam->pCamPos[j].a + 240 && My > cam->pCamPos[j].b&&My <= cam->pCamPos[j].c+120)
+			{
+				i = j; 
+
+			}
+
+		}
+		if (cam->pCamPos[j].d ==2 )
+		{
+			if (My > cam->pCamPos[j].a &&My<cam->pCamPos[j].a + 240 && Mx>cam->pCamPos[j].b&&Mx <= cam->pCamPos[j].c + 240)
+			{
+
+				i = j;
+			}
+		}
+
+	}
+
+
+
+	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir(),isCamStop, i );
 
 
 	//update megaman theo cái cam

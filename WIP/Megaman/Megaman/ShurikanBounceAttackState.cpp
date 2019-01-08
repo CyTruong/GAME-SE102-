@@ -1,5 +1,6 @@
 ﻿#include "ShurikanBounceAttackState.h"
 #include "ShurikanWallAttackState.h"
+#include "ShurikanDeadState.h"
 
 
 ShurikanBounceAttackState::ShurikanBounceAttackState(EnemyData * pData)
@@ -15,6 +16,7 @@ ShurikanBounceAttackState::ShurikanBounceAttackState(EnemyData * pData)
 
 void ShurikanBounceAttackState::onUpdate()
 {
+	UIComponents::getInstance()->setShurikanHp(pData->HP);
 
 	if (FrameRun++ > 120) {
 		this->pData->iCurrentArr = ShurikanData::SurikenAniIndex::BOUNCE_RUN;
@@ -29,6 +31,7 @@ void ShurikanBounceAttackState::onUpdate()
 	}
 
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
+
 
 	if (this->pData->iCurrentArr == ShurikanData::SurikenAniIndex::BOUNCE_RUN) {
 		this->pData->vx = this->pData->transform(speed);
@@ -146,6 +149,12 @@ void ShurikanBounceAttackState::onCollision(CollisionRectF rect)
 			}
 		}
 	}
+}
+
+void ShurikanBounceAttackState::onDead()
+{
+	transition(new ShurikanDeadState(this->pData));
+
 }
 
 

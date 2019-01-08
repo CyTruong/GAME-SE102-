@@ -193,6 +193,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ShurikanBounceAttackState.h" />
     <ClInclude Include="ShurikanData.h" />
+    <ClInclude Include="ShurikanDeadState.h" />
     <ClInclude Include="ShurikanRunningAttackState.h" />
     <ClInclude Include="ShurikanSprite.h" />
     <ClInclude Include="ShurikanStartState.h" />
@@ -269,6 +270,7 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="ShurikanBounceAttackState.cpp" />
     <ClCompile Include="ShurikanData.cpp" />
+    <ClCompile Include="ShurikanDeadState.cpp" />
     <ClCompile Include="ShurikanRunningAttackState.cpp" />
     <ClCompile Include="ShurikanSprite.cpp" />
     <ClCompile Include="ShurikanStartState.cpp" />

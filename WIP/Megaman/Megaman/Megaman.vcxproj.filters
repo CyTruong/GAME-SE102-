@@ -366,6 +366,9 @@
     <ClInclude Include="ElevatorWaittingState.h">
       <Filter>Objects\Elevator</Filter>
     </ClInclude>
+    <ClInclude Include="ShurikanDeadState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -565,6 +568,9 @@
     </ClCompile>
     <ClCompile Include="DoorSprite.cpp">
       <Filter>Objects\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanDeadState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

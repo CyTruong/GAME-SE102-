@@ -676,6 +676,7 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 
 	}
 
+	// player vs object 
 
 
 	for (std::map < int, ObjectSprite* > ::iterator objectIt = objectMap.begin(); objectIt != objectMap.end(); objectIt++)
@@ -683,11 +684,12 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 		if (objectIt->second->isPlayerCollisionable())
 		{
 			CollisionRectF* r = objectIt->second->getRefCollisionRect();
+			
 			std::vector < CollisionRectF* > throughRectVector = sprite->getDynamicThroughRect();
 			int size = 0;
 			size = throughRectVector.size();
 			if (std::find(throughRectVector.begin(), throughRectVector.end(), r) == throughRectVector.end())
-			{
+			{ 
 				if (sprite->getBody().checkCollision(r->rect))
 				{
 					sprite->onDynamicObjectCollision(r);

@@ -11,7 +11,9 @@ public:
 		WALLSPIN,
 		BOUNCE_START, //xoay quang trục z
 		BOUNCE_RUN,
+		DIE,
 		ANI_COUNT
+		
 	};
 	
 	enum SurikenMechIndex

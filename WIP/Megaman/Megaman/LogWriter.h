@@ -5,6 +5,10 @@
 #include <ctime>
 
 #define LogFileName  "..\\Debuglog.txt"
+
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
 using namespace std;
 
 
@@ -22,6 +26,7 @@ private :
 		char* dt = ctime(&now);
 		return string(dt).substr(0, string(dt).length() - 1);
 	}
+
 
 	void Creat();
 
