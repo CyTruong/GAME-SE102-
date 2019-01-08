@@ -12,6 +12,7 @@ private:
 	float speed;
 	int nextMech;
 	float getYfromX(float Y);
+	void doMech();
 public:
 	ZuliaNormalFlyState(EnemyData *pData,float desX,float desY,RectF Range,int nextMech = 0);
 	void onUpdate();
