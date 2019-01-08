@@ -224,6 +224,7 @@
     <ClInclude Include="zlib.h" />
     <ClInclude Include="ZuliaAlphaFlyState.h" />
     <ClInclude Include="ZuliaData.h" />
+    <ClInclude Include="ZuliaDeadState.h" />
     <ClInclude Include="ZuliaNormalBulletData.h" />
     <ClInclude Include="ZuliaNormalBulletSprite.h" />
     <ClInclude Include="ZuliaNormalFlyState.h" />
@@ -297,6 +298,7 @@
     <ClCompile Include="winmain.cpp" />
     <ClCompile Include="ZuliaAlphaFlyState.cpp" />
     <ClCompile Include="ZuliaData.cpp" />
+    <ClCompile Include="ZuliaDeadState.cpp" />
     <ClCompile Include="ZuliaNormalBulletSprite.cpp" />
     <ClCompile Include="ZuliaNormalFlyState.cpp" />
     <ClCompile Include="ZuliaShoot2State.cpp" />

@@ -75,7 +75,7 @@ public:
 		pCamPos[5] = CamPos(64, 159, 185, 0);
 		pCamPos[6] = CamPos(64, 262, 364 , 0);
 		pCamPos[7] = CamPos(369, 68, 100, 1); 
-		pCamPos[8] = CamPos(106,369 ,473 , 0);
+		pCamPos[8] = CamPos(106,369 ,475 , 0);
 		pCamPos[9] = CamPos(106, 479, 479, 2); 
 
 

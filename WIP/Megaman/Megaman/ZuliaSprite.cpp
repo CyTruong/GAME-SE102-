@@ -27,6 +27,9 @@ ZuliaSprite::ZuliaSprite(float x, float y,Direction dir, std::vector<BulletSprit
 	this->pData->ppTextureArrays[ZuliaData::ZuliaAniIndex::WINGS] = new TextureArray(RESOURCE_SPRITE, "Zulia", "Wing", 3, 8);
 	this->pData->ppTextureArrays[ZuliaData::ZuliaAniIndex::WINGS]->setAnchorPoint(0.5f, 0.5f);
 
+	this->pData->ppTextureArrays[ZuliaData::ZuliaAniIndex::DIE] = new TextureArray(RESOURCE_SPRITE, "Zulia", "Dead", 1, 40);
+	this->pData->ppTextureArrays[ZuliaData::ZuliaAniIndex::DIE]->setAnchorPoint(0.5f, 0.5f);
+
 	this->pData->body = RectF(-20, -20, 40, 40);
 
 	this->pData->x = this->pData->respawnX;

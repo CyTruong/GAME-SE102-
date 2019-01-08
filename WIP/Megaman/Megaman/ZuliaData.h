@@ -22,6 +22,7 @@ public:
 		SHOOT,
 		WINGS,
 		AIM, 
+		DIE,
 		ANICOUNT
 	};
 	

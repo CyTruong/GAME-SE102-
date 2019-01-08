@@ -372,6 +372,9 @@
     <ClInclude Include="ZuliaSpecialBulletSprite.h">
       <Filter>Bullets\Zulia</Filter>
     </ClInclude>
+    <ClInclude Include="ZuliaDeadState.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -577,6 +580,9 @@
     </ClCompile>
     <ClCompile Include="ZuliaSpecialBulletSprite.cpp">
       <Filter>Bullets\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaDeadState.cpp">
+      <Filter>Enemies\Zulia</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

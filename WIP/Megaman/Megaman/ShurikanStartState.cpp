@@ -27,6 +27,10 @@ void ShurikanStartState::onCollision(CollisionRectF rect)
 {
 }
 
+void ShurikanStartState::onDead()
+{
+}
+
 
 
 
