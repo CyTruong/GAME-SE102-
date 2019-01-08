@@ -1,6 +1,7 @@
 #include "ZuliaNormalFlyState.h"
 #include "ZuliaData.h"
 #include "ZuliaAlphaFlyState.h"
+#include "ZuliaShoot2State.h"
 #include "ZuliaStingState.h"
 #include "ZuliaShootState.h"
 
@@ -31,6 +32,9 @@ void ZuliaNormalFlyState::doMech()
 	}
 	if (nextMech == ZuliaData::ZuliaMechIndex::BEESHOOT) {
 		transition(new ZuliaShootState(this->pData, Range));
+	}
+	if (nextMech == ZuliaData::ZuliaMechIndex::TARGETBEESHOOT) {
+		transition(new ZuliaShoot2State(this->pData, Range));
 	}
 }
 

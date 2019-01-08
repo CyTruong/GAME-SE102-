@@ -41,13 +41,7 @@ void ZuliaAlphaFlyState::onUpdate()
 	}
 
 	if (mechCounter == 3)
-		if (this->pData->x < Range.x + Range.width/2) {
-			transition(new ZuliaNormalFlyState(this->pData, Range.x+30 , Range.y+30,Range,(int)ZuliaData::ZuliaMechIndex::STING_PLAYER));
-		}
-		else
-		{
-			transition(new ZuliaNormalFlyState(this->pData, Range.x+ Range.width-30, Range.y+30, Range,(int)ZuliaData::ZuliaMechIndex::STING_PLAYER));
-		}
+		transition(new ZuliaNormalFlyState(this->pData, 7781, 1786,Range,(int)ZuliaData::ZuliaMechIndex::TARGETBEESHOOT));
 }
 
 void ZuliaAlphaFlyState::onCollision(RectF rect)

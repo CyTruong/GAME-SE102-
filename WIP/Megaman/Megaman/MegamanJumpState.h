@@ -16,7 +16,7 @@ private:
 public:
 	//MegamanJumpState(MegamanData * data, bool isMoving = false , float vy =-5.0f);
 	// hcmt 
-	MegamanJumpState(MegamanData *data, bool isMoving = false, float vy = -5.0f, bool isCimping = false);
+	MegamanJumpState(MegamanData *data, bool isMoving = false, float vy = -8.0f, bool isCimping = false);
 	~MegamanJumpState();
 	void onMovePressed(Direction dir);
 	void onMoveReleased(Direction dir);

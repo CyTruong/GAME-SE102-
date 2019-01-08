@@ -8,6 +8,7 @@ ShurikanDeadState::ShurikanDeadState(EnemyData *pData)
 
 	this->pData = pData;
 	this->pData->iCurrentArr = ShurikanData::SurikenAniIndex::DIE;
+	Sound::getInstance()->play("Enemy_Destroy", false, 1);
 
 }
 

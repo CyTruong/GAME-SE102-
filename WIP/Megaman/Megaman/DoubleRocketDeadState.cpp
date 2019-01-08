@@ -8,7 +8,7 @@ DoubleRocketDeadState::DoubleRocketDeadState(EnemyData *pData)
 
 	this->pData = pData;
 	this->pData->iCurrentArr = DoubleRocketData::DoubleGunArrindex::DIE;
-
+	Sound::getInstance()->play("Enemy_Destroy", false, 1);
 }
 
 

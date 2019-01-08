@@ -31,7 +31,7 @@ public:
 		pData->ppTextureArrays[pData->iCurrentArr]->update();
 
 		bool outRange = pData->x < range.x || pData->x > range.x + range.width || pData->y< range.y || pData->y > range.y + range.height;
-		if (outRange)
+		if (outRange || waitting4updateVector > 300)
 		{
 			this->pData->iCurrentArr = ZuliaSpecialBulletData::DESTROY;
 		}
@@ -59,6 +59,8 @@ public:
 
 		if (this->pData->iCurrentArr == ZuliaSpecialBulletData::DESTROY   && this->pData->ppTextureArrays[this->pData->iCurrentArr]->isLastTexture()) {
 			this->pData->isDesTroyed = true;
+			Sound::getInstance()->play("BulletDestroy2", false, 1);
+
 		}
 
 	}

@@ -14,8 +14,15 @@ void Scene1::loadSound()
 	Sound::getInstance()->loadSound("Resource\\Sound\\SingleGunFire.wav", "SingleGunFire");
 	Sound::getInstance()->loadSound("Resource\\Sound\\stage1.wav", "BlastHornet");
 	Sound::getInstance()->loadSound("Resource\\Sound\\Bullet_Destroy.wav", "BulletDestroy");
+	Sound::getInstance()->loadSound("Resource\\Sound\\Bullet_Destroy2.wav", "BulletDestroy2");
 	Sound::getInstance()->loadSound("Resource\\Sound\\Dash.wav", "Dash");
+	Sound::getInstance()->loadSound("Resource\\Sound\\Jump.wav", "Jump");
+	Sound::getInstance()->loadSound("Resource\\Sound\\Elevator.wav", "Elevator");
+	Sound::getInstance()->loadSound("Resource\\Sound\\Enemy_Destroy.wav", "Enemy_Destroy");
+	Sound::getInstance()->loadSound("Resource\\Sound\\Death.wav", "Death");
 
+
+	
 	
 }
 
@@ -37,10 +44,10 @@ Scene1::Scene1()
 
 
 
-	//pMegaman = new MegamanSprite(120, 48* 16 + 120, cam->getMoveDir());
+	pMegaman = new MegamanSprite(120, 48* 16 + 120, cam->getMoveDir());
 	//pMegaman = new MegamanSprite(7500, 1924, cam->getMoveDir());
 	//pMegaman = new MegamanSprite( 1940, 1035, cam->getMoveDir());
-	pMegaman = new MegamanSprite(7300, 1300, cam->getMoveDir());
+	//pMegaman = new MegamanSprite(7300, 1300, cam->getMoveDir());
 
 	// Texture Hp 
 	hpHub = new HPBarSprite(cam, 15, 80);
@@ -143,7 +150,7 @@ void Scene1::handlerInput()
 			{
 				if (e.isPressed())
 				{
-					Sound::getInstance()->play("MgmWallJump", false, 1);
+					Sound::getInstance()->play("Jump", false, 1);
 					pMegaman->getState()->onJumpPressed();
 				}
 				else

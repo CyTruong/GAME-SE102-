@@ -43,6 +43,8 @@ public:
 
 		if (this->pData->iCurrentArr == ZuliaNormalBulletData::DESTROY   && this->pData->ppTextureArrays[this->pData->iCurrentArr]->isLastTexture() ) {
 			this->pData->isDesTroyed = true;
+			Sound::getInstance()->play("BulletDestroy2", false, 1);
+
 		}
 
 	}

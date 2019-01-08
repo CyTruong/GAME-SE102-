@@ -16,7 +16,7 @@ DoubleRocketSprite::DoubleRocketSprite(float x, float y, Direction dir, bool isS
 	this->pData->isDesTroyed = false;
 	this->pData->dir = dir;
 	this->pData->isHittable = true;
-	this->pData->HP = 5;
+	this->pData->HP = 2;
 	this->pData->isShooter = true;
 	this->pData->respawnX = x;
 	this->pData->respawnY = y;

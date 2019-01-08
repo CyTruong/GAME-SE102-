@@ -8,7 +8,7 @@ MegamanDeathState::MegamanDeathState(MegamanData * data)
 	this->pData = data;
 	this->pData->setiCurrentArray(MegamanData::DEAD);
 	this->pData->isUndying = false;
-	
+	Sound::getInstance()->play("Death", false, 1);
 }
 
 MegamanDeathState::~MegamanDeathState()

@@ -8,6 +8,7 @@ ZuliaDeadState::ZuliaDeadState(EnemyData *pData)
 
 	this->pData = pData;
 	this->pData->iCurrentArr = ZuliaData::ZuliaAniIndex::DIE;
+	Sound::getInstance()->play("Enemy_Destroy", false, 1);
 
 }
 

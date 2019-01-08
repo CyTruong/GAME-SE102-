@@ -103,8 +103,9 @@ void MegamanWallClimping::onUpdate()
 
 	hittableCalculation();
 	undyingCalculation();
-	pData->ppTextureArrays[pData->iCurrentArr]->update();
-
+	if (!pData->ppTextureArrays[pData->iCurrentArr]->isLastTexture()) {
+		pData->ppTextureArrays[pData->iCurrentArr]->update();
+	}
 
 	pData->vx = 0;
 	pData->vy += DownGraviy;

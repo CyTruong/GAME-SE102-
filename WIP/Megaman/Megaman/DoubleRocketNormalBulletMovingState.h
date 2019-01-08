@@ -27,6 +27,7 @@ public:
 		else
 		{
 			if (this->pData->ppTextureArrays[DoubleRocketNormalBulletData::DESTROY]->isLastTexture()) {
+				Sound::getInstance()->play("BulletDestroy2", false, 1);
 				this->pData->isDesTroyed = true;
 			}
 		}
